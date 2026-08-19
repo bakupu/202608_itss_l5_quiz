@@ -1,4 +1,15 @@
+"""M2版 問題データ生成スクリプト。
+
+概要: 種データ（概念36件＋シナリオ9件）から出題JSONを生成する。
+出力: docs/data/questions.json（既存を無条件で上書きする）
+実行: python tools/make_questions.py  （リポジトリ内のどこから実行してもよい）
+注意: 出力先はGitHub Pagesの配信対象。生成後は必ずアプリを起動して件数と表示を確認する。
+      M3以降は concepts.json / questions-v3.json へ分離予定。IDポリシーは 40_spec/ を参照。
+"""
 import json, random
+from pathlib import Path
+
+OUT_PATH = Path(__file__).resolve().parent.parent / 'docs' / 'data' / 'questions.json'
 random.seed(42)
 DOMAINS={
 'STRATEGY':[
@@ -72,5 +83,6 @@ scenarios=[
 for d,id_,stem,choices,correct,explanation,notes,related in scenarios:
     questions.append(dict(id=id_,source_type='ORIGINAL',domain=d,subdomain='午前問題型',question_type='SCENARIO',stem=stem,choices=choices,correct_choice=correct,explanation=explanation,choice_notes=notes,related_terms=related,difficulty=3,tags=['午前問題型']))
 
-with open('questions.json','w',encoding='utf-8') as f: json.dump(questions,f,ensure_ascii=False,indent=2)
+with OUT_PATH.open('w',encoding='utf-8',newline='\n') as f: json.dump(questions,f,ensure_ascii=False,indent=2)
+print(OUT_PATH)
 print(len(questions))

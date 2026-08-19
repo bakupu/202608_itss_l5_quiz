@@ -152,7 +152,7 @@ function updateAuthUI(user){
 }
 
 async function init(){
-  questions=await fetch('questions.json').then(r=>r.json());renderHome();
+  questions=await fetch('data/questions.json').then(r=>r.json());renderHome();
   $('dailyStartBtn').onclick=()=>startSession(chooseDaily(),'daily');
   $('customStartBtn').onclick=()=>{const n=Math.max(1,Math.min(100,Number($('countInput').value)||20));startSession(filteredQuestions().slice(0,n),'custom')};
   $('nextBtn').onclick=endOrNext;$('quitBtn').onclick=()=>showView('homeView');$('resultHomeBtn').onclick=()=>showView('homeView');
