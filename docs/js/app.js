@@ -1,12 +1,15 @@
 import { SyncManager } from './sync.js';
 import { loadContent, loadStateV3, blankState, STORAGE_KEY_V3 } from './content.js';
 import { renderExplanation } from './explain.js';
+import { renderGlossary } from './glossary.js';
 
 const STORAGE_KEY = STORAGE_KEY_V3;
 const DAY = 86400000;
 let questions = [];
 let state = blankState();
 let concepts = new Map();
+const glossaryFilters = { query: '', domain: 'ALL', sort: 'STANDARD', weakOnly: false };
+const glossaryOpened = new Set();
 let session = null;
 let installPrompt = null;
 let syncManager = null;
@@ -386,6 +389,38 @@ function renderReview() {
         (b.onclick = () => startSession([questions.find((q) => q.id === b.dataset.id)], 'review')),
     );
 }
+function renderGlossaryView() {
+  const shown = renderGlossary({
+    container: $('glossaryList'),
+    concepts,
+    questions,
+    getP,
+    filters: glossaryFilters,
+    opened: glossaryOpened,
+  });
+  $('glossaryCountLabel').textContent = `${shown} / ${concepts.size}語`;
+
+  $('glossaryList')
+    .querySelectorAll('[data-toggle]')
+    .forEach((b) => {
+      b.onclick = () => {
+        const id = b.dataset.toggle;
+        // 開いている項目を覚えておかないと、検索や並び替えのたびに閉じてしまう。
+        if (glossaryOpened.has(id)) glossaryOpened.delete(id);
+        else glossaryOpened.add(id);
+        renderGlossaryView();
+      };
+    });
+
+  $('glossaryList')
+    .querySelectorAll('.gl-practice')
+    .forEach((b) => {
+      b.onclick = () => {
+        const list = questions.filter((q) => q.concept_id === b.dataset.concept);
+        startSession(list, 'concept');
+      };
+    });
+}
 function showView(id) {
   views.forEach((v) => v.classList.toggle('active', v.id === id));
   document
@@ -394,6 +429,7 @@ function showView(id) {
   if (id === 'homeView') renderHome();
   if (id === 'dashboardView') renderDashboard();
   if (id === 'reviewView') renderReview();
+  if (id === 'glossaryView') renderGlossaryView();
   window.scrollTo(0, 0);
 }
 function renderCurrentView() {
@@ -401,6 +437,7 @@ function renderCurrentView() {
   if (v === 'homeView') renderHome();
   else if (v === 'dashboardView') renderDashboard();
   else if (v === 'reviewView') renderReview();
+  else if (v === 'glossaryView') renderGlossaryView();
 }
 function escapeHtml(s) {
   return String(s).replace(
@@ -458,6 +495,22 @@ async function init() {
   document
     .querySelectorAll('.nav-btn')
     .forEach((b) => (b.onclick = () => showView(b.dataset.view)));
+  $('glossarySearch').oninput = (e) => {
+    glossaryFilters.query = e.target.value;
+    renderGlossaryView();
+  };
+  $('glossaryDomain').onchange = (e) => {
+    glossaryFilters.domain = e.target.value;
+    renderGlossaryView();
+  };
+  $('glossarySort').onchange = (e) => {
+    glossaryFilters.sort = e.target.value;
+    renderGlossaryView();
+  };
+  $('glossaryWeakOnly').onchange = (e) => {
+    glossaryFilters.weakOnly = e.target.checked;
+    renderGlossaryView();
+  };
 
   syncManager = new SyncManager({
     getState: () => state,

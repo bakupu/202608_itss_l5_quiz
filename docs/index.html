@@ -182,10 +182,44 @@
           <div id="reviewList" class="review-list"></div>
         </section>
       </section>
+
+      <section id="glossaryView" class="view">
+        <section class="card section-card">
+          <div class="section-head">
+            <h2>用語辞書</h2>
+            <span id="glossaryCountLabel" class="muted"></span>
+          </div>
+          <input
+            id="glossarySearch"
+            class="gl-search"
+            type="search"
+            placeholder="用語・意味・関連語で検索"
+            autocomplete="off"
+          />
+          <div class="gl-filters">
+            <select id="glossaryDomain" aria-label="領域で絞り込む">
+              <option value="ALL">すべての領域</option>
+              <option value="STRATEGY">ストラテジ</option>
+              <option value="ARCHITECTURE">アーキテクト</option>
+              <option value="SECURITY">セキュリティ</option>
+            </select>
+            <select id="glossarySort" aria-label="並び順">
+              <option value="STANDARD">標準の並び</option>
+              <option value="WEAK">苦手順</option>
+            </select>
+            <label class="gl-check">
+              <input id="glossaryWeakOnly" type="checkbox" />
+              未習得のみ
+            </label>
+          </div>
+          <div id="glossaryList" class="gl-list"></div>
+        </section>
+      </section>
     </main>
 
     <nav class="bottom-nav">
       <button data-view="homeView" class="nav-btn active">ホーム</button>
+      <button data-view="glossaryView" class="nav-btn">辞書</button>
       <button data-view="reviewView" class="nav-btn">復習</button>
       <button data-view="dashboardView" class="nav-btn">分析</button>
     </nav>

@@ -61,6 +61,19 @@ const SCREENS = [
   { name: '3-feedback', act: async (page) => page.click('#choices button:first-child') },
   { name: '4-dashboard', act: async (page) => page.click('.nav-btn[data-view="dashboardView"]') },
   { name: '5-review', act: async (page) => page.click('.nav-btn[data-view="reviewView"]') },
+  { name: '6-glossary', act: async (page) => page.click('.nav-btn[data-view="glossaryView"]') },
+  {
+    // 1件開いた状態と、検索が効いている状態を別々に撮る。
+    name: '7-glossary-open',
+    act: async (page) => page.click('.gl-item:first-child .gl-head'),
+  },
+  {
+    name: '8-glossary-search',
+    act: async (page) => {
+      await page.click('.gl-item:first-child .gl-head');
+      await page.fill('#glossarySearch', '証明書');
+    },
+  },
 ];
 
 const VIEWPORTS = [
@@ -97,7 +110,21 @@ try {
 
     await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle' });
     for (const screen of SCREENS) {
-      await screen.act(page);
+      try {
+        // 旧版に無い画面で30秒待たされないよう、待ち時間を短くする。
+        await Promise.race([
+          screen.act(page),
+          new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 4000)),
+        ]);
+      } catch {
+        // 旧版と撮り比べるとき、その版に存在しないUIの操作は必ず失敗する。
+        // そこで全体を止めると「比較のための撮影」が比較のたびに落ちるので、
+        // その画面だけ飛ばして残りを撮る。飛ばしたことは必ず出力する。
+        console.error(
+          `⚠️ ${vp.tag} / ${screen.name} は操作できず撮影を飛ばした（この版に無い画面か）`,
+        );
+        continue;
+      }
       await page.waitForTimeout(250);
       // fullPage 撮影では position:fixed の要素がページ中央へ描画され、本文に重なって写る
       // （実機の見え方ではなく撮影側の挙動）。撮影の間だけ static へ落として本文を隠さないようにする。

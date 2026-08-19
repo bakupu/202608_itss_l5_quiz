@@ -657,3 +657,117 @@ select {
     margin-left: 0;
   }
 }
+
+/* ===== 用語辞書ビュー =====
+   一覧は「用語 + 習得状況」を1行で見せ、詳細はタップで開く。
+   苦手用語は独立画面にせず、この一覧の並び替え（苦手順）として持たせている。 */
+.gl-search {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+.gl-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.gl-filters select {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  font-size: 0.85rem;
+}
+.gl-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.gl-list {
+  display: grid;
+  gap: 8px;
+}
+.gl-item {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  overflow: hidden;
+}
+.gl-item.is-open {
+  border-color: var(--accent);
+}
+.gl-head {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 10px 12px;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+.gl-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+}
+.gl-title strong {
+  font-size: 0.98rem;
+}
+.gl-fullname {
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+.gl-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 5px;
+}
+.gl-domain,
+.gl-tag {
+  font-size: 0.7rem;
+  padding: 1px 7px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+.gl-tag.bad {
+  color: var(--bad);
+  border-color: var(--bad);
+}
+.gl-tag.star {
+  color: var(--warn);
+  border-color: var(--warn);
+}
+.gl-track {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--line);
+  margin-top: 8px;
+  overflow: hidden;
+}
+.gl-fill {
+  height: 100%;
+  background: var(--good);
+}
+.gl-detail {
+  padding: 0 12px 12px;
+  border-top: 1px solid var(--line);
+}
+.gl-detail .ex-rows {
+  margin: 10px 0 12px;
+}
+.gl-practice {
+  width: 100%;
+}

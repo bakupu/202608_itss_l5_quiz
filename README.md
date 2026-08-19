@@ -28,6 +28,7 @@ ITSS レベル5相当（ITストラテジスト / システムアーキテクト
 | 開発の作業コンテキスト・構造・命名ルール | [CLAUDE.md](CLAUDE.md) |
 | ローカル確認と公開の手順 | [50_workflow/50-ops_ローカル確認とPages公開.md](50_workflow/50-ops_ローカル確認とPages公開.md) |
 | 問題データの生成 | [50_workflow/20-content_問題データ生成.md](50_workflow/20-content_問題データ生成.md) |
+| 変更前の自動テストと画面撮影 | [50_workflow/30-app_画面撮影と自動テスト.md](50_workflow/30-app_画面撮影と自動テスト.md) |
 | 端末間同期（保留中） | [50_workflow/50-ops_Supabase同期セットアップ.md](50_workflow/50-ops_Supabase同期セットアップ.md) |
 | 次の改修（M3）の計画 | [30_plan/10-overview_M3実装計画.md](30_plan/10-overview_M3実装計画.md) |
 
