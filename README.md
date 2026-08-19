@@ -1,131 +1,45 @@
-# ITSS L5 Study — M2 Supabase Sync
+# ITSS L5 Study
 
-戦略・アーキテクチャ・セキュリティ寄りの午前I/II対策用PWAです。
-M1のローカル学習機能に、Supabase Auth + PostgreSQLによるPC/スマホ間同期を追加しています。
+ITSS レベル5相当（ITストラテジスト / システムアーキテクト / 情報処理安全確保支援士）の午前対策を、
+**戦略・アーキテクチャ・セキュリティ**の3領域に絞って自習するための PWA。
+サーバもビルドも持たず、GitHub Pages の静的配信とブラウザの localStorage だけで動く。
 
-## M2で実装済み
-- PC / スマホ対応レスポンシブPWA
-- 今日の3問、任意問題数、領域・形式・復習条件フィルタ
-- 正誤、短い解説、全選択肢メモ、関連語
-- ★重点マーク
-- 習得Lv 0〜4、復習予定、連続学習日数、誤答→習得
-- ダッシュボードとJSONエクスポート
-- Supabase Email Magic Link / OTPログイン
-- `attempts` と `user_question_state` の端末間同期
-- RLSで本人のデータだけ読書き可能
-- M1 localStorage (`itss-l5-study-state-v1`) からM2へ自動移行
-- オフライン時はlocalStorageへ保存し、オンライン復帰後に再同期
-- 複数端末の回答履歴をIDでマージし、習得状態を履歴から再計算
-- PWAオフラインキャッシュ
-- オリジナル問題 81問
+- 公開URL: https://bakupu.github.io/202608_itss_l5_quiz/
+- 現在: **M2**（オリジナル問題 81問 / 36概念）
 
-## 1. Supabaseプロジェクトを作る
-Supabase Dashboardで新規Projectを作成します。
+開発の段階を M1 / M2 / M3 と呼ぶ。
 
-## 2. DBを作る
-Supabaseの SQL Editor で `supabase_m2.sql` を丸ごと実行します。
+- **M1**: ローカル保存だけの学習機能（初版）
+- **M2**: 端末間同期のコードを追加した現行公開版（同期自体は既定で無効）
+- **M3**: 次の改修。解説を用語辞書ベースへ拡充し、履歴を壊さない永久ID体系へ移行する
 
-作成される主なテーブル:
-- `attempts`: 回答履歴。同期の基準となるイベントデータ
-- `user_question_state`: ★や現在の習得状態のスナップショット
+## 使う
 
-両方ともRLSを有効にし、`auth.uid() = user_id` の本人だけアクセス可能です。
+公開URLをブラウザで開くだけ。スマホは「ホーム画面に追加」でアプリのように使える。
+学習履歴はブラウザの localStorage に保存される（端末間同期は既定で無効）。
 
-## 3. Authを設定する
-AuthenticationでEmail providerを有効にします。
+主な機能: 今日の3問 / 任意問題数のセッション / 領域・出題形式・復習条件でのフィルタ /
+★重点マーク / 習得Lv 0〜4 と復習予定 / 連続学習日数 / ダッシュボード / JSONエクスポート / オフライン動作
 
-URL Configurationで、実際のGitHub Pages URLを許可してください。
-例:
+## 目的別の文書入口
+
+| 目的 | 場所 |
+|------|------|
+| 開発の作業コンテキスト・構造・命名ルール | [CLAUDE.md](CLAUDE.md) |
+| ローカル確認と公開の手順 | [50_workflow/50-ops_ローカル確認とPages公開.md](50_workflow/50-ops_ローカル確認とPages公開.md) |
+| 問題データの生成 | [50_workflow/20-content_問題データ生成.md](50_workflow/20-content_問題データ生成.md) |
+| 端末間同期（保留中） | [50_workflow/50-ops_Supabase同期セットアップ.md](50_workflow/50-ops_Supabase同期セットアップ.md) |
+| 次の改修（M3）の計画 | [30_plan/10-overview_M3実装計画.md](30_plan/10-overview_M3実装計画.md) |
+
+## 構成
 
 ```
-https://YOUR_GITHUB_NAME.github.io/YOUR_REPOSITORY/
+docs/     ★GitHub Pages の配信ルート。ブラウザへ配られるのはここだけ
+tools/    問題データの生成スクリプト
+infra/    Supabase スキーマ
+10_memo/ 20_adr/ 30_plan/ 40_spec/ 50_workflow/ 90_ref/   文書
 ```
 
-ローカル確認もするなら、Redirect URLsに以下も追加します。
-
-```
-http://localhost:8000/
-```
-
-メールテンプレートが `ConfirmationURL` を使う標準Magic Link形式なら、受信メールのリンクを押すだけでログインできます。
-
-## 4. 公開キーを設定する
-`supabase-config.js` を編集します。
-
-```js
-export const SUPABASE_CONFIG = {
-  url: 'https://xxxx.supabase.co',
-  anonKey: 'YOUR_ANON_OR_PUBLISHABLE_KEY'
-};
-```
-
-Project URL と、ブラウザ用の anon/public(publishable) key を指定します。
-
-**service_role key は絶対にGitHub Pagesへ置かないでください。**
-
-設定が空のままでもアプリはM1同様、localStorageのみで動作します。
-
-## 5. ローカル確認
-`file://` 直開きではなくHTTPで開きます。
-
-```bash
-python -m http.server 8000
-```
-
-ブラウザで:
-
-```
-http://localhost:8000/
-```
-
-## 6. GitHub Pagesへ公開
-このディレクトリ一式をGitHubリポジトリへ置き、Settings → Pages から公開します。
-スマホからGitHub Pages URLを開き、必要なら「ホーム画面に追加」してください。
-
-## 同期の使い方
-1. PCでメールアドレスを入力し「メールでログイン」
-2. 届いたMagic Linkを開く
-3. 「同期済み」と表示されることを確認
-4. スマホでも同じGitHub Pages URLを開く
-5. 同じメールアドレスでログイン
-6. 回答履歴、★、習得状態、グラフが同期される
-
-「今すぐ同期」でも手動同期できます。通常は回答・★変更・オンライン復帰後に自動同期します。
-
-## 同期設計
-回答履歴 `attempts` を主データとして扱います。
-各回答にはクライアントでUUIDを振り、Supabase側でも同じIDを保持します。
-
-同期時は:
-1. サーバの回答履歴を取得
-2. 端末の回答履歴とUUIDでマージ
-3. 未アップロード回答をSupabaseへupsert
-4. ★状態を更新日時でマージ
-5. 全回答を時系列に並べて習得度・復習日・日次実績を再計算
-6. `user_question_state` に最新スナップショットを保存
-
-この方式により、PCとスマホで別々に回答しても履歴をできるだけ失わない構成です。
-
-## オフライン
-ネット接続がない場合も回答できます。回答はlocalStorageへ残ります。
-オンラインへ戻りログイン状態なら自動同期を試みます。
-
-SupabaseのJSクライアント自体はCDNから動的ロードします。そのため、初回のSupabaseログイン/同期にはネット接続が必要です。学習UI本体はService Workerでキャッシュします。
-
-## M1からの移行
-同じブラウザにM1の `itss-l5-study-state-v1` が残っていれば、M2初回起動時に `itss-l5-study-state-v2` へコピーします。
-その後Supabaseへログインすると、既存回答履歴をクラウド側へマージします。
-
-## セキュリティ上の前提
-- GitHub Pagesは静的配信のみ
-- DBアクセスはSupabase Authのユーザーセッション経由
-- RLSでユーザーIDごとに分離
-- 公開用キーは権限境界ではなく、RLSが実際のデータ保護を担当
-- `service_role` / DB password / private key はクライアントへ置かない
-
-## 次のM3候補
-- GitHub Actions等で問題DBの検証
-- IPA過去問インポータ（出典・年度・問題番号付き）
-- ChatGPT Scheduled Tasksから毎日3問への導線
-- 問題検索 / 苦手用語一覧
-- 同期状態・最終同期時刻の詳細画面
+⚠️ **`docs/` はドキュメント置き場ではなくサイト本体。** GitHub Pages のブランチ配信で選べるフォルダが
+`/` か `/docs` に限られるための命名で、文書は番号付きディレクトリに置く。経緯は
+[20_adr/0001-10-overview_ディレクトリ構造とPages配信方式.md](20_adr/0001-10-overview_ディレクトリ構造とPages配信方式.md)。
