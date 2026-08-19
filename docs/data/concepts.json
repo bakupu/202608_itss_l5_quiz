@@ -765,6 +765,4948 @@
         "脆弱性管理"
       ],
       "choice_definition": "脆弱性の深刻度を基本・現状・環境などの指標から定量評価する共通スコアリング方式"
+    },
+    {
+      "id": "audit.jis_q19011",
+      "domain": "AUDIT",
+      "term": "JIS Q 19011",
+      "full_name": "Guidelines for auditing management systems",
+      "japanese": "マネジメントシステム監査のための指針",
+      "meaning": "マネジメントシステムの監査（第一者・第二者・第三者）について、監査プログラムの管理、監査の実施、監査員の力量と評価を定めた指針。ISO 19011 の国内規格。",
+      "exam_tip": "用語の定義が直接問われる。「監査員」は監査を行う人であり、監査チームリーダーは含まれるが、同行するオブザーバや監査チームを支援する技術専門家は含まれない。「監査依頼者」は監査を要請する側で監査員ではない。",
+      "related": [
+        "audit.system_audit_standard",
+        "audit.audit_plan"
+      ],
+      "related_terms": [
+        "監査プログラム",
+        "監査基準",
+        "監査証拠",
+        "力量"
+      ]
+    },
+    {
+      "id": "audit.it_due_diligence",
+      "domain": "AUDIT",
+      "term": "デューデリジェンス",
+      "full_name": "Due Diligence",
+      "japanese": "適正評価手続",
+      "meaning": "企業買収や事業提携などの重要な意思決定の前に、対象企業の価値とリスクを詳細に調査・評価する手続。情報システムを対象とする場合は、システムの資産価値、技術的負債、ライセンス、セキュリティやコンプライアンス上のリスクを評価する。",
+      "exam_tip": "「買収などの意思決定の前に対象の価値とリスクを評価する」が定義。監査人が事後に有効性を検証する通常のシステム監査とは、実施時期と目的が違う点で区別する。",
+      "related": [
+        "audit.system_audit_standard"
+      ],
+      "related_terms": [
+        "M&A",
+        "企業価値評価",
+        "技術的負債"
+      ]
+    },
+    {
+      "id": "audit.application_control",
+      "domain": "AUDIT",
+      "term": "IT業務処理統制",
+      "full_name": "IT Application Control",
+      "japanese": "IT業務処理統制",
+      "meaning": "個々の業務を処理する情報システムの中に組み込まれ、その業務で扱う情報の正確性・網羅性・正当性を確保する統制。入力データの妥当性チェック、エラーデータの修正と再処理、承認手続、マスタデータの維持管理などが該当する。",
+      "exam_tip": "IT全般統制との切り分けが毎年のように問われる。個別の業務処理に組み込まれていれば業務処理統制、システム開発・変更・運用・アクセス管理のように複数業務へ共通して効くものはIT全般統制。監査手続を選ばせる問では「その業務の記録に承認の証跡があるか」を確かめるものが業務処理統制の監査になる。",
+      "related": [
+        "audit.it_general_control",
+        "audit.internal_control_report"
+      ],
+      "related_terms": [
+        "インプットコントロール",
+        "網羅性",
+        "正当性"
+      ]
+    },
+    {
+      "id": "audit.system_audit_standard",
+      "domain": "AUDIT",
+      "term": "システム監査基準",
+      "full_name": "System Audit Standards (令和5年)",
+      "japanese": "システム監査基準",
+      "meaning": "経済産業省が定める、システム監査人の行為規範と監査手続の実施方法。監査の品質を確保し、有効かつ効率的な監査を実現するための一般基準・実施基準・報告基準からなる。",
+      "exam_tip": "「ガバナンス／マネジメント／コントロール」の3視点の切り分けが頻出。ガバナンス＝経営者が方向付け・監視しているか、マネジメント＝PDCAで組織的に管理されているか、コントロール＝個々の統制が機能しているか。令和5年版はシステム管理基準と対になっている。",
+      "related": [
+        "audit.system_management_standard",
+        "audit.audit_plan",
+        "audit.audit_report"
+      ],
+      "related_terms": [
+        "一般基準",
+        "実施基準",
+        "報告基準",
+        "経済産業省"
+      ]
+    },
+    {
+      "id": "audit.test_check",
+      "domain": "AUDIT",
+      "term": "試査",
+      "full_name": "Test Check / Sampling",
+      "japanese": "試査",
+      "meaning": "監査対象の母集団から一部を抽出して監査手続を適用し、その結果から母集団全体について判断する方法。全件を調べる「精査」に対する語。",
+      "exam_tip": "「一部を抽出して全体を判断する」が定義。全件調べるのは精査であって試査ではない。抽出方法（統計的サンプリング／非統計的サンプリング）と、試査で得た結論が母集団へ及ぶことの根拠が問われる。",
+      "related": [
+        "audit.audit_evidence",
+        "audit.risk_approach"
+      ],
+      "related_terms": [
+        "精査",
+        "サンプリング",
+        "母集団"
+      ]
+    },
+    {
+      "id": "audit.control_activity",
+      "domain": "AUDIT",
+      "term": "統制活動",
+      "full_name": "Control Activities",
+      "japanese": "統制活動",
+      "meaning": "内部統制の基本的要素の一つ。経営者の命令および指示が適切に実行されることを確保するために定める方針および手続。権限と職責の付与、職務の分掌などを含む。",
+      "exam_tip": "内部統制の基本的要素6つ（統制環境・リスクの評価と対応・統制活動・情報と伝達・モニタリング・ITへの対応）のどれかを選ばせる問が頻出。統制活動＝「命令・指示が実行されることを確保する方針と手続」という言い回しで覚える。組織構造や企業風土は統制環境。",
+      "related": [
+        "audit.control_environment",
+        "audit.internal_control_report",
+        "security.sod"
+      ],
+      "related_terms": [
+        "職務分掌",
+        "内部統制の基本的要素",
+        "権限と職責"
+      ]
+    },
+    {
+      "id": "audit.audit_report",
+      "domain": "AUDIT",
+      "term": "システム監査報告書",
+      "full_name": "System Audit Report",
+      "japanese": "システム監査報告書",
+      "meaning": "監査人が監査の目的、対象、実施した手続、発見事項および結論（保証または助言）を記載して監査の依頼者へ提出する文書。",
+      "exam_tip": "報告前に監査対象先と事実確認を行う（意見交換会など）のが適切な手続。指摘事項を裏付ける監査証拠について認識を合わせてから報告する。監査人が改善そのものを実施することはない（独立性を失う）。",
+      "related": [
+        "audit.system_audit_standard",
+        "audit.follow_up",
+        "audit.audit_evidence"
+      ],
+      "related_terms": [
+        "意見交換会",
+        "指摘事項",
+        "改善勧告"
+      ]
+    },
+    {
+      "id": "audit.audit_plan",
+      "domain": "AUDIT",
+      "term": "監査計画",
+      "full_name": "Audit Plan",
+      "japanese": "監査計画",
+      "meaning": "監査の目的を達成するために、対象、範囲、時期、要員、手続をあらかじめ定めたもの。中長期計画・年度計画・個別監査計画の階層で作る。",
+      "exam_tip": "必要性の理由は「網羅性と効率性を整合させ、有効性の高い監査を行うため」。限られた資源で重要なリスクを漏らさず見るために作る、という説明が正解になる。監査の途中で状況が変われば計画は見直してよい（固定してはならない）。",
+      "related": [
+        "audit.system_audit_standard",
+        "audit.risk_approach"
+      ],
+      "related_terms": [
+        "中長期計画",
+        "個別監査計画",
+        "監査資源"
+      ]
+    },
+    {
+      "id": "audit.internal_control_report",
+      "domain": "AUDIT",
+      "term": "内部統制報告制度",
+      "full_name": "Internal Control Report System (J-SOX)",
+      "japanese": "内部統制報告制度",
+      "meaning": "金融商品取引法に基づき、上場企業の経営者が財務報告に係る内部統制の有効性を評価して内部統制報告書を提出し、監査人がそれを監査する制度。",
+      "exam_tip": "目的は「財務報告の信頼性」に限られる。業務の有効性・効率性や法令遵守は内部統制の目的ではあるが、この制度が直接求めるものではない、という論点が繰り返し出る。評価範囲は重要性で絞り込む（全社的な内部統制と、重要な業務プロセス）。",
+      "related": [
+        "audit.control_activity",
+        "audit.it_general_control",
+        "audit.application_control"
+      ],
+      "related_terms": [
+        "金融商品取引法",
+        "J-SOX",
+        "財務報告の信頼性",
+        "内部統制報告書"
+      ],
+      "aliases": [
+        "J-SOX"
+      ]
+    },
+    {
+      "id": "audit.control_environment",
+      "domain": "AUDIT",
+      "term": "統制環境",
+      "full_name": "Control Environment",
+      "japanese": "統制環境",
+      "meaning": "内部統制の基本的要素の一つで、組織の気風を決定し、統制に対する組織構成員の意識に影響を与えるとともに、他の基本的要素の基礎となるもの。誠実性と倫理観、経営者の意向と姿勢、組織構造および慣行、権限と職責などが含まれる。",
+      "exam_tip": "「組織構造及び慣行」「経営者の姿勢」「誠実性と倫理観」が統制環境。他の5要素の土台という位置づけで、具体的な手続（承認・照合）は統制活動へ分類する。",
+      "related": [
+        "audit.control_activity",
+        "audit.internal_control_report"
+      ],
+      "related_terms": [
+        "誠実性と倫理観",
+        "経営方針",
+        "組織風土"
+      ]
+    },
+    {
+      "id": "architecture.jis_q20000",
+      "domain": "ARCHITECTURE",
+      "term": "JIS Q 20000-1",
+      "full_name": "Service management system requirements (ISO/IEC 20000-1)",
+      "japanese": "サービスマネジメントシステム要求事項",
+      "meaning": "サービスマネジメントシステム（SMS）を確立し、実施し、維持し、継続的に改善するために組織が満たすべき要求事項を定めた規格。第三者認証の基準になる。",
+      "exam_tip": "「組織に対する要求事項」を規定する規格であって、手順書やベストプラクティス集ではない（それはITIL）。-1が要求事項、-2が適用の手引。SMSにおける「継続的改善」の定義（パフォーマンスを向上させるために繰り返し行う活動）もそのまま問われる。",
+      "related": [
+        "architecture.itil",
+        "architecture.sla"
+      ],
+      "related_terms": [
+        "SMS",
+        "ITIL",
+        "継続的改善",
+        "ISO/IEC 20000"
+      ],
+      "aliases": [
+        "ISO/IEC 20000-1",
+        "JIS Q 20000"
+      ]
+    },
+    {
+      "id": "architecture.error_proofing",
+      "domain": "ARCHITECTURE",
+      "term": "エラープルーフ化",
+      "full_name": "Error Proofing",
+      "japanese": "エラープルーフ化",
+      "meaning": "ヒューマンエラーによる障害を減らすため、作業そのものを変えて誤りを起こさせない、あるいは起きても影響を抑える考え方。五つの原理は、排除・代替化・容易化（発生を防ぐ）と、異常検出・影響緩和（起きた後に効く）。",
+      "exam_tip": "「未然に防ぐ」＝排除・代替化・容易化、「起きた後」＝異常検出・影響緩和の3対2の切り分けが問われる。フールプルーフ（誤操作しても危険が生じない設計）と近いが、エラープルーフ化は5原理の分類が問題になる。",
+      "related": [
+        "architecture.fail_safe",
+        "architecture.fail_soft"
+      ],
+      "related_terms": [
+        "フールプルーフ",
+        "排除",
+        "代替化",
+        "容易化",
+        "異常検出",
+        "影響緩和"
+      ]
+    },
+    {
+      "id": "strategy.work_for_hire",
+      "domain": "STRATEGY",
+      "term": "職務著作",
+      "full_name": "Work for Hire",
+      "japanese": "職務著作（法人著作）",
+      "meaning": "法人等の発意に基づき、その業務に従事する者が職務上作成する著作物で、法人等の名義で公表するものは、契約や勤務規則に別段の定めがない限り法人等が著作者となる制度。",
+      "exam_tip": "プログラムの著作物だけは「法人名義で公表すること」の要件が不要という例外が繰り返し問われる。プログラムは公表せず社内利用されることが多いための例外。ほかの要件（法人の発意、職務上の作成、別段の定めがない）はプログラムでも必要。",
+      "related": [
+        "strategy.copyright_ai",
+        "strategy.fair_use"
+      ],
+      "related_terms": [
+        "著作権法",
+        "法人著作",
+        "著作者",
+        "勤務規則"
+      ]
+    },
+    {
+      "id": "strategy.whistleblowing",
+      "domain": "STRATEGY",
+      "term": "ホイッスルブローイング",
+      "full_name": "Whistleblowing",
+      "japanese": "内部告発",
+      "meaning": "組織の構成員が、その組織の法令違反や社会規範を逸脱する行為を、監督官庁や報道機関など第三者へ知らせること。技術者倫理では、組織への忠誠と公衆の安全が衝突したときの行動として扱われる。",
+      "exam_tip": "「第三者などに知らしめる」が定義。組織内で上司へ報告するだけのものや、匿名で嫌がらせをする行為とは区別する。日本では公益通報者保護法が通報者の保護を定める。",
+      "related": [
+        "strategy.public_interest_reporting",
+        "strategy.groupthink"
+      ],
+      "related_terms": [
+        "技術者倫理",
+        "公益通報者保護法",
+        "内部告発"
+      ]
+    },
+    {
+      "id": "strategy.invoice_system",
+      "domain": "STRATEGY",
+      "term": "インボイス制度",
+      "full_name": "適格請求書等保存方式",
+      "japanese": "適格請求書等保存方式",
+      "meaning": "消費税の仕入税額控除を受けるために、登録を受けた課税事業者が発行する適格請求書（インボイス）の保存を要件とする制度。2023年10月開始。",
+      "exam_tip": "適格請求書に必要な記載事項が問われる。区分記載請求書の記載事項に加えて、登録番号・適用税率・税率ごとに区分した消費税額等が要る。発行できるのは登録を受けた課税事業者だけで、免税事業者は発行できない。",
+      "related": [
+        "strategy.subcontract_act"
+      ],
+      "related_terms": [
+        "仕入税額控除",
+        "適格請求書発行事業者",
+        "登録番号",
+        "消費税"
+      ]
+    },
+    {
+      "id": "strategy.contingency_theory",
+      "domain": "STRATEGY",
+      "term": "コンティンジェンシー理論",
+      "full_name": "Contingency Theory of Leadership",
+      "japanese": "条件適合理論",
+      "meaning": "唯一最適なリーダーシップのスタイルは存在せず、有効なスタイルは状況（部下の成熟度、課題の構造、権限の強さなど）によって変わるとする考え方。フィードラーのLPCモデルが代表。",
+      "exam_tip": "「唯一最適なスタイルは存在しない」という一文があれば、まずこの理論。特性論（優れたリーダーには共通の資質があるとする）や行動論（行動類型で説明する）との違いで問われる。SL理論もこの系統。",
+      "related": [
+        "strategy.sl_theory",
+        "strategy.kotter_leadership"
+      ],
+      "related_terms": [
+        "フィードラー",
+        "LPCモデル",
+        "特性論",
+        "行動論"
+      ]
+    },
+    {
+      "id": "security.cps",
+      "domain": "SECURITY",
+      "term": "CPS",
+      "full_name": "Certification Practice Statement",
+      "japanese": "認証局運用規程",
+      "meaning": "認証局（CA）が証明書を発行・管理・失効・更新する際に、実際にどのような運用を行うかを定めた規程。X.509 の公開鍵基盤における文書の一つ。",
+      "exam_tip": "CP（Certificate Policy／証明書ポリシー）が「何を満たすか」を定めるのに対し、CPS は「どう運用するか」を定める。この対比で選択肢が作られる。証明書そのものの書式や失効リスト（CRL）とは別物。",
+      "related": [
+        "security.pki",
+        "security.ocsp",
+        "security.crl"
+      ],
+      "related_terms": [
+        "CP",
+        "認証局",
+        "X.509",
+        "リポジトリ"
+      ]
+    },
+    {
+      "id": "security.open_redirect",
+      "domain": "SECURITY",
+      "term": "オープンリダイレクト",
+      "full_name": "Open Redirect",
+      "japanese": "オープンリダイレクト",
+      "meaning": "URLのパラメータで指定された任意の外部サイトへ利用者を遷移させてしまうWebアプリケーションの脆弱性。正規サイトのURLから偽サイトへ誘導されるため、利用者が気づきにくい。",
+      "exam_tip": "「正規サイトのURLのパラメータを書き換えて偽サイトへ誘導する」が典型。対策は遷移先を許可リストで限定すること。ディレクトリトラバーサルやクロスサイトスクリプティングと選択肢で並べられる。",
+      "related": [
+        "security.csrf",
+        "security.ssrf"
+      ],
+      "related_terms": [
+        "フィッシング",
+        "リダイレクタ",
+        "許可リスト"
+      ]
+    },
+    {
+      "id": "security.cryptrec",
+      "domain": "SECURITY",
+      "term": "CRYPTREC",
+      "full_name": "Cryptography Research and Evaluation Committees",
+      "japanese": "暗号技術評価プロジェクト",
+      "meaning": "電子政府で利用する暗号技術の安全性を評価・監視し、CRYPTREC暗号リストを策定する、総務省・経済産業省・NICT・IPAによるプロジェクト。",
+      "exam_tip": "活動は暗号技術の技術的検討・国際競争力向上・運用面の安全性向上。暗号リストは「電子政府推奨暗号リスト」「推奨候補暗号リスト」「運用監視暗号リスト」の3つに分かれ、運用監視は互換性維持のためだけに残されている点が問われる。製品の認証制度（JISEC）とは別。",
+      "related": [
+        "security.jisec",
+        "security.pqc"
+      ],
+      "related_terms": [
+        "電子政府推奨暗号リスト",
+        "運用監視暗号リスト",
+        "NICT",
+        "IPA"
+      ]
+    },
+    {
+      "id": "architecture.icmp",
+      "domain": "ARCHITECTURE",
+      "term": "ICMP",
+      "full_name": "Internet Control Message Protocol",
+      "japanese": "インターネット制御通知プロトコル",
+      "meaning": "IPの通信でエラーや制御情報を通知するプロトコル。ping はエコー要求／エコー応答メッセージを使い、traceroute は時間超過メッセージを使う。",
+      "exam_tip": "ping を止めたければ ICMP を遮断する。TCP/UDP のポート番号を持たないため、ファイアウォールではプロトコル単位で指定する。エコー応答を悪用するSmurf攻撃、到達不能を悪用する調査など、攻撃との絡みでも出る。",
+      "related": [
+        "security.smurf",
+        "architecture.tcp"
+      ],
+      "related_terms": [
+        "ping",
+        "traceroute",
+        "エコー要求",
+        "到達不能",
+        "RFC 792"
+      ]
+    },
+    {
+      "id": "architecture.natural_join",
+      "domain": "ARCHITECTURE",
+      "term": "自然結合",
+      "full_name": "Natural Join",
+      "japanese": "自然結合",
+      "meaning": "二つの表を、両方に共通する名前の列の値が等しい行同士で結合し、重複する結合列を1つにまとめて出力する関係演算。",
+      "exam_tip": "等結合（両方の結合列が残る）との違いが問われる。SQLで書き下すと共通列の等値条件をWHEREに書き、SELECTでは共通列を片方だけ選ぶ形になる。列名を明示せずに書く NATURAL JOIN 句もあるが、試験では等値条件の形で出ることが多い。",
+      "related": [
+        "architecture.foreign_key",
+        "architecture.sql_null"
+      ],
+      "related_terms": [
+        "等結合",
+        "内部結合",
+        "射影",
+        "関係代数"
+      ]
+    },
+    {
+      "id": "architecture.san",
+      "domain": "ARCHITECTURE",
+      "term": "SAN",
+      "full_name": "Storage Area Network",
+      "japanese": "ストレージエリアネットワーク",
+      "meaning": "サーバと外部記憶装置を、業務用のLANとは別の高速な専用ネットワークで接続する構成。ブロック単位でアクセスし、ファイバチャネルやiSCSIを使う。",
+      "exam_tip": "NASとの対比が定番。SANはブロックアクセスでサーバからはローカルディスクに見え、NASはファイル単位でLAN経由（NFS/SMB）。「通常のLANとは別の専用ネットワーク」と書かれていればSAN。",
+      "related": [
+        "architecture.thin_provisioning"
+      ],
+      "related_terms": [
+        "NAS",
+        "DAS",
+        "ファイバチャネル",
+        "iSCSI",
+        "ブロックアクセス"
+      ]
+    },
+    {
+      "id": "architecture.squa_re",
+      "domain": "ARCHITECTURE",
+      "term": "SQuaRE品質モデル",
+      "full_name": "Systems and software Quality Requirements and Evaluation (JIS X 25010)",
+      "japanese": "システム及びソフトウェア品質モデル",
+      "meaning": "システム・ソフトウェア製品の品質を8つの品質特性（機能適合性、性能効率性、互換性、使用性、信頼性、セキュリティ、保守性、移植性）で定義した規格。",
+      "exam_tip": "品質特性の定義文をそのまま選ばせる。性能効率性＝「明記された状態で使用する資源の量に関係する性能の度合い」。時間効率性・資源効率性・容量満足性を副特性に持つ。信頼性（必要なときに機能する度合い）や使用性（利用者が目的を達成できる度合い）と混同しやすい。",
+      "related": [
+        "architecture.nfr"
+      ],
+      "related_terms": [
+        "JIS X 25010",
+        "品質特性",
+        "機能適合性",
+        "使用性",
+        "移植性",
+        "ISO/IEC 25010"
+      ],
+      "aliases": [
+        "JIS X 25010",
+        "ISO/IEC 25010"
+      ]
+    },
+    {
+      "id": "strategy.vrio",
+      "domain": "STRATEGY",
+      "term": "VRIO分析",
+      "full_name": "Value, Rarity, Imitability, Organization",
+      "japanese": "経済的価値・希少性・模倣困難性・組織",
+      "meaning": "J.B.バーニーが提唱した、自社の経営資源が持続的な競争優位の源泉になるかを評価するフレームワーク。経済的価値・希少性・模倣困難性・組織の4つの視点で問う。",
+      "exam_tip": "視点の並びをそのまま覚える。「他社が同等の資源を獲得するためのコスト」＝模倣困難性、「その資源を活用するための組織的な方針」＝組織。外部環境を見るファイブフォースやPESTとは逆に、内部資源に着目する（リソースベースドビュー）点が対比で問われる。",
+      "related": [
+        "strategy.swot",
+        "strategy.five_forces",
+        "strategy.value_chain"
+      ],
+      "related_terms": [
+        "バーニー",
+        "リソースベースドビュー",
+        "持続的競争優位",
+        "模倣困難性"
+      ]
+    },
+    {
+      "id": "strategy.ansoff",
+      "domain": "STRATEGY",
+      "term": "アンゾフの成長マトリクス",
+      "full_name": "Ansoff Matrix",
+      "japanese": "成長ベクトル",
+      "meaning": "製品（既存・新規）と市場（既存・新規）の2軸で事業拡大の方向性を、市場浸透・製品開発・市場開拓・多角化の4つに分類するフレームワーク。",
+      "exam_tip": "「既存製品×新規市場＝市場開拓」「新規製品×既存市場＝製品開発」の入れ替えが定番のひっかけ。多角化（新規×新規）はリスクが最も高い。PPMが「資源配分」を扱うのに対し、こちらは「成長の方向」を扱う。",
+      "related": [
+        "strategy.ppm",
+        "strategy.swot"
+      ],
+      "related_terms": [
+        "市場浸透",
+        "製品開発",
+        "市場開拓",
+        "多角化",
+        "成長ベクトル"
+      ]
+    },
+    {
+      "id": "audit.system_management_standard",
+      "domain": "AUDIT",
+      "term": "システム管理基準",
+      "full_name": "System Management Standards (令和5年)",
+      "japanese": "システム管理基準",
+      "meaning": "経済産業省が定める、情報システムの企画・開発・運用・保守を適切に管理するための実践規範。システム監査基準が「監査する側」の規範であるのに対し、こちらは「監査される側」があるべき姿として参照する。",
+      "exam_tip": "システム監査基準との役割の違いが問われる。監査の判断尺度（あるべき姿）を示すのがシステム管理基準。「稼働後評価と報告」では、システムが意図したビジネスモデル・業務プロセスを実現していることを示す客観的な情報が提供されているか、という観点になる。",
+      "related": [
+        "audit.system_audit_standard",
+        "audit.audit_plan"
+      ],
+      "related_terms": [
+        "実践規範",
+        "判断尺度",
+        "経済産業省",
+        "ITガバナンス"
+      ]
+    },
+    {
+      "id": "audit.risk_approach",
+      "domain": "AUDIT",
+      "term": "リスク・アプローチ",
+      "full_name": "Risk-Based Approach",
+      "japanese": "リスク重視の監査手法",
+      "meaning": "限られた監査資源を、リスクの大きい領域へ重点的に配分する監査の進め方。リスクの大きさは「発生可能性（脅威と脆弱性で決まる）」と「発生したときの影響度」の組合せで評価する。",
+      "exam_tip": "リスクの大きさ＝発生可能性×影響度、発生可能性の決定要因＝脅威と脆弱性、という2段構えを覚える。「全領域を均等に監査する」は誤り。監査計画の策定でリスク評価を考慮するのはこの考え方による。",
+      "related": [
+        "audit.audit_plan",
+        "audit.test_check",
+        "security.risk_treatment"
+      ],
+      "related_terms": [
+        "脅威",
+        "脆弱性",
+        "影響度",
+        "監査資源"
+      ]
+    },
+    {
+      "id": "audit.quality_assessment",
+      "domain": "AUDIT",
+      "term": "監査の品質評価",
+      "full_name": "Quality Assessment of Audit",
+      "japanese": "監査の品質評価",
+      "meaning": "監査業務そのものの品質を維持・改善するために、監査活動を点検・評価する仕組み。内部評価（自己点検）と、組織体外部の独立した専門家による外部評価がある。",
+      "exam_tip": "システム監査基準で「実施が望ましい」とされるのは、組織体外部の独立した専門家による定期的な点検・評価。監査部門が自らを評価するだけでは独立性の観点で不十分、という論点で出る。",
+      "related": [
+        "audit.system_audit_standard",
+        "audit.audit_report"
+      ],
+      "related_terms": [
+        "外部評価",
+        "内部評価",
+        "独立性",
+        "品質管理"
+      ]
+    },
+    {
+      "id": "audit.jis_q27002",
+      "domain": "AUDIT",
+      "term": "JIS Q 27002",
+      "full_name": "Information security controls (ISO/IEC 27002:2022)",
+      "japanese": "情報セキュリティ管理策",
+      "meaning": "情報セキュリティマネジメントシステムで採用する管理策と、その実施の手引を示す規格。2024年版では管理策を組織的・人的・物理的・技術的の4区分へ再編し、各管理策に属性を付与している。",
+      "exam_tip": "監査活動の管理策では、運用システムへの影響を最小限にするため「テストでのアクセスは読出し専用に限定する」ことが求められる。属性の一つ「サイバーセキュリティ概念」の値は識別・防御・検知・対応・復旧の5つで、NISTのCSFに対応する。",
+      "related": [
+        "security.nist_csf",
+        "security.risk_treatment"
+      ],
+      "related_terms": [
+        "ISO/IEC 27002",
+        "管理策",
+        "属性",
+        "ISMS"
+      ],
+      "aliases": [
+        "ISO/IEC 27002"
+      ]
+    },
+    {
+      "id": "audit.audit_working_paper",
+      "domain": "AUDIT",
+      "term": "監査調書",
+      "full_name": "Audit Working Paper",
+      "japanese": "監査調書",
+      "meaning": "監査の実施過程と入手した監査証拠、監査人の判断を記録した文書。監査の結論を裏付ける根拠となり、監査業務の品質評価にも使われる。",
+      "exam_tip": "保証を目的とした監査でも助言を目的とした監査でも共通して当てはまるのが「監査の結論は監査調書の内容の検討によって合理的な根拠に基づいて導かれる」こと。保証／助言で違うのは結論の性質であって、証拠に基づく点は変わらない。",
+      "related": [
+        "audit.audit_evidence",
+        "audit.audit_report"
+      ],
+      "related_terms": [
+        "監査証拠",
+        "監査手続",
+        "保証型監査",
+        "助言型監査"
+      ]
+    },
+    {
+      "id": "audit.three_lines_model",
+      "domain": "AUDIT",
+      "term": "3線モデル",
+      "full_name": "Three Lines Model",
+      "japanese": "三つのラインモデル",
+      "meaning": "組織のリスク管理と内部統制を、役割の異なる3つのラインで分担する考え方。第1ラインは業務を実行する現場部門、第2ラインはリスク管理やコンプライアンスの専門部門、第3ラインは独立した内部監査部門。",
+      "exam_tip": "組合せを選ばせる形で出る。第1＝営業などの業務部門、第2＝リスク管理部門、第3＝内部監査部門。第3ラインの独立性（第1・第2から独立して評価する）が要点。旧称は「3つのディフェンスライン」。",
+      "related": [
+        "audit.internal_control_report",
+        "audit.control_activity"
+      ],
+      "related_terms": [
+        "内部監査",
+        "コンプライアンス部門",
+        "IIA",
+        "3つのディフェンスライン"
+      ]
+    },
+    {
+      "id": "audit.it_general_control",
+      "domain": "AUDIT",
+      "term": "IT全般統制",
+      "full_name": "IT General Control",
+      "japanese": "IT全般統制",
+      "meaning": "業務処理統制が有効に機能する環境を保証するための統制。システムの開発・保守、運用・管理、内外からのアクセス管理などのセキュリティ、外部委託の管理が含まれる。",
+      "exam_tip": "業務処理統制との切り分けが最頻出。開発・変更・運用・アクセス管理のように複数業務へ共通して効くものがIT全般統制で、プログラム作成時の上位者によるロジックレビューもここに入る。評価の単位も違い、全般統制は同一のIT基盤・管理体制の単位でまとめて評価し、業務処理統制は業務プロセスごと（システムごと）に個別評価する。",
+      "related": [
+        "audit.application_control",
+        "audit.internal_control_report"
+      ],
+      "related_terms": [
+        "システム開発・保守",
+        "運用・管理",
+        "アクセス管理",
+        "外部委託"
+      ]
+    },
+    {
+      "id": "architecture.redmine",
+      "domain": "ARCHITECTURE",
+      "term": "Redmine",
+      "full_name": "Redmine",
+      "japanese": "Redmine",
+      "meaning": "プロジェクトの課題（チケット）を軸に、進捗管理・ガントチャート・Wiki・リポジトリ連携を提供するオープンソースのプロジェクト管理ツール。",
+      "exam_tip": "「進捗管理・課題管理に加えてインシデント管理やサービス要求管理にも使えるOSS」と書かれていればRedmine。構成管理のGit、CIのJenkins、監視のZabbixなど、他のOSSとの役割の違いで選ばせる形が多い。",
+      "related": [
+        "architecture.bug_tracking_system"
+      ],
+      "related_terms": [
+        "チケット",
+        "ガントチャート",
+        "OSS",
+        "Trac"
+      ]
+    },
+    {
+      "id": "architecture.fail_soft",
+      "domain": "ARCHITECTURE",
+      "term": "フェールソフト",
+      "full_name": "Fail Soft",
+      "japanese": "縮退運転",
+      "meaning": "障害が発生したとき、システムを止めずに機能や性能を落として運転を継続する設計方針。縮退運転（フォールバック）ともいう。",
+      "exam_tip": "フェールセーフ（障害時に安全側へ倒す）、フォールトトレラント（障害が起きても性能を落とさず継続）、フールプルーフ（誤操作しても危険が生じない）との4択が定番。「性能は低下するが構成を縮小して運転を続ける」はフェールソフト。",
+      "related": [
+        "architecture.fail_safe",
+        "architecture.error_proofing",
+        "architecture.availability"
+      ],
+      "related_terms": [
+        "縮退運転",
+        "フォールバック",
+        "フォールトトレラント",
+        "フェールセーフ"
+      ]
+    },
+    {
+      "id": "strategy.patent_act",
+      "domain": "STRATEGY",
+      "term": "特許権",
+      "full_name": "Patent Right",
+      "japanese": "特許権",
+      "meaning": "発明を独占的に実施できる権利。出願から20年で消滅する。侵害に対しては差止請求権、損害賠償請求権、不当利得返還請求権などを行使できる。",
+      "exam_tip": "差止請求権は「侵害する者」だけでなく「侵害するおそれのある者」にも行使できる（予防的請求）点が問われる。先使用権（出願前から実施していた者は継続できる）や、職務発明の扱いも頻出。",
+      "related": [
+        "strategy.work_for_hire",
+        "strategy.ip_landscape"
+      ],
+      "related_terms": [
+        "差止請求権",
+        "損害賠償請求権",
+        "先使用権",
+        "職務発明"
+      ]
+    },
+    {
+      "id": "security.pia",
+      "domain": "SECURITY",
+      "term": "PIA",
+      "full_name": "Privacy Impact Assessment",
+      "japanese": "プライバシー影響評価",
+      "meaning": "個人識別可能情報を扱う仕組みについて、潜在的なプライバシーへの影響を特定・分析・評価し、協議・伝達と対応の計画までを行う全体的なプロセス。JIS X 9251:2021 が指針を定める。",
+      "exam_tip": "「特定・分析・評価・協議・伝達及び対応の計画を立てるための全体的なプロセス」という定義文がそのまま出る。事後の監査ではなく、企画・設計段階で先に行う点が要点（プライバシー・バイ・デザインと結びつく）。",
+      "related": [
+        "security.risk_treatment",
+        "audit.jis_q27002"
+      ],
+      "related_terms": [
+        "JIS X 9251",
+        "個人識別可能情報",
+        "プライバシー・バイ・デザイン",
+        "ISO/IEC 29134"
+      ]
+    },
+    {
+      "id": "strategy.groupthink",
+      "domain": "STRATEGY",
+      "term": "集団思考",
+      "full_name": "Groupthink",
+      "japanese": "集団浅慮",
+      "meaning": "結束の強い集団が、和を保とうとするあまり批判的な検討を欠き、不合理な結論へ合意してしまう現象。アーヴィング・ジャニスが提唱し、8つの兆候を挙げた。",
+      "exam_tip": "「強い連帯性をもつチームが自らへの批判的思考を欠いて不合理な合意に達する」が定義。8兆候のうち「心の警備（マインドガード）」は、集団の結束を乱す情報をメンバーが遮断してリーダーや集団に伝えない役割を果たすこと。技術者倫理の阻害要因として出る。",
+      "related": [
+        "strategy.whistleblowing",
+        "strategy.public_interest_reporting"
+      ],
+      "related_terms": [
+        "アーヴィング・ジャニス",
+        "心の警備",
+        "マインドガード",
+        "技術者倫理"
+      ]
+    },
+    {
+      "id": "strategy.sl_theory",
+      "domain": "STRATEGY",
+      "term": "SL理論",
+      "full_name": "Situational Leadership Theory",
+      "japanese": "状況対応型リーダーシップ理論",
+      "meaning": "有効なリーダーシップのスタイルは部下の成熟度によって変わるとする理論。仕事志向と人間志向の2軸で4象限に分け、部下の成熟に応じて教示型→説得型→参加型→委任型へ移行する。",
+      "exam_tip": "4スタイルの順序（教示→説得→参加→委任）と、軸が「仕事志向の強さ」「人間志向の強さ」であることが問われる。コンティンジェンシー理論の一種だが、状況変数を部下の成熟度に絞っている点が特徴。",
+      "related": [
+        "strategy.contingency_theory",
+        "strategy.kotter_leadership"
+      ],
+      "related_terms": [
+        "ハーシー",
+        "ブランチャード",
+        "成熟度",
+        "教示型",
+        "委任型"
+      ]
+    },
+    {
+      "id": "security.saml",
+      "domain": "SECURITY",
+      "term": "SAML",
+      "full_name": "Security Assertion Markup Language",
+      "japanese": "セキュリティ表明マークアップ言語",
+      "meaning": "OASISが策定した、異なるドメイン間で認証情報・属性情報・認可情報を安全に交換するためのXMLベースの仕様。IdP（認証を行う側）とSP（サービスを提供する側）の間でアサーションをやり取りする。",
+      "exam_tip": "「認証情報に加え、属性情報と認可情報を異なるドメインへ伝達する」が定義。策定団体はOASIS。シングルサインオンの実装方式として、Cookieを使う方式（同一ドメインに限られる）やリバースプロキシ方式と対比される。OAuth 2.0（認可の委譲）やOpenID Connect（SAMLの後発でJSON/RESTベース）との役割の違いも問われる。",
+      "related": [
+        "security.oauth2",
+        "security.oidc",
+        "security.sso"
+      ],
+      "related_terms": [
+        "OASIS",
+        "IdP",
+        "SP",
+        "アサーション",
+        "XML"
+      ]
+    },
+    {
+      "id": "security.nist_csf",
+      "domain": "SECURITY",
+      "term": "NIST CSF",
+      "full_name": "NIST Cybersecurity Framework",
+      "japanese": "サイバーセキュリティフレームワーク",
+      "meaning": "米国NISTが公表した、組織のサイバーセキュリティ対策を体系化したフレームワーク。中核（コア）は機能・カテゴリ・サブカテゴリの階層で構成される。",
+      "exam_tip": "バージョンによって機能の数が違う点に注意。1.1は識別・防御・検知・対応・復旧の5機能、2.0はこれに「統治（GOVERN）」を加えた6機能。JIS Q 27002:2024 の属性「サイバーセキュリティ概念」の5つの値は1.1の5機能に対応する。",
+      "related": [
+        "audit.jis_q27002",
+        "security.risk_treatment"
+      ],
+      "related_terms": [
+        "IDENTIFY",
+        "PROTECT",
+        "DETECT",
+        "RESPOND",
+        "RECOVER",
+        "GOVERN",
+        "NIST"
+      ],
+      "aliases": [
+        "CSF",
+        "サイバーセキュリティフレームワーク"
+      ]
+    },
+    {
+      "id": "security.risk_treatment",
+      "domain": "SECURITY",
+      "term": "リスク対応",
+      "full_name": "Risk Treatment",
+      "japanese": "リスク対応",
+      "meaning": "JIS Q 27000 において「リスクを修正するプロセス」と定義される活動。回避・低減（軽減）・共有（移転）・保有（受容）などの選択肢から選び、実施する。",
+      "exam_tip": "用語の定義を1語で言い切る問が出る。リスク対応＝「リスクを修正するプロセス」。リスクの大きさを見積もるのはリスク分析、分析結果を基準と比較して重要性を決めるのはリスク評価、特定から評価までをまとめてリスクアセスメントと呼ぶ、という階層で整理する。",
+      "related": [
+        "audit.risk_approach",
+        "security.pia",
+        "security.operational_risk"
+      ],
+      "related_terms": [
+        "リスクアセスメント",
+        "リスク分析",
+        "リスク評価",
+        "リスク受容",
+        "JIS Q 27000"
+      ]
+    },
+    {
+      "id": "security.casb",
+      "domain": "SECURITY",
+      "term": "CASB",
+      "full_name": "Cloud Access Security Broker",
+      "japanese": "クラウドアクセスセキュリティブローカ",
+      "meaning": "クラウドサービスの利用者と提供者の間に置き、利用状況の可視化、データ保護、コンプライアンス、脅威防御を一元的に適用する仕組み。",
+      "exam_tip": "クラウド利用者（カスタマー）側の管理者が導入し、従業員のクラウド利用を可視化してシャドーITを特定できる、という使い方が正解になりやすい。クラウド提供者側の設定不備を検出するCSPMとは立場が違う。",
+      "related": [
+        "security.cspm",
+        "security.zero_trust"
+      ],
+      "related_terms": [
+        "シャドーIT",
+        "可視化",
+        "クラウドサービスカスタマー",
+        "SaaS"
+      ]
+    },
+    {
+      "id": "architecture.uml_object_diagram",
+      "domain": "ARCHITECTURE",
+      "term": "オブジェクト図",
+      "full_name": "UML Object Diagram",
+      "japanese": "オブジェクト図",
+      "meaning": "UMLで、ある時点における具体的なオブジェクト（インスタンス）とそのリンクを表す図。クラス図で定義した関連と多重度の制約を、実例として満たしているかを確認できる。",
+      "exam_tip": "クラス図の多重度とオブジェクト図のリンク本数が矛盾していないかを問う形で出る。クラス図で「注文 * : 1 商品」と定義されていれば、1つの注文オブジェクトが複数の商品オブジェクトへリンクしているのは誤り。",
+      "related": [
+        "architecture.use_case_diagram",
+        "architecture.dfd"
+      ],
+      "related_terms": [
+        "UML",
+        "クラス図",
+        "多重度",
+        "インスタンス",
+        "リンク"
+      ]
+    },
+    {
+      "id": "architecture.udp",
+      "domain": "ARCHITECTURE",
+      "term": "UDP",
+      "full_name": "User Datagram Protocol",
+      "japanese": "ユーザデータグラムプロトコル",
+      "meaning": "コネクションレスで再送制御を持たないトランスポート層のプロトコル。オーバーヘッドが小さく遅延に強いため、時刻同期・名前解決・音声/映像のストリーミングに使われる。",
+      "exam_tip": "どのプロトコルがUDPを使うかを選ばせる。NTP・DNS（問合せ）・SNMP・DHCP・TFTP・RIPがUDP、HTTP・SMTP・FTP・TelnetはTCP。TCPは3ウェイハンドシェイクと再送で信頼性を確保する点が対比になる。",
+      "related": [
+        "architecture.tcp",
+        "architecture.icmp"
+      ],
+      "related_terms": [
+        "NTP",
+        "DNS",
+        "SNMP",
+        "コネクションレス",
+        "データグラム"
+      ]
+    },
+    {
+      "id": "architecture.acceptance_test",
+      "domain": "ARCHITECTURE",
+      "term": "ソフトウェア受入れテスト",
+      "full_name": "Software Acceptance Test",
+      "japanese": "ソフトウェア受入れテスト",
+      "meaning": "提供するソフトウェアシステムが利害関係者要件に合致し、利用に適していることを、顧客とともに確信するに至るためのテスト。JIS X 0160 のソフトウェアライフサイクルプロセスで定義される。",
+      "exam_tip": "妥当性確認（要件に対して正しいものを作ったか）と検証（仕様どおりに正しく作ったか）の対比で問われる。受入れテストは顧客とともに行う点が特徴で、開発者だけで行う結合テスト・システムテストと区別する。",
+      "related": [
+        "architecture.validation_process",
+        "architecture.jis_x0160"
+      ],
+      "related_terms": [
+        "JIS X 0160",
+        "妥当性確認",
+        "利害関係者要件",
+        "システム適格性確認テスト"
+      ]
+    },
+    {
+      "id": "strategy.ip_landscape",
+      "domain": "STRATEGY",
+      "term": "IPランドスケープ",
+      "full_name": "IP Landscape",
+      "japanese": "知財情報を組み込んだ経営分析",
+      "meaning": "経営・事業情報に知的財産情報を組み込んで分析し、現状の俯瞰や将来展望を経営者・事業責任者と共有する取組。特許庁が普及を進めている。",
+      "exam_tip": "「知財部門が特許を出願・管理する」だけの活動ではなく、経営層と共有して事業戦略の意思決定に使う点が要点。単なる特許調査（先行技術調査）やパテントマップ作成との違いで選ばせる。",
+      "related": [
+        "strategy.patent_act",
+        "strategy.vrio"
+      ],
+      "related_terms": [
+        "特許庁",
+        "知的財産戦略",
+        "パテントマップ",
+        "経営戦略"
+      ]
+    },
+    {
+      "id": "pm.project_management_plan",
+      "domain": "PM",
+      "term": "プロジェクトマネジメント計画書",
+      "full_name": "Project Management Plan",
+      "japanese": "プロジェクトマネジメント計画書",
+      "meaning": "プロジェクトをどのように実施・監視・管理するかを定めた文書。スコープ・スケジュール・コストなどのベースラインと、実行・管理・終結の方法を明確にする。",
+      "exam_tip": "プロジェクト憲章との違いが問われる。憲章はプロジェクトの存在を承認しプロジェクトマネージャに権限を与える文書で、計画書は「どう進めるか」を定める文書。計画書はベースラインを含み、変更管理の手続を経て更新される。",
+      "related": [
+        "pm.jis_q21500",
+        "pm.scope_creep"
+      ],
+      "related_terms": [
+        "プロジェクト憲章",
+        "ベースライン",
+        "変更管理",
+        "スコープ記述書"
+      ]
+    },
+    {
+      "id": "pm.raci",
+      "domain": "PM",
+      "term": "RACIチャート",
+      "full_name": "Responsible, Accountable, Consulted, Informed",
+      "japanese": "責任分担マトリックス",
+      "meaning": "作業とメンバーの対応を表にし、各セルへ役割を割り当てる責任分担マトリックス（RAM）の一種。R＝実行責任、A＝説明責任、C＝相談対応、I＝情報提供。",
+      "exam_tip": "4文字の意味の組合せを選ばせる。RとAの区別が要点で、実際に作業するのがR（Responsible）、最終的に説明責任を負い承認するのがA（Accountable）。Aは作業ごとに1人にするのが原則。",
+      "related": [
+        "pm.project_management_plan",
+        "pm.jis_q21500"
+      ],
+      "related_terms": [
+        "RAM",
+        "実行責任",
+        "説明責任",
+        "相談対応",
+        "情報提供"
+      ]
+    },
+    {
+      "id": "pm.jis_q21500",
+      "domain": "PM",
+      "term": "JIS Q 21500",
+      "full_name": "Guidance on project management (ISO 21500)",
+      "japanese": "プロジェクトマネジメントの手引",
+      "meaning": "プロジェクトマネジメントの概念とプロセスを示した国際規格の国内版。プロセスを5つのプロセス群（立ち上げ・計画・実行・管理・終結）と10の対象群（統合、ステークホルダ、スコープ、資源、時間、コスト、リスク、品質、調達、コミュニケーション）で整理する。",
+      "exam_tip": "「どのプロセス群／対象群に属するか」「そのプロセスの目的は何か」を問う形が定番。リスクの特定・評価は計画のプロセス群、リスクへの対応は実行のプロセス群。プロジェクト組織の定義の目的は「役割・責任・権限について全ての当事者からコミットメントを得ること」。ガバナンスを維持する責任はプロジェクトスポンサーにある。",
+      "related": [
+        "pm.project_management_plan",
+        "pm.risk_response",
+        "pm.communication_plan"
+      ],
+      "related_terms": [
+        "ISO 21500",
+        "プロセス群",
+        "対象群",
+        "プロジェクトスポンサー",
+        "PMBOK"
+      ],
+      "aliases": [
+        "ISO 21500"
+      ]
+    },
+    {
+      "id": "pm.tcpi",
+      "domain": "PM",
+      "term": "TCPI",
+      "full_name": "To-Complete Performance Index",
+      "japanese": "残作業効率指数",
+      "meaning": "完成時総予算（BAC）どおりに完了させるために、残作業で達成しなければならないコスト効率。TCPI＝(BAC−EV)／(BAC−AC) で求める。",
+      "exam_tip": "式の分子は残作業の出来高（BAC−EV）、分母は残りの予算（BAC−AC）。1.0を超えていれば、これまでより高い効率で残作業をこなさないと予算内に収まらないことを意味する。CPI（＝EV／AC、これまでの実績）と混同しない。",
+      "related": [
+        "pm.evm"
+      ],
+      "related_terms": [
+        "BAC",
+        "EV",
+        "AC",
+        "EAC",
+        "CPI"
+      ]
+    },
+    {
+      "id": "pm.arrow_diagram",
+      "domain": "PM",
+      "term": "アローダイアグラム",
+      "full_name": "Arrow Diagramming Method (ADM)",
+      "japanese": "アローダイアグラム法",
+      "meaning": "作業を矢印、結合点をノードで表す日程計画手法。作業の順序関係だけを示すダミー作業（破線）を使う。最早開始時刻と最遅開始時刻の差が総余裕（トータルフロート）となり、余裕がゼロの経路がクリティカルパスになる。",
+      "exam_tip": "「遅くとも何日後までに開始しなければならないか」は最遅開始時刻を問うている。前進計算で最早結合点時刻、後退計算で最遅結合点時刻を求め、その作業の最遅開始時刻＝後続結合点の最遅時刻−所要日数。ダミー作業は所要日数0だが順序制約は効く点に注意。",
+      "related": [
+        "pm.pdm",
+        "pm.critical_chain"
+      ],
+      "related_terms": [
+        "クリティカルパス",
+        "ダミー作業",
+        "最早開始時刻",
+        "最遅開始時刻",
+        "トータルフロート",
+        "PERT"
+      ]
+    },
+    {
+      "id": "pm.pdm",
+      "domain": "PM",
+      "term": "PDM",
+      "full_name": "Precedence Diagramming Method",
+      "japanese": "プレシデンスダイアグラム法",
+      "meaning": "アクティビティをノード、依存関係を矢印で表す日程計画手法。依存関係はFS（終了－開始）、SS（開始－開始）、FF（終了－終了）、SF（開始－終了）の4種類があり、リード／ラグを設定できる。",
+      "exam_tip": "依存関係の種類ごとに「いつから開始できるか」が変わる。FSは先行が終わってから、SSは先行が始まってから並行して開始できる。所要日数を求める問では、各アクティビティの開始可能時刻を依存関係の型どおりに積み上げる。アローダイアグラムと違いダミー作業は不要。",
+      "related": [
+        "pm.arrow_diagram",
+        "pm.critical_chain"
+      ],
+      "related_terms": [
+        "FS",
+        "SS",
+        "FF",
+        "SF",
+        "リード",
+        "ラグ",
+        "アクティビティ"
+      ]
+    },
+    {
+      "id": "pm.velocity",
+      "domain": "PM",
+      "term": "ベロシティ",
+      "full_name": "Velocity",
+      "japanese": "ベロシティ",
+      "meaning": "アジャイル開発で、1つのイテレーション（スプリント）など定められた期間にチームが受入れまで完了させた成果物の量。ストーリーポイントなどで測る。",
+      "exam_tip": "「定められた期間に受入れが行われたチームの成果物の量」が定義。完了していない作業は含めない点、チーム間で比較する指標ではなく同一チームの実績の推移を見るための指標である点が要点。将来のイテレーション数の見積りに使う。",
+      "related": [
+        "pm.invest",
+        "pm.scrum",
+        "pm.agile_manifesto"
+      ],
+      "related_terms": [
+        "ストーリーポイント",
+        "イテレーション",
+        "スプリント",
+        "バーンダウンチャート"
+      ]
+    },
+    {
+      "id": "pm.evm",
+      "domain": "PM",
+      "term": "EVM",
+      "full_name": "Earned Value Management",
+      "japanese": "アーンドバリューマネジメント",
+      "meaning": "出来高（EV）、計画価値（PV）、実コスト（AC）を金額で表し、進捗とコストを同じ尺度で管理する手法。CPI＝EV／AC、SPI＝EV／PV。",
+      "exam_tip": "CPIが1.0未満はコスト超過、SPIが1.0未満は進捗遅れ。CPIが1.0を下回ったときの対処は「超過の原因を明確にし、コスト効率を上げる対策を取りつつCPIを監視する」であって、ベースラインを都合よく引き直すことではない。CV＝EV−AC、SV＝EV−PV も併せて覚える。",
+      "related": [
+        "pm.tcpi",
+        "pm.project_management_plan"
+      ],
+      "related_terms": [
+        "PV",
+        "EV",
+        "AC",
+        "CPI",
+        "SPI",
+        "BAC",
+        "EAC"
+      ]
+    },
+    {
+      "id": "pm.cocomo",
+      "domain": "PM",
+      "term": "COCOMO",
+      "full_name": "Constructive Cost Model",
+      "japanese": "構造的コストモデル",
+      "meaning": "開発規模（kステップ）から開発工数を見積もるモデル。工数 E ＝ a × L^b の形で、指数 b が1より大きいと規模の増加以上に工数が増える（規模の不経済）。",
+      "exam_tip": "計算問題として出る。生産性＝規模／工数。E＝5.2L^0.98、L＝10 なら E≒5.2×10^0.98≒49.8、生産性＝10／49.8≒0.2。指数が1より小さいか大きいかで、規模が増えたときに生産性が上がるか下がるかを問う形もある。",
+      "related": [
+        "pm.productivity",
+        "pm.function_point"
+      ],
+      "related_terms": [
+        "ファンクションポイント法",
+        "LOC",
+        "規模の不経済",
+        "見積り"
+      ]
+    },
+    {
+      "id": "pm.productivity",
+      "domain": "PM",
+      "term": "生産性（工程別の合成）",
+      "full_name": "Composite Productivity",
+      "japanese": "全体の生産性",
+      "meaning": "複数の工程を直列に通す場合の全体の生産性。各工程の生産性の逆数（単位量あたりの所要工数）を足し合わせ、その逆数を取る（調和平均の形）。",
+      "exam_tip": "1ステップあたりの工数が 1/X＋1/Y＋1/Z なので、全体の生産性は 1／(1/X＋1/Y＋1/Z)。単純平均 (X＋Y＋Z)/3 や和 X＋Y＋Z を選ばせるひっかけが並ぶ。「率・速度を合成するときは逆数で足す」と覚える。",
+      "related": [
+        "pm.cocomo"
+      ],
+      "related_terms": [
+        "調和平均",
+        "人月",
+        "工程",
+        "スループット"
+      ]
+    },
+    {
+      "id": "pm.risk_response",
+      "domain": "PM",
+      "term": "リスクへの対応",
+      "full_name": "Risk Response",
+      "japanese": "リスクへの対応",
+      "meaning": "特定・評価したリスクに対し、回避・軽減・転嫁（共有）・受容などの策を決め、予算とスケジュールに資源と活動を割り当てて実行するプロセス。",
+      "exam_tip": "JIS Q 21500 では、リスクの特定・評価が計画のプロセス群、リスクへの対応が実行のプロセス群に属する。「予算及びスケジュールに資源と活動を投入してリスクを扱う」という記述が対応のプロセス。リスクを洗い出す・大きさを見積もるのは別プロセス。",
+      "related": [
+        "pm.jis_q21500",
+        "security.risk_treatment",
+        "audit.risk_approach"
+      ],
+      "related_terms": [
+        "回避",
+        "軽減",
+        "転嫁",
+        "受容",
+        "コンティンジェンシー予備"
+      ]
+    },
+    {
+      "id": "pm.procurement_cost",
+      "domain": "PM",
+      "term": "要員投入計画と調達",
+      "full_name": "Resource Loading and Procurement",
+      "japanese": "要員投入計画に基づく調達",
+      "meaning": "期間ごとの要員数の推移（要員投入計画）に合わせて、必要な機材やライセンスを最小の費用で調達する計画。",
+      "exam_tip": "計算問題として出る。契約単位（月額×台数×期間）と、途中で台数を増減できるか、最低契約期間があるかといった条件を読み違えないこと。ピーク時の必要数と、契約単価の刻みの両方を満たす最小構成を探す。",
+      "related": [
+        "pm.cost_reimbursable"
+      ],
+      "related_terms": [
+        "要員投入計画",
+        "レンタル",
+        "調達計画",
+        "山積み・山崩し"
+      ]
+    },
+    {
+      "id": "pm.migration_rehearsal",
+      "domain": "PM",
+      "term": "移行リハーサル",
+      "full_name": "Migration Rehearsal",
+      "japanese": "移行リハーサル",
+      "meaning": "本番移行の前に、本番と同等の環境と手順で移行作業を試行し、手順の妥当性、所要時間、想定外の事象への対応を確認すること。",
+      "exam_tip": "目的は「本番移行を計画どおり完遂できることを確認する」こと。リハーサル中に環境起因の問題が出ても、本番環境では発生しないと確認できていれば完了としてよい。逆に、手順そのものに起因する問題を積み残したまま完了とするのは不適切。",
+      "related": [
+        "architecture.acceptance_test"
+      ],
+      "related_terms": [
+        "移行計画",
+        "切戻し",
+        "本番移行",
+        "リハーサル環境"
+      ]
+    },
+    {
+      "id": "pm.cmmi",
+      "domain": "PM",
+      "term": "CMMI",
+      "full_name": "Capability Maturity Model Integration",
+      "japanese": "能力成熟度モデル統合",
+      "meaning": "組織のプロセス成熟度を5段階で評価・改善するモデル。レベル1（初期）、2（管理された）、3（定義された）、4（定量的に管理された）、5（最適化している）。",
+      "exam_tip": "レベル4と3の違いが最頻出。レベル3は組織標準プロセスが定義され適用されている状態、レベル4は定量的な目標を立ててデータで運営し予測可能な状態。レベル5は継続的にプロセスそのものを改善する状態。",
+      "related": [
+        "pm.process_assessment"
+      ],
+      "related_terms": [
+        "成熟度レベル",
+        "プロセス改善",
+        "SPI",
+        "V2.0"
+      ]
+    },
+    {
+      "id": "pm.invest",
+      "domain": "PM",
+      "term": "INVEST",
+      "full_name": "Independent, Negotiable, Valuable, Estimable, Small, Testable",
+      "japanese": "良いユーザーストーリーの6観点",
+      "meaning": "Bill Wake が提案した、質の高いユーザーストーリーを評価する6つの観点。独立している、交渉可能である、価値がある、見積り可能である、小さい、テスト可能である。",
+      "exam_tip": "6観点の頭文字と意味の対応が問われる。「作業期間に対して適切な大きさになっている」はSmall。ユーザーストーリーの良し悪しを評価する観点であって、開発プロセスやチーム編成を評価するものではない点に注意。",
+      "related": [
+        "pm.velocity",
+        "pm.scrum",
+        "pm.agile_manifesto"
+      ],
+      "related_terms": [
+        "ユーザーストーリー",
+        "Bill Wake",
+        "Independent",
+        "Testable"
+      ]
+    },
+    {
+      "id": "pm.agile_manifesto",
+      "domain": "PM",
+      "term": "アジャイルソフトウェア開発宣言",
+      "full_name": "Manifesto for Agile Software Development",
+      "japanese": "アジャイルソフトウェア開発宣言",
+      "meaning": "4つの価値を掲げた宣言。プロセスやツールよりも個人と対話を、包括的なドキュメントよりも動くソフトウェアを、契約交渉よりも顧客との協調を、計画に従うことよりも変化への対応を重視する。",
+      "exam_tip": "「左記のことがらに価値があることを認めながらも、右記のことがらにより価値をおく」という言い回しが要点。右側だけを是として左側を否定する選択肢（ドキュメントを作らない、計画を立てない）は誤り。",
+      "related": [
+        "pm.invest",
+        "pm.scrum",
+        "pm.velocity"
+      ],
+      "related_terms": [
+        "個人と対話",
+        "動くソフトウェア",
+        "顧客との協調",
+        "変化への対応"
+      ]
+    },
+    {
+      "id": "architecture.gof_pattern",
+      "domain": "ARCHITECTURE",
+      "term": "GoFのデザインパターン",
+      "full_name": "Gang of Four Design Patterns",
+      "japanese": "GoFデザインパターン",
+      "meaning": "オブジェクト指向設計で繰り返し現れる問題への定石を23個にまとめたもの。生成・構造・振る舞いの3カテゴリに分類される。",
+      "exam_tip": "「オブジェクト指向開発のためのパターンで、生成・構造・振る舞いの3カテゴリに分類される」が定義。分析パターン、アーキテクチャパターン（MVCなど）、イディオムとの階層の違いで選ばせる。個別パターン（Observer、Factory Methodなど）の説明も単独で出る。",
+      "related": [
+        "architecture.observer_pattern",
+        "architecture.ocp"
+      ],
+      "related_terms": [
+        "生成に関するパターン",
+        "構造に関するパターン",
+        "振る舞いに関するパターン",
+        "Singleton",
+        "Facade"
+      ]
+    },
+    {
+      "id": "architecture.backup_recovery",
+      "domain": "ARCHITECTURE",
+      "term": "バックアップと復旧",
+      "full_name": "Backup and Recovery",
+      "japanese": "バックアップと復旧",
+      "meaning": "フルバックアップと更新ログ（ジャーナル）を組み合わせて障害から復旧する仕組み。復旧はフルバックアップを戻したうえで、その後のログを順に反映（ロールフォワード）する。",
+      "exam_tip": "取得間隔を2倍にすると、1回のバックアップ以降に溜まるログ量も約2倍になり、復旧時のログ反映時間が約2倍になる。バックアップ1回あたりの取得時間はデータ量で決まるので変わらない、という切り分けが問われる。RTO・RPOとの関係でも出る。",
+      "related": [
+        "architecture.rto",
+        "architecture.rpo"
+      ],
+      "related_terms": [
+        "フルバックアップ",
+        "差分バックアップ",
+        "ジャーナル",
+        "ロールフォワード",
+        "ロールバック"
+      ]
+    },
+    {
+      "id": "pm.cost_reimbursable",
+      "domain": "PM",
+      "term": "実費償還契約",
+      "full_name": "Cost-Reimbursable Contract",
+      "japanese": "実費償還契約",
+      "meaning": "委託業務の遂行に実際に要した費用を発注者が支払い、それに加えて役務や技術に対する報酬（フィー）を支払う契約方式。",
+      "exam_tip": "定額契約（金額を先に固定し、超過分はベンダー負担）との対比で問われる。要件が固まらず作業量を見通せない場合に使い、発注者側がコスト超過のリスクを負う。準委任と請負の区別とは別軸の話なので混同しない。",
+      "related": [
+        "pm.procurement_cost",
+        "architecture.lab_contract"
+      ],
+      "related_terms": [
+        "定額契約",
+        "タイムアンドマテリアル",
+        "フィー",
+        "請負",
+        "準委任"
+      ]
+    },
+    {
+      "id": "strategy.ai_contract_guideline",
+      "domain": "STRATEGY",
+      "term": "AI・データの利用に関する契約ガイドライン",
+      "full_name": "AI・データの利用に関する契約ガイドライン",
+      "japanese": "AI・データの利用に関する契約ガイドライン",
+      "meaning": "経済産業省が公表した、データの利用権限やAI技術を利用したソフトウェアの開発・利用に関する契約の考え方と条項例をまとめた指針。",
+      "exam_tip": "AI開発は成果を事前に保証しにくく、契約プラクティスが確立していないことが法的問題の一因である、という認識が示されている。段階的な開発（アセスメント→PoC→開発→追加学習）を推奨する点も要点。学習済みモデルや学習用データセットの権利帰属は当事者間の取決めによる。",
+      "related": [
+        "strategy.copyright_ai",
+        "strategy.work_for_hire"
+      ],
+      "related_terms": [
+        "経済産業省",
+        "PoC",
+        "学習済みモデル",
+        "データ利用権限"
+      ]
+    },
+    {
+      "id": "security.csirt",
+      "domain": "SECURITY",
+      "term": "CSIRT",
+      "full_name": "Computer Security Incident Response Team",
+      "japanese": "コンピュータセキュリティインシデント対応チーム",
+      "meaning": "セキュリティインシデントの受付、分析、対応の調整を行う組織。インシデントマネジメントの中核となる業務がインシデントハンドリング（検知・トリアージ・対応・報告）。",
+      "exam_tip": "インシデントハンドリングに含まれる業務としてトリアージ（受け付けた事象の優先度付け）が問われる。教育・訓練や脆弱性情報の公表はインシデントマネジメントの一部だがハンドリングではない。自社製品の脆弱性に対応するのはPSIRT、監視・検知を担うのはSOCという役割分担も頻出。",
+      "related": [
+        "security.psirt",
+        "security.soc",
+        "security.vulnerability_management"
+      ],
+      "related_terms": [
+        "JPCERT/CC",
+        "トリアージ",
+        "インシデントハンドリング",
+        "PoC対応"
+      ]
+    },
+    {
+      "id": "security.vulnerability_management",
+      "domain": "SECURITY",
+      "term": "脆弱性管理",
+      "full_name": "Vulnerability Management",
+      "japanese": "脆弱性管理",
+      "meaning": "自組織が使うソフトウェアの脆弱性情報を継続的に収集し、修正プログラムの適用や回避策（ワークアラウンド）の実施によって、悪用される前に対処する運用。",
+      "exam_tip": "公開された実証コード（PoC）を使う攻撃への「未然の」対策は、脆弱性情報を確認してパッチかワークアラウンドを適用すること。侵害後の調査（フォレンジックス）や、ダークウェブの巡回は未然防止にはならない、という切り分けで出る。",
+      "related": [
+        "security.csirt",
+        "security.cvss",
+        "security.sbom"
+      ],
+      "related_terms": [
+        "ワークアラウンド",
+        "修正プログラム",
+        "PoC",
+        "JVN",
+        "ゼロデイ"
+      ]
+    },
+    {
+      "id": "pm.project_governance",
+      "domain": "PM",
+      "term": "プロジェクトガバナンス",
+      "full_name": "Project Governance",
+      "japanese": "プロジェクトガバナンス",
+      "meaning": "プロジェクトを組織の方針に沿って方向付け、監視し、必要な意思決定を行う枠組み。JIS Q 21500 では、これを維持する責任はプロジェクトスポンサ、またはプロジェクト運営委員会にあるとされる。",
+      "exam_tip": "「誰に責任があるか」を問う形で出る。日々の管理を行うプロジェクトマネージャではなく、プロジェクトを許可し経営的決定を下すプロジェクトスポンサ（または上級レベルの指導を行う運営委員会）が正解。ガバナンスとマネジメントの層の違いを、システム監査基準の3視点と同じ発想で押さえる。",
+      "related": [
+        "pm.jis_q21500",
+        "audit.system_audit_standard"
+      ],
+      "related_terms": [
+        "プロジェクトスポンサ",
+        "プロジェクト運営委員会",
+        "ステアリングコミッティ"
+      ]
+    },
+    {
+      "id": "strategy.regression_analysis",
+      "domain": "STRATEGY",
+      "term": "回帰分析",
+      "full_name": "Regression Analysis",
+      "japanese": "回帰分析",
+      "meaning": "目的変数（アウトプット）と、それに対応する説明変数（インプット）との関係を多数のデータから統計的に明らかにし、予測に用いる手法。",
+      "exam_tip": "「多数のデータからアウトプットとインプット変数の統計学的関係を明らかにする」が定義。相関分析（関係の強さだけを見る）や、分類を行うクラスタ分析・決定木との違いで選ばせる。目的変数が二値のときはロジスティック回帰分析を使い、発症確率のような確率を推定できる。",
+      "related": [
+        "strategy.logistic_regression",
+        "strategy.collaborative_filtering"
+      ],
+      "related_terms": [
+        "説明変数",
+        "目的変数",
+        "最小二乗法",
+        "相関分析"
+      ]
+    },
+    {
+      "id": "pm.scope_creep",
+      "domain": "PM",
+      "term": "スコープクリープ",
+      "full_name": "Scope Creep",
+      "japanese": "スコープクリープ",
+      "meaning": "正式な変更管理の手続を経ないまま、小さな追加や変更が積み重なってスコープが少しずつ膨らむ現象。コストとスケジュールの超過を招く。",
+      "exam_tip": "「軽微な変更だと判断してコストや工数を見積もらずに作業を進めた」が典型例。変更要求を受け付けること自体は問題ではなく、影響を評価せず承認も得ないことが原因である点が要点。ゴールドプレーティング（要求されていない機能を作り込む）と並べて出る。",
+      "related": [
+        "pm.project_management_plan",
+        "pm.jis_q21500"
+      ],
+      "related_terms": [
+        "変更管理",
+        "ベースライン",
+        "ゴールドプレーティング",
+        "変更要求"
+      ]
+    },
+    {
+      "id": "pm.hawthorne_effect",
+      "domain": "PM",
+      "term": "ホーソン効果",
+      "full_name": "Hawthorne Effect",
+      "japanese": "ホーソン効果",
+      "meaning": "注目され関心を寄せられていること自体が動機づけとなり、生産性や成果が向上する現象。ホーソン工場での実験に由来する。",
+      "exam_tip": "「注目されたことで士気が上がり生産性が向上した」が典型例。物理的な作業条件（照明、報酬）ではなく人間関係や関心が効くという点が要点。ピグマリオン効果（期待をかけられると伸びる）、ハロー効果（一つの印象が全体評価に影響する）と紛らわしいので並べて覚える。",
+      "related": [
+        "strategy.sl_theory",
+        "strategy.contingency_theory"
+      ],
+      "related_terms": [
+        "ピグマリオン効果",
+        "ハロー効果",
+        "人間関係論",
+        "動機づけ"
+      ]
+    },
+    {
+      "id": "pm.critical_chain",
+      "domain": "PM",
+      "term": "クリティカルチェーン法",
+      "full_name": "Critical Chain Project Management (CCPM)",
+      "japanese": "クリティカルチェーン法",
+      "meaning": "資源の制約と不確実性を考慮した日程計画手法。各作業に持たせていた安全余裕を取り上げてまとめ、合流バッファとプロジェクトバッファとして置き、バッファの消費状況で進捗を管理する。",
+      "exam_tip": "「合流バッファとプロジェクトバッファを設ける」が実施例。個々の作業に余裕を持たせると学生症候群やパーキンソンの法則で余裕が消費されてしまうため、余裕を集約する、という理屈で覚える。資源制約を考えない従来のクリティカルパス法との違いが問われる。",
+      "related": [
+        "pm.arrow_diagram",
+        "pm.pdm"
+      ],
+      "related_terms": [
+        "プロジェクトバッファ",
+        "合流バッファ",
+        "TOC",
+        "学生症候群",
+        "資源制約"
+      ]
+    },
+    {
+      "id": "pm.risk_identification",
+      "domain": "PM",
+      "term": "リスクの特定・評価",
+      "full_name": "Risk Identification and Assessment",
+      "japanese": "リスクの特定・評価",
+      "meaning": "プロジェクトに影響しうる事象を洗い出し（特定）、発生確率と影響度から優先順位を付ける（評価）プロセス。",
+      "exam_tip": "JIS Q 21500 では、リスクの特定・リスクの評価はどちらも計画のプロセス群に属し、リスクへの対応と管理は実行・管理のプロセス群に属する。「特定と評価はいつやるのか」を問う形で出る。",
+      "related": [
+        "pm.risk_response",
+        "pm.jis_q21500",
+        "audit.risk_approach"
+      ],
+      "related_terms": [
+        "リスク登録簿",
+        "発生確率",
+        "影響度",
+        "定性的分析"
+      ]
+    },
+    {
+      "id": "pm.communication_plan",
+      "domain": "PM",
+      "term": "コミュニケーションの計画",
+      "full_name": "Plan Communications",
+      "japanese": "コミュニケーションの計画",
+      "meaning": "プロジェクトのステークホルダが必要とする情報とコミュニケーションのニーズを決定し、誰に・何を・いつ・どのように伝えるかを定めるプロセス。",
+      "exam_tip": "目的は「ステークホルダの情報及びコミュニケーションのニーズを決定すること」。会議体の一覧を5W1Hで点検させる問では、Who（主催者と参加者）が抜けやすい。What（議題）、When（頻度）、Where（場所）、How（手段）と対応づけて確認する。",
+      "related": [
+        "pm.jis_q21500",
+        "pm.project_management_plan"
+      ],
+      "related_terms": [
+        "ステークホルダ",
+        "会議体",
+        "5W1H",
+        "情報配布"
+      ]
+    },
+    {
+      "id": "pm.scrum",
+      "domain": "PM",
+      "term": "スクラム",
+      "full_name": "Scrum",
+      "japanese": "スクラム",
+      "meaning": "固定長のスプリントを繰り返すアジャイル開発のフレームワーク。プロダクトオーナー、スクラムマスター、開発チームの3つの責任と、プロダクトバックログ・スプリントバックログ・インクリメントの3つの作成物からなる。",
+      "exam_tip": "スプリント途中で開発チームだけの判断で変更できるのはスプリントバックログ（実現方法とタスクの分解）。スプリントゴールやプロダクトバックログの優先順位はプロダクトオーナーの領分、スプリントの長さは途中で変えない。レトロスペクティブでKPT手法を使う点も併せて出る。",
+      "related": [
+        "pm.velocity",
+        "pm.invest",
+        "pm.agile_manifesto",
+        "pm.kpt"
+      ],
+      "related_terms": [
+        "スプリント",
+        "プロダクトオーナー",
+        "スクラムマスター",
+        "レトロスペクティブ",
+        "インクリメント"
+      ]
+    },
+    {
+      "id": "pm.process_assessment",
+      "domain": "PM",
+      "term": "JIS X 33002",
+      "full_name": "Requirements for performing process assessment (ISO/IEC 33002)",
+      "japanese": "プロセスアセスメント実施に対する要求事項",
+      "meaning": "組織のプロセスの品質を客観的に診断するために、アセスメントをどう実施すべきかの要求事項を定めた規格。SPICE（ISO/IEC 15504）系列の後継。",
+      "exam_tip": "「組織プロセスの品質を客観的に診断するための要求事項を規定する」が説明。プロセスそのものの内容（何をすべきか）を定める規格ではなく、診断のやり方を定める規格である点が要点。CMMIと目的は近いが、こちらは規格として要求事項だけを規定する。",
+      "related": [
+        "pm.cmmi",
+        "architecture.jis_x0160"
+      ],
+      "related_terms": [
+        "SPICE",
+        "ISO/IEC 33002",
+        "プロセス能力水準",
+        "アセッサ"
+      ],
+      "aliases": [
+        "ISO/IEC 33002"
+      ]
+    },
+    {
+      "id": "architecture.bug_tracking_system",
+      "domain": "ARCHITECTURE",
+      "term": "バグトラッキングシステム",
+      "full_name": "Bug Tracking System (BTS)",
+      "japanese": "障害管理システム",
+      "meaning": "発見されたバグの内容、発生したソフトウェアのバージョン、再現手順などを記録し、修正計画・担当・修正履歴・検証結果までの状態遷移を管理する仕組み。",
+      "exam_tip": "「バグの内容とバージョンを記録し、修正計画や修正履歴を管理する」が定義。ソースコードの版を管理する構成管理ツール、ビルドを自動化するCIツール、静的解析ツールとの役割の違いで選ばせる。",
+      "related": [
+        "architecture.redmine",
+        "architecture.static_analysis"
+      ],
+      "related_terms": [
+        "BTS",
+        "課題管理",
+        "ITS",
+        "構成管理"
+      ]
+    },
+    {
+      "id": "architecture.charging_method",
+      "domain": "ARCHITECTURE",
+      "term": "逓減課金方式",
+      "full_name": "Degressive Charging",
+      "japanese": "逓減課金方式",
+      "meaning": "利用量が増えるほど単価が下がる課金方式。料金の総額は増え続けるが、グラフの傾き（限界単価）が途中から緩やかになる。",
+      "exam_tip": "グラフの形を選ばせる。逓減は「増加し続けるが傾きが緩くなる（上に凸）」、逓増は「傾きが急になる（下に凸）」、定額は水平、従量一定は直線。総額が減少するグラフを選ぶのは誤り。",
+      "related": [
+        "architecture.jis_q20000"
+      ],
+      "related_terms": [
+        "逓増課金",
+        "従量課金",
+        "定額課金",
+        "チャージバック"
+      ]
+    },
+    {
+      "id": "strategy.subcontract_act",
+      "domain": "STRATEGY",
+      "term": "下請代金支払遅延等防止法",
+      "full_name": "下請法",
+      "japanese": "下請法",
+      "meaning": "親事業者が下請事業者に対して優越的地位を濫用することを防ぐ法律。給付を受領した日から60日以内のできる限り短い期間内に支払期日を定めることを義務づける。",
+      "exam_tip": "支払期日の起算点は「受領した日」。下請事業者側の事情によるやり直しがあった場合、改めて定める起算点は修正済みの成果物が納品された日になる。受領を拒む・支払を遅らせる・代金を減額するなどの禁止行為も頻出。",
+      "related": [
+        "strategy.invoice_system",
+        "pm.cost_reimbursable"
+      ],
+      "related_terms": [
+        "親事業者",
+        "下請事業者",
+        "60日",
+        "受領日",
+        "優越的地位の濫用"
+      ],
+      "aliases": [
+        "下請法"
+      ]
+    },
+    {
+      "id": "strategy.public_interest_reporting",
+      "domain": "STRATEGY",
+      "term": "公益通報者保護制度",
+      "full_name": "Whistleblower Protection System",
+      "japanese": "公益通報者保護制度",
+      "meaning": "労働者などが組織の法令違反を通報したことを理由に、解雇その他の不利益な取扱いを受けないよう保護する制度。事業者には内部通報体制の整備が求められる。",
+      "exam_tip": "運用上の留意点として「制度の利用方法を教育し周知徹底すること」が正解になる。通報者を特定して人事上不利に扱う、通報窓口を経営者直下に限定して独立性を欠く、といった選択肢は誤り。ホイッスルブローイング（行為そのもの）と、それを保護する制度という関係で整理する。",
+      "related": [
+        "strategy.whistleblowing",
+        "strategy.groupthink"
+      ],
+      "related_terms": [
+        "公益通報者保護法",
+        "内部通報窓口",
+        "不利益取扱いの禁止"
+      ]
+    },
+    {
+      "id": "security.mfa_fatigue",
+      "domain": "SECURITY",
+      "term": "多要素認証疲労攻撃",
+      "full_name": "MFA Fatigue Attack / Push Bombing",
+      "japanese": "多要素認証疲労攻撃",
+      "meaning": "入手済みのパスワードでログインを何度も試み、利用者のスマートフォンへプッシュ通知を大量に送りつけて、根負けした利用者が承認してしまうのを狙う攻撃。",
+      "exam_tip": "「利用者が承認するまで不正ログイン操作を繰り返す」が該当例。多要素認証そのものではなく、承認操作を行う人間の疲労を突く点が要点。対策は番号照合（マッチング）方式やフィッシング耐性のあるFIDO/パスキーへの移行、試行回数の制限。",
+      "related": [
+        "security.mfa",
+        "security.passkey"
+      ],
+      "related_terms": [
+        "プッシュ通知",
+        "プッシュボミング",
+        "番号照合",
+        "FIDO"
+      ]
+    },
+    {
+      "id": "security.operational_risk",
+      "domain": "SECURITY",
+      "term": "オペレーショナルリスク",
+      "full_name": "Operational Risk",
+      "japanese": "オペレーショナルリスク",
+      "meaning": "日常的な業務活動に伴うリスク。過失による誤入力、情報システムの障害、内部者の不正、外部事象などによって損失が発生する。",
+      "exam_tip": "市場リスク（相場変動）、信用リスク（取引先の債務不履行）、流動性リスクとの分類問題で出る。「業務プロセス・人・システム・外部事象に起因する」がオペレーショナルリスクの定義（バーゼル）。",
+      "related": [
+        "security.risk_treatment",
+        "audit.risk_approach"
+      ],
+      "related_terms": [
+        "市場リスク",
+        "信用リスク",
+        "流動性リスク",
+        "バーゼル"
+      ]
+    },
+    {
+      "id": "security.digital_forensics",
+      "domain": "SECURITY",
+      "term": "デジタルフォレンジックス",
+      "full_name": "Digital Forensics",
+      "japanese": "デジタル鑑識",
+      "meaning": "インシデントの原因究明や法的証拠のために、電磁的記録を改変せずに保全し、解析して証拠性を明らかにする一連の手続。",
+      "exam_tip": "保全の順序は揮発性の高いものから。CPUのレジスタ・キャッシュ→メモリ（ARPキャッシュ・ルーティングテーブル・プロセス情報を含む）→一時ファイル→ディスク→リモートログ→バックアップ媒体、の順。電源を切るとメモリ上の情報が失われるため、電源断の前に揮発性情報を取る。ハッシュ値による同一性の証明と、証拠保全の連鎖（Chain of Custody）も要点。",
+      "related": [
+        "security.csirt",
+        "security.ioc"
+      ],
+      "related_terms": [
+        "揮発性の順序",
+        "証拠保全",
+        "Chain of Custody",
+        "ハッシュ値",
+        "メモリダンプ"
+      ]
+    },
+    {
+      "id": "architecture.in_process_database",
+      "domain": "ARCHITECTURE",
+      "term": "インプロセスデータベース",
+      "full_name": "In-Process Database",
+      "japanese": "インプロセスデータベース",
+      "meaning": "データベースエンジンをライブラリとして提供し、アプリケーションプログラムとリンクして同一メモリ空間・同一プロセス内で動作させる方式。プロセス間通信が発生しないため組込みシステムで使われる。",
+      "exam_tip": "「同一メモリ空間で動作する」が要点。クライアント／サーバ型のように通信のオーバーヘッドが無い代わり、複数プロセスからの同時利用には向かない。インメモリデータベース（データを主記憶に置く）とは着眼点が違うので混同しない。",
+      "related": [
+        "architecture.deadlock"
+      ],
+      "related_terms": [
+        "組込みシステム",
+        "ライブラリ",
+        "インメモリデータベース",
+        "SQLite"
+      ]
+    },
+    {
+      "id": "architecture.module_coupling",
+      "domain": "ARCHITECTURE",
+      "term": "モジュール結合度",
+      "full_name": "Module Coupling",
+      "japanese": "モジュール結合度",
+      "meaning": "モジュール間の依存の強さ。弱いほど良い設計とされ、弱い順にデータ結合、スタンプ結合、制御結合、外部結合、共通結合、内容結合となる。",
+      "exam_tip": "「単一のデータ項目を引数で受け渡す」が最も結合度が低いデータ結合。構造体やレコード全体を渡すのはスタンプ結合、処理の切り替えフラグを渡すのは制御結合、グローバル領域を共有するのは共通結合、他モジュールの内部を直接参照するのは内容結合。強度（凝集度）とは別概念なので混同しない。",
+      "related": [
+        "architecture.loose_coupling",
+        "architecture.ocp"
+      ],
+      "related_terms": [
+        "データ結合",
+        "スタンプ結合",
+        "制御結合",
+        "共通結合",
+        "内容結合",
+        "モジュール強度"
+      ]
+    },
+    {
+      "id": "architecture.assertion_check",
+      "domain": "ARCHITECTURE",
+      "term": "アサーションチェック",
+      "full_name": "Assertion Check",
+      "japanese": "表明検査",
+      "meaning": "プログラムの特定の実行時点で成立すべき変数間の関係や条件を論理式として埋め込み、実行時にそれが成り立つかを確認して正当性を検証する手法。",
+      "exam_tip": "「実行中の特定の時点で成立すべき条件を論理式で埋め込む」が定義。ソースコードを実行せずに解析する静的解析、実行経路の網羅を測るカバレッジ、机上で追うウォークスルーとの違いで選ばせる。事前条件・事後条件・不変条件の形で書く。",
+      "related": [
+        "architecture.static_analysis",
+        "architecture.formal_method"
+      ],
+      "related_terms": [
+        "事前条件",
+        "事後条件",
+        "不変条件",
+        "動的テスト"
+      ]
+    },
+    {
+      "id": "architecture.aop",
+      "domain": "ARCHITECTURE",
+      "term": "アスペクト指向プログラミング",
+      "full_name": "Aspect-Oriented Programming (AOP)",
+      "japanese": "アスペクト指向プログラミング",
+      "meaning": "ログ出力やトランザクション制御のように複数のモジュールへ横断的に現れる関心事（横断的関心事）を、アスペクトとして本体のコードから分離し、指定した実行点へ織り込む（ウィービング）手法。",
+      "exam_tip": "「各プログラムを直接書き換えずに、共通の処理を特定の実行点へ後から差し込む」実装案が示されたらAOP。オブジェクト指向の継承や委譲では、呼び出し側の記述が必要になる点との違いが要点。ログ・認可・監査は代表的な横断的関心事。",
+      "related": [
+        "architecture.gof_pattern",
+        "architecture.module_coupling"
+      ],
+      "related_terms": [
+        "横断的関心事",
+        "アスペクト",
+        "ウィービング",
+        "ポイントカット"
+      ]
+    },
+    {
+      "id": "architecture.referential_transparency",
+      "domain": "ARCHITECTURE",
+      "term": "参照透過性",
+      "full_name": "Referential Transparency",
+      "japanese": "参照透過性",
+      "meaning": "同じ引数を与えれば常に同じ結果を返し、副作用を持たない性質。純粋関数型言語の基本的な特性で、式をその値で置き換えても意味が変わらないことを意味する。",
+      "exam_tip": "「同じ引数を渡せば常に同じ結果を返す」が定義。状態を持たない・副作用が無いことが前提になる。並行処理でのデータ競合が起きにくい、テストしやすい、といった利点と結びつけて出る。",
+      "related": [
+        "architecture.idempotency",
+        "architecture.unification"
+      ],
+      "related_terms": [
+        "純粋関数型言語",
+        "副作用",
+        "不変性",
+        "Haskell"
+      ]
+    },
+    {
+      "id": "architecture.unification",
+      "domain": "ARCHITECTURE",
+      "term": "ユニフィケーション",
+      "full_name": "Unification",
+      "japanese": "単一化",
+      "meaning": "論理型プログラミングで、変数を含む二つの項が同じ形になるように変数へ値を割り当てる操作。命題の証明（導出）を進める基本機能。",
+      "exam_tip": "Prologの動作原理として出る。パターンマッチに似るが、両側の変数を同時に束縛できる点が異なる。バックトラック（失敗したら直前の選択点へ戻る）と対で覚える。",
+      "related": [
+        "architecture.referential_transparency"
+      ],
+      "related_terms": [
+        "Prolog",
+        "単一化",
+        "バックトラック",
+        "導出",
+        "ホーン節"
+      ]
+    },
+    {
+      "id": "architecture.transition_process",
+      "domain": "ARCHITECTURE",
+      "term": "移行プロセス",
+      "full_name": "Transition Process",
+      "japanese": "移行プロセス",
+      "meaning": "JIS X 0160 のテクニカルプロセスの一つ。検証済みのシステムを運用環境へ導入し、運用・支援に必要な文書と教育訓練を用意して、運用可能な状態にする。",
+      "exam_tip": "「利用者用文書と、運用操作者・利用者への教育訓練を用意する」が移行プロセスのタスク。要件を満たすことを確かめるのは妥当性確認プロセス、仕様どおりかを確かめるのは検証プロセス、運用を続けるのは運用プロセス、と役割で切り分ける。",
+      "related": [
+        "architecture.jis_x0160",
+        "architecture.validation_process",
+        "pm.migration_rehearsal"
+      ],
+      "related_terms": [
+        "JIS X 0160",
+        "テクニカルプロセス",
+        "利用者用文書",
+        "教育訓練"
+      ]
+    },
+    {
+      "id": "architecture.disposal_process",
+      "domain": "ARCHITECTURE",
+      "term": "廃棄プロセス",
+      "full_name": "Disposal Process",
+      "japanese": "廃棄プロセス",
+      "meaning": "JIS X 0160 のテクニカルプロセスの一つ。システム要素やその関連製品を終結させ、環境・法令・契約上の要求を満たしつつ処分する。",
+      "exam_tip": "「ライフサイクルのどの段階でも適用できる」点が問われる。最後の工程としてだけ存在するのではなく、途中で不要になった要素にも適用できる。データの消去や保存義務のある記録の扱いもこのプロセスの範囲。",
+      "related": [
+        "architecture.jis_x0160",
+        "architecture.transition_process"
+      ],
+      "related_terms": [
+        "JIS X 0160",
+        "終結",
+        "データ消去",
+        "ライフサイクル"
+      ]
+    },
+    {
+      "id": "architecture.lean_software_development",
+      "domain": "ARCHITECTURE",
+      "term": "リーンソフトウェア開発",
+      "full_name": "Lean Software Development",
+      "japanese": "リーンソフトウェア開発",
+      "meaning": "トヨタ生産方式など製造業の考え方をソフトウェア開発へ適用したもの。「ムダをなくす」「品質を作り込む」「知識を作り出す」「決定を遅らせる」「速く提供する」「人を尊重する」「全体を最適化する」の7原則からなる。",
+      "exam_tip": "「製造業の現場から生まれた考え方をソフトウェア開発に適用し、七つの原則を重視する」が定義。スクラム（フレームワーク）、XP（プラクティス集）、DevOps（開発と運用の連携）との層の違いで選ばせる。",
+      "related": [
+        "pm.agile_manifesto",
+        "pm.scrum"
+      ],
+      "related_terms": [
+        "ムダをなくす",
+        "品質を作り込む",
+        "トヨタ生産方式",
+        "7原則"
+      ]
+    },
+    {
+      "id": "strategy.design_thinking",
+      "domain": "STRATEGY",
+      "term": "デザイン思考",
+      "full_name": "Design Thinking",
+      "japanese": "デザイン思考",
+      "meaning": "利用者の立場から問題解決に取り組む方法論。現場の観察による共感から始め、問題定義、アイディア出し、試作、試行（テスト）を繰り返す。スタンフォード大学ハッソ・プラットナー・デザイン研究所（d.school）の5段階が有名。",
+      "exam_tip": "5段階の順序（共感→問題定義→創造→プロトタイプ→テスト）と、「共感から始める」点が要点。見た目の意匠を整えることではない。リーンスタートアップ（仮説検証の高速化）やアート思考との違いで選ばせる。",
+      "related": [
+        "strategy.marketing_process",
+        "pm.agile_manifesto"
+      ],
+      "related_terms": [
+        "共感",
+        "問題定義",
+        "プロトタイプ",
+        "d.school",
+        "人間中心設計"
+      ]
+    },
+    {
+      "id": "strategy.wto_gpa",
+      "domain": "STRATEGY",
+      "term": "WTO政府調達協定",
+      "full_name": "WTO Government Procurement Agreement (GPA)",
+      "japanese": "WTO政府調達協定",
+      "meaning": "政府機関の調達について、内国民待遇と無差別を原則とし、締約国の供給者へ競争の機会を開くことを定めた国際協定。一定額以上の調達に手続の透明性を求める。",
+      "exam_tip": "目的は「政府調達における国際的な競争の機会を増大させ、締約国間の問題の円滑な解決を図る」こと。国内産業の保護や、特定技術の指定を認めるものではない。基準額以上の調達で仕様書の技術的中立性や公告期間が求められる。",
+      "related": [
+        "pm.cost_reimbursable"
+      ],
+      "related_terms": [
+        "内国民待遇",
+        "無差別",
+        "基準額",
+        "一般競争入札"
+      ],
+      "aliases": [
+        "GPA"
+      ]
+    },
+    {
+      "id": "strategy.foundry",
+      "domain": "STRATEGY",
+      "term": "ファウンドリー",
+      "full_name": "Foundry",
+      "japanese": "半導体受託製造",
+      "meaning": "半導体の製造だけを専門に請け負う企業。設計を自社で行い製造を外部委託する場合の委託先になる。",
+      "exam_tip": "設計専業のファブレス、設計から製造まで自社で行うIDM（垂直統合型）、後工程の組立・検査を請け負うOSATとの役割分担で問われる。「設計は自社、製造を委託」ならファウンドリー。",
+      "related": [
+        "strategy.odm"
+      ],
+      "related_terms": [
+        "ファブレス",
+        "IDM",
+        "OSAT",
+        "前工程"
+      ]
+    },
+    {
+      "id": "security.e_seal",
+      "domain": "SECURITY",
+      "term": "eシール",
+      "full_name": "Electronic Seal",
+      "japanese": "電子シール",
+      "meaning": "法人が作成した電子文書について、作成者がその法人であることと、作成後に改ざんされていないことを証明する仕組み。法人の印章に相当する。",
+      "exam_tip": "電子署名が「自然人」の意思表示を示すのに対し、eシールは「法人」の発行元を示す点が最大の違い。タイムスタンプ（その時刻に存在したこと）とも役割が違う。請求書や証明書の一括発行で使われる。",
+      "related": [
+        "security.code_signing",
+        "security.timestamp"
+      ],
+      "related_terms": [
+        "電子署名",
+        "法人",
+        "改ざん検知",
+        "トラストサービス"
+      ]
+    },
+    {
+      "id": "security.code_signing",
+      "domain": "SECURITY",
+      "term": "コードサイニング証明書",
+      "full_name": "Code Signing Certificate",
+      "japanese": "コード署名証明書",
+      "meaning": "ソフトウェアの配布物へデジタル署名を付けるための証明書。利用者はインストール時に発行元（ソフトウェア作成者）の正当性と、配布物が改ざんされていないことを確認できる。",
+      "exam_tip": "用途ごとの証明書の使い分けが問われる。サーバ証明書（SSL/TLSサーバの正当性）、クライアント証明書（利用者の認証）、S/MIME証明書（メールの署名・暗号化）、コードサイニング証明書（ソフトウェアの発行元）。",
+      "related": [
+        "security.pki",
+        "security.e_seal",
+        "security.ocsp"
+      ],
+      "related_terms": [
+        "デジタル署名",
+        "サーバ証明書",
+        "クライアント証明書",
+        "タイムスタンプ"
+      ]
+    },
+    {
+      "id": "security.aes",
+      "domain": "SECURITY",
+      "term": "AES",
+      "full_name": "Advanced Encryption Standard",
+      "japanese": "高度暗号化標準",
+      "meaning": "NISTが制定した共通鍵ブロック暗号。ブロック長は128ビット固定で、鍵長は128／192／256ビットから選ぶ。",
+      "exam_tip": "「鍵長は128・192・256ビットから選択、ブロック長は128ビット固定」を数字で覚える。DES（鍵56ビット）やトリプルDESとの世代の違い、共通鍵暗号なので鍵配送の課題があること、CRYPTREC暗号リストの電子政府推奨暗号であることが併せて出る。",
+      "related": [
+        "security.cryptrec",
+        "security.sha",
+        "security.pqc"
+      ],
+      "related_terms": [
+        "共通鍵暗号",
+        "ブロック暗号",
+        "Rijndael",
+        "DES",
+        "NIST"
+      ]
+    },
+    {
+      "id": "security.jisec",
+      "domain": "SECURITY",
+      "term": "JISEC",
+      "full_name": "Japan Information Technology Security Evaluation and Certification Scheme",
+      "japanese": "ITセキュリティ評価及び認証制度",
+      "meaning": "IT製品のセキュリティ機能が、ISO/IEC 15408（コモンクライテリア）に基づいて適切に設計・実装されているかを第三者が評価し認証する日本の制度。IPAが認証機関を務める。",
+      "exam_tip": "対象は「保護すべき資産、対抗すべき脅威、適用すべき環境が具体化できるIT製品」。組織のマネジメント体制を認証するISMS適合性評価制度、暗号アルゴリズムを評価するCRYPTREC、クラウドサービスを評価するISMAPとの対象の違いで選ばせる。",
+      "related": [
+        "security.cryptrec",
+        "security.ismap"
+      ],
+      "related_terms": [
+        "ISO/IEC 15408",
+        "コモンクライテリア",
+        "EAL",
+        "IPA",
+        "プロテクションプロファイル"
+      ]
+    },
+    {
+      "id": "architecture.superscalar",
+      "domain": "ARCHITECTURE",
+      "term": "スーパースカラ",
+      "full_name": "Superscalar",
+      "japanese": "スーパースカラ",
+      "meaning": "プロセッサ内に複数の実行ユニットを持ち、互いに依存関係のない複数の命令を動的に判定して同時に実行する高速化手法。",
+      "exam_tip": "パイプライン（1命令を段階に分けて重ねる）、スーパーパイプライン（段数を増やす）、VLIW（依存関係の判定をコンパイラが静的に行い長い命令語にまとめる）との違いが要点。「動的に並列実行」ならスーパースカラ、「静的（コンパイル時）」ならVLIW。",
+      "related": [
+        "architecture.cache_memory"
+      ],
+      "related_terms": [
+        "パイプライン",
+        "VLIW",
+        "命令レベル並列",
+        "アウトオブオーダ実行"
+      ]
+    },
+    {
+      "id": "architecture.thin_provisioning",
+      "domain": "ARCHITECTURE",
+      "term": "シンプロビジョニング",
+      "full_name": "Thin Provisioning",
+      "japanese": "シンプロビジョニング",
+      "meaning": "実際に確保した物理容量よりも大きな容量をアプリケーションへ見せ、書き込みが発生した分だけ物理領域を割り当てるストレージ仮想化技術。",
+      "exam_tip": "「物理容量を実際よりも大きく見せかける」が定義。初期投資を抑えられる一方、物理容量の枯渇を監視しないと突然書き込めなくなる点が運用上の要点。重複排除や圧縮とは別の技術。",
+      "related": [
+        "architecture.san"
+      ],
+      "related_terms": [
+        "ストレージ仮想化",
+        "オーバーコミット",
+        "重複排除",
+        "シック（Thick）"
+      ]
+    },
+    {
+      "id": "architecture.deadlock",
+      "domain": "ARCHITECTURE",
+      "term": "デッドロック",
+      "full_name": "Deadlock",
+      "japanese": "デッドロック",
+      "meaning": "複数のトランザクションが互いの保持する資源のロック解放を待ち合い、どれも進めなくなる状態。DBMSは待ちグラフ（資源の待ち関係を有向グラフで表したもの）の閉路を検出して発見し、一方をロールバックさせる。",
+      "exam_tip": "検出に使うデータ構造は待ちグラフ。B木・ハッシュ表・待ち行列などと並べて選ばせる。予防策としては資源への操作順序を全トランザクションで統一する方法がある。",
+      "related": [
+        "architecture.isolation_level",
+        "architecture.in_process_database"
+      ],
+      "related_terms": [
+        "待ちグラフ",
+        "ロック",
+        "ロールバック",
+        "2相ロック"
+      ]
+    },
+    {
+      "id": "architecture.http_status",
+      "domain": "ARCHITECTURE",
+      "term": "HTTPステータスコード",
+      "full_name": "HTTP Status Code",
+      "japanese": "HTTPステータスコード",
+      "meaning": "Webサーバが応答の結果を3桁の数字で示すもの。1xxは情報、2xxは成功、3xxはリダイレクト、4xxはクライアント側の誤り、5xxはサーバ側の誤り。",
+      "exam_tip": "先頭の桁の意味を覚えれば大半が解ける。リダイレクトは3xx（301 Moved Permanently／302 Found）、認証が必要は401、権限不足は403、存在しないは404、サーバ内部エラーは500。「別のURLへアクセスし直すよう促す」なら302。",
+      "related": [
+        "architecture.http_method",
+        "security.hsts"
+      ],
+      "related_terms": [
+        "301",
+        "302",
+        "401",
+        "403",
+        "404",
+        "500"
+      ]
+    },
+    {
+      "id": "architecture.dfd",
+      "domain": "ARCHITECTURE",
+      "term": "DFD",
+      "full_name": "Data Flow Diagram",
+      "japanese": "データフロー図",
+      "meaning": "データの流れに着目して業務やシステムを表す図。図形要素は、源泉と吸収（外部実体）、データフロー（矢印）、プロセス（円）、データストア（2本線）の4種類。",
+      "exam_tip": "図形要素の組合せを選ばせる問が定番。判断・分岐の記号や、制御の流れを表す記号はDFDには無い（それはフローチャートやアクティビティ図）。データの流れであって処理の順序ではない点が要点。",
+      "related": [
+        "architecture.use_case_diagram",
+        "architecture.uml_object_diagram"
+      ],
+      "related_terms": [
+        "源泉と吸収",
+        "データフロー",
+        "プロセス",
+        "データストア",
+        "構造化分析"
+      ]
+    },
+    {
+      "id": "architecture.ocp",
+      "domain": "ARCHITECTURE",
+      "term": "開放・閉鎖原則",
+      "full_name": "Open-Closed Principle (OCP)",
+      "japanese": "開放・閉鎖原則",
+      "meaning": "モジュールは拡張に対して開いて（機能の追加や変更ができる）、修正に対して閉じて（その影響を他のモジュールへ及ぼさない）いるべきという設計原則。SOLID原則の一つ。",
+      "exam_tip": "「機能の追加や変更が可能で、その影響を他へ及ぼさない」という言い回しが目印。他のSOLID原則との識別が問われる。単一責任原則（変更理由は一つ）、リスコフの置換原則（派生型は基底型と置換可能）、インタフェース分離原則、依存関係逆転原則。",
+      "related": [
+        "architecture.gof_pattern",
+        "architecture.module_coupling",
+        "architecture.loose_coupling"
+      ],
+      "related_terms": [
+        "SOLID",
+        "単一責任原則",
+        "リスコフの置換原則",
+        "依存関係逆転原則"
+      ]
+    },
+    {
+      "id": "security.sso",
+      "domain": "SECURITY",
+      "term": "シングルサインオン",
+      "full_name": "Single Sign-On (SSO)",
+      "japanese": "シングルサインオン",
+      "meaning": "一度の認証で、複数のシステムやサービスを利用できるようにする仕組み。代理認証方式、リバースプロキシ方式、エージェント方式、SAMLやOpenID Connectによるフェデレーション方式がある。",
+      "exam_tip": "実装方式ごとの制約が問われる。Cookieを使う方式は同一ドメイン内に限られる、リバースプロキシ方式は全通信がプロキシを通る必要がある、SAMLやOIDCなら異なるドメイン間でも実現できる。実現する製品としてKeycloakなどのIdPが挙げられる。",
+      "related": [
+        "security.saml",
+        "security.oidc",
+        "security.oauth2",
+        "security.mfa"
+      ],
+      "related_terms": [
+        "IdP",
+        "SP",
+        "フェデレーション",
+        "リバースプロキシ",
+        "Keycloak"
+      ]
+    },
+    {
+      "id": "architecture.mapreduce",
+      "domain": "ARCHITECTURE",
+      "term": "MapReduce",
+      "full_name": "MapReduce",
+      "japanese": "MapReduce",
+      "meaning": "大量データを並列処理するためのプログラミングモデル。入力データから中間キーと値の組を生成するMap処理と、同じ中間キーを持つ値をまとめて加工するReduce処理の2段階で実行する。",
+      "exam_tip": "「中間キーと値の組を作る処理」「同じ中間キーの値を加工する処理」という2段階の説明が目印。分散ファイルシステム（HDFS）や、その上に載るHadoop／Sparkと合わせて出る。ストリーム処理やETLとの違いに注意。",
+      "related": [
+        "architecture.scalability"
+      ],
+      "related_terms": [
+        "Map",
+        "Reduce",
+        "Hadoop",
+        "HDFS",
+        "分散処理"
+      ]
+    },
+    {
+      "id": "architecture.observer_pattern",
+      "domain": "ARCHITECTURE",
+      "term": "Observerパターン",
+      "full_name": "Observer Pattern",
+      "japanese": "観察者パターン",
+      "meaning": "あるオブジェクト（Subject）の状態が変化したときに、それに依存する全てのオブジェクト（Observer）へ自動的に通知する、振る舞いに関するデザインパターン。",
+      "exam_tip": "「状態が変わったら依存する全オブジェクトへ自動通知する」が定義。生成に関するパターン（Factory Method、Singleton）、構造に関するパターン（Adapter、Facade）と区別する。イベント駆動・publish/subscribeの原型。",
+      "related": [
+        "architecture.gof_pattern",
+        "architecture.event_sourcing"
+      ],
+      "related_terms": [
+        "Subject",
+        "Observer",
+        "publish/subscribe",
+        "イベント駆動"
+      ]
+    },
+    {
+      "id": "architecture.static_analysis",
+      "domain": "ARCHITECTURE",
+      "term": "静的解析ツール",
+      "full_name": "Static Analysis Tool",
+      "japanese": "静的解析ツール",
+      "meaning": "プログラムを実行せずにソースコードを分析し、構文上の誤り、未使用変数、規約違反、バグや脆弱性につながるコードを検出するツール。",
+      "exam_tip": "「実行せずにソースを分析する」が静的、「実行しながら調べる」が動的（デバッガ、プロファイラ、カバレッジ測定）。アジャイル開発でコードの重複や脆弱性を自動検出するOSSとしてSonarQubeが挙げられる。",
+      "related": [
+        "architecture.assertion_check",
+        "architecture.mutation_test",
+        "architecture.bug_tracking_system"
+      ],
+      "related_terms": [
+        "SonarQube",
+        "動的解析",
+        "コーディング規約",
+        "SAST"
+      ]
+    },
+    {
+      "id": "architecture.mutation_test",
+      "domain": "ARCHITECTURE",
+      "term": "ミューテーションテスト",
+      "full_name": "Mutation Testing",
+      "japanese": "変異テスト",
+      "meaning": "プログラムへ意図的に小さな誤り（ミュータント）を埋め込み、テストセットがそれを検出できるかを調べることで、テストセット自体の欠陥検出能力を評価する手法。",
+      "exam_tip": "評価の対象がプログラムではなく「テストセット」である点が最大の要点。テストが全て通ったあとで、テストの十分性を測るために行う。カバレッジ（実行された経路の割合）よりも厳しくテストの質を測れる。",
+      "related": [
+        "architecture.static_analysis",
+        "architecture.cyclomatic_complexity"
+      ],
+      "related_terms": [
+        "ミュータント",
+        "テストセット",
+        "カバレッジ",
+        "エラー埋込み法"
+      ]
+    },
+    {
+      "id": "architecture.cyclomatic_complexity",
+      "domain": "ARCHITECTURE",
+      "term": "サイクロマティック複雑度",
+      "full_name": "Cyclomatic Complexity",
+      "japanese": "循環的複雑度",
+      "meaning": "McCabeが提唱した、プログラムの制御構造の複雑さを測る尺度。制御フローグラフのエッジ数 e とノード数 n から、e − n + 2 で求める（連結成分が1つの場合）。",
+      "exam_tip": "式 e − n + 2 をそのまま当てはめる計算問題として出る。分岐（if、case、ループ）の数＋1でも同じ値になる。値が大きいほどテストに必要な独立経路が増えるため、上限を決めて分割の目安にする。",
+      "related": [
+        "architecture.mutation_test",
+        "architecture.static_analysis"
+      ],
+      "related_terms": [
+        "McCabe",
+        "制御フローグラフ",
+        "エッジ",
+        "ノード",
+        "独立経路"
+      ]
+    },
+    {
+      "id": "architecture.call_by_value",
+      "domain": "ARCHITECTURE",
+      "term": "値呼出し",
+      "full_name": "Call by Value",
+      "japanese": "値呼出し",
+      "meaning": "サブルーチンへ引数の値の複製を渡す方式。サブルーチン内で仮引数を書き換えても、呼び出し側の変数は変化しない。",
+      "exam_tip": "「実行後に呼び出し側の変数が変更されないことが保証される」のは値呼出しだけ。参照呼出し（変数のアドレスを渡す）、名前呼出し、結果呼出しは呼び出し側へ影響しうる。副作用の有無で切り分ける。",
+      "related": [
+        "architecture.referential_transparency"
+      ],
+      "related_terms": [
+        "参照呼出し",
+        "名前呼出し",
+        "仮引数",
+        "実引数",
+        "副作用"
+      ]
+    },
+    {
+      "id": "strategy.kirkpatrick",
+      "domain": "STRATEGY",
+      "term": "カークパトリックモデル",
+      "full_name": "Kirkpatrick Model",
+      "japanese": "教育効果測定の4段階評価",
+      "meaning": "教育訓練の効果を4段階で測るモデル。レベル1 Reaction（受講者の反応）、レベル2 Learning（理解・習得）、レベル3 Behavior（行動の変化）、レベル4 Results（組織業績への貢献）。",
+      "exam_tip": "活動とレベルの対応が問われる。アンケートはレベル1、理解度確認テストはレベル2、後日の活用状況の確認はレベル3、ROIなど業績への影響の分析はレベル4。上のレベルほど測定が難しく時間がかかる。",
+      "related": [
+        "architecture.transition_process"
+      ],
+      "related_terms": [
+        "Reaction",
+        "Learning",
+        "Behavior",
+        "Results",
+        "ROI"
+      ]
+    },
+    {
+      "id": "architecture.use_case_driven",
+      "domain": "ARCHITECTURE",
+      "term": "ユースケース駆動開発",
+      "full_name": "Use Case Driven Development",
+      "japanese": "ユースケース駆動開発",
+      "meaning": "ユースケース（利用者から見た一連の機能）を単位として、設計からテストまでを一貫して実施する開発の進め方。",
+      "exam_tip": "利点は「ひとまとまりの要件を1単位として設計からテストまで実施するので、要件ごとに開発状況を把握できる」こと。工程単位で全機能を横断的に進めるウォーターフォールとの対比で出る。ユースケース図はその表現手段。",
+      "related": [
+        "architecture.use_case_diagram",
+        "pm.agile_manifesto"
+      ],
+      "related_terms": [
+        "ユースケース",
+        "反復開発",
+        "UP",
+        "トレーサビリティ"
+      ]
+    },
+    {
+      "id": "architecture.structured_interview",
+      "domain": "ARCHITECTURE",
+      "term": "構造化インタビュー",
+      "full_name": "Structured Interview",
+      "japanese": "構造化インタビュー",
+      "meaning": "あらかじめ質問項目と順序を決めておき、全ての回答者へ同じ形式で行うインタビュー技法。",
+      "exam_tip": "長所と短所の組合せで問われる。長所は複数の回答者の結果を比較しやすいこと、短所は個別の回答を掘り下げて深い洞察を引き出しにくいこと。非構造化インタビューはその逆。半構造化はその中間。",
+      "related": [
+        "architecture.use_case_diagram"
+      ],
+      "related_terms": [
+        "非構造化インタビュー",
+        "半構造化インタビュー",
+        "要求分析",
+        "質問項目"
+      ]
+    },
+    {
+      "id": "architecture.use_case_diagram",
+      "domain": "ARCHITECTURE",
+      "term": "ユースケース図",
+      "full_name": "Use Case Diagram",
+      "japanese": "ユースケース図",
+      "meaning": "システムが提供する機能単位（ユースケース）と、利用者や外部システム（アクター）との相互作用、およびシステムの内部と外部の境界を表すUMLの図。",
+      "exam_tip": "「機能単位とアクターの相互作用」「システムの境界を明示する」が目印。処理の流れを表すアクティビティ図、データの流れを表すDFD、時間順の相互作用を表すシーケンス図と区別する。",
+      "related": [
+        "architecture.dfd",
+        "architecture.use_case_driven",
+        "architecture.uml_object_diagram"
+      ],
+      "related_terms": [
+        "アクター",
+        "ユースケース",
+        "システム境界",
+        "UML"
+      ]
+    },
+    {
+      "id": "architecture.lab_contract",
+      "domain": "ARCHITECTURE",
+      "term": "ラボ契約",
+      "full_name": "Lab Contract / Dedicated Team Contract",
+      "japanese": "ラボ契約",
+      "meaning": "一定期間、決められたスキルと人数の要員をベンダーが確保する代わりに、依頼元が一定以上の発注を約束する契約形態。オフショア開発でよく使われる。",
+      "exam_tip": "「要員の確保を求める代わりに一定以上の発注を約束する」が特徴。成果物の完成を約束する請負契約、作業の遂行を約束する準委任契約、実費を精算する実費償還契約との違いで問われる。",
+      "related": [
+        "pm.cost_reimbursable"
+      ],
+      "related_terms": [
+        "オフショア開発",
+        "請負",
+        "準委任",
+        "専任チーム"
+      ]
+    },
+    {
+      "id": "strategy.collaborative_filtering",
+      "domain": "STRATEGY",
+      "term": "協調フィルタリング",
+      "full_name": "Collaborative Filtering",
+      "japanese": "協調フィルタリング",
+      "meaning": "多くの利用者の行動履歴から、嗜好の似た利用者や似た商品を見つけ、それに基づいて推薦を行う手法。",
+      "exam_tip": "「顧客Aに似た顧客Bが買っている商品をAに勧める」が典型例。商品の属性（ジャンル、キーワード）を使う内容ベースフィルタリングとの違いが要点。新規商品や新規利用者では推薦しにくい（コールドスタート問題）。",
+      "related": [
+        "strategy.regression_analysis",
+        "strategy.logistic_regression"
+      ],
+      "related_terms": [
+        "レコメンデーション",
+        "内容ベースフィルタリング",
+        "コールドスタート問題",
+        "相関分析"
+      ]
+    },
+    {
+      "id": "security.open_resolver",
+      "domain": "SECURITY",
+      "term": "オープンリゾルバ",
+      "full_name": "Open Resolver",
+      "japanese": "オープンリゾルバ",
+      "meaning": "インターネット上の誰からの再帰的な名前解決要求にも応答してしまうDNSサーバ。送信元IPアドレスを偽装した問合せを多数送りつけることで、標的へ大量の応答を集中させるDNS amp攻撃に悪用される。",
+      "exam_tip": "「送信元を偽装したDNS問合せを多数のDNSサーバへ送り、標的へ大量の応答を送る」が該当。反射（リフレクション）と増幅（アンプリフィケーション）を組み合わせたDRDoSの一種。対策は再帰問合せを自組織内からに限定すること。",
+      "related": [
+        "security.drdos",
+        "security.dns_cache_poisoning"
+      ],
+      "related_terms": [
+        "DNS amp",
+        "リフレクション攻撃",
+        "再帰問合せ",
+        "IPアドレス偽装"
+      ]
+    },
+    {
+      "id": "security.annual_loss_expectancy",
+      "domain": "SECURITY",
+      "term": "年間発生確率と対策効果",
+      "full_name": "Annual Rate of Occurrence / Control Effectiveness",
+      "japanese": "年間発生確率と対策効果",
+      "meaning": "リスク分析で、事象の年間発生確率と、対策によってその発生を防止できる確率から、対策後の残存リスクを見積もる考え方。対策後の確率は Q×(1−d) で表される。",
+      "exam_tip": "複数の事象が連鎖する場合、下流の事象の発生確率は上流の残存確率の積になる。どの事象へ対策を打つと最終事象の確率が最も下がるかを計算させる形で出る。防止確率dが同じでも、発生確率Qの大きい事象へ打つほうが効果が大きい。",
+      "related": [
+        "security.risk_treatment",
+        "audit.risk_approach"
+      ],
+      "related_terms": [
+        "年間発生確率",
+        "残存リスク",
+        "ALE",
+        "リスク分析"
+      ]
+    },
+    {
+      "id": "security.ssh",
+      "domain": "SECURITY",
+      "term": "SSH",
+      "full_name": "Secure Shell",
+      "japanese": "セキュアシェル",
+      "meaning": "通信の暗号化と利用者認証の機能を持ち、遠隔のコンピュータへ安全にログインするためのプロトコル。ポートフォワーディングによる他プロトコルのトンネリングもできる。",
+      "exam_tip": "Telnetやrloginの暗号化版として問われる。公開鍵認証とパスワード認証を選べる点、既定ポートが22である点、ファイル転送はSCP／SFTPで行う点が要点。SSL/TLSやIPsecとは適用層が違う。",
+      "related": [
+        "security.tls",
+        "architecture.tcp"
+      ],
+      "related_terms": [
+        "Telnet",
+        "公開鍵認証",
+        "ポートフォワーディング",
+        "SCP",
+        "SFTP"
+      ]
+    },
+    {
+      "id": "security.submission_port",
+      "domain": "SECURITY",
+      "term": "サブミッションポート",
+      "full_name": "Submission Port (587/tcp)",
+      "japanese": "サブミッションポート",
+      "meaning": "メール利用者が自分のメールサーバへメールを投稿するための専用ポート（587番）。SMTP-AUTHによる送信者認証を必須にすることで、認証されていない送信を拒否する。",
+      "exam_tip": "目的は「SMTP-AUTHで送信者を認証すること」。25番はサーバ間の中継用として残し、利用者からの投稿は587番＋認証に分ける。ISPが自ネットワークから外部の25番宛て通信を遮断するOP25Bと組み合わせて、迷惑メールの直接送信を防ぐ。",
+      "related": [
+        "security.op25b",
+        "security.spf_dmarc"
+      ],
+      "related_terms": [
+        "SMTP-AUTH",
+        "25番ポート",
+        "OP25B",
+        "メール投稿"
+      ]
+    },
+    {
+      "id": "architecture.cache_memory",
+      "domain": "ARCHITECTURE",
+      "term": "キャッシュメモリの写像方式",
+      "full_name": "Cache Mapping",
+      "japanese": "キャッシュメモリの写像方式",
+      "meaning": "主記憶のブロックをキャッシュのどこへ置くかの決め方。ダイレクトマップ（1か所固定）、フルアソシアティブ（どこでも可）、セットアソシアティブ（セット内の複数の候補位置のいずれか）の3方式がある。",
+      "exam_tip": "セットアソシアティブは「単一又は複数の配置可能なロケーションに対応付ける」という説明になる。ダイレクトマップは競合が起きやすいが回路が単純、フルアソシアティブは競合が最も少ないが検索が重い、というトレードオフで整理する。",
+      "related": [
+        "architecture.hit_ratio",
+        "architecture.superscalar",
+        "architecture.cache_aside"
+      ],
+      "related_terms": [
+        "ダイレクトマップ",
+        "フルアソシアティブ",
+        "ライトスルー",
+        "ライトバック"
+      ]
+    },
+    {
+      "id": "architecture.orchestration",
+      "domain": "ARCHITECTURE",
+      "term": "オーケストレーション",
+      "full_name": "Orchestration",
+      "japanese": "オーケストレーション",
+      "meaning": "処理の順序やサービスの呼出しを制御する中央のプログラムがあり、そこからのリクエストで各サービスを実行し、結果を受け取って処理を進める方式。コンテナ基盤では、コンテナの配置・起動・スケール・復旧を自動化する仕組みを指す。",
+      "exam_tip": "コレオグラフィとの対比が要点。中央の指揮者がいるのがオーケストレーション、指揮者を置かず各サービスがあらかじめ定めた条件で自律的に動くのがコレオグラフィ。コンテナ型仮想化そのものの説明（1つのOSで動かし起動が速い）や、ライブマイグレーションの説明と混同しない。",
+      "related": [
+        "architecture.saga",
+        "architecture.loose_coupling"
+      ],
+      "related_terms": [
+        "コレオグラフィ",
+        "Kubernetes",
+        "コンテナ",
+        "マイクロサービス"
+      ]
+    },
+    {
+      "id": "architecture.hit_ratio",
+      "domain": "ARCHITECTURE",
+      "term": "ヒット率と平均応答時間",
+      "full_name": "Hit Ratio and Average Response Time",
+      "japanese": "ヒット率と平均応答時間",
+      "meaning": "平均応答時間＝ヒット率×ヒット時の時間＋(1−ヒット率)×ミス時の時間。キャッシュの効果を定量化する基本式。",
+      "exam_tip": "式を立ててヒット率を逆算させる問が定番。1.0＝h×0.2＋(1−h)×2.2 から h＝0.6、ヒット率が半分の0.3になれば 0.3×0.2＋0.7×2.2＝1.6秒。単位（秒・ミリ秒）と、ミス時にヒット時の処理も加算されるかどうかの前提を読み違えないこと。",
+      "related": [
+        "architecture.cache_memory",
+        "architecture.cache_aside"
+      ],
+      "related_terms": [
+        "ヒット率",
+        "ミスヒット",
+        "実効アクセス時間",
+        "平均応答時間"
+      ]
+    },
+    {
+      "id": "architecture.code_design",
+      "domain": "ARCHITECTURE",
+      "term": "コード体系",
+      "full_name": "Coding Scheme",
+      "japanese": "コード体系",
+      "meaning": "データを識別するためのコードの付け方。順番コード、区分コード、桁別コード、表意コード（ニモニックコード）、けた別分類コードなどがある。",
+      "exam_tip": "「値から対象物が連想できる」のはニモニックコード（表意コード）。順番コードは単なる連番で意味を持たない、区分コードは範囲で分類する、桁別コードは各桁に意味を割り当てる。追加のしやすさと意味の分かりやすさのトレードオフで問われる。",
+      "related": [
+        "architecture.natural_join"
+      ],
+      "related_terms": [
+        "ニモニックコード",
+        "順番コード",
+        "区分コード",
+        "桁別コード",
+        "チェックディジット"
+      ]
+    },
+    {
+      "id": "architecture.isolation_level",
+      "domain": "ARCHITECTURE",
+      "term": "隔離性水準",
+      "full_name": "Isolation Level",
+      "japanese": "トランザクション隔離性水準",
+      "meaning": "同時実行するトランザクション同士がどこまで影響し合うかの水準。READ UNCOMMITTED／READ COMMITTED／REPEATABLE READ／SERIALIZABLE の順に厳しくなる。",
+      "exam_tip": "水準を高めると不整合なデータを読むトランザクションは減るが、ロックの範囲と時間が増えるためスループット（単位時間に処理できるトランザクション数）も減る、というトレードオフが答え。ダーティリード・ノンリピータブルリード・ファントムリードのどれが防げるかも頻出。",
+      "related": [
+        "architecture.deadlock",
+        "architecture.commit_timing"
+      ],
+      "related_terms": [
+        "ダーティリード",
+        "ファントムリード",
+        "SERIALIZABLE",
+        "ACID",
+        "スループット"
+      ]
+    },
+    {
+      "id": "architecture.layer2_switch",
+      "domain": "ARCHITECTURE",
+      "term": "レイヤー2スイッチ",
+      "full_name": "Layer 2 Switch",
+      "japanese": "レイヤー2スイッチ",
+      "meaning": "MACアドレスを見てフレームを転送するデータリンク層の装置。フレームの蓄積、速度変換、交換の機能を持つ。",
+      "exam_tip": "同じ階層で同等の機能を持つ装置はブリッジ。リピータ（物理層）、ルータ（ネットワーク層）、ゲートウェイ（トランスポート層以上）との階層の対応を覚える。コリジョンドメインはポートごとに分割されるが、ブロードキャストドメインは分割されない（分割するのはルータやVLAN）。",
+      "related": [
+        "architecture.spanning_tree",
+        "architecture.icmp"
+      ],
+      "related_terms": [
+        "ブリッジ",
+        "MACアドレス",
+        "コリジョンドメイン",
+        "ブロードキャストドメイン",
+        "リピータ"
+      ]
+    },
+    {
+      "id": "security.aaa",
+      "domain": "SECURITY",
+      "term": "AAAフレームワーク",
+      "full_name": "Authentication, Authorization, Accounting",
+      "japanese": "認証・認可・課金",
+      "meaning": "ネットワークアクセス制御の3要素。誰であるかを確かめる認証、何をしてよいかを決める認可、いつ何をどれだけ使ったかを記録する課金（アカウンティング）。RADIUSやDiameterが提供する。",
+      "exam_tip": "3つ目のAがAccounting（課金・記録）である点が問われる。Availability や Auditing を選ばせるひっかけが並ぶ。RADIUSはUDP、Diameterはその後継でTCP/SCTPを使い信頼性を高めている。",
+      "related": [
+        "security.ieee8021x",
+        "security.oauth2"
+      ],
+      "related_terms": [
+        "RADIUS",
+        "Diameter",
+        "アカウンティング",
+        "NAS"
+      ]
+    },
+    {
+      "id": "security.adversarial_examples",
+      "domain": "SECURITY",
+      "term": "敵対的サンプル攻撃",
+      "full_name": "Adversarial Examples Attack",
+      "japanese": "敵対的サンプル攻撃",
+      "meaning": "入力データに人間には知覚できないノイズや微小な変化を加え、AIモデルに誤った推論をさせる攻撃。画像認識で標識を別のものと誤認させる例が知られる。",
+      "exam_tip": "AIへの攻撃の分類が問われる。推論時に入力を細工するのが敵対的サンプル、学習データに毒を混ぜるのがデータポイズニング、出力から学習データを推定するのがモデルインバージョン、モデル自体を複製するのがモデル抽出。",
+      "related": [
+        "security.model_inversion"
+      ],
+      "related_terms": [
+        "データポイズニング",
+        "モデル抽出",
+        "AIセキュリティ",
+        "誤認識"
+      ]
+    },
+    {
+      "id": "security.mitre_attack",
+      "domain": "SECURITY",
+      "term": "MITRE ATT&CK",
+      "full_name": "Adversarial Tactics, Techniques, and Common Knowledge",
+      "japanese": "攻撃戦術・技術のナレッジベース",
+      "meaning": "実際に観測されたサイバー攻撃の戦術（Tactics）と技術（Techniques）を体系的に分類したナレッジベース。MITREが公開している。",
+      "exam_tip": "「攻撃手法を分類したナレッジベース」ならATT&CK。脆弱性の識別子はCVE、脆弱性の種類の分類はCWE、深刻度の評価はCVSS、設定基準の識別子はCCEと、MITRE系の略語を役割で区別する。MITREはCVE採番機関でもある。",
+      "related": [
+        "security.cvss",
+        "security.cwe",
+        "security.ioc"
+      ],
+      "related_terms": [
+        "MITRE",
+        "CVE",
+        "CWE",
+        "戦術",
+        "技術",
+        "サイバーキルチェーン"
+      ]
+    },
+    {
+      "id": "security.ntp_reflection",
+      "domain": "SECURITY",
+      "term": "NTPリフレクション攻撃",
+      "full_name": "NTP Reflection / Amplification Attack",
+      "japanese": "NTPリフレクション攻撃",
+      "meaning": "送信元IPアドレスを標的に偽装し、NTPサーバへ応答が大きくなるリクエスト（monlistなど）を送ることで、標的へ増幅されたトラフィックを集中させる攻撃。",
+      "exam_tip": "「送信元を偽って、レスポンスが大きくなるリクエストを送る」が特徴。DNSやmemcachedを使う同種の攻撃と併せてDRDoS（分散反射型サービス妨害）に分類される。対策はNTPサーバのmonlist無効化と、送信元アドレス偽装を防ぐフィルタリング。",
+      "related": [
+        "security.open_resolver",
+        "security.drdos",
+        "security.smurf"
+      ],
+      "related_terms": [
+        "monlist",
+        "増幅率",
+        "DRDoS",
+        "IPアドレス偽装"
+      ]
+    },
+    {
+      "id": "security.pqc",
+      "domain": "SECURITY",
+      "term": "PQC",
+      "full_name": "Post-Quantum Cryptography",
+      "japanese": "耐量子計算機暗号",
+      "meaning": "量子コンピュータを使っても現実的な時間で解読できないと考えられる暗号方式。格子暗号、符号ベース暗号、多変数多項式暗号、ハッシュベース署名などがある。",
+      "exam_tip": "量子暗号（量子力学の性質を使って鍵を共有する仕組み）と混同しない。PQCは既存のコンピュータ上で動く数学的な暗号方式であって、量子通信路を必要としない。NISTが標準化を進めている点も出る。",
+      "related": [
+        "security.quantum_cryptography",
+        "security.aes",
+        "security.cryptrec"
+      ],
+      "related_terms": [
+        "格子暗号",
+        "耐量子",
+        "NIST",
+        "ショアのアルゴリズム"
+      ],
+      "aliases": [
+        "耐量子計算機暗号"
+      ]
+    },
+    {
+      "id": "security.smurf",
+      "domain": "SECURITY",
+      "term": "Smurf攻撃",
+      "full_name": "Smurf Attack",
+      "japanese": "Smurf攻撃",
+      "meaning": "ICMPエコー要求の送信元IPアドレスを標的のアドレスに偽装し、宛先をブロードキャストアドレスにして送ることで、多数のホストからの応答を標的へ集中させる攻撃。",
+      "exam_tip": "ICMP＋ブロードキャスト＋送信元偽装の3点セットが目印。UDPのechoサービスを使う同種の攻撃はFraggle。対策はルータでのディレクテッドブロードキャストの転送禁止。",
+      "related": [
+        "security.ntp_reflection",
+        "security.drdos",
+        "architecture.icmp"
+      ],
+      "related_terms": [
+        "ICMPエコー要求",
+        "ディレクテッドブロードキャスト",
+        "Fraggle",
+        "踏み台"
+      ]
+    },
+    {
+      "id": "security.passkey",
+      "domain": "SECURITY",
+      "term": "パスキー",
+      "full_name": "Passkey / FIDO2",
+      "japanese": "パスキー",
+      "meaning": "FIDOの規格に基づく、パスワードを使わない認証方式。認証器（スマートフォンなど）の中で秘密鍵を保持し、生体認証などで利用者を確認したうえで署名を返す。",
+      "exam_tip": "秘密鍵と生体情報が認証器の外へ出ない点が最大の要点。ブラウザにもサーバにもIdPにも生体情報や秘密鍵は送られず、送られるのは署名だけ。フィッシング耐性があるのは、認証器が接続先のオリジンを検証するため。",
+      "related": [
+        "security.mfa",
+        "security.mfa_fatigue",
+        "security.sso"
+      ],
+      "related_terms": [
+        "FIDO2",
+        "WebAuthn",
+        "認証器",
+        "公開鍵暗号",
+        "オリジン検証"
+      ]
+    },
+    {
+      "id": "security.quantum_cryptography",
+      "domain": "SECURITY",
+      "term": "量子暗号",
+      "full_name": "Quantum Cryptography / QKD",
+      "japanese": "量子暗号（量子鍵配送）",
+      "meaning": "量子通信路を使って安全に乱数列を共有し、それを使い捨ての暗号鍵（ワンタイムパッド）として使うことで、原理的に第三者に解読されない秘匿通信を実現する技術。",
+      "exam_tip": "「量子通信路で共有した乱数を使い捨ての鍵として使う」が特徴。盗聴すると量子状態が変化するため検知できる点が原理。PQC（既存計算機で動く耐量子アルゴリズム）とは別物であり、この対比が定番の出題。",
+      "related": [
+        "security.pqc",
+        "security.aes"
+      ],
+      "related_terms": [
+        "量子鍵配送",
+        "QKD",
+        "ワンタイムパッド",
+        "情報理論的安全性"
+      ]
+    },
+    {
+      "id": "security.spf_dmarc",
+      "domain": "SECURITY",
+      "term": "DMARC",
+      "full_name": "Domain-based Message Authentication, Reporting and Conformance",
+      "japanese": "送信ドメイン認証の処理方針",
+      "meaning": "SPFやDKIMによる送信ドメイン認証が失敗したときに、受信側でどう扱うか（何もしない／隔離する／拒否する）を、送信側のドメイン管理者がDNSレコードで宣言する仕組み。レポートの受領も指定できる。",
+      "exam_tip": "SPF（送信元IPアドレスを検証）、DKIM（電子署名を検証）、DMARC（失敗時の処理方針とレポート）の役割分担が要点。「処理方針を送信側が指定する」ならDMARC。ポリシーは none／quarantine／reject。",
+      "related": [
+        "security.submission_port",
+        "security.op25b"
+      ],
+      "related_terms": [
+        "SPF",
+        "DKIM",
+        "p=reject",
+        "エンベロープFrom",
+        "ヘッダFrom"
+      ]
+    },
+    {
+      "id": "security.soar",
+      "domain": "SECURITY",
+      "term": "SOAR",
+      "full_name": "Security Orchestration, Automation and Response",
+      "japanese": "セキュリティ運用の自動化",
+      "meaning": "脅威インテリジェンスを活用し、複数のセキュリティ製品の操作を連携（オーケストレーション）させて運用を自動化し、インシデント対応を効率化する技術。",
+      "exam_tip": "SIEM（ログを集約・相関分析して検知する）との役割の違いが要点。SIEMが「気づく」ためのもので、SOARは「気づいた後の対応を自動で回す」ためのもの。プレイブックに沿って封じ込めや通知を自動実行する。",
+      "related": [
+        "security.siem",
+        "security.csirt",
+        "security.ueba"
+      ],
+      "related_terms": [
+        "プレイブック",
+        "脅威インテリジェンス",
+        "オーケストレーション",
+        "インシデント対応"
+      ]
+    },
+    {
+      "id": "security.waf",
+      "domain": "SECURITY",
+      "term": "WAF",
+      "full_name": "Web Application Firewall",
+      "japanese": "Webアプリケーションファイアウォール",
+      "meaning": "HTTP/HTTPSの通信内容を検査し、SQLインジェクションやクロスサイトスクリプティングなどWebアプリケーションへの攻撃を検知・遮断する仕組み。",
+      "exam_tip": "フォールスポジティブ（偽陽性）は「正常な通信を攻撃と誤検知して遮断する」こと、フォールスネガティブ（偽陰性）は「攻撃を見逃す」こと。この2語の取り違えが定番。ブラックリスト型は未知の攻撃に弱く、ホワイトリスト型は運用負荷が高い。",
+      "related": [
+        "security.ips",
+        "security.open_redirect",
+        "security.csrf"
+      ],
+      "related_terms": [
+        "フォールスポジティブ",
+        "フォールスネガティブ",
+        "シグネチャ",
+        "SQLインジェクション"
+      ]
+    },
+    {
+      "id": "security.ips",
+      "domain": "SECURITY",
+      "term": "IPS",
+      "full_name": "Intrusion Prevention System",
+      "japanese": "侵入防止システム",
+      "meaning": "通信を監視し、不正と判断した通信を遮断する仕組み。通信経路上に設置する（インラインモード）と遮断でき、ミラーポートに接続する（プロミスキャスモード）と検知のみになる。",
+      "exam_tip": "設置形態（インライン／ミラー）と検知方式（シグネチャ型＝既知の攻撃パターンと照合、アノマリ型＝通常の通信を定義しそこから外れたものを不正とみなす）の2軸で問われる。「通信経路上に設置」かつ「通常時を定義して外れを遮断」ならインラインモードのアノマリ型IPS。",
+      "related": [
+        "security.waf",
+        "security.network_tap",
+        "security.siem"
+      ],
+      "related_terms": [
+        "IDS",
+        "インラインモード",
+        "アノマリ型",
+        "シグネチャ型",
+        "ミラーポート"
+      ]
+    },
+    {
+      "id": "security.clickjacking",
+      "domain": "SECURITY",
+      "term": "クリックジャッキング",
+      "full_name": "Clickjacking",
+      "japanese": "クリックジャッキング",
+      "meaning": "透明にした標的サイトのiframeを罠ページへ重ね、利用者が意図しないボタンをクリックさせる攻撃。",
+      "exam_tip": "対策はHTTPレスポンスヘッダーの X-Frame-Options（DENY／SAMEORIGIN）や CSP の frame-ancestors で、他サイトからのフレーム内表示を禁じること。トークンによる対策はCSRF、エスケープ処理はXSS、と対策とセットで覚える。",
+      "related": [
+        "security.csrf",
+        "security.hsts"
+      ],
+      "related_terms": [
+        "X-Frame-Options",
+        "frame-ancestors",
+        "iframe",
+        "UIリドレス"
+      ]
+    },
+    {
+      "id": "security.dtls",
+      "domain": "SECURITY",
+      "term": "DTLS",
+      "full_name": "Datagram Transport Layer Security",
+      "japanese": "データグラムTLS",
+      "meaning": "UDPのようなデータグラム通信の上で、TLSと同等の暗号化と認証を実現するプロトコル。パケットの欠落や順序入替えを前提とした設計になっている。",
+      "exam_tip": "「UDPのペイロードを暗号化できる」が特徴。TLSはTCPが前提でパケット順序が保証されることを利用するため、そのままではUDPに使えない、という理由づけで覚える。WebRTCやVPNで使われる。",
+      "related": [
+        "security.tls",
+        "architecture.udp",
+        "security.ipsec"
+      ],
+      "related_terms": [
+        "UDP",
+        "TLS",
+        "WebRTC",
+        "データグラム"
+      ]
+    },
+    {
+      "id": "security.ieee8021x",
+      "domain": "SECURITY",
+      "term": "IEEE 802.1X",
+      "full_name": "Port-Based Network Access Control",
+      "japanese": "ポートベース認証",
+      "meaning": "LANのポート単位でアクセス制御を行う規格。サプリカント（利用者の端末）、オーセンティケータ（スイッチやアクセスポイント）、認証サーバ（RADIUSサーバ）の3者で構成し、EAPで認証情報をやり取りする。",
+      "exam_tip": "3者の役割の割当てが問われる。アクセスポイントにはオーセンティケータとRADIUSクライアントの機能を持たせ、認証そのものはRADIUSサーバが行う。サプリカントは端末側のソフトウェア。認証が済むまでポートは制御用の通信しか通さない。",
+      "related": [
+        "security.aaa",
+        "security.sso"
+      ],
+      "related_terms": [
+        "サプリカント",
+        "オーセンティケータ",
+        "RADIUS",
+        "EAP",
+        "EAPOL"
+      ]
+    },
+    {
+      "id": "security.ipsec",
+      "domain": "SECURITY",
+      "term": "IPsec",
+      "full_name": "Security Architecture for Internet Protocol",
+      "japanese": "IPセキュリティ",
+      "meaning": "ネットワーク層で認証と暗号化を行うプロトコル群。トンネルモードでは元のIPパケット全体を新しいIPパケットでカプセル化して転送でき、拠点間VPNに使われる。",
+      "exam_tip": "「ネットワーク層のパケットをIPパケットでカプセル化してトンネリングする」ならIPsec。AHは認証のみ、ESPは暗号化と認証、鍵交換はIKE。TLS（トランスポート層以上）やSSH（アプリケーション層）との階層の違いで選ばせる。",
+      "related": [
+        "security.tls",
+        "security.ssh",
+        "security.dtls"
+      ],
+      "related_terms": [
+        "トンネルモード",
+        "トランスポートモード",
+        "AH",
+        "ESP",
+        "IKE",
+        "VPN"
+      ]
+    },
+    {
+      "id": "security.network_tap",
+      "domain": "SECURITY",
+      "term": "ネットワークタップ",
+      "full_name": "Network TAP",
+      "japanese": "ネットワークタップ",
+      "meaning": "通信経路に挿入し、光信号や電気信号を分岐させて監視装置へ複製を送る装置。通信そのものには手を加えないため、監視装置が停止しても本線に影響しない。",
+      "exam_tip": "「光学的に信号を分岐させて取り出す」ならネットワークタップ。スイッチのミラーポート（SPAN）でも複製は取れるが、スイッチの負荷や取りこぼしの影響を受ける点が違い。IDS/IPSの設置方法と絡めて出る。",
+      "related": [
+        "security.ips",
+        "security.siem"
+      ],
+      "related_terms": [
+        "ミラーポート",
+        "SPAN",
+        "光スプリッタ",
+        "パッシブ監視"
+      ]
+    },
+    {
+      "id": "architecture.foreign_key",
+      "domain": "ARCHITECTURE",
+      "term": "外部キー",
+      "full_name": "Foreign Key",
+      "japanese": "外部キー",
+      "meaning": "ある関係の属性（属性の組）で、他の関係（または自分自身）の主キーを参照するもの。参照整合性制約を表す。",
+      "exam_tip": "「一つの関係に外部キーが複数あってもよい」「同じ関係の主キーを参照してもよい（自己参照）」「NULLを許す場合がある」が正しい記述。主キーと違い一意である必要はない点が要点。",
+      "related": [
+        "architecture.natural_join",
+        "architecture.isolation_level"
+      ],
+      "related_terms": [
+        "主キー",
+        "参照整合性",
+        "候補キー",
+        "自己参照"
+      ]
+    },
+    {
+      "id": "architecture.tdd",
+      "domain": "ARCHITECTURE",
+      "term": "テスト駆動開発",
+      "full_name": "Test-Driven Development (TDD)",
+      "japanese": "テスト駆動開発",
+      "meaning": "実装コードを書く前にテストコードを書き、テストが通る最小限の実装を行い、その後リファクタリングする、という短い反復で進める開発手法。XPのプラクティスの一つ。",
+      "exam_tip": "「プログラムコードを書く前にテストコードを書く」が特徴。ペアプログラミング、リファクタリング、継続的インテグレーション、オンサイト顧客など、XPの他のプラクティスと並べて選ばせる形も多い。",
+      "related": [
+        "pm.agile_manifesto",
+        "architecture.static_analysis"
+      ],
+      "related_terms": [
+        "XP",
+        "リファクタリング",
+        "ペアプログラミング",
+        "レッド・グリーン・リファクタ"
+      ]
+    },
+    {
+      "id": "security.mac",
+      "domain": "SECURITY",
+      "term": "メッセージ認証符号",
+      "full_name": "Message Authentication Code (MAC)",
+      "japanese": "メッセージ認証符号",
+      "meaning": "送信者がメッセージと共通鍵から生成する短い値。受信者は同じ鍵で計算し直して一致を確かめることで、メッセージが改ざんされていないこと（完全性）と、鍵を知る者が作ったことを確認できる。",
+      "exam_tip": "共通鍵を使うため、第三者へ転送しても第三者は検証できず、また受信者自身もMACを作れるので送信者を特定する証拠にならない（否認防止にならない）。否認防止が要るならデジタル署名（公開鍵暗号）を使う、という対比が要点。",
+      "related": [
+        "security.pki",
+        "security.sha",
+        "security.e_seal"
+      ],
+      "related_terms": [
+        "完全性",
+        "共通鍵",
+        "HMAC",
+        "デジタル署名",
+        "否認防止"
+      ]
+    },
+    {
+      "id": "security.registration_authority",
+      "domain": "SECURITY",
+      "term": "RA",
+      "full_name": "Registration Authority",
+      "japanese": "登録局",
+      "meaning": "公開鍵基盤で、証明書の発行申請者の本人確認を行い、申請の承認または却下を判断する機関。実際の証明書の発行・署名はCA（認証局）が行う。",
+      "exam_tip": "RAとCAの役割分担が問われる。本人確認と申請の承認がRA、鍵の管理と証明書の発行・失効がCA、証明書やCRLを公開するのがリポジトリ（VA／IA）。「本人確認を行い発行申請の承認・却下を行う」ならRA。",
+      "related": [
+        "security.pki",
+        "security.crl",
+        "security.ocsp",
+        "security.cps"
+      ],
+      "related_terms": [
+        "CA",
+        "リポジトリ",
+        "VA",
+        "本人確認",
+        "X.509"
+      ]
+    },
+    {
+      "id": "security.backscatter",
+      "domain": "SECURITY",
+      "term": "バックスキャッタ",
+      "full_name": "Backscatter",
+      "japanese": "バックスキャッタ",
+      "meaning": "送信元IPアドレスを偽装したサービス妨害攻撃の結果として、攻撃を受けたサーバから偽装された側（本来無関係な第三者）へ返る応答パケット。ダークネット観測で検出される。",
+      "exam_tip": "「送信元ポート80/tcp、宛先が未使用IPアドレスのSYN/ACKを大量に観測」＝ある80番のサーバ（IPアドレスA）へSYNフラッドが行われ、その応答が偽装元へ散っている状態。したがって推定できるのは『IPアドレスAを攻撃先とするサービス妨害攻撃』。観測側が攻撃されているのではない点が要点。",
+      "related": [
+        "security.drdos",
+        "security.ntp_reflection"
+      ],
+      "related_terms": [
+        "SYNフラッド",
+        "ダークネット",
+        "IPアドレス偽装",
+        "SYN/ACK"
+      ]
+    },
+    {
+      "id": "security.crl",
+      "domain": "SECURITY",
+      "term": "CRL",
+      "full_name": "Certificate Revocation List",
+      "japanese": "証明書失効リスト",
+      "meaning": "認証局が、有効期限内に失効させたデジタル証明書のシリアル番号と失効日時を列挙して公開するリスト。",
+      "exam_tip": "記載されるのは「有効期限内に失効した証明書のシリアル番号」。有効期限が切れただけの証明書は載らない（期限切れは検証側が判断できるため）。CRLは定期的に配布されるので反映に遅れが出る点が、オンラインで問い合わせるOCSPとの対比になる。",
+      "related": [
+        "security.ocsp",
+        "security.pki",
+        "security.registration_authority"
+      ],
+      "related_terms": [
+        "シリアル番号",
+        "失効",
+        "X.509",
+        "有効期限"
+      ]
+    },
+    {
+      "id": "security.ismap",
+      "domain": "SECURITY",
+      "term": "ISMAP",
+      "full_name": "Information system Security Management and Assessment Program",
+      "japanese": "政府情報システムのためのセキュリティ評価制度",
+      "meaning": "政府が求めるセキュリティ要求を満たしていると確認されたクラウドサービスをあらかじめ評価・登録し、政府機関の調達を円滑にする制度。",
+      "exam_tip": "ISMAP-LIU（Low-Impact Use）は、リスクの小さな業務・情報の処理に用いるSaaSを対象にした簡素な枠組みである点が問われる。IT製品を評価するJISEC、暗号アルゴリズムを評価するCRYPTREC、組織のマネジメントを認証するISMSと対象で区別する。",
+      "related": [
+        "security.jisec",
+        "security.casb"
+      ],
+      "related_terms": [
+        "ISMAP-LIU",
+        "クラウドサービスリスト",
+        "管理基準",
+        "SaaS"
+      ]
+    },
+    {
+      "id": "security.sim3",
+      "domain": "SECURITY",
+      "term": "SIM3",
+      "full_name": "Security Incident Management Maturity Model",
+      "japanese": "セキュリティインシデント管理成熟度モデル",
+      "meaning": "Open CSIRT Foundation が開発した、CSIRTなどのインシデント管理体制の成熟度を、組織・人材・ツール・プロセスの4分類のパラメータで評価するモデル。",
+      "exam_tip": "開発元（Open CSIRT Foundation）と目的（インシデント管理の成熟度評価）で識別する。プロセス成熟度一般を測るCMMI、セキュリティ管理策の規格であるISO/IEC 27001、脅威分類のATT&CKと混同しない。",
+      "related": [
+        "security.csirt",
+        "pm.cmmi"
+      ],
+      "related_terms": [
+        "Open CSIRT Foundation",
+        "CSIRT",
+        "成熟度",
+        "パラメータ"
+      ]
+    },
+    {
+      "id": "security.cwe",
+      "domain": "SECURITY",
+      "term": "CWE",
+      "full_name": "Common Weakness Enumeration",
+      "japanese": "共通脆弱性タイプ一覧",
+      "meaning": "ソフトウェアやハードウェアの脆弱性の「種類」を体系的に分類した一覧。JVNなどの脆弱性対策ポータルで、個々の脆弱性がどの種類に当たるかを示すために使われる。",
+      "exam_tip": "MITRE系の識別子を役割で区別する。CVEは個別の脆弱性の識別子、CWEはその種類の分類、CVSSは深刻度の評価尺度、CCEはセキュリティ設定項目の識別子、CPEは製品名の識別子。",
+      "related": [
+        "security.cvss",
+        "security.mitre_attack",
+        "security.vulnerability_management"
+      ],
+      "related_terms": [
+        "CVE",
+        "CVSS",
+        "JVN",
+        "CCE",
+        "CPE"
+      ]
+    },
+    {
+      "id": "security.fips140",
+      "domain": "SECURITY",
+      "term": "FIPS PUB 140-3",
+      "full_name": "Security Requirements for Cryptographic Modules",
+      "japanese": "暗号モジュールのセキュリティ要求事項",
+      "meaning": "暗号処理を行うハードウェア／ソフトウェアモジュールが満たすべきセキュリティ要求を定めた米国連邦標準。セキュリティレベル1〜4があり、物理的な耐タンパ性なども規定する。",
+      "exam_tip": "「暗号アルゴリズムそのもの」ではなく「暗号モジュール（実装）」の要求事項である点が要点。アルゴリズムを定めるのはFIPS PUB 197（AES）やFIPS PUB 180（SHA）。製品全般のセキュリティ評価はISO/IEC 15408。",
+      "related": [
+        "security.aes",
+        "security.jisec",
+        "security.side_channel"
+      ],
+      "related_terms": [
+        "暗号モジュール",
+        "セキュリティレベル",
+        "耐タンパ性",
+        "NIST"
+      ]
+    },
+    {
+      "id": "security.enhanced_open",
+      "domain": "SECURITY",
+      "term": "Enhanced Open",
+      "full_name": "Wi-Fi CERTIFIED Enhanced Open (OWE)",
+      "japanese": "拡張オープン",
+      "meaning": "Wi-Fi Allianceが規定した、公衆無線LANなどのパスワードなし接続でも端末とアクセスポイント間の通信を暗号化できる仕様。日和見無線暗号化（OWE）を用いる。",
+      "exam_tip": "「パスワードの入力なしに通信の暗号化を可能にする」が要点。認証を行うものではないので、なりすましアクセスポイント対策にはならない。WPA3-Personal（SAEによるパスワード認証）とは目的が違う。",
+      "related": [
+        "security.ieee8021x"
+      ],
+      "related_terms": [
+        "OWE",
+        "Wi-Fi Alliance",
+        "WPA3",
+        "公衆無線LAN"
+      ]
+    },
+    {
+      "id": "security.hsts",
+      "domain": "SECURITY",
+      "term": "HSTS",
+      "full_name": "HTTP Strict Transport Security",
+      "japanese": "HTTP厳格転送セキュリティ",
+      "meaning": "Webサーバが応答ヘッダーで指定することで、以降の指定期間、そのサイトへは必ずHTTPSで接続するようWebブラウザに強制する仕組み。",
+      "exam_tip": "「以降の指定された期間、そのサイトへは全てHTTPSで接続する」が動作。初回アクセスがHTTPだと保護されない（プリロードリストで補う）点も要点。中間者によるHTTPへのダウングレード攻撃（SSLストリップ）への対策。",
+      "related": [
+        "security.tls",
+        "security.clickjacking",
+        "architecture.http_status"
+      ],
+      "related_terms": [
+        "Strict-Transport-Security",
+        "max-age",
+        "プリロード",
+        "SSLストリップ"
+      ]
+    },
+    {
+      "id": "security.dns_caa",
+      "domain": "SECURITY",
+      "term": "DNS CAAレコード",
+      "full_name": "Certification Authority Authorization",
+      "japanese": "認証局認可レコード",
+      "meaning": "そのドメインのサーバ証明書を発行してよい認証局をDNSレコードで宣言する仕組み。認証局は発行前にCAAを確認し、許可されていなければ発行しない。",
+      "exam_tip": "効果は「不正なサーバ証明書の発行を防ぐ」こと。すでに発行された証明書の失効確認（CRL／OCSP）や、通信の暗号化とは目的が違う。DNSSEC（DNS応答の改ざん検知）とも別物。",
+      "related": [
+        "security.pki",
+        "security.crl",
+        "security.dns_cache_poisoning"
+      ],
+      "related_terms": [
+        "認証局",
+        "サーバ証明書",
+        "DNSSEC",
+        "誤発行"
+      ]
+    },
+    {
+      "id": "security.mail_encryption",
+      "domain": "SECURITY",
+      "term": "メールの暗号化方式",
+      "full_name": "PGP / S/MIME / SMTP over TLS",
+      "japanese": "メールの暗号化方式",
+      "meaning": "PGPとS/MIMEはメール本文を利用者単位で暗号化・署名する方式（エンドツーエンド）、SMTP over TLSはメールサーバ間の通信路を暗号化する方式。",
+      "exam_tip": "公開鍵を用意する単位が問われる。PGPとS/MIMEはメールアドレスごと、SMTP over TLSはメールサーバごと。PGPは利用者同士の信頼の輪、S/MIMEは認証局による証明書、という信頼モデルの違いも出る。SMTP over TLSは経路だけなのでサーバ内では平文である点が要点。",
+      "related": [
+        "security.pki",
+        "security.tls",
+        "security.submission_port"
+      ],
+      "related_terms": [
+        "PGP",
+        "S/MIME",
+        "SMTP over TLS",
+        "信頼の輪",
+        "エンドツーエンド暗号化"
+      ]
+    },
+    {
+      "id": "security.sbom",
+      "domain": "SECURITY",
+      "term": "SBOM",
+      "full_name": "Software Bill of Materials",
+      "japanese": "ソフトウェア部品表",
+      "meaning": "ソフトウェアを構成するコンポーネント（ライブラリ、パッケージ）とそのバージョン、互いの依存関係を機械可読な形で列挙したリスト。",
+      "exam_tip": "用途は脆弱性管理。新しい脆弱性が公表されたとき、影響を受ける製品を即座に特定できる。フォーマットはSPDXやCycloneDX。ソースコードそのものや、設計書ではない点に注意。",
+      "related": [
+        "security.vulnerability_management",
+        "security.cwe"
+      ],
+      "related_terms": [
+        "SPDX",
+        "CycloneDX",
+        "サプライチェーン",
+        "依存関係",
+        "OSS"
+      ]
+    },
+    {
+      "id": "architecture.tcp",
+      "domain": "ARCHITECTURE",
+      "term": "TCP",
+      "full_name": "Transmission Control Protocol",
+      "japanese": "伝送制御プロトコル",
+      "meaning": "コネクション型で、順序制御・再送制御・フロー制御により信頼性のある通信を提供するトランスポート層のプロトコル。",
+      "exam_tip": "TCPヘッダーに含まれるのは送信元／宛先ポート番号、シーケンス番号、確認応答番号、ウィンドウサイズ、制御フラグなど。IPアドレスはIPヘッダー、MACアドレスはイーサネットヘッダーに入る、という階層ごとの持ち物の切り分けが問われる。",
+      "related": [
+        "architecture.udp",
+        "security.backscatter",
+        "architecture.icmp"
+      ],
+      "related_terms": [
+        "ポート番号",
+        "シーケンス番号",
+        "3ウェイハンドシェイク",
+        "ウィンドウサイズ"
+      ]
+    },
+    {
+      "id": "architecture.cache_control",
+      "domain": "ARCHITECTURE",
+      "term": "Cache-Controlヘッダー",
+      "full_name": "HTTP Cache-Control",
+      "japanese": "HTTPキャッシュ制御",
+      "meaning": "HTTPの応答や要求に付けて、キャッシュの可否と条件を指示するヘッダー。no-store は保存そのものを禁じ、no-cache は保存はするが再検証なしに使うことを禁じる。",
+      "exam_tip": "「ブラウザやプロキシのキャッシュに保持させない」のは no-store。no-cache は名前に反して保存はする（毎回サーバへ確認する）点が定番のひっかけ。private は共有キャッシュへの保存を禁じ、ブラウザ内は許す。",
+      "related": [
+        "architecture.http_status",
+        "security.hsts",
+        "architecture.cache_aside"
+      ],
+      "related_terms": [
+        "no-store",
+        "no-cache",
+        "private",
+        "max-age",
+        "Expires"
+      ]
+    },
+    {
+      "id": "architecture.sql_null",
+      "domain": "ARCHITECTURE",
+      "term": "SQLの検索条件とNULL",
+      "full_name": "SQL Predicates and NULL",
+      "japanese": "SQLの検索条件とNULL",
+      "meaning": "SQLの比較演算はNULLに対して真とも偽ともならず「不明」を返すため、NULLを含む行はWHERE句の条件を満たさない。NULLの判定には IS NULL／IS NOT NULL を使う。",
+      "exam_tip": "NULLを含む列を「= 値」や「<> 値」で比較しても該当行は返らない、という点が結果を狂わせる。NOT IN の副問合せにNULLが混じると全体が一致しなくなる挙動も頻出。COUNT(列名) はNULLを数えないが COUNT(*) は数える。",
+      "related": [
+        "architecture.natural_join",
+        "architecture.foreign_key"
+      ],
+      "related_terms": [
+        "IS NULL",
+        "三値論理",
+        "NOT IN",
+        "COUNT",
+        "主キー"
+      ]
+    },
+    {
+      "id": "architecture.walkthrough",
+      "domain": "ARCHITECTURE",
+      "term": "ウォークスルー",
+      "full_name": "Walkthrough",
+      "japanese": "ウォークスルー",
+      "meaning": "仕様書やソースコードについて、作成者を含む複数人が集まり、記述された振る舞いを机上でシミュレートしながら問題点を見つけるレビュー技法。",
+      "exam_tip": "レビュー技法の識別が問われる。作成者が主導し非公式に行うのがウォークスルー、第三者のモデレータが主導し記録・追跡まで行う公式な手続がインスペクション、持ち回りで回覧するのがラウンドロビン。実行して調べるのはテストであってレビューではない。",
+      "related": [
+        "architecture.static_analysis",
+        "architecture.assertion_check"
+      ],
+      "related_terms": [
+        "インスペクション",
+        "モデレータ",
+        "机上デバッグ",
+        "ピアレビュー"
+      ]
+    },
+    {
+      "id": "architecture.formal_method",
+      "domain": "ARCHITECTURE",
+      "term": "形式手法",
+      "full_name": "Formal Methods",
+      "japanese": "形式手法",
+      "meaning": "明確で厳密な意味を定義できる言語（形式仕様記述言語）で仕様を記述し、満たすべき性質と仕様が整合しているかを数学的・論理的に検証する手法。",
+      "exam_tip": "「厳密な意味を持つ言語で仕様を書き、性質との整合を論理的に検証する」が定義。テストのように実行して確かめるのではない点が要点。VDM、Z記法、Alloy、モデル検査が該当する。",
+      "related": [
+        "architecture.assertion_check",
+        "architecture.static_analysis"
+      ],
+      "related_terms": [
+        "形式仕様記述言語",
+        "モデル検査",
+        "VDM",
+        "Z記法",
+        "定理証明"
+      ]
+    },
+    {
+      "id": "security.pass_the_hash",
+      "domain": "SECURITY",
+      "term": "Pass the Hash攻撃",
+      "full_name": "Pass the Hash Attack",
+      "japanese": "ハッシュ渡し攻撃",
+      "meaning": "侵入した端末のメモリなどから窃取したパスワードのハッシュ値を、そのまま認証に使ってほかのホストへログインする攻撃。平文パスワードを復元する必要がない。",
+      "exam_tip": "「ハッシュ値だけでログインできる仕組みを悪用する」が定義。ハッシュを総当たりで解読するオフライン攻撃や、盗んだ認証チケットを使うPass the Ticketとは別。横展開（ラテラルムーブメント）の代表的手口で、対策は特権アカウントの使い回しをやめること。",
+      "related": [
+        "security.least_privilege",
+        "security.mfa"
+      ],
+      "related_terms": [
+        "ラテラルムーブメント",
+        "NTLM",
+        "Pass the Ticket",
+        "資格情報の窃取"
+      ]
+    },
+    {
+      "id": "security.model_inversion",
+      "domain": "SECURITY",
+      "term": "モデルインバージョン攻撃",
+      "full_name": "Model Inversion Attack",
+      "japanese": "モデル逆転攻撃",
+      "meaning": "AIモデルへ入力を調整しながら出力を繰り返し取得し、その結果を解析して学習に用いた元のデータを推測する攻撃。",
+      "exam_tip": "AIへの攻撃の分類問題で出る。学習データを推測するのがモデルインバージョン、モデル自体を複製するのがモデル抽出、推論時に入力へノイズを混ぜて誤らせるのが敵対的サンプル、学習データを汚染するのがデータポイズニング。",
+      "related": [
+        "security.adversarial_examples"
+      ],
+      "related_terms": [
+        "モデル抽出",
+        "メンバーシップ推論",
+        "学習データ",
+        "差分プライバシー"
+      ]
+    },
+    {
+      "id": "security.xml_signature",
+      "domain": "SECURITY",
+      "term": "XMLデジタル署名",
+      "full_name": "XML Signature",
+      "japanese": "XML署名",
+      "meaning": "XML文書やその一部（エレメント）に対してデジタル署名を行う仕様。署名の形態にエンベロープ署名、エンベローピング署名、デタッチ署名の3種類がある。",
+      "exam_tip": "文書の一部だけを対象にできる点と、デタッチ署名（署名対象と署名を分離した形式）を同じXML文書内に含められる点が特徴。文書全体しか対象にできない一般のデジタル署名との違いで問われる。SAMLアサーションの保護にも使われる。",
+      "related": [
+        "security.saml",
+        "security.e_seal",
+        "security.mac"
+      ],
+      "related_terms": [
+        "エンベロープ署名",
+        "デタッチ署名",
+        "正規化",
+        "W3C"
+      ]
+    },
+    {
+      "id": "security.domain_fronting",
+      "domain": "SECURITY",
+      "term": "ドメインフロンティング",
+      "full_name": "Domain Fronting",
+      "japanese": "ドメインフロンティング",
+      "meaning": "TLSのSNIやDNSでは正規のCDNドメインを示しつつ、暗号化されたHTTPヘッダーのHostでは別の宛先を指定することで、実際の通信先を隠す手法。マルウェアのC2通信の隠蔽に悪用される。",
+      "exam_tip": "「CDNの機能を悪用して実際の通信先を隠蔽し、攻撃者のサーバへ接続する」が該当例。境界での宛先ドメインによるフィルタリングを回避される点が問題。ドメイン名を頻繁に生成するDGAや、DNSトンネリングとは手口が違う。",
+      "related": [
+        "security.connect_back",
+        "security.ioc"
+      ],
+      "related_terms": [
+        "CDN",
+        "SNI",
+        "C2サーバ",
+        "通信の隠蔽"
+      ]
+    },
+    {
+      "id": "security.one_time_pad",
+      "domain": "SECURITY",
+      "term": "ワンタイムパッド",
+      "full_name": "One-Time Pad",
+      "japanese": "使い捨てパッド",
+      "meaning": "平文と同じ長さの真の乱数鍵を1回だけ使って排他的論理和を取る暗号方式。鍵が真にランダムで再利用されなければ、計算能力に関係なく解読不能（情報理論的安全性）。",
+      "exam_tip": "「情報理論的安全性」を持つ唯一の実用的な方式として問われる。AESやRSAは計算量的安全性（現実的な時間で解けないだけ）に基づく。鍵の長さと配送が実用上の障壁で、量子鍵配送はこの鍵共有を解決しようとする技術。",
+      "related": [
+        "security.quantum_cryptography",
+        "security.aes",
+        "security.pqc"
+      ],
+      "related_terms": [
+        "情報理論的安全性",
+        "計算量的安全性",
+        "排他的論理和",
+        "バーナム暗号"
+      ]
+    },
+    {
+      "id": "security.biometrics",
+      "domain": "SECURITY",
+      "term": "生体認証",
+      "full_name": "Biometrics",
+      "japanese": "生体認証",
+      "meaning": "指紋、虹彩、静脈、顔などの身体的特徴や、署名の筆跡などの行動的特徴で本人を識別する認証方式。",
+      "exam_tip": "特徴ごとの性質が問われる。成人の虹彩パターンは経年変化がほとんどないためテンプレートの更新が不要。本人拒否率（FRR）と他人受入率（FAR）はしきい値によりトレードオフの関係にあり、両者が等しくなる点がEER。生体情報は変更できないため漏えい時の影響が大きい。",
+      "related": [
+        "security.mfa",
+        "security.passkey",
+        "security.identity_proofing"
+      ],
+      "related_terms": [
+        "本人拒否率",
+        "他人受入率",
+        "EER",
+        "テンプレート",
+        "虹彩認証"
+      ]
+    },
+    {
+      "id": "security.identity_proofing",
+      "domain": "SECURITY",
+      "term": "Identity Proofing",
+      "full_name": "Identity Proofing",
+      "japanese": "身元確認",
+      "meaning": "システムに利用者を登録する際に、その人物が実在し申告どおりの人物であることを、写真付き身分証などで確認すること。NIST SP 800-63-3 が保証レベル（IAL）を定める。",
+      "exam_tip": "身元確認（Identity Proofing／IAL）と、当人認証（Authentication／AAL）の区別が要点。登録時に本人であることを確かめるのが身元確認、利用時に登録済みの本人であることを確かめるのが当人認証。フェデレーションの保証レベルはFAL。",
+      "related": [
+        "security.biometrics",
+        "security.mfa",
+        "security.sso"
+      ],
+      "related_terms": [
+        "IAL",
+        "AAL",
+        "FAL",
+        "NIST SP 800-63",
+        "本人確認"
+      ]
+    },
+    {
+      "id": "security.psirt",
+      "domain": "SECURITY",
+      "term": "PSIRT",
+      "full_name": "Product Security Incident Response Team",
+      "japanese": "製品セキュリティインシデント対応チーム",
+      "meaning": "自社が提供する製品やサービスの脆弱性を受け付け、調査し、修正や公表の調整を行う組織。",
+      "exam_tip": "社内組織の役割分担が問われる。自社製品の脆弱性はPSIRT、自組織へのインシデントはCSIRT、常時監視と検知はSOC、ドメイン登録情報の技術連絡担当はWHOISの窓口。「自社製品の脆弱性に起因するリスク」ならPSIRT。",
+      "related": [
+        "security.csirt",
+        "security.soc",
+        "security.vulnerability_management"
+      ],
+      "related_terms": [
+        "CSIRT",
+        "SOC",
+        "脆弱性情報",
+        "調整",
+        "製品セキュリティ"
+      ]
+    },
+    {
+      "id": "security.ueba",
+      "domain": "SECURITY",
+      "term": "UEBA",
+      "full_name": "User and Entity Behavior Analytics",
+      "japanese": "利用者・機器の振る舞い分析",
+      "meaning": "利用者や機器の平常時の行動をモデル化し、そこから外れた異常な振る舞いを検知する仕組み。内部不正やアカウント乗っ取りの発見に使う。",
+      "exam_tip": "「利用者や機器の異常な振る舞いを検知する」が機能。既知のパターンと照合するシグネチャ型検知と対比される。SIEMに組み込まれることが多く、検知後の対応自動化はSOARが担う、という役割の連なりで覚える。",
+      "related": [
+        "security.siem",
+        "security.soar",
+        "security.ips"
+      ],
+      "related_terms": [
+        "ベースライン",
+        "異常検知",
+        "内部不正",
+        "アカウント乗っ取り"
+      ]
+    },
+    {
+      "id": "security.cspm",
+      "domain": "SECURITY",
+      "term": "CSPM",
+      "full_name": "Cloud Security Posture Management",
+      "japanese": "クラウドセキュリティ設定管理",
+      "meaning": "クラウドサービスの設定を継続的に監視し、公開設定の誤りや権限の過剰付与など不適切な設定を検知して是正を促す仕組み。",
+      "exam_tip": "CASB（利用者側から利用状況を可視化・制御する）との違いが要点。CSPMはクラウド基盤の「設定」そのものを見る。ワークロード内部を守るのはCWPP。クラウドの設定ミスは責任共有モデルで利用者側の責任である点と結びつく。",
+      "related": [
+        "security.casb",
+        "security.zero_trust"
+      ],
+      "related_terms": [
+        "設定ミス",
+        "責任共有モデル",
+        "CWPP",
+        "IaaS"
+      ]
+    },
+    {
+      "id": "architecture.ajax",
+      "domain": "ARCHITECTURE",
+      "term": "Ajax",
+      "full_name": "Asynchronous JavaScript + XML",
+      "japanese": "非同期通信技術",
+      "meaning": "JavaScriptからサーバへ非同期に通信し、ページ全体を再読み込みせずに画面の一部だけを更新する技術。地図のスクロールや検索候補の逐次表示に使われる。",
+      "exam_tip": "「非同期通信でページ全体を再読み込みしない」が要点。XMLHttpRequestやFetch APIが実現手段。CSSは見た目、CGIはサーバ側での処理、Cookieは状態の保持と、役割で選び分ける。",
+      "related": [
+        "architecture.http_status",
+        "architecture.cache_control"
+      ],
+      "related_terms": [
+        "XMLHttpRequest",
+        "Fetch API",
+        "非同期",
+        "SPA",
+        "JSON"
+      ]
+    },
+    {
+      "id": "architecture.ospf",
+      "domain": "ARCHITECTURE",
+      "term": "OSPF",
+      "full_name": "Open Shortest Path First",
+      "japanese": "最短経路優先プロトコル",
+      "meaning": "リンク状態（各ルータが把握した回線の状態）をエリア内の全ルータで共有してデータベースを作り、ダイクストラ法で最短経路を計算するリンクステート型のルーティングプロトコル。",
+      "exam_tip": "RIP-2との比較が定番。OSPFだけの特徴はリンク状態データベースを持つこと、コストを帯域から算出すること、エリアによる階層化ができること、ホップ数の上限（RIPは15）が無いこと。RIPは距離ベクトル型で定期的に経路表全体を広告する。",
+      "related": [
+        "architecture.layer2_switch",
+        "architecture.spanning_tree"
+      ],
+      "related_terms": [
+        "RIP",
+        "リンクステート",
+        "距離ベクトル",
+        "ダイクストラ法",
+        "エリア"
+      ]
+    },
+    {
+      "id": "architecture.commit_timing",
+      "domain": "ARCHITECTURE",
+      "term": "コミットのタイミング",
+      "full_name": "Commit Timing / WAL",
+      "japanese": "コミット完了の時点",
+      "meaning": "DBMSはコミット情報をログファイルへ書き込み終えた時点でコミット完了とする。データベース本体への反映は後から行ってよい（ログ先行書出し／WAL）。",
+      "exam_tip": "「ログファイルへのコミット情報の書込み完了時点」が答え。データベースファイルへの書込み完了やバッファへの反映ではない。障害時はログからロールフォワード／ロールバックできるため、ログさえ確定していれば耐久性（Durability）が保証される、という理屈で覚える。",
+      "related": [
+        "architecture.isolation_level",
+        "architecture.backup_recovery",
+        "architecture.deadlock"
+      ],
+      "related_terms": [
+        "WAL",
+        "ログ先行書出し",
+        "チェックポイント",
+        "ACID",
+        "耐久性"
+      ]
+    },
+    {
+      "id": "architecture.integration_test",
+      "domain": "ARCHITECTURE",
+      "term": "結合テストの方式",
+      "full_name": "Integration Test Strategy",
+      "japanese": "結合テストの方式",
+      "meaning": "モジュールを組み合わせて検証する方式。上位から順に組み合わせスタブで下位を代用するトップダウンテスト、下位から組み合わせドライバで上位を代用するボトムアップテスト、両者を併用するサンドイッチテストがある。",
+      "exam_tip": "どちらが使えるかは「どの層が先に完成しているか」で決まる。上位（アプリケーション層・ミドルウェア層）が終わり下位（デバイスドライバ層）が未完成なら、スタブで下位を代用するトップダウンテスト。逆なら、ドライバで上位を代用するボトムアップテスト。",
+      "related": [
+        "architecture.acceptance_test",
+        "architecture.tdd"
+      ],
+      "related_terms": [
+        "スタブ",
+        "ドライバ",
+        "ボトムアップテスト",
+        "ビッグバンテスト"
+      ]
+    },
+    {
+      "id": "strategy.software_copyright",
+      "domain": "STRATEGY",
+      "term": "請負開発と著作権の帰属",
+      "full_name": "Copyright in Contract Development",
+      "japanese": "請負開発における著作権の帰属",
+      "meaning": "請負契約で開発されたソフトウェアの著作権は、契約に別段の定めがない限り、実際に創作した側（請負人）に原始的に帰属する。注文者へ移転させたい場合は契約で定める必要がある。",
+      "exam_tip": "「取決めがない場合」の帰属先を問う形で出る。代金を支払っても自動的には移転しない点が要点。職務著作（法人が著作者になる）は同一法人内の話であり、発注者と受注者の関係には及ばない。",
+      "related": [
+        "strategy.work_for_hire",
+        "strategy.ai_contract_guideline",
+        "pm.cost_reimbursable"
+      ],
+      "related_terms": [
+        "請負契約",
+        "著作権の移転",
+        "原始的帰属",
+        "利用許諾"
+      ]
+    },
+    {
+      "id": "architecture.service_availability",
+      "domain": "ARCHITECTURE",
+      "term": "サービス可用性",
+      "full_name": "Service Availability",
+      "japanese": "サービス可用性",
+      "meaning": "サービス提供時間のうち、実際に利用できた時間の割合。可用性＝(合意されたサービス提供時間−停止時間)÷合意されたサービス提供時間。",
+      "exam_tip": "計算の分母を取り違えないことが要点。サービス提供時間帯の外は分母に入らず、あらかじめ合意された計画停止（バージョンアップ作業など）は分母から除く旨の指定があれば従う。MTBF／(MTBF＋MTTR) で表す稼働率とは前提が違う。",
+      "related": [
+        "architecture.availability",
+        "architecture.rto",
+        "architecture.jis_q20000"
+      ],
+      "related_terms": [
+        "SLA",
+        "計画停止",
+        "MTBF",
+        "MTTR",
+        "サービス提供時間"
+      ]
+    },
+    {
+      "id": "security.drdos",
+      "domain": "SECURITY",
+      "term": "DRDoS攻撃",
+      "full_name": "Distributed Reflection Denial of Service",
+      "japanese": "分散反射型サービス妨害攻撃",
+      "meaning": "送信元IPアドレスを標的に偽装したリクエストを多数の公開サーバへ送り、それらの応答パケットを標的へ集中させてリソースを枯渇させる攻撃。応答が要求より大きいプロトコルを選ぶと増幅効果も得られる。",
+      "exam_tip": "「送信元を標的に偽装」＋「多数のサーバの応答で標的を妨害」が定義。DNS（オープンリゾルバ）、NTP（monlist）、memcached、ICMP（Smurf）が悪用される。マルウェアに感染した多数の端末から直接攻撃するDDoSとは、踏み台が正規サーバである点が違う。",
+      "related": [
+        "security.open_resolver",
+        "security.ntp_reflection",
+        "security.smurf",
+        "security.mirai"
+      ],
+      "related_terms": [
+        "リフレクション",
+        "増幅率",
+        "IPアドレス偽装",
+        "DDoS"
+      ]
+    },
+    {
+      "id": "security.sha",
+      "domain": "SECURITY",
+      "term": "SHA-2",
+      "full_name": "Secure Hash Algorithm 2",
+      "japanese": "セキュアハッシュアルゴリズム",
+      "meaning": "任意長の入力から固定長のハッシュ値を求める一方向関数の規格群。SHA-224／256／384／512 などがあり、SHA-512/256 は SHA-512 の計算結果を256ビットに切り詰めて出力する（初期値も専用のものを使う）。",
+      "exam_tip": "SHA-512/256 の「/256」は出力長を表し、2回適用や2分割ではない点が問われる。ハッシュ関数の性質（衝突困難性、原像計算困難性、一方向性）と、改ざん検知には使えるが暗号化ではないことも要点。",
+      "related": [
+        "security.mac",
+        "security.aes",
+        "security.pass_the_hash"
+      ],
+      "related_terms": [
+        "ハッシュ値",
+        "衝突困難性",
+        "一方向性",
+        "SHA-3",
+        "MD5"
+      ]
+    },
+    {
+      "id": "security.dns_cache_poisoning",
+      "domain": "SECURITY",
+      "term": "DNSキャッシュポイズニング",
+      "full_name": "DNS Cache Poisoning / Kaminsky Attack",
+      "japanese": "DNSキャッシュ汚染",
+      "meaning": "DNSキャッシュサーバへ偽の応答を先に届けて誤った名前解決結果をキャッシュさせる攻撃。カミンスキー攻撃は存在しないサブドメインを大量に問い合わせて偽装の成功確率を上げる手法。",
+      "exam_tip": "対策は、問合せ時の送信元ポート番号をランダム化して攻撃者が当てにくくすること（ソースポートランダマイゼーション）と、応答に署名を付けるDNSSEC。オープンリゾルバ対策（再帰問合せの制限）はDDoSの踏み台化を防ぐもので、目的が違う。",
+      "related": [
+        "security.open_resolver",
+        "security.dns_caa"
+      ],
+      "related_terms": [
+        "カミンスキー攻撃",
+        "ソースポートランダマイゼーション",
+        "DNSSEC",
+        "トランザクションID"
+      ]
+    },
+    {
+      "id": "security.cryptojacking",
+      "domain": "SECURITY",
+      "term": "クリプトジャッキング",
+      "full_name": "Cryptojacking",
+      "japanese": "クリプトジャッキング",
+      "meaning": "他人のコンピュータへ不正に侵入したり、Webページにスクリプトを仕込んだりして、その計算資源を無断で暗号資産のマイニングに使う攻撃。",
+      "exam_tip": "「PCのリソースを利用して暗号資産のマイニングを行う」が該当。データを暗号化して身代金を要求するランサムウェア、暗号資産そのものを盗む攻撃と区別する。被害が電気代と性能低下として表れ、気づかれにくい点が特徴。",
+      "related": [
+        "security.mirai",
+        "security.connect_back"
+      ],
+      "related_terms": [
+        "マイニング",
+        "暗号資産",
+        "ランサムウェア",
+        "リソースの窃取"
+      ]
+    },
+    {
+      "id": "security.digital_certificate",
+      "domain": "SECURITY",
+      "term": "デジタル証明書",
+      "full_name": "Digital Certificate",
+      "japanese": "デジタル証明書",
+      "meaning": "公開鍵とその持ち主の情報を認証局が署名して結び付けた電子的な証明書。X.509 の形式が広く使われる。",
+      "exam_tip": "TLSでは、サーバ証明書によって通信相手の認証と鍵交換（またはそのための公開鍵の受渡し）が行われる。証明書に含まれるのは公開鍵であって秘密鍵ではない点、失効確認はCRLかOCSPで行う点、有効期限があり期限切れは失効とは別である点が頻出。",
+      "related": [
+        "security.pki",
+        "security.crl",
+        "security.ocsp",
+        "security.code_signing"
+      ],
+      "related_terms": [
+        "X.509",
+        "サーバ証明書",
+        "公開鍵",
+        "認証局",
+        "TLS"
+      ]
+    },
+    {
+      "id": "security.mirai",
+      "domain": "SECURITY",
+      "term": "Mirai",
+      "full_name": "Mirai",
+      "japanese": "Mirai",
+      "meaning": "IoT機器の既定の認証情報を狙って感染を広げ、C&Cサーバの指令に従って大規模なDDoS攻撃を行うマルウェア。ランダムな宛先IPアドレスへ探索を仕掛けて拡大する。",
+      "exam_tip": "「ランダムな宛先IPアドレスでIoT機器へ感染を広げ、C&Cサーバの指令でDDoSを行う」が動作。感染経路が既定のIDとパスワードである点が要点で、対策は初期パスワードの変更と不要なポートの閉塞。ボットネットの代表例。",
+      "related": [
+        "security.drdos",
+        "security.connect_back",
+        "security.ioc"
+      ],
+      "related_terms": [
+        "IoT",
+        "ボットネット",
+        "C&Cサーバ",
+        "既定パスワード",
+        "DDoS"
+      ]
+    },
+    {
+      "id": "security.connect_back",
+      "domain": "SECURITY",
+      "term": "コネクトバック",
+      "full_name": "Connect Back / Reverse Shell",
+      "japanese": "コネクトバック通信",
+      "meaning": "侵害した内部システムの側から攻撃者のサーバへ向けて通信を開始する手法。外向き通信は許可されていることが多いため、境界のファイアウォールを回避できる。",
+      "exam_tip": "「侵害したシステムから攻撃者のサーバへ通信を開始する」が定義。外部から内部への接続を防ぐ従来の境界防御では止められない点が要点。対策は外向き通信の監視と制限（プロキシ経由の強制、宛先の許可リスト）。ドメインフロンティングと組み合わせて隠蔽される。",
+      "related": [
+        "security.domain_fronting",
+        "security.mirai",
+        "security.ioc"
+      ],
+      "related_terms": [
+        "リバースシェル",
+        "C&Cサーバ",
+        "外向き通信",
+        "ファイアウォール回避"
+      ]
+    },
+    {
+      "id": "security.risk_identification_iso",
+      "domain": "SECURITY",
+      "term": "リスク特定",
+      "full_name": "Risk Identification (JIS Q 27000)",
+      "japanese": "リスク特定",
+      "meaning": "リスクを発見し、認識し、記述するプロセス。リスク源、事象、それらの原因および起こり得る結果の特定を含む。",
+      "exam_tip": "JIS Q 27000 の用語定義をそのまま問う形で出る。リスク特定（見つけて記述する）→リスク分析（性質を理解し大きさを決める）→リスク評価（基準と比較して対応の要否を決める）＝リスクアセスメント、その後にリスク対応（リスクを修正するプロセス）、という順序で整理する。",
+      "related": [
+        "security.risk_treatment",
+        "audit.risk_approach",
+        "pm.risk_identification"
+      ],
+      "related_terms": [
+        "リスクアセスメント",
+        "リスク源",
+        "リスク分析",
+        "リスク評価",
+        "JIS Q 27000"
+      ]
+    },
+    {
+      "id": "security.ioc",
+      "domain": "SECURITY",
+      "term": "IoC",
+      "full_name": "Indicator of Compromise",
+      "japanese": "侵害指標",
+      "meaning": "侵害が起きたことを示す痕跡。C&Cサーバとの通信履歴、特定のハッシュ値を持つファイル、不審なレジストリ変更、既知の悪性IPアドレスなどが該当する。",
+      "exam_tip": "「侵害の痕跡」であって、脆弱性そのものや攻撃の手口の分類ではない点が要点。ログに残ったC&Cサーバとの通信履歴が典型例。脆弱性の識別子はCVE、手口の分類はATT&CK、深刻度はCVSS。IoCは他組織と共有して検知に活用する（脅威インテリジェンス）。",
+      "related": [
+        "security.mitre_attack",
+        "security.soar",
+        "security.digital_forensics",
+        "security.connect_back"
+      ],
+      "related_terms": [
+        "脅威インテリジェンス",
+        "C&Cサーバ",
+        "ハッシュ値",
+        "STIX",
+        "TAXII"
+      ]
+    },
+    {
+      "id": "security.side_channel",
+      "domain": "SECURITY",
+      "term": "サイドチャネル攻撃",
+      "full_name": "Side-Channel Attack",
+      "japanese": "サイドチャネル攻撃",
+      "meaning": "暗号アルゴリズムそのものではなく、実装が漏らす物理的な情報（処理時間、消費電力、電磁波、音、キャッシュの挙動）から秘密情報を推定する攻撃。",
+      "exam_tip": "タイミング攻撃の対策は「秘密情報の値によって処理時間が変わらないようにする」こと（定時間実装）。鍵長を伸ばす、アルゴリズムを変える、といった対策では防げない点が要点。電力解析にはノイズの付加やマスキングで対処する。",
+      "related": [
+        "security.fips140",
+        "security.aes"
+      ],
+      "related_terms": [
+        "タイミング攻撃",
+        "電力解析",
+        "定時間実装",
+        "耐タンパ性"
+      ]
+    },
+    {
+      "id": "security.op25b",
+      "domain": "SECURITY",
+      "term": "OP25B",
+      "full_name": "Outbound Port 25 Blocking",
+      "japanese": "送信ポート25番ブロッキング",
+      "meaning": "ISPが、自ネットワーク内の動的IPアドレスの端末から外部のメールサーバの25番ポートへ直接送信することを遮断する迷惑メール対策。",
+      "exam_tip": "目的は「ISP管理下のネットワークから管理外のネットワークへ送信されるスパムメールを制限する」こと。外向きの制限であって、外部から受け取るメールを止めるものではない点が要点。正規の利用者はサブミッションポート（587番＋SMTP-AUTH）を使う。",
+      "related": [
+        "security.submission_port",
+        "security.spf_dmarc"
+      ],
+      "related_terms": [
+        "25番ポート",
+        "動的IPアドレス",
+        "SMTP-AUTH",
+        "587番",
+        "迷惑メール"
+      ]
+    },
+    {
+      "id": "architecture.spanning_tree",
+      "domain": "ARCHITECTURE",
+      "term": "スパニングツリープロトコル",
+      "full_name": "Spanning Tree Protocol (STP)",
+      "japanese": "スパニングツリープロトコル",
+      "meaning": "複数のブリッジ／スイッチがBPDUを交換して論理的なループを検出し、一部のポートを遮断して木構造を作る。障害時には遮断していた経路を有効にして迂回する。",
+      "exam_tip": "「ブリッジ間で情報を交換してループの検出と障害時の迂回ルート決定を行う」が機能。負荷分散や帯域の集約を目的とするリンクアグリゲーションとは違い、冗長経路は普段使わない。収束を速めたRSTPもある。",
+      "related": [
+        "architecture.layer2_switch",
+        "architecture.ospf"
+      ],
+      "related_terms": [
+        "BPDU",
+        "ルートブリッジ",
+        "ブロッキングポート",
+        "RSTP",
+        "ループ"
+      ]
+    },
+    {
+      "id": "architecture.http_method",
+      "domain": "ARCHITECTURE",
+      "term": "GETとPOST",
+      "full_name": "HTTP GET / POST",
+      "japanese": "HTTPメソッド",
+      "meaning": "GETはリクエスト行のURL（クエリ文字列）にデータを載せ、POSTはメッセージボディにデータを載せてサーバへ送るHTTPのメソッド。",
+      "exam_tip": "データの載る場所が問われる。GETはリクエスト行、POSTはメッセージボディ。GETはURLに残るためログやブラウザ履歴に記録され、長さの制限もあるので機密情報の送信に向かない。GETは安全（副作用を持たない）かつべき等であるべき、という設計上の約束も出る。",
+      "related": [
+        "architecture.http_status",
+        "architecture.cache_control",
+        "architecture.idempotency"
+      ],
+      "related_terms": [
+        "クエリ文字列",
+        "メッセージボディ",
+        "リクエスト行",
+        "べき等性"
+      ]
+    },
+    {
+      "id": "pm.kpt",
+      "domain": "PM",
+      "term": "KPT",
+      "full_name": "Keep, Problem, Try",
+      "japanese": "KPT法",
+      "meaning": "ふりかえり（レトロスペクティブ）の手法。続けたいこと（Keep）、問題だと感じること（Problem）、次に試すこと（Try）の3つの視点で整理する。",
+      "exam_tip": "3語の組合せをそのまま問う形で出る。Keep／Problem／Try であって、Plan や Check ではない（それはPDCA）。スクラムのスプリントレトロスペクティブで使われる代表的な手法。",
+      "related": [
+        "pm.scrum",
+        "pm.agile_manifesto"
+      ],
+      "related_terms": [
+        "レトロスペクティブ",
+        "ふりかえり",
+        "Keep",
+        "Problem",
+        "Try"
+      ]
+    },
+    {
+      "id": "audit.it_control_objective",
+      "domain": "AUDIT",
+      "term": "ITの統制目標",
+      "full_name": "IT Control Objectives",
+      "japanese": "ITの統制目標",
+      "meaning": "内部統制の実施基準で示される、組織目標を達成するためにITが満たすべき目標。有効性・効率性、準拠性、信頼性、機密性、可用性などが挙げられる。",
+      "exam_tip": "「記録した取引に漏れ、重複がないこと」は情報の正確性・網羅性を指すので信頼性に含まれる。機密性は許可された者だけがアクセスできること、可用性は必要なときに利用できること、準拠性は法令や社内規程に従っていること、と対応づける。",
+      "related": [
+        "audit.internal_control_report",
+        "audit.application_control",
+        "audit.it_general_control"
+      ],
+      "related_terms": [
+        "信頼性",
+        "機密性",
+        "可用性",
+        "準拠性",
+        "有効性・効率性"
+      ]
+    },
+    {
+      "id": "strategy.dfft",
+      "domain": "STRATEGY",
+      "term": "DFFT",
+      "full_name": "Data Free Flow with Trust",
+      "japanese": "信頼性のある自由なデータ流通",
+      "meaning": "プライバシー、セキュリティ、知的財産権への信頼を確保しながら、有益なデータが国境を越えて自由に流通することを目指すコンセプト。2019年のダボス会議で日本が提唱した。",
+      "exam_tip": "「信頼を確保しながら国境を意識せずデータが自由に流通する」が定義。データの越境移転を制限するデータローカライゼーションとは方向が逆。GDPRやデータポータビリティと並べて出題される。",
+      "related": [
+        "strategy.data_portability",
+        "strategy.api_economy"
+      ],
+      "related_terms": [
+        "ダボス会議",
+        "越境データ流通",
+        "GDPR",
+        "データローカライゼーション"
+      ]
+    },
+    {
+      "id": "strategy.regtech",
+      "domain": "STRATEGY",
+      "term": "レグテック",
+      "full_name": "RegTech (Regulatory Technology)",
+      "japanese": "規制対応技術",
+      "meaning": "金融業界を中心に、被規制事業者が各種規制に正しく対応できているかを確認する業務（コンプライアンス、報告、監視）を、最新のITで効率化する取組。",
+      "exam_tip": "規制する側ではなく「規制を守る側の業務」を効率化する点が要点。金融サービスそのものを革新するフィンテック、監督当局側の技術であるスプテック（SupTech）、保険分野のインシュアテックと区別する。",
+      "related": [
+        "strategy.embedded_finance",
+        "audit.internal_control_report"
+      ],
+      "related_terms": [
+        "フィンテック",
+        "コンプライアンス",
+        "SupTech",
+        "インシュアテック"
+      ]
+    },
+    {
+      "id": "strategy.embedded_finance",
+      "domain": "STRATEGY",
+      "term": "組み込み型金融",
+      "full_name": "Embedded Finance",
+      "japanese": "組込み型金融",
+      "meaning": "非金融事業者が、自社のサービスの中に決済・融資・保険などの金融機能を、利用者に意識させない形で組み込んで提供するビジネスモデル。",
+      "exam_tip": "「非金融事業者が」「顧客に意識させずに」金融サービスを提供する、の2点が要点。金融機関が自らアプリを提供する例や、単に決済代行を使う例とは区別される。APIエコノミーの上に成り立つ。",
+      "related": [
+        "strategy.api_economy",
+        "strategy.regtech",
+        "strategy.multi_sided_platform"
+      ],
+      "related_terms": [
+        "BaaS",
+        "フィンテック",
+        "API",
+        "決済"
+      ]
+    },
+    {
+      "id": "strategy.model_contract",
+      "domain": "STRATEGY",
+      "term": "情報システム・モデル取引・契約書",
+      "full_name": "情報システム・モデル取引・契約書",
+      "japanese": "モデル取引・契約書",
+      "meaning": "経済産業省とIPAが公表した、ユーザー（取得者）とベンダー（供給者）の間の情報システム取引の標準的な契約の考え方と条項例。工程ごとに適した契約類型を示す。",
+      "exam_tip": "ウォーターフォールモデルでは、要件定義や外部設計のようにユーザーの関与と意思決定が要る工程は準委任型、成果物が特定できるシステム内部設計フェーズからシステム結合フェーズまでは請負型が基本、という対応が問われる。運用テスト以降は再び準委任型。",
+      "related": [
+        "pm.cost_reimbursable",
+        "strategy.software_copyright",
+        "architecture.lab_contract"
+      ],
+      "related_terms": [
+        "請負",
+        "準委任",
+        "要件定義",
+        "外部設計",
+        "経済産業省"
+      ]
+    },
+    {
+      "id": "strategy.ad_exchange",
+      "domain": "STRATEGY",
+      "term": "アドエクスチェンジ",
+      "full_name": "Ad Exchange",
+      "japanese": "広告枠取引市場",
+      "meaning": "複数の広告媒体の広告枠を束ねて管理し、入札型インプレッション課金によるリアルタイム入札（RTB）で、広告枠ごとに掲載する広告を決める仕組み。",
+      "exam_tip": "広告枠を「オークションで、枠ごとに、リアルタイムに」売買する点が要点。媒体社側の収益最適化を担うSSP、広告主側の出稿最適化を担うDSP、複数媒体へまとめて配信するアドネットワークと役割で区別する。",
+      "related": [
+        "strategy.content_marketing",
+        "strategy.multi_sided_platform"
+      ],
+      "related_terms": [
+        "RTB",
+        "インプレッション課金",
+        "DSP",
+        "SSP",
+        "アドネットワーク"
+      ]
+    },
+    {
+      "id": "strategy.cause_related_marketing",
+      "domain": "STRATEGY",
+      "term": "コーズリレーテッドマーケティング",
+      "full_name": "Cause-Related Marketing",
+      "japanese": "大義関連マーケティング",
+      "meaning": "商品の売上の一部を寄付するなど、社会的な大義（コーズ）への支援を打ち出し、企業姿勢への共感を通じて販売促進につなげる手法。",
+      "exam_tip": "「売上に連動して社会貢献活動を支援する」点が要点。単なる寄付やCSR活動と違い、購買行動と結びついている。マスマーケティング、ダイレクトマーケティング、コンテンツマーケティングと並べて選ばせる。",
+      "related": [
+        "strategy.content_marketing",
+        "strategy.marketing_process"
+      ],
+      "related_terms": [
+        "CSR",
+        "大義",
+        "寄付",
+        "販売促進"
+      ]
+    },
+    {
+      "id": "strategy.life_cycle_extension",
+      "domain": "STRATEGY",
+      "term": "ライフサイクルエクステンション",
+      "full_name": "Life Cycle Extension",
+      "japanese": "ライフサイクル延長戦略",
+      "meaning": "プロダクトライフサイクルの成熟期から衰退期にかけて、性能や品質の向上、機能やデザインの多様化、新用途の提案などで売上高の維持・増大を図る手法。",
+      "exam_tip": "適用する時期が「成熟期から衰退期」である点が要点。導入期の市場浸透策や、成長期のシェア拡大策と混同しない。プロダクトライフサイクル（導入期・成長期・成熟期・衰退期）の各段階の施策と併せて出る。",
+      "related": [
+        "strategy.ansoff",
+        "strategy.ppm",
+        "strategy.product_level"
+      ],
+      "related_terms": [
+        "プロダクトライフサイクル",
+        "成熟期",
+        "衰退期",
+        "製品差別化"
+      ]
+    },
+    {
+      "id": "strategy.ltv",
+      "domain": "STRATEGY",
+      "term": "顧客生涯価値",
+      "full_name": "Life Time Value (LTV)",
+      "japanese": "顧客生涯価値",
+      "meaning": "一人の顧客が取引期間全体を通じて企業にもたらす利益の総額。将来の購入額から獲得・維持コストを差し引き、その顧客が紹介する他の顧客の購入見込みも考慮する。",
+      "exam_tip": "「その顧客が紹介する他の顧客の購入見込みも対象とする」という記述が正解になる。単年度の購入額だけを見るものではない点、獲得コストと維持コストを差し引く点が要点。CRMの投資判断の根拠になる。",
+      "related": [
+        "strategy.roi",
+        "strategy.cause_related_marketing"
+      ],
+      "related_terms": [
+        "CRM",
+        "顧客獲得コスト",
+        "解約率",
+        "紹介"
+      ],
+      "aliases": [
+        "LTV"
+      ]
+    },
+    {
+      "id": "strategy.product_level",
+      "domain": "STRATEGY",
+      "term": "顧客価値ヒエラルキー",
+      "full_name": "Customer Value Hierarchy",
+      "japanese": "五つの製品レベル",
+      "meaning": "コトラーが示した製品の5つのレベル。中核ベネフィット（顧客が本当に求めている便益）、基本製品、期待製品、膨張製品、潜在製品の順に積み上がる。",
+      "exam_tip": "最下層が中核ベネフィットである点が要点。「ホテルなら休息、ドリルなら穴」のように、物理的な製品ではなく顧客が得る便益を指す。期待製品（顧客が当然と考える条件）と膨張製品（期待を超える付加）の違いも問われる。",
+      "related": [
+        "strategy.life_cycle_extension",
+        "strategy.marketing_process"
+      ],
+      "related_terms": [
+        "コトラー",
+        "中核ベネフィット",
+        "基本製品",
+        "期待製品",
+        "膨張製品"
+      ]
+    },
+    {
+      "id": "strategy.seci",
+      "domain": "STRATEGY",
+      "term": "SECIモデル",
+      "full_name": "Socialization, Externalization, Combination, Internalization",
+      "japanese": "知識創造プロセス",
+      "meaning": "野中郁次郎らが示した知識創造のモデル。共同化（暗黙知から暗黙知）、表出化（暗黙知から形式知）、連結化（形式知から形式知）、内面化（形式知から暗黙知）の4プロセスを循環する。",
+      "exam_tip": "「新たに創造された知識を組織に広め、新たな暗黙知として習得する」のは内面化（Internalization）。4プロセスと、暗黙知・形式知のどちらからどちらへの変換かの対応を表で覚えるのが確実。",
+      "related": [
+        "strategy.affinity_diagram"
+      ],
+      "related_terms": [
+        "野中郁次郎",
+        "暗黙知",
+        "形式知",
+        "共同化",
+        "表出化",
+        "連結化"
+      ]
+    },
+    {
+      "id": "strategy.api_economy",
+      "domain": "STRATEGY",
+      "term": "APIエコノミー",
+      "full_name": "API Economy",
+      "japanese": "APIエコノミー",
+      "meaning": "企業が自社の機能やデータをAPIとして公開し、他社がそれを組み込むことで、企業をまたいだサービスの連携と新たな価値が生まれる経済圏。",
+      "exam_tip": "「他社が公開しているAPIを自社サービスへ組み込む」「自社のAPIを他社へ公開する」のいずれかが事例になる。自社内のシステム連携にAPIを使うだけの例は該当しない点が要点。組み込み型金融もこの上に成り立つ。",
+      "related": [
+        "strategy.embedded_finance",
+        "strategy.multi_sided_platform",
+        "architecture.loose_coupling"
+      ],
+      "related_terms": [
+        "Web API",
+        "マッシュアップ",
+        "エコシステム",
+        "オープンAPI"
+      ]
+    },
+    {
+      "id": "strategy.soe",
+      "domain": "STRATEGY",
+      "term": "SoE",
+      "full_name": "Systems of Engagement",
+      "japanese": "つながりのシステム",
+      "meaning": "データの活用を通じて消費者や顧客企業とのつながりや関係性を深めるためのシステム。変化に素早く追随することが求められ、アジャイル開発と相性がよい。",
+      "exam_tip": "SoR（Systems of Record／基幹系。正確な記録と安定が最優先）との対比が要点。SoEは変化への追随を優先し、SoI（Systems of Insight／分析・洞察）を加えた3分類で問われることもある。モード1／モード2のバイモーダルITとも結びつく。",
+      "related": [
+        "strategy.api_economy",
+        "pm.agile_manifesto"
+      ],
+      "related_terms": [
+        "SoR",
+        "SoI",
+        "バイモーダルIT",
+        "基幹系システム"
+      ]
+    },
+    {
+      "id": "strategy.capacity_utilization",
+      "domain": "STRATEGY",
+      "term": "操業度",
+      "full_name": "Capacity Utilization",
+      "japanese": "操業度",
+      "meaning": "工場全体の設備能力をどれだけ使えているかを示す指標。標準生産量に対する実際生産量の割合で表す。",
+      "exam_tip": "生産性指標の識別問題で出る。操業度は「設備能力の利用度合い」、歩留りは「投入に対する良品の割合」、稼働率は「使える時間のうち実際に動いた割合」、労働生産性は「投入労働量あたりの産出」。分母が何かで見分ける。",
+      "related": [
+        "pm.productivity",
+        "architecture.service_availability"
+      ],
+      "related_terms": [
+        "歩留り",
+        "稼働率",
+        "労働生産性",
+        "設備能力"
+      ]
+    },
+    {
+      "id": "strategy.filter_bubble",
+      "domain": "STRATEGY",
+      "term": "フィルターバブル",
+      "full_name": "Filter Bubble",
+      "japanese": "フィルターバブル",
+      "meaning": "イーライ・パリサーが提唱した概念。検索やSNSのパーソナライズによって、利用者の属性や行動に合う情報ばかりが表示され、実社会から隔てられた情報空間に包まれる現象。",
+      "exam_tip": "「アルゴリズムによるパーソナライズの結果」である点が要点。同じ意見の者同士が反響し合って信念が増幅されるエコーチェンバーは、人の集まり方に起因する現象で原因が違う。誤情報の拡散やアテンションエコノミーと併せて出る。",
+      "related": [
+        "strategy.collaborative_filtering",
+        "strategy.dfft"
+      ],
+      "related_terms": [
+        "イーライ・パリサー",
+        "エコーチェンバー",
+        "パーソナライズ",
+        "アルゴリズム"
+      ]
+    },
+    {
+      "id": "architecture.bathtub_curve",
+      "domain": "ARCHITECTURE",
+      "term": "バスタブ曲線",
+      "full_name": "Bathtub Curve",
+      "japanese": "故障率曲線",
+      "meaning": "機器の故障率の時間変化を表す曲線。初期故障期間は故障率が減少し、偶発故障期間はほぼ一定、摩耗故障期間は増加する。全体が浴槽の断面に似ることから名付けられた。",
+      "exam_tip": "偶発故障期間の特徴は「故障率が時間の経過によらずほぼ一定」。初期故障期間は減少（バーンインで取り除く）、摩耗故障期間は増加（予防保全で部品交換）と対応づける。故障率一定の期間ではMTBFが意味を持つ。",
+      "related": [
+        "architecture.availability",
+        "architecture.service_availability"
+      ],
+      "related_terms": [
+        "初期故障期間",
+        "偶発故障期間",
+        "摩耗故障期間",
+        "MTBF",
+        "バーンイン"
+      ]
+    },
+    {
+      "id": "strategy.affinity_diagram",
+      "domain": "STRATEGY",
+      "term": "親和図",
+      "full_name": "Affinity Diagram",
+      "japanese": "親和図法",
+      "meaning": "錯綜した問題点やまとまっていない意見・アイディアを、意味の近さでグループ化して整理し、構造を見いだす手法。新QC七つ道具の一つ。",
+      "exam_tip": "新QC七つ道具の識別問題で出る。親和図は「言語データをまとめて整理する」、連関図は「原因と結果の絡み合いを解きほぐす」、系統図は「目的を手段へ展開する」、マトリックス図は「二つの軸の対応を見る」。",
+      "related": [
+        "strategy.seci",
+        "strategy.design_thinking"
+      ],
+      "related_terms": [
+        "新QC七つ道具",
+        "KJ法",
+        "連関図",
+        "系統図",
+        "特性要因図"
+      ]
+    },
+    {
+      "id": "strategy.cash_flow_statement",
+      "domain": "STRATEGY",
+      "term": "キャッシュフロー計算書",
+      "full_name": "Cash Flow Statement",
+      "japanese": "キャッシュフロー計算書",
+      "meaning": "一定期間の現金の増減を、営業活動・投資活動・財務活動の3区分で表す財務諸表。",
+      "exam_tip": "区分の切り分けが問われる。本業の収支（税引前当期純利益に減価償却費などの非資金項目を加減し、運転資本の増減を調整）が営業活動、固定資産や有価証券の取得・売却が投資活動、借入や増資・配当が財務活動。減価償却費は現金支出を伴わないため営業CFで加算する点が頻出。",
+      "related": [
+        "strategy.eva",
+        "strategy.income_statement",
+        "strategy.npv"
+      ],
+      "related_terms": [
+        "営業活動によるCF",
+        "投資活動によるCF",
+        "財務活動によるCF",
+        "減価償却費",
+        "運転資本"
+      ]
+    },
+    {
+      "id": "strategy.eva",
+      "domain": "STRATEGY",
+      "term": "EVA",
+      "full_name": "Economic Value Added",
+      "japanese": "経済的付加価値",
+      "meaning": "税引後営業利益（NOPAT）から、投下資本に資本コスト率を掛けた資本コストを差し引いて求める指標。株主資本のコストまで含めて価値を生んだかを見る。",
+      "exam_tip": "「税引後営業利益から資本コストを引く」が算出方法。会計上の利益が黒字でも、資本コストを賄えなければEVAは負になる点が要点。ROI（利益÷投資額の比率）やNPV（将来キャッシュフローの現在価値と初期投資の差）と、指標の性質で区別する。",
+      "related": [
+        "strategy.roi",
+        "strategy.npv",
+        "strategy.cash_flow_statement"
+      ],
+      "related_terms": [
+        "NOPAT",
+        "投下資本",
+        "WACC",
+        "資本コスト"
+      ]
+    },
+    {
+      "id": "strategy.copyright_ai",
+      "domain": "STRATEGY",
+      "term": "AI学習と著作権",
+      "full_name": "著作権法第30条の4",
+      "japanese": "情報解析のための著作物利用",
+      "meaning": "著作物に表現された思想・感情を享受することを目的としない利用（情報解析など）は、必要と認められる限度で、著作権者の許諾なく行える。ただし著作権者の利益を不当に害する場合は除く。",
+      "exam_tip": "「享受目的でない」「必要と認められる限度」「著作権者の利益を不当に害さない」の3条件を満たせば、商業利用かどうかを問わず許諾なく学習に使える点が要点。営利なら不可、と読ませるひっかけが並ぶ。生成物が既存著作物に類似する場合は別途、侵害の問題になる。",
+      "related": [
+        "strategy.work_for_hire",
+        "strategy.fair_use",
+        "strategy.ai_contract_guideline"
+      ],
+      "related_terms": [
+        "著作権法第30条の4",
+        "情報解析",
+        "享受目的",
+        "学習データ"
+      ]
+    },
+    {
+      "id": "security.fileless_attack",
+      "domain": "SECURITY",
+      "term": "ファイルレス攻撃",
+      "full_name": "Fileless Attack",
+      "japanese": "ファイルレス攻撃",
+      "meaning": "実行ファイルをディスク上に置かず、メモリ上だけで動作したり、OS標準のツール（PowerShellなど）を悪用したりして、ファイルの解析と検知を困難にする攻撃。",
+      "exam_tip": "「ファイルシステム上に実体を作らずメモリ上にだけ生成する」が定義。パターンマッチングによるファイル検査では検知できないため、振る舞い検知やEDRが必要になる、という対策との対応で覚える。環境寄生型（LotL）攻撃とも呼ばれる。",
+      "related": [
+        "security.ueba",
+        "security.digital_forensics",
+        "security.connect_back"
+      ],
+      "related_terms": [
+        "メモリ常駐",
+        "PowerShell",
+        "EDR",
+        "振る舞い検知",
+        "LotL"
+      ]
+    },
+    {
+      "id": "strategy.logistic_regression",
+      "domain": "STRATEGY",
+      "term": "ロジスティック回帰分析",
+      "full_name": "Logistic Regression",
+      "japanese": "ロジスティック回帰分析",
+      "meaning": "目的変数が「発症する／しない」のような二値のときに、複数の説明変数から起こる確率を推定する統計モデル。",
+      "exam_tip": "「目的変数が二値」「結果として確率が得られる」の2点がそろえばロジスティック回帰。数値を予測する通常の（線形）回帰分析、グループ分けを行うクラスタ分析、条件分岐でセグメントを予測する決定木分析と区別する。",
+      "related": [
+        "strategy.regression_analysis",
+        "strategy.decision_tree"
+      ],
+      "related_terms": [
+        "説明変数",
+        "目的変数",
+        "オッズ比",
+        "二値分類"
+      ]
+    },
+    {
+      "id": "strategy.ecrs",
+      "domain": "STRATEGY",
+      "term": "ECRS",
+      "full_name": "Eliminate, Combine, Rearrange, Simplify",
+      "japanese": "改善の4原則",
+      "meaning": "業務改善の着眼点を、排除（Eliminate）・結合（Combine）・交換／再配置（Rearrange）・簡素化（Simplify）の順に検討するフレームワーク。",
+      "exam_tip": "「無駄な業務をなくす」のがE（Eliminate）。効果が大きい順にE→C→R→Sで検討するのが原則で、いきなり簡素化から入らない点も要点。複数の作業をまとめるのがC、順序や担当を入れ替えるのがR、手順を単純にするのがS。",
+      "related": [
+        "strategy.teardown",
+        "architecture.lean_software_development"
+      ],
+      "related_terms": [
+        "Eliminate",
+        "Combine",
+        "Rearrange",
+        "Simplify",
+        "業務改善"
+      ]
+    },
+    {
+      "id": "strategy.decision_tree",
+      "domain": "STRATEGY",
+      "term": "決定木分析",
+      "full_name": "Decision Tree Analysis",
+      "japanese": "決定木分析",
+      "meaning": "属性による条件分岐を木構造で表し、データをセグメントへ分割しながら分類や予測を行う手法。結果を人が読んで解釈しやすい。",
+      "exam_tip": "「複数の属性を組み合わせてセグメント化し、どのセグメントが最も可能性が高いかを予測する」なら決定木分析。分岐の条件がそのまま説明になるため解釈性が高い点が特徴。確率を直接推定するのはロジスティック回帰、似た者同士をまとめるのはクラスタ分析。",
+      "related": [
+        "strategy.logistic_regression",
+        "strategy.regression_analysis",
+        "strategy.collaborative_filtering"
+      ],
+      "related_terms": [
+        "セグメント",
+        "分類",
+        "ランダムフォレスト",
+        "解釈性"
+      ]
+    },
+    {
+      "id": "strategy.dcf",
+      "domain": "STRATEGY",
+      "term": "DCF法",
+      "full_name": "Discounted Cash Flow",
+      "japanese": "割引キャッシュフロー法",
+      "meaning": "将来得られるキャッシュフローを、割引率を使って現在価値に換算して評価する方法。n年後の金額は (1＋割引率)^n で割る。",
+      "exam_tip": "計算問題として出る。各年のキャッシュフローを個別に割り引いてから合計し、初期投資額を差し引く（＝正味現在価値NPV）。年数の指数を1つずらす誤り、割引率を掛けてしまう誤りが定番のひっかけ。",
+      "related": [
+        "strategy.npv",
+        "strategy.roi",
+        "strategy.cash_flow_statement"
+      ],
+      "related_terms": [
+        "現在価値",
+        "割引率",
+        "NPV",
+        "IRR",
+        "回収期間法"
+      ]
+    },
+    {
+      "id": "strategy.odm",
+      "domain": "STRATEGY",
+      "term": "ODM",
+      "full_name": "Original Design Manufacturing",
+      "japanese": "相手先ブランドによる設計・製造",
+      "meaning": "受託者が設計と製造の両方を担い、委託者は自社ブランドで販売する形態。",
+      "exam_tip": "OEM（設計は委託者、製造は受託者）との違いが最頻出。ODMは設計まで受託者が行う。EMS（製造受託サービス）、ファウンドリー（半導体製造の受託）、ファブレス（製造を持たない）と併せて役割で整理する。",
+      "related": [
+        "strategy.foundry"
+      ],
+      "related_terms": [
+        "OEM",
+        "EMS",
+        "ファブレス",
+        "自社ブランド"
+      ]
+    },
+    {
+      "id": "strategy.content_marketing",
+      "domain": "STRATEGY",
+      "term": "コンテンツマーケティング",
+      "full_name": "Content Marketing",
+      "japanese": "コンテンツマーケティング",
+      "meaning": "潜在顧客にとって価値のあるコンテンツを作成・発信し、関係性を深めたうえで最終的に自社の製品・サービスの購入につなげる手法。",
+      "exam_tip": "「価値あるコンテンツで関係性を築いてから購入につなげる」点が要点。広告枠を買って直接訴求するものではない。広告枠のオークションはアドエクスチェンジ、社会貢献と結びつけるのはコーズリレーテッドマーケティング。",
+      "related": [
+        "strategy.ad_exchange",
+        "strategy.cause_related_marketing",
+        "strategy.marketing_process"
+      ],
+      "related_terms": [
+        "潜在顧客",
+        "オウンドメディア",
+        "リードナーチャリング",
+        "SEO"
+      ]
+    },
+    {
+      "id": "strategy.marketing_process",
+      "domain": "STRATEGY",
+      "term": "マーケティング戦略の策定プロセス",
+      "full_name": "R-STP-MM",
+      "japanese": "マーケティング戦略の策定プロセス",
+      "meaning": "市場調査（Research）→セグメンテーション→ターゲティング→ポジショニング→マーケティングミックス（4P）決定→実行・管理、という順に進める流れ。",
+      "exam_tip": "順序を問う形で出る。STP（分けて・選んで・位置づける）が先で、マーケティングミックス（製品・価格・流通・プロモーション）の決定はその後。ポジショニングが決まらないと4Pを決められない、という依存関係で覚える。",
+      "related": [
+        "strategy.content_marketing",
+        "strategy.product_level",
+        "strategy.price_elasticity"
+      ],
+      "related_terms": [
+        "セグメンテーション",
+        "ターゲティング",
+        "ポジショニング",
+        "4P",
+        "STP"
+      ]
+    },
+    {
+      "id": "strategy.price_elasticity",
+      "domain": "STRATEGY",
+      "term": "需要の価格弾力性",
+      "full_name": "Price Elasticity of Demand",
+      "japanese": "需要の価格弾力性",
+      "meaning": "価格が1％変化したときに需要量が何％変化するかを表す指標。値が大きいほど価格の変化に需要が敏感に反応する。",
+      "exam_tip": "必需品は価格が上がっても買わざるを得ないため弾力性が小さく、贅沢品は大きい。弾力性が小さい財は値上げしても需要があまり減らないので売上高が増える、という価格戦略への含意まで問われる。代替品が多いほど弾力性は大きくなる。",
+      "related": [
+        "strategy.marketing_process",
+        "strategy.five_forces"
+      ],
+      "related_terms": [
+        "必需品",
+        "贅沢品",
+        "代替品",
+        "需要曲線",
+        "価格戦略"
+      ]
+    },
+    {
+      "id": "strategy.assael",
+      "domain": "STRATEGY",
+      "term": "アサエルの購買行動類型",
+      "full_name": "Assael's Buying Behavior Types",
+      "japanese": "購買行動の四類型",
+      "meaning": "ヘンリー・アサエルが、製品への関与度と、ブランド間の違いを知覚できる程度の2軸で消費者の購買行動を4つに分類したモデル。情報処理型、バラエティシーキング型、不協和低減型、習慣型からなる。",
+      "exam_tip": "不協和低減型は「関与は高いがブランドの違いが分かりにくい」場合で、選びきれないまま購入し、購入後に後悔（認知的不協和）を感じやすい。関与も違いの知覚も高いのが情報処理型、関与は低いが違いは分かるのがバラエティシーキング型、どちらも低いのが習慣型。",
+      "related": [
+        "strategy.product_level",
+        "strategy.marketing_process"
+      ],
+      "related_terms": [
+        "関与度",
+        "認知的不協和",
+        "情報処理型",
+        "バラエティシーキング型",
+        "習慣型"
+      ]
+    },
+    {
+      "id": "strategy.multi_sided_platform",
+      "domain": "STRATEGY",
+      "term": "マルチサイドプラットフォーム",
+      "full_name": "Multi-Sided Platform",
+      "japanese": "多面市場プラットフォーム",
+      "meaning": "複数の異なる種類の顧客セグメント（例えば出品者と購入者）をつなぎ合わせ、その間の交流を促進することで価値を生むビジネスモデル。",
+      "exam_tip": "「異なる種類の顧客セグメントをつなぐ」点が要点。片側の利用者が増えるともう片側の価値が高まるネットワーク効果が働き、片側を無料にして他方から収益を得るフリーミアム型の課金と結びつく。単なる仕入販売や直販モデルとは区別する。",
+      "related": [
+        "strategy.api_economy",
+        "strategy.ad_exchange",
+        "strategy.embedded_finance"
+      ],
+      "related_terms": [
+        "ネットワーク効果",
+        "両面市場",
+        "フリーミアム",
+        "エコシステム"
+      ]
+    },
+    {
+      "id": "strategy.sop",
+      "domain": "STRATEGY",
+      "term": "S&OP",
+      "full_name": "Sales and Operations Planning",
+      "japanese": "販売・業務計画",
+      "meaning": "顧客重視のマーケティング計画とサプライチェーン管理を融合し、需要と供給を経営レベルで擦り合わせる戦略的計画の策定プロセス。SCMから発展した概念。",
+      "exam_tip": "「マーケティング計画とサプライチェーン管理を融合し、経営者に戦略的な事業推進の能力を提供する」が定義。現場レベルの生産計画や在庫最適化にとどまらず、経営の意思決定と結びつける点が要点。MRP、CRP、SCMとの階層の違いで問われる。",
+      "related": [
+        "strategy.value_chain",
+        "strategy.bsc"
+      ],
+      "related_terms": [
+        "SCM",
+        "需給調整",
+        "MRP",
+        "需要予測"
+      ]
+    },
+    {
+      "id": "strategy.devils_river",
+      "domain": "STRATEGY",
+      "term": "魔の川",
+      "full_name": "Devil's River",
+      "japanese": "魔の川",
+      "meaning": "技術経営で、基礎研究の成果を製品開発へ結び付けるまでに横たわる障壁。",
+      "exam_tip": "3つの障壁の順序と位置を覚える。研究から開発の間が「魔の川」、開発から事業化の間が「死の谷」、事業化から産業化（市場での競争に勝ち残る）の間が「ダーウィンの海」。どの段階の話かを設問文から特定する。",
+      "related": [
+        "strategy.teardown",
+        "strategy.ip_landscape"
+      ],
+      "related_terms": [
+        "死の谷",
+        "ダーウィンの海",
+        "技術経営",
+        "MOT",
+        "事業化"
+      ]
+    },
+    {
+      "id": "strategy.energy_review",
+      "domain": "STRATEGY",
+      "term": "エネルギーレビュー",
+      "full_name": "Energy Review",
+      "japanese": "エネルギーレビュー",
+      "meaning": "エネルギーマネジメントシステム（ISO 50001）で、エネルギーの使用状況と使用量データを分析し、著しいエネルギーの使用を特定して、パフォーマンス改善の機会を見いだす一連のプロセス。",
+      "exam_tip": "「著しいエネルギーの使用の特定」の段階では、設備や生産プロセスの操業条件のうちエネルギー使用量への影響が大きい要素を明らかにする。改善目標の設定や投資判断はその後の段階であり、順序を入れ替えた選択肢が誤りになる。",
+      "related": [
+        "strategy.capacity_utilization"
+      ],
+      "related_terms": [
+        "ISO 50001",
+        "エネルギーパフォーマンス",
+        "著しいエネルギー使用",
+        "EnMS"
+      ]
+    },
+    {
+      "id": "strategy.teardown",
+      "domain": "STRATEGY",
+      "term": "ティアダウン",
+      "full_name": "Teardown",
+      "japanese": "分解分析",
+      "meaning": "他社製品を分解・分析して自社製品と比較し、コストや性能の面でより競争力の高い製品を開発するための手法。",
+      "exam_tip": "「他社製品を分解して比較する」が定義。既存製品から仕様を復元するリバースエンジニアリング（ソフトウェア文脈が多い）、優れた事例と自社を比べるベンチマーキング、機能とコストの比で見直すバリューエンジニアリングと並べて選ばせる。",
+      "related": [
+        "strategy.ecrs",
+        "strategy.devils_river"
+      ],
+      "related_terms": [
+        "リバースエンジニアリング",
+        "ベンチマーキング",
+        "VE",
+        "コスト分析"
+      ]
+    },
+    {
+      "id": "strategy.cps",
+      "domain": "STRATEGY",
+      "term": "サイバーフィジカルシステム",
+      "full_name": "Cyber-Physical System (CPS)",
+      "japanese": "サイバーフィジカルシステム",
+      "meaning": "現実世界（フィジカル）のデータをセンサなどで収集し、仮想世界（サイバー）で分析・加工して、その結果を現実世界へリアルタイムにフィードバックすることで付加価値を生む仕組み。",
+      "exam_tip": "「現実→仮想→現実へフィードバック」の循環が要点。仮想空間に現実の写しを作るデジタルツインはCPSを実現する手段の一つ。単にセンサでデータを集めるだけ、あるいは仮想空間で完結するメタバースとは区別する。",
+      "related": [
+        "strategy.dfft",
+        "strategy.api_economy"
+      ],
+      "related_terms": [
+        "デジタルツイン",
+        "IoT",
+        "Society 5.0",
+        "フィードバック"
+      ]
+    },
+    {
+      "id": "strategy.kotter_leadership",
+      "domain": "STRATEGY",
+      "term": "コッターのリーダーシップ論",
+      "full_name": "Kotter's Leadership vs Management",
+      "japanese": "リーダーシップとマネジメントの区別",
+      "meaning": "J.コッターは、変革を生み出すリーダーシップの機能を「方向性（ビジョン）の設定」「人心の統合」「動機付けとコーチング」とし、複雑さに対処するマネジメントの機能（計画と予算、組織化と人員配置、統制と問題解決）と区別した。",
+      "exam_tip": "ビジョンの提示・動機付け・コーチングがリーダーシップ側、計画立案・予算配分・統制がマネジメント側。どちらの側の機能かを選ばせる形で出る。コッターは変革の8段階プロセスでも知られる。",
+      "related": [
+        "strategy.contingency_theory",
+        "strategy.sl_theory",
+        "pm.project_governance"
+      ],
+      "related_terms": [
+        "ビジョン",
+        "動機付け",
+        "コーチング",
+        "変革の8段階",
+        "マネジメント"
+      ]
+    },
+    {
+      "id": "strategy.insolvency",
+      "domain": "STRATEGY",
+      "term": "債務超過",
+      "full_name": "Insolvency / Negative Net Worth",
+      "japanese": "債務超過",
+      "meaning": "負債の総額が資産の総額を上回り、純資産合計がマイナスになっている状態。",
+      "exam_tip": "「純資産合計がマイナス」が定義。当期純損失が出ている（赤字）だけでは債務超過ではない点、手元資金が足りない資金ショート（黒字倒産の原因）とも別である点が要点。上場企業では上場廃止基準に関わる。",
+      "related": [
+        "strategy.income_statement",
+        "strategy.cash_flow_statement"
+      ],
+      "related_terms": [
+        "純資産",
+        "負債",
+        "貸借対照表",
+        "赤字",
+        "資金ショート"
+      ]
+    },
+    {
+      "id": "strategy.income_statement",
+      "domain": "STRATEGY",
+      "term": "損益計算書の利益区分",
+      "full_name": "Income Statement",
+      "japanese": "損益計算書",
+      "meaning": "売上総利益＝売上高−売上原価、営業利益＝売上総利益−販売費及び一般管理費、経常利益＝営業利益＋営業外収益−営業外費用、税引前当期純利益＝経常利益＋特別利益−特別損失。",
+      "exam_tip": "計算問題では「どの利益を聞かれているか」を先に確認する。営業利益に営業外損益（受取利息、支払利息など）や特別損益を混ぜてしまうのが定番の誤り。販売費及び一般管理費には人件費・広告宣伝費・減価償却費が含まれる。",
+      "related": [
+        "strategy.cash_flow_statement",
+        "strategy.eva",
+        "strategy.insolvency"
+      ],
+      "related_terms": [
+        "売上総利益",
+        "営業利益",
+        "経常利益",
+        "販売費及び一般管理費",
+        "特別損益"
+      ]
+    },
+    {
+      "id": "strategy.fair_use",
+      "domain": "STRATEGY",
+      "term": "フェアユース",
+      "full_name": "Fair Use",
+      "japanese": "公正利用",
+      "meaning": "批評、解説、ニュース報道、教授、研究、調査などの公正な目的であれば、一定の範囲での著作物の利用は著作権侵害に当たらないとする米国著作権法の考え方。",
+      "exam_tip": "利用目的を限定列挙せず、4要素（利用の目的と性質、著作物の性質、利用された量、市場への影響）で個別に判断する一般条項である点が要点。日本の著作権法は権利制限規定を個別に列挙する方式で、フェアユース規定は持たない。",
+      "related": [
+        "strategy.copyright_ai",
+        "strategy.work_for_hire",
+        "strategy.software_copyright"
+      ],
+      "related_terms": [
+        "米国著作権法",
+        "権利制限規定",
+        "引用",
+        "4要素"
+      ]
+    },
+    {
+      "id": "architecture.race_condition",
+      "domain": "ARCHITECTURE",
+      "term": "レースコンディション",
+      "full_name": "Race Condition",
+      "japanese": "競合状態",
+      "meaning": "排他制御の不備により、複数のプロセスやスレッドが共有リソースへ同時にアクセスした結果、実行順序によって想定外の動作をする問題。",
+      "exam_tip": "「排他制御の不備」「同時アクセス」「実行順序で結果が変わる」がそろえばレースコンディション。互いに待ち合って進めなくなるデッドロック、優先度の低い処理が実行されないスタベーション、確認と使用の時間差を突くTOCTOU脆弱性と関連づけて覚える。",
+      "related": [
+        "architecture.deadlock",
+        "architecture.isolation_level",
+        "architecture.idempotency"
+      ],
+      "related_terms": [
+        "排他制御",
+        "クリティカルセクション",
+        "デッドロック",
+        "TOCTOU",
+        "セマフォ"
+      ]
+    },
+    {
+      "id": "architecture.validation_process",
+      "domain": "ARCHITECTURE",
+      "term": "妥当性確認プロセス",
+      "full_name": "Validation Process",
+      "japanese": "妥当性確認プロセス",
+      "meaning": "JIS X 0160 のテクニカルプロセスの一つ。システムが利用中に、意図された運用環境で意図された用途を達成し、ビジネスまたはミッションの目標および利害関係者要件を満たすという客観的証拠を提供する。",
+      "exam_tip": "検証（Verification）との対比が要点。検証は「仕様どおりに正しく作ったか」、妥当性確認は「正しいものを作ったか（利害関係者の要求を満たすか）」。定義文に「意図された運用環境」「利害関係者要件」が出てきたら妥当性確認。",
+      "related": [
+        "architecture.jis_x0160",
+        "architecture.acceptance_test",
+        "architecture.transition_process"
+      ],
+      "related_terms": [
+        "検証プロセス",
+        "Verification",
+        "Validation",
+        "利害関係者要件",
+        "客観的証拠"
+      ]
+    },
+    {
+      "id": "architecture.jis_x0160",
+      "domain": "ARCHITECTURE",
+      "term": "JIS X 0160",
+      "full_name": "Software life cycle processes (ISO/IEC/IEEE 12207)",
+      "japanese": "ソフトウェアライフサイクルプロセス",
+      "meaning": "ソフトウェアの構想から廃棄までのライフサイクルで実施するプロセスを体系化した規格。合意プロセス、組織のプロジェクトイネーブリングプロセス、テクニカルマネジメントプロセス、テクニカルプロセスに大別される。",
+      "exam_tip": "個々のプロセスの目的やタスクをそのまま問う形が定番。テクニカルプロセスには、要件定義、設計、実装、統合、検証、移行、妥当性確認、運用、保守、廃棄が含まれる。どの記述がどのプロセスかを、目的語（何を確かめるか・何を用意するか）で見分ける。",
+      "related": [
+        "architecture.validation_process",
+        "architecture.transition_process",
+        "architecture.disposal_process",
+        "architecture.acceptance_test"
+      ],
+      "related_terms": [
+        "ISO/IEC/IEEE 12207",
+        "テクニカルプロセス",
+        "合意プロセス",
+        "保守プロセス"
+      ],
+      "aliases": [
+        "ISO/IEC 12207"
+      ]
+    },
+    {
+      "id": "architecture.fail_safe",
+      "domain": "ARCHITECTURE",
+      "term": "フェールセーフ",
+      "full_name": "Fail Safe",
+      "japanese": "フェールセーフ",
+      "meaning": "障害が発生したとき、安全な側に状態を倒す設計方針。信号機が故障したら全方向を赤にする、といった例が典型。",
+      "exam_tip": "4つの類似語の切り分けが最頻出。フェールセーフ＝安全側へ倒す、フェールソフト＝性能を落として継続、フォールトトレラント＝障害があっても機能を保つ、フールプルーフ＝誤操作しても危険が生じない。「安全」という語が出たらフェールセーフ。",
+      "related": [
+        "architecture.fail_soft",
+        "architecture.error_proofing",
+        "architecture.availability"
+      ],
+      "related_terms": [
+        "フェールソフト",
+        "フォールトトレラント",
+        "フールプルーフ",
+        "縮退運転"
+      ]
+    },
+    {
+      "id": "architecture.itil",
+      "domain": "ARCHITECTURE",
+      "term": "ITIL",
+      "full_name": "Information Technology Infrastructure Library",
+      "japanese": "ITサービスマネジメントのベストプラクティス集",
+      "meaning": "ITサービスの企画から運用・改善までのベストプラクティスをまとめた体系。認証の基準ではなく、実務の手引として使われる。",
+      "exam_tip": "JIS Q 20000-1（要求事項を定め第三者認証の基準になる規格）との役割の違いが要点。ITILは「こうするとよい」を示す実践集で、認証されるものではない。ITIL 4では「サービスバリューシステム」「4つの側面」といった枠組みを採る。",
+      "related": [
+        "architecture.jis_q20000",
+        "architecture.sla",
+        "architecture.service_availability"
+      ],
+      "related_terms": [
+        "ベストプラクティス",
+        "サービスデスク",
+        "インシデント管理",
+        "変更管理"
+      ]
+    },
+    {
+      "id": "architecture.sla",
+      "domain": "ARCHITECTURE",
+      "term": "SLA",
+      "full_name": "Service Level Agreement",
+      "japanese": "サービスレベル合意書",
+      "meaning": "提供者と利用者の間で、サービスの内容と達成すべき水準（可用性、応答時間、復旧時間など）、測定方法、未達時の対応を合意した文書。",
+      "exam_tip": "SLA（提供者と顧客の合意）、SLO（合意の中の個々の目標値）、OLA（社内部門間の合意）、UC（外部委託先との契約）の区別が問われる。測定できない項目をSLAに書かない、達成できる水準を段階的に高めていく、といった運用上の要点も出る。",
+      "related": [
+        "architecture.service_availability",
+        "architecture.jis_q20000",
+        "architecture.itil"
+      ],
+      "related_terms": [
+        "SLO",
+        "SLM",
+        "OLA",
+        "可用性",
+        "サービスレベル管理"
+      ]
+    },
+    {
+      "id": "audit.audit_evidence",
+      "domain": "AUDIT",
+      "term": "監査証拠",
+      "full_name": "Audit Evidence",
+      "japanese": "監査証拠",
+      "meaning": "監査人が監査の結論を裏付けるために入手する記録、事実の記述、その他の情報。証拠力（信頼性）と十分性（量）の両方が求められる。",
+      "exam_tip": "証拠力は入手経路で決まる。監査人が自ら実査・観察して得た証拠が最も強く、被監査部門から提供された内部資料は相対的に弱い。原本は写しより強い。入手した証拠と監査人の判断は監査調書へ記録する。",
+      "related": [
+        "audit.audit_working_paper",
+        "audit.test_check",
+        "audit.audit_report"
+      ],
+      "related_terms": [
+        "証拠力",
+        "十分性",
+        "実査",
+        "立会",
+        "突合"
+      ]
+    },
+    {
+      "id": "audit.follow_up",
+      "domain": "AUDIT",
+      "term": "フォローアップ",
+      "full_name": "Follow-up",
+      "japanese": "フォローアップ",
+      "meaning": "監査報告書で指摘した事項について、改善が計画どおりに実施されているかを監査人が確認する活動。",
+      "exam_tip": "監査人が行うのはあくまで「改善状況の確認」であって、改善そのものの実施や改善策の立案ではない（実施責任は被監査部門にある）。監査人が改善を実行すると独立性を失う、という論点で誤答選択肢が作られる。",
+      "related": [
+        "audit.audit_report",
+        "audit.system_audit_standard",
+        "audit.quality_assessment"
+      ],
+      "related_terms": [
+        "改善勧告",
+        "独立性",
+        "改善計画",
+        "指摘事項"
+      ]
+    },
+    {
+      "id": "pm.function_point",
+      "domain": "PM",
+      "term": "ファンクションポイント法",
+      "full_name": "Function Point Method",
+      "japanese": "ファンクションポイント法",
+      "meaning": "外部入力、外部出力、外部照会、内部論理ファイル、外部インタフェースファイルの5要素の数と複雑度から、ソフトウェアの機能規模を測る見積り手法。",
+      "exam_tip": "プログラムの行数ではなく「利用者から見える機能」で規模を測るため、開発言語に依存しない点が最大の特徴。要件定義の段階で見積もれる。LOC法（行数）、COCOMO（規模から工数を算出）、標準タスク法との違いで問われる。",
+      "related": [
+        "pm.cocomo",
+        "pm.productivity"
+      ],
+      "related_terms": [
+        "外部入力",
+        "内部論理ファイル",
+        "LOC法",
+        "調整係数",
+        "機能規模"
+      ]
+    },
+    {
+      "id": "security.soc",
+      "domain": "SECURITY",
+      "term": "SOC",
+      "full_name": "Security Operation Center",
+      "japanese": "セキュリティ監視センター",
+      "meaning": "ネットワークや機器のログを常時監視し、攻撃や不審な事象を検知して通知する組織。検知を担い、対応はCSIRTへ引き継ぐことが多い。",
+      "exam_tip": "役割分担で問われる。監視・検知がSOC、インシデント対応の統括がCSIRT、自社製品の脆弱性対応がPSIRT。SOCの武器がSIEMやUEBA、対応の自動化がSOAR、という道具との対応も併せて覚える。",
+      "related": [
+        "security.csirt",
+        "security.psirt",
+        "security.siem",
+        "security.soar"
+      ],
+      "related_terms": [
+        "常時監視",
+        "SIEM",
+        "アラート",
+        "トリアージ"
+      ]
+    },
+    {
+      "id": "security.timestamp",
+      "domain": "SECURITY",
+      "term": "タイムスタンプ",
+      "full_name": "Time Stamp",
+      "japanese": "タイムスタンプ",
+      "meaning": "時刻認証局（TSA）が、ある電子データがその時刻に存在していたこと（存在証明）と、その後改ざんされていないこと（完全性）を証明する仕組み。",
+      "exam_tip": "デジタル署名が「誰が作ったか」を示すのに対し、タイムスタンプは「いつ存在したか」を示す。署名者の証明書が期限切れや失効になった後も、署名時点の有効性を示せるため長期署名で組み合わせて使う。eシールは法人の発行元を示すもので目的が違う。",
+      "related": [
+        "security.e_seal",
+        "security.digital_certificate",
+        "security.mac"
+      ],
+      "related_terms": [
+        "時刻認証局",
+        "TSA",
+        "存在証明",
+        "長期署名",
+        "ハッシュ値"
+      ]
+    },
+    {
+      "id": "security.tls",
+      "domain": "SECURITY",
+      "term": "TLS",
+      "full_name": "Transport Layer Security",
+      "japanese": "トランスポート層セキュリティ",
+      "meaning": "トランスポート層の上で、通信相手の認証、鍵交換、暗号化、完全性の保護を行うプロトコル。SSLの後継で、HTTPSの土台になる。",
+      "exam_tip": "TLS 1.3では、暗号スイートの整理（危殆化した方式の廃止）、ハンドシェイクの往復削減、前方秘匿性（PFS）を持つ鍵交換の必須化が行われた点が問われる。TCPが前提なのでUDPにはDTLSを使う、IPsecはネットワーク層、という階層の対比も定番。",
+      "related": [
+        "security.dtls",
+        "security.hsts",
+        "security.digital_certificate",
+        "security.ipsec"
+      ],
+      "related_terms": [
+        "SSL",
+        "HTTPS",
+        "ハンドシェイク",
+        "暗号スイート",
+        "前方秘匿性"
+      ]
+    },
+    {
+      "id": "strategy.data_portability",
+      "domain": "STRATEGY",
+      "term": "データポータビリティ",
+      "full_name": "Data Portability",
+      "japanese": "データポータビリティ",
+      "meaning": "利用者が自分のデータを、構造化され機械可読な形式で受け取り、別の事業者へ移行できる権利や仕組み。GDPRが権利として定める。",
+      "exam_tip": "利用者が「持ち運べる」ことが要点で、事業者間でデータを自由に売買できることではない。囲い込み（ロックイン）を防ぎ競争を促す狙いがある。DFFT（国境を越えた流通）やオープンAPIと関連づけて出る。",
+      "related": [
+        "strategy.dfft",
+        "strategy.api_economy"
+      ],
+      "related_terms": [
+        "GDPR",
+        "機械可読",
+        "ロックイン",
+        "個人情報保護法",
+        "オープンバンキング"
+      ]
     }
   ]
 }
