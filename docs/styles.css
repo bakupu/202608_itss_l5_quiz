@@ -534,3 +534,126 @@ select {
     white-space: nowrap;
   }
 }
+
+/* ===== 解説カード（回答後） =====
+   A〜Dすべてを同じ密度で表示する。正解だけを目立たせて誤答を薄くすると、
+   誤答選択肢が何なのかを読ませる設計にならない。差は枠線と見出しの色だけに留める。 */
+.explain-cards {
+  display: grid;
+  gap: 12px;
+  margin: 12px 0 16px;
+}
+.ex-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: var(--card);
+}
+.ex-card.is-correct {
+  border-color: var(--good);
+  background: #f0fdf4;
+}
+.ex-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+}
+.ex-mark {
+  flex: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.ex-card.is-correct .ex-mark {
+  color: var(--good);
+}
+.ex-choice {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.ex-badges {
+  display: flex;
+  gap: 6px;
+  margin: 6px 0 0 22px;
+  min-height: 0;
+}
+.ex-badges:empty {
+  display: none;
+}
+.ex-badge {
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+.ex-badge.good {
+  color: var(--good);
+  border-color: var(--good);
+}
+.ex-badge.chosen {
+  color: var(--warn);
+  border-color: var(--warn);
+}
+.ex-term {
+  margin: 10px 0 6px 22px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+}
+.ex-term strong {
+  font-size: 1.02rem;
+}
+.ex-fullname {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.ex-rows {
+  margin: 0 0 0 22px;
+  display: grid;
+  gap: 6px;
+}
+.ex-row {
+  display: grid;
+  grid-template-columns: 6.5em 1fr;
+  gap: 10px;
+  align-items: start;
+}
+.ex-row dt {
+  font-size: 0.78rem;
+  color: var(--muted);
+  padding-top: 2px;
+}
+.ex-row dd {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.ex-row dd.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.ex-row .chip {
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+}
+
+/* スマホ幅では見出しを上に積む。6.5emの見出し列を残すと本文が2〜3文字で折り返す。 */
+@media (max-width: 480px) {
+  .ex-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .ex-term,
+  .ex-rows,
+  .ex-badges {
+    margin-left: 0;
+  }
+}

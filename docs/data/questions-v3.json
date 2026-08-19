@@ -1,0 +1,2747 @@
+[
+  {
+    "id": "strategy.swot.term_to_meaning.001",
+    "concept_id": "strategy.swot",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「SWOT分析」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "エンタープライズアーキテクチャを策定・運用するための代表的なフレームワーク",
+      "政治・経済・社会・技術の観点から、企業を取り巻くマクロ環境を分析する手法",
+      "内部環境の強み・弱みと、外部環境の機会・脅威を整理して戦略立案に用いる分析手法",
+      "業界の競争要因を、新規参入・代替品・買い手・売り手・既存競争の五つの力で捉える手法"
+    ],
+    "choice_concept_ids": [
+      "strategy.togaf",
+      "strategy.pest",
+      "strategy.swot",
+      "strategy.five_forces"
+    ],
+    "correct_choice": 2,
+    "choice_reasons": [
+      "これはTOGAFの説明であり、SWOT分析ではない。",
+      "これはPEST分析の説明であり、SWOT分析ではない。",
+      "SWOT分析の定義そのもの。",
+      "これはファイブフォース分析の説明であり、SWOT分析ではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "SWOT分析",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.swot.meaning_to_term.001",
+    "concept_id": "strategy.swot",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n内部環境の強み・弱みと、外部環境の機会・脅威を整理して戦略立案に用いる分析手法。",
+    "choices": [
+      "PEST分析",
+      "SWOT分析",
+      "ファイブフォース分析",
+      "TOGAF"
+    ],
+    "choice_concept_ids": [
+      "strategy.pest",
+      "strategy.swot",
+      "strategy.five_forces",
+      "strategy.togaf"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "PEST分析は「政治・経済・社会・技術の観点から、企業を取り巻くマクロ環境を分析する手法」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "ファイブフォース分析は「業界の競争要因を、新規参入・代替品・買い手・売り手・既存競争の五つの力で捉える手法」であり、設問の説明とは別。",
+      "TOGAFは「エンタープライズアーキテクチャを策定・運用するための代表的なフレームワーク」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "SWOT分析",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.pest.term_to_meaning.001",
+    "concept_id": "strategy.pest",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「PEST分析」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "エンタープライズアーキテクチャを策定・運用するための代表的なフレームワーク",
+      "将来キャッシュフローを割引率で現在価値に換算し、投資額との差で投資価値を評価する指標",
+      "政治・経済・社会・技術の観点から、企業を取り巻くマクロ環境を分析する手法",
+      "業界の競争要因を、新規参入・代替品・買い手・売り手・既存競争の五つの力で捉える手法"
+    ],
+    "choice_concept_ids": [
+      "strategy.togaf",
+      "strategy.npv",
+      "strategy.pest",
+      "strategy.five_forces"
+    ],
+    "correct_choice": 2,
+    "choice_reasons": [
+      "これはTOGAFの説明であり、PEST分析ではない。",
+      "これはNPVの説明であり、PEST分析ではない。",
+      "PEST分析の定義そのもの。",
+      "これはファイブフォース分析の説明であり、PEST分析ではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "PEST分析",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.pest.meaning_to_term.001",
+    "concept_id": "strategy.pest",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n政治・経済・社会・技術の観点から、企業を取り巻くマクロ環境を分析する手法。",
+    "choices": [
+      "TOGAF",
+      "NPV",
+      "ファイブフォース分析",
+      "PEST分析"
+    ],
+    "choice_concept_ids": [
+      "strategy.togaf",
+      "strategy.npv",
+      "strategy.five_forces",
+      "strategy.pest"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "TOGAFは「エンタープライズアーキテクチャを策定・運用するための代表的なフレームワーク」であり、設問の説明とは別。",
+      "NPVは「将来キャッシュフローを割引率で現在価値に換算し、投資額との差で投資価値を評価する指標」であり、設問の説明とは別。",
+      "ファイブフォース分析は「業界の競争要因を、新規参入・代替品・買い手・売り手・既存競争の五つの力で捉える手法」であり、設問の説明とは別。",
+      "設問の説明に合致する。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "PEST分析",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.five_forces.term_to_meaning.001",
+    "concept_id": "strategy.five_forces",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「ファイブフォース分析」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "業界の競争要因を、新規参入・代替品・買い手・売り手・既存競争の五つの力で捉える手法",
+      "内部環境の強み・弱みと、外部環境の機会・脅威を整理して戦略立案に用いる分析手法",
+      "導入費だけでなく運用・保守・教育・廃棄などを含め、保有期間全体の総コストで評価する考え方",
+      "将来キャッシュフローを割引率で現在価値に換算し、投資額との差で投資価値を評価する指標"
+    ],
+    "choice_concept_ids": [
+      "strategy.five_forces",
+      "strategy.swot",
+      "strategy.tco",
+      "strategy.npv"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "ファイブフォース分析の定義そのもの。",
+      "これはSWOT分析の説明であり、ファイブフォース分析ではない。",
+      "これはTCOの説明であり、ファイブフォース分析ではない。",
+      "これはNPVの説明であり、ファイブフォース分析ではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "ファイブフォース分析",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.five_forces.meaning_to_term.001",
+    "concept_id": "strategy.five_forces",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n業界の競争要因を、新規参入・代替品・買い手・売り手・既存競争の五つの力で捉える手法。",
+    "choices": [
+      "ファイブフォース分析",
+      "TCO",
+      "SWOT分析",
+      "NPV"
+    ],
+    "choice_concept_ids": [
+      "strategy.five_forces",
+      "strategy.tco",
+      "strategy.swot",
+      "strategy.npv"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "設問の説明に合致する。",
+      "TCOは「導入費だけでなく運用・保守・教育・廃棄などを含め、保有期間全体の総コストで評価する考え方」であり、設問の説明とは別。",
+      "SWOT分析は「内部環境の強み・弱みと、外部環境の機会・脅威を整理して戦略立案に用いる分析手法」であり、設問の説明とは別。",
+      "NPVは「将来キャッシュフローを割引率で現在価値に換算し、投資額との差で投資価値を評価する指標」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "ファイブフォース分析",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.value_chain.term_to_meaning.001",
+    "concept_id": "strategy.value_chain",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「バリューチェーン」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "KGI達成に至るプロセスの進捗や重要活動を定量的に測る中間指標",
+      "企業活動を主活動と支援活動に分け、どこで価値や競争優位が生まれるかを分析する考え方",
+      "内部環境の強み・弱みと、外部環境の機会・脅威を整理して戦略立案に用いる分析手法",
+      "業界の競争要因を、新規参入・代替品・買い手・売り手・既存競争の五つの力で捉える手法"
+    ],
+    "choice_concept_ids": [
+      "strategy.kpi",
+      "strategy.value_chain",
+      "strategy.swot",
+      "strategy.five_forces"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "これはKPIの説明であり、バリューチェーンではない。",
+      "バリューチェーンの定義そのもの。",
+      "これはSWOT分析の説明であり、バリューチェーンではない。",
+      "これはファイブフォース分析の説明であり、バリューチェーンではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "バリューチェーン",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.value_chain.meaning_to_term.001",
+    "concept_id": "strategy.value_chain",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n企業活動を主活動と支援活動に分け、どこで価値や競争優位が生まれるかを分析する考え方。",
+    "choices": [
+      "ファイブフォース分析",
+      "バリューチェーン",
+      "KPI",
+      "SWOT分析"
+    ],
+    "choice_concept_ids": [
+      "strategy.five_forces",
+      "strategy.value_chain",
+      "strategy.kpi",
+      "strategy.swot"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "ファイブフォース分析は「業界の競争要因を、新規参入・代替品・買い手・売り手・既存競争の五つの力で捉える手法」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "KPIは「KGI達成に至るプロセスの進捗や重要活動を定量的に測る中間指標」であり、設問の説明とは別。",
+      "SWOT分析は「内部環境の強み・弱みと、外部環境の機会・脅威を整理して戦略立案に用いる分析手法」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "バリューチェーン",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.ppm.term_to_meaning.001",
+    "concept_id": "strategy.ppm",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「PPM」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "事業を市場成長率と相対的市場占有率で分類し、経営資源配分を検討するポートフォリオ分析",
+      "エンタープライズアーキテクチャを策定・運用するための代表的なフレームワーク",
+      "政治・経済・社会・技術の観点から、企業を取り巻くマクロ環境を分析する手法",
+      "KGI達成に至るプロセスの進捗や重要活動を定量的に測る中間指標"
+    ],
+    "choice_concept_ids": [
+      "strategy.ppm",
+      "strategy.togaf",
+      "strategy.pest",
+      "strategy.kpi"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "PPMの定義そのもの。",
+      "これはTOGAFの説明であり、PPMではない。",
+      "これはPEST分析の説明であり、PPMではない。",
+      "これはKPIの説明であり、PPMではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "PPM",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.ppm.meaning_to_term.001",
+    "concept_id": "strategy.ppm",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n事業を市場成長率と相対的市場占有率で分類し、経営資源配分を検討するポートフォリオ分析。",
+    "choices": [
+      "TOGAF",
+      "PEST分析",
+      "KPI",
+      "PPM"
+    ],
+    "choice_concept_ids": [
+      "strategy.togaf",
+      "strategy.pest",
+      "strategy.kpi",
+      "strategy.ppm"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "TOGAFは「エンタープライズアーキテクチャを策定・運用するための代表的なフレームワーク」であり、設問の説明とは別。",
+      "PEST分析は「政治・経済・社会・技術の観点から、企業を取り巻くマクロ環境を分析する手法」であり、設問の説明とは別。",
+      "KPIは「KGI達成に至るプロセスの進捗や重要活動を定量的に測る中間指標」であり、設問の説明とは別。",
+      "設問の説明に合致する。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "PPM",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.bsc.term_to_meaning.001",
+    "concept_id": "strategy.bsc",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「BSC」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "KGI達成に至るプロセスの進捗や重要活動を定量的に測る中間指標",
+      "将来キャッシュフローを割引率で現在価値に換算し、投資額との差で投資価値を評価する指標",
+      "政治・経済・社会・技術の観点から、企業を取り巻くマクロ環境を分析する手法",
+      "財務・顧客・内部プロセス・学習と成長の複数視点で戦略を指標に落とし込む管理手法"
+    ],
+    "choice_concept_ids": [
+      "strategy.kpi",
+      "strategy.npv",
+      "strategy.pest",
+      "strategy.bsc"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "これはKPIの説明であり、BSCではない。",
+      "これはNPVの説明であり、BSCではない。",
+      "これはPEST分析の説明であり、BSCではない。",
+      "BSCの定義そのもの。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "BSC",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.bsc.meaning_to_term.001",
+    "concept_id": "strategy.bsc",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n財務・顧客・内部プロセス・学習と成長の複数視点で戦略を指標に落とし込む管理手法。",
+    "choices": [
+      "NPV",
+      "BSC",
+      "KPI",
+      "PEST分析"
+    ],
+    "choice_concept_ids": [
+      "strategy.npv",
+      "strategy.bsc",
+      "strategy.kpi",
+      "strategy.pest"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "NPVは「将来キャッシュフローを割引率で現在価値に換算し、投資額との差で投資価値を評価する指標」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "KPIは「KGI達成に至るプロセスの進捗や重要活動を定量的に測る中間指標」であり、設問の説明とは別。",
+      "PEST分析は「政治・経済・社会・技術の観点から、企業を取り巻くマクロ環境を分析する手法」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "BSC",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.kgi.term_to_meaning.001",
+    "concept_id": "strategy.kgi",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「KGI」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "政治・経済・社会・技術の観点から、企業を取り巻くマクロ環境を分析する手法",
+      "企業活動を主活動と支援活動に分け、どこで価値や競争優位が生まれるかを分析する考え方",
+      "組織や施策が最終的に達成すべきゴールを定量的に表す成果指標",
+      "内部環境の強み・弱みと、外部環境の機会・脅威を整理して戦略立案に用いる分析手法"
+    ],
+    "choice_concept_ids": [
+      "strategy.pest",
+      "strategy.value_chain",
+      "strategy.kgi",
+      "strategy.swot"
+    ],
+    "correct_choice": 2,
+    "choice_reasons": [
+      "これはPEST分析の説明であり、KGIではない。",
+      "これはバリューチェーンの説明であり、KGIではない。",
+      "KGIの定義そのもの。",
+      "これはSWOT分析の説明であり、KGIではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "KGI",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.kgi.meaning_to_term.001",
+    "concept_id": "strategy.kgi",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n組織や施策が最終的に達成すべきゴールを定量的に表す成果指標。",
+    "choices": [
+      "バリューチェーン",
+      "SWOT分析",
+      "PEST分析",
+      "KGI"
+    ],
+    "choice_concept_ids": [
+      "strategy.value_chain",
+      "strategy.swot",
+      "strategy.pest",
+      "strategy.kgi"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "バリューチェーンは「企業活動を主活動と支援活動に分け、どこで価値や競争優位が生まれるかを分析する考え方」であり、設問の説明とは別。",
+      "SWOT分析は「内部環境の強み・弱みと、外部環境の機会・脅威を整理して戦略立案に用いる分析手法」であり、設問の説明とは別。",
+      "PEST分析は「政治・経済・社会・技術の観点から、企業を取り巻くマクロ環境を分析する手法」であり、設問の説明とは別。",
+      "設問の説明に合致する。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "KGI",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.kpi.term_to_meaning.001",
+    "concept_id": "strategy.kpi",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「KPI」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "業界の競争要因を、新規参入・代替品・買い手・売り手・既存競争の五つの力で捉える手法",
+      "KGI達成に至るプロセスの進捗や重要活動を定量的に測る中間指標",
+      "投下した資本や費用に対して、どれだけ利益を得たかを示す投資効率の指標",
+      "財務・顧客・内部プロセス・学習と成長の複数視点で戦略を指標に落とし込む管理手法"
+    ],
+    "choice_concept_ids": [
+      "strategy.five_forces",
+      "strategy.kpi",
+      "strategy.roi",
+      "strategy.bsc"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "これはファイブフォース分析の説明であり、KPIではない。",
+      "KPIの定義そのもの。",
+      "これはROIの説明であり、KPIではない。",
+      "これはBSCの説明であり、KPIではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "KPI",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.kpi.meaning_to_term.001",
+    "concept_id": "strategy.kpi",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\nKGI達成に至るプロセスの進捗や重要活動を定量的に測る中間指標。",
+    "choices": [
+      "ROI",
+      "KPI",
+      "ファイブフォース分析",
+      "BSC"
+    ],
+    "choice_concept_ids": [
+      "strategy.roi",
+      "strategy.kpi",
+      "strategy.five_forces",
+      "strategy.bsc"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "ROIは「投下した資本や費用に対して、どれだけ利益を得たかを示す投資効率の指標」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "ファイブフォース分析は「業界の競争要因を、新規参入・代替品・買い手・売り手・既存競争の五つの力で捉える手法」であり、設問の説明とは別。",
+      "BSCは「財務・顧客・内部プロセス・学習と成長の複数視点で戦略を指標に落とし込む管理手法」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "KPI",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.roi.term_to_meaning.001",
+    "concept_id": "strategy.roi",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「ROI」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "業界の競争要因を、新規参入・代替品・買い手・売り手・既存競争の五つの力で捉える手法",
+      "将来キャッシュフローを割引率で現在価値に換算し、投資額との差で投資価値を評価する指標",
+      "投下した資本や費用に対して、どれだけ利益を得たかを示す投資効率の指標",
+      "導入費だけでなく運用・保守・教育・廃棄などを含め、保有期間全体の総コストで評価する考え方"
+    ],
+    "choice_concept_ids": [
+      "strategy.five_forces",
+      "strategy.npv",
+      "strategy.roi",
+      "strategy.tco"
+    ],
+    "correct_choice": 2,
+    "choice_reasons": [
+      "これはファイブフォース分析の説明であり、ROIではない。",
+      "これはNPVの説明であり、ROIではない。",
+      "ROIの定義そのもの。",
+      "これはTCOの説明であり、ROIではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "ROI",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.roi.meaning_to_term.001",
+    "concept_id": "strategy.roi",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n投下した資本や費用に対して、どれだけ利益を得たかを示す投資効率の指標。",
+    "choices": [
+      "ファイブフォース分析",
+      "ROI",
+      "TCO",
+      "NPV"
+    ],
+    "choice_concept_ids": [
+      "strategy.five_forces",
+      "strategy.roi",
+      "strategy.tco",
+      "strategy.npv"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "ファイブフォース分析は「業界の競争要因を、新規参入・代替品・買い手・売り手・既存競争の五つの力で捉える手法」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "TCOは「導入費だけでなく運用・保守・教育・廃棄などを含め、保有期間全体の総コストで評価する考え方」であり、設問の説明とは別。",
+      "NPVは「将来キャッシュフローを割引率で現在価値に換算し、投資額との差で投資価値を評価する指標」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "ROI",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.npv.term_to_meaning.001",
+    "concept_id": "strategy.npv",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「NPV」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "財務・顧客・内部プロセス・学習と成長の複数視点で戦略を指標に落とし込む管理手法",
+      "内部環境の強み・弱みと、外部環境の機会・脅威を整理して戦略立案に用いる分析手法",
+      "将来キャッシュフローを割引率で現在価値に換算し、投資額との差で投資価値を評価する指標",
+      "エンタープライズアーキテクチャを策定・運用するための代表的なフレームワーク"
+    ],
+    "choice_concept_ids": [
+      "strategy.bsc",
+      "strategy.swot",
+      "strategy.npv",
+      "strategy.togaf"
+    ],
+    "correct_choice": 2,
+    "choice_reasons": [
+      "これはBSCの説明であり、NPVではない。",
+      "これはSWOT分析の説明であり、NPVではない。",
+      "NPVの定義そのもの。",
+      "これはTOGAFの説明であり、NPVではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "NPV",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.npv.meaning_to_term.001",
+    "concept_id": "strategy.npv",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n将来キャッシュフローを割引率で現在価値に換算し、投資額との差で投資価値を評価する指標。",
+    "choices": [
+      "BSC",
+      "NPV",
+      "TOGAF",
+      "SWOT分析"
+    ],
+    "choice_concept_ids": [
+      "strategy.bsc",
+      "strategy.npv",
+      "strategy.togaf",
+      "strategy.swot"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "BSCは「財務・顧客・内部プロセス・学習と成長の複数視点で戦略を指標に落とし込む管理手法」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "TOGAFは「エンタープライズアーキテクチャを策定・運用するための代表的なフレームワーク」であり、設問の説明とは別。",
+      "SWOT分析は「内部環境の強み・弱みと、外部環境の機会・脅威を整理して戦略立案に用いる分析手法」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "NPV",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.tco.term_to_meaning.001",
+    "concept_id": "strategy.tco",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「TCO」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "導入費だけでなく運用・保守・教育・廃棄などを含め、保有期間全体の総コストで評価する考え方",
+      "財務・顧客・内部プロセス・学習と成長の複数視点で戦略を指標に落とし込む管理手法",
+      "将来キャッシュフローを割引率で現在価値に換算し、投資額との差で投資価値を評価する指標",
+      "企業活動を主活動と支援活動に分け、どこで価値や競争優位が生まれるかを分析する考え方"
+    ],
+    "choice_concept_ids": [
+      "strategy.tco",
+      "strategy.bsc",
+      "strategy.npv",
+      "strategy.value_chain"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "TCOの定義そのもの。",
+      "これはBSCの説明であり、TCOではない。",
+      "これはNPVの説明であり、TCOではない。",
+      "これはバリューチェーンの説明であり、TCOではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "TCO",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.tco.meaning_to_term.001",
+    "concept_id": "strategy.tco",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n導入費だけでなく運用・保守・教育・廃棄などを含め、保有期間全体の総コストで評価する考え方。",
+    "choices": [
+      "TCO",
+      "バリューチェーン",
+      "NPV",
+      "BSC"
+    ],
+    "choice_concept_ids": [
+      "strategy.tco",
+      "strategy.value_chain",
+      "strategy.npv",
+      "strategy.bsc"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "設問の説明に合致する。",
+      "バリューチェーンは「企業活動を主活動と支援活動に分け、どこで価値や競争優位が生まれるかを分析する考え方」であり、設問の説明とは別。",
+      "NPVは「将来キャッシュフローを割引率で現在価値に換算し、投資額との差で投資価値を評価する指標」であり、設問の説明とは別。",
+      "BSCは「財務・顧客・内部プロセス・学習と成長の複数視点で戦略を指標に落とし込む管理手法」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "TCO",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.togaf.term_to_meaning.001",
+    "concept_id": "strategy.togaf",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「TOGAF」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "エンタープライズアーキテクチャを策定・運用するための代表的なフレームワーク",
+      "導入費だけでなく運用・保守・教育・廃棄などを含め、保有期間全体の総コストで評価する考え方",
+      "事業を市場成長率と相対的市場占有率で分類し、経営資源配分を検討するポートフォリオ分析",
+      "業界の競争要因を、新規参入・代替品・買い手・売り手・既存競争の五つの力で捉える手法"
+    ],
+    "choice_concept_ids": [
+      "strategy.togaf",
+      "strategy.tco",
+      "strategy.ppm",
+      "strategy.five_forces"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "TOGAFの定義そのもの。",
+      "これはTCOの説明であり、TOGAFではない。",
+      "これはPPMの説明であり、TOGAFではない。",
+      "これはファイブフォース分析の説明であり、TOGAFではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "TOGAF",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.togaf.meaning_to_term.001",
+    "concept_id": "strategy.togaf",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\nエンタープライズアーキテクチャを策定・運用するための代表的なフレームワーク。",
+    "choices": [
+      "TOGAF",
+      "ファイブフォース分析",
+      "PPM",
+      "TCO"
+    ],
+    "choice_concept_ids": [
+      "strategy.togaf",
+      "strategy.five_forces",
+      "strategy.ppm",
+      "strategy.tco"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "設問の説明に合致する。",
+      "ファイブフォース分析は「業界の競争要因を、新規参入・代替品・買い手・売り手・既存競争の五つの力で捉える手法」であり、設問の説明とは別。",
+      "PPMは「事業を市場成長率と相対的市場占有率で分類し、経営資源配分を検討するポートフォリオ分析」であり、設問の説明とは別。",
+      "TCOは「導入費だけでなく運用・保守・教育・廃棄などを含め、保有期間全体の総コストで評価する考え方」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "TOGAF",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.nfr.term_to_meaning.001",
+    "concept_id": "architecture.nfr",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「非機能要件」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "分散システムの長いトランザクションを複数のローカルトランザクションと補償処理で扱うパターン",
+      "更新系コマンドと参照系クエリの責務やモデルを分離するアーキテクチャパターン",
+      "性能・可用性・拡張性・セキュリティ・運用性など、機能そのもの以外にシステムへ求める品質特性",
+      "コンポーネント間の依存を小さくし、変更の影響範囲を限定する設計上の性質"
+    ],
+    "choice_concept_ids": [
+      "architecture.saga",
+      "architecture.cqrs",
+      "architecture.nfr",
+      "architecture.loose_coupling"
+    ],
+    "correct_choice": 2,
+    "choice_reasons": [
+      "これはSagaパターンの説明であり、非機能要件ではない。",
+      "これはCQRSの説明であり、非機能要件ではない。",
+      "非機能要件の定義そのもの。",
+      "これは疎結合の説明であり、非機能要件ではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "非機能要件",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.nfr.meaning_to_term.001",
+    "concept_id": "architecture.nfr",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n性能・可用性・拡張性・セキュリティ・運用性など、機能そのもの以外にシステムへ求める品質特性。",
+    "choices": [
+      "Sagaパターン",
+      "CQRS",
+      "疎結合",
+      "非機能要件"
+    ],
+    "choice_concept_ids": [
+      "architecture.saga",
+      "architecture.cqrs",
+      "architecture.loose_coupling",
+      "architecture.nfr"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "Sagaパターンは「分散システムの長いトランザクションを複数のローカルトランザクションと補償処理で扱うパターン」であり、設問の説明とは別。",
+      "CQRSは「更新系コマンドと参照系クエリの責務やモデルを分離するアーキテクチャパターン」であり、設問の説明とは別。",
+      "疎結合は「コンポーネント間の依存を小さくし、変更の影響範囲を限定する設計上の性質」であり、設問の説明とは別。",
+      "設問の説明に合致する。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "非機能要件",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.availability.term_to_meaning.001",
+    "concept_id": "architecture.availability",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「可用性」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "必要なときにシステムやサービスを利用できる度合い。稼働率や停止時間などで評価する",
+      "障害中の外部サービスへの呼出しを一時的に遮断し、連鎖障害や無駄な待ちを防ぐパターン",
+      "障害発生時に、どの時点までのデータ損失を許容するかを表す目標復旧時点",
+      "負荷増大に対して資源追加や構成変更により処理能力を拡張できる性質"
+    ],
+    "choice_concept_ids": [
+      "architecture.availability",
+      "architecture.circuit_breaker",
+      "architecture.rpo",
+      "architecture.scalability"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "可用性の定義そのもの。",
+      "これはCircuit Breakerの説明であり、可用性ではない。",
+      "これはRPOの説明であり、可用性ではない。",
+      "これはスケーラビリティの説明であり、可用性ではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "可用性",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.availability.meaning_to_term.001",
+    "concept_id": "architecture.availability",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n必要なときにシステムやサービスを利用できる度合い。稼働率や停止時間などで評価する。",
+    "choices": [
+      "RPO",
+      "可用性",
+      "スケーラビリティ",
+      "Circuit Breaker"
+    ],
+    "choice_concept_ids": [
+      "architecture.rpo",
+      "architecture.availability",
+      "architecture.scalability",
+      "architecture.circuit_breaker"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "RPOは「障害発生時に、どの時点までのデータ損失を許容するかを表す目標復旧時点」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "スケーラビリティは「負荷増大に対して資源追加や構成変更により処理能力を拡張できる性質」であり、設問の説明とは別。",
+      "Circuit Breakerは「障害中の外部サービスへの呼出しを一時的に遮断し、連鎖障害や無駄な待ちを防ぐパターン」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "可用性",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.scalability.term_to_meaning.001",
+    "concept_id": "architecture.scalability",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「スケーラビリティ」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "負荷増大に対して資源追加や構成変更により処理能力を拡張できる性質",
+      "障害発生時に、どの時点までのデータ損失を許容するかを表す目標復旧時点",
+      "同じ操作を複数回実行しても、一回実行した場合と同じ最終状態になる性質",
+      "必要なときにシステムやサービスを利用できる度合い。稼働率や停止時間などで評価する"
+    ],
+    "choice_concept_ids": [
+      "architecture.scalability",
+      "architecture.rpo",
+      "architecture.idempotency",
+      "architecture.availability"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "スケーラビリティの定義そのもの。",
+      "これはRPOの説明であり、スケーラビリティではない。",
+      "これは冪等性の説明であり、スケーラビリティではない。",
+      "これは可用性の説明であり、スケーラビリティではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "スケーラビリティ",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.scalability.meaning_to_term.001",
+    "concept_id": "architecture.scalability",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n負荷増大に対して資源追加や構成変更により処理能力を拡張できる性質。",
+    "choices": [
+      "冪等性",
+      "可用性",
+      "RPO",
+      "スケーラビリティ"
+    ],
+    "choice_concept_ids": [
+      "architecture.idempotency",
+      "architecture.availability",
+      "architecture.rpo",
+      "architecture.scalability"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "冪等性は「同じ操作を複数回実行しても、一回実行した場合と同じ最終状態になる性質」であり、設問の説明とは別。",
+      "可用性は「必要なときにシステムやサービスを利用できる度合い。稼働率や停止時間などで評価する」であり、設問の説明とは別。",
+      "RPOは「障害発生時に、どの時点までのデータ損失を許容するかを表す目標復旧時点」であり、設問の説明とは別。",
+      "設問の説明に合致する。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "スケーラビリティ",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.loose_coupling.term_to_meaning.001",
+    "concept_id": "architecture.loose_coupling",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「疎結合」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "負荷増大に対して資源追加や構成変更により処理能力を拡張できる性質",
+      "コンポーネント間の依存を小さくし、変更の影響範囲を限定する設計上の性質",
+      "性能・可用性・拡張性・セキュリティ・運用性など、機能そのもの以外にシステムへ求める品質特性",
+      "アプリケーションがまずキャッシュを参照し、ミス時にデータストアから取得してキャッシュへ格納する方式"
+    ],
+    "choice_concept_ids": [
+      "architecture.scalability",
+      "architecture.loose_coupling",
+      "architecture.nfr",
+      "architecture.cache_aside"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "これはスケーラビリティの説明であり、疎結合ではない。",
+      "疎結合の定義そのもの。",
+      "これは非機能要件の説明であり、疎結合ではない。",
+      "これはキャッシュアサイドの説明であり、疎結合ではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "疎結合",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.loose_coupling.meaning_to_term.001",
+    "concept_id": "architecture.loose_coupling",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\nコンポーネント間の依存を小さくし、変更の影響範囲を限定する設計上の性質。",
+    "choices": [
+      "非機能要件",
+      "スケーラビリティ",
+      "キャッシュアサイド",
+      "疎結合"
+    ],
+    "choice_concept_ids": [
+      "architecture.nfr",
+      "architecture.scalability",
+      "architecture.cache_aside",
+      "architecture.loose_coupling"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "非機能要件は「性能・可用性・拡張性・セキュリティ・運用性など、機能そのもの以外にシステムへ求める品質特性」であり、設問の説明とは別。",
+      "スケーラビリティは「負荷増大に対して資源追加や構成変更により処理能力を拡張できる性質」であり、設問の説明とは別。",
+      "キャッシュアサイドは「アプリケーションがまずキャッシュを参照し、ミス時にデータストアから取得してキャッシュへ格納する方式」であり、設問の説明とは別。",
+      "設問の説明に合致する。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "疎結合",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.cqrs.term_to_meaning.001",
+    "concept_id": "architecture.cqrs",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「CQRS」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "同じ操作を複数回実行しても、一回実行した場合と同じ最終状態になる性質",
+      "更新系コマンドと参照系クエリの責務やモデルを分離するアーキテクチャパターン",
+      "コンポーネント間の依存を小さくし、変更の影響範囲を限定する設計上の性質",
+      "障害発生時に、どの時点までのデータ損失を許容するかを表す目標復旧時点"
+    ],
+    "choice_concept_ids": [
+      "architecture.idempotency",
+      "architecture.cqrs",
+      "architecture.loose_coupling",
+      "architecture.rpo"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "これは冪等性の説明であり、CQRSではない。",
+      "CQRSの定義そのもの。",
+      "これは疎結合の説明であり、CQRSではない。",
+      "これはRPOの説明であり、CQRSではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "CQRS",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.cqrs.meaning_to_term.001",
+    "concept_id": "architecture.cqrs",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n更新系コマンドと参照系クエリの責務やモデルを分離するアーキテクチャパターン。",
+    "choices": [
+      "疎結合",
+      "RPO",
+      "冪等性",
+      "CQRS"
+    ],
+    "choice_concept_ids": [
+      "architecture.loose_coupling",
+      "architecture.rpo",
+      "architecture.idempotency",
+      "architecture.cqrs"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "疎結合は「コンポーネント間の依存を小さくし、変更の影響範囲を限定する設計上の性質」であり、設問の説明とは別。",
+      "RPOは「障害発生時に、どの時点までのデータ損失を許容するかを表す目標復旧時点」であり、設問の説明とは別。",
+      "冪等性は「同じ操作を複数回実行しても、一回実行した場合と同じ最終状態になる性質」であり、設問の説明とは別。",
+      "設問の説明に合致する。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "CQRS",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.event_sourcing.term_to_meaning.001",
+    "concept_id": "architecture.event_sourcing",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「イベントソーシング」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "必要なときにシステムやサービスを利用できる度合い。稼働率や停止時間などで評価する",
+      "現在状態だけでなく、状態変化を表すイベント列を永続化し、イベントから状態を再構築する方式",
+      "アプリケーションがまずキャッシュを参照し、ミス時にデータストアから取得してキャッシュへ格納する方式",
+      "性能・可用性・拡張性・セキュリティ・運用性など、機能そのもの以外にシステムへ求める品質特性"
+    ],
+    "choice_concept_ids": [
+      "architecture.availability",
+      "architecture.event_sourcing",
+      "architecture.cache_aside",
+      "architecture.nfr"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "これは可用性の説明であり、イベントソーシングではない。",
+      "イベントソーシングの定義そのもの。",
+      "これはキャッシュアサイドの説明であり、イベントソーシングではない。",
+      "これは非機能要件の説明であり、イベントソーシングではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "イベントソーシング",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.event_sourcing.meaning_to_term.001",
+    "concept_id": "architecture.event_sourcing",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n現在状態だけでなく、状態変化を表すイベント列を永続化し、イベントから状態を再構築する方式。",
+    "choices": [
+      "キャッシュアサイド",
+      "非機能要件",
+      "可用性",
+      "イベントソーシング"
+    ],
+    "choice_concept_ids": [
+      "architecture.cache_aside",
+      "architecture.nfr",
+      "architecture.availability",
+      "architecture.event_sourcing"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "キャッシュアサイドは「アプリケーションがまずキャッシュを参照し、ミス時にデータストアから取得してキャッシュへ格納する方式」であり、設問の説明とは別。",
+      "非機能要件は「性能・可用性・拡張性・セキュリティ・運用性など、機能そのもの以外にシステムへ求める品質特性」であり、設問の説明とは別。",
+      "可用性は「必要なときにシステムやサービスを利用できる度合い。稼働率や停止時間などで評価する」であり、設問の説明とは別。",
+      "設問の説明に合致する。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "イベントソーシング",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.saga.term_to_meaning.001",
+    "concept_id": "architecture.saga",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「Sagaパターン」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "アプリケーションがまずキャッシュを参照し、ミス時にデータストアから取得してキャッシュへ格納する方式",
+      "障害発生時に、どの時点までのデータ損失を許容するかを表す目標復旧時点",
+      "分散システムの長いトランザクションを複数のローカルトランザクションと補償処理で扱うパターン",
+      "必要なときにシステムやサービスを利用できる度合い。稼働率や停止時間などで評価する"
+    ],
+    "choice_concept_ids": [
+      "architecture.cache_aside",
+      "architecture.rpo",
+      "architecture.saga",
+      "architecture.availability"
+    ],
+    "correct_choice": 2,
+    "choice_reasons": [
+      "これはキャッシュアサイドの説明であり、Sagaパターンではない。",
+      "これはRPOの説明であり、Sagaパターンではない。",
+      "Sagaパターンの定義そのもの。",
+      "これは可用性の説明であり、Sagaパターンではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "Sagaパターン",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.saga.meaning_to_term.001",
+    "concept_id": "architecture.saga",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n分散システムの長いトランザクションを複数のローカルトランザクションと補償処理で扱うパターン。",
+    "choices": [
+      "Sagaパターン",
+      "キャッシュアサイド",
+      "RPO",
+      "可用性"
+    ],
+    "choice_concept_ids": [
+      "architecture.saga",
+      "architecture.cache_aside",
+      "architecture.rpo",
+      "architecture.availability"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "設問の説明に合致する。",
+      "キャッシュアサイドは「アプリケーションがまずキャッシュを参照し、ミス時にデータストアから取得してキャッシュへ格納する方式」であり、設問の説明とは別。",
+      "RPOは「障害発生時に、どの時点までのデータ損失を許容するかを表す目標復旧時点」であり、設問の説明とは別。",
+      "可用性は「必要なときにシステムやサービスを利用できる度合い。稼働率や停止時間などで評価する」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "Sagaパターン",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.circuit_breaker.term_to_meaning.001",
+    "concept_id": "architecture.circuit_breaker",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「Circuit Breaker」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "障害中の外部サービスへの呼出しを一時的に遮断し、連鎖障害や無駄な待ちを防ぐパターン",
+      "障害発生時に、どの時点までのデータ損失を許容するかを表す目標復旧時点",
+      "コンポーネント間の依存を小さくし、変更の影響範囲を限定する設計上の性質",
+      "同じ操作を複数回実行しても、一回実行した場合と同じ最終状態になる性質"
+    ],
+    "choice_concept_ids": [
+      "architecture.circuit_breaker",
+      "architecture.rpo",
+      "architecture.loose_coupling",
+      "architecture.idempotency"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "Circuit Breakerの定義そのもの。",
+      "これはRPOの説明であり、Circuit Breakerではない。",
+      "これは疎結合の説明であり、Circuit Breakerではない。",
+      "これは冪等性の説明であり、Circuit Breakerではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "Circuit Breaker",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.circuit_breaker.meaning_to_term.001",
+    "concept_id": "architecture.circuit_breaker",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n障害中の外部サービスへの呼出しを一時的に遮断し、連鎖障害や無駄な待ちを防ぐパターン。",
+    "choices": [
+      "Circuit Breaker",
+      "疎結合",
+      "冪等性",
+      "RPO"
+    ],
+    "choice_concept_ids": [
+      "architecture.circuit_breaker",
+      "architecture.loose_coupling",
+      "architecture.idempotency",
+      "architecture.rpo"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "設問の説明に合致する。",
+      "疎結合は「コンポーネント間の依存を小さくし、変更の影響範囲を限定する設計上の性質」であり、設問の説明とは別。",
+      "冪等性は「同じ操作を複数回実行しても、一回実行した場合と同じ最終状態になる性質」であり、設問の説明とは別。",
+      "RPOは「障害発生時に、どの時点までのデータ損失を許容するかを表す目標復旧時点」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "Circuit Breaker",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.cache_aside.term_to_meaning.001",
+    "concept_id": "architecture.cache_aside",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「キャッシュアサイド」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "コンポーネント間の依存を小さくし、変更の影響範囲を限定する設計上の性質",
+      "災害や障害発生後、業務やサービスを復旧させるまでの目標時間",
+      "必要なときにシステムやサービスを利用できる度合い。稼働率や停止時間などで評価する",
+      "アプリケーションがまずキャッシュを参照し、ミス時にデータストアから取得してキャッシュへ格納する方式"
+    ],
+    "choice_concept_ids": [
+      "architecture.loose_coupling",
+      "architecture.rto",
+      "architecture.availability",
+      "architecture.cache_aside"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "これは疎結合の説明であり、キャッシュアサイドではない。",
+      "これはRTOの説明であり、キャッシュアサイドではない。",
+      "これは可用性の説明であり、キャッシュアサイドではない。",
+      "キャッシュアサイドの定義そのもの。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "キャッシュアサイド",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.cache_aside.meaning_to_term.001",
+    "concept_id": "architecture.cache_aside",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\nアプリケーションがまずキャッシュを参照し、ミス時にデータストアから取得してキャッシュへ格納する方式。",
+    "choices": [
+      "RTO",
+      "キャッシュアサイド",
+      "疎結合",
+      "可用性"
+    ],
+    "choice_concept_ids": [
+      "architecture.rto",
+      "architecture.cache_aside",
+      "architecture.loose_coupling",
+      "architecture.availability"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "RTOは「災害や障害発生後、業務やサービスを復旧させるまでの目標時間」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "疎結合は「コンポーネント間の依存を小さくし、変更の影響範囲を限定する設計上の性質」であり、設問の説明とは別。",
+      "可用性は「必要なときにシステムやサービスを利用できる度合い。稼働率や停止時間などで評価する」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "キャッシュアサイド",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.idempotency.term_to_meaning.001",
+    "concept_id": "architecture.idempotency",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「冪等性」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "障害発生時に、どの時点までのデータ損失を許容するかを表す目標復旧時点",
+      "必要なときにシステムやサービスを利用できる度合い。稼働率や停止時間などで評価する",
+      "同じ操作を複数回実行しても、一回実行した場合と同じ最終状態になる性質",
+      "性能・可用性・拡張性・セキュリティ・運用性など、機能そのもの以外にシステムへ求める品質特性"
+    ],
+    "choice_concept_ids": [
+      "architecture.rpo",
+      "architecture.availability",
+      "architecture.idempotency",
+      "architecture.nfr"
+    ],
+    "correct_choice": 2,
+    "choice_reasons": [
+      "これはRPOの説明であり、冪等性ではない。",
+      "これは可用性の説明であり、冪等性ではない。",
+      "冪等性の定義そのもの。",
+      "これは非機能要件の説明であり、冪等性ではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "冪等性",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.idempotency.meaning_to_term.001",
+    "concept_id": "architecture.idempotency",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n同じ操作を複数回実行しても、一回実行した場合と同じ最終状態になる性質。",
+    "choices": [
+      "非機能要件",
+      "RPO",
+      "冪等性",
+      "可用性"
+    ],
+    "choice_concept_ids": [
+      "architecture.nfr",
+      "architecture.rpo",
+      "architecture.idempotency",
+      "architecture.availability"
+    ],
+    "correct_choice": 2,
+    "choice_reasons": [
+      "非機能要件は「性能・可用性・拡張性・セキュリティ・運用性など、機能そのもの以外にシステムへ求める品質特性」であり、設問の説明とは別。",
+      "RPOは「障害発生時に、どの時点までのデータ損失を許容するかを表す目標復旧時点」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "可用性は「必要なときにシステムやサービスを利用できる度合い。稼働率や停止時間などで評価する」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "冪等性",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.rto.term_to_meaning.001",
+    "concept_id": "architecture.rto",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「RTO」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "災害や障害発生後、業務やサービスを復旧させるまでの目標時間",
+      "コンポーネント間の依存を小さくし、変更の影響範囲を限定する設計上の性質",
+      "障害中の外部サービスへの呼出しを一時的に遮断し、連鎖障害や無駄な待ちを防ぐパターン",
+      "更新系コマンドと参照系クエリの責務やモデルを分離するアーキテクチャパターン"
+    ],
+    "choice_concept_ids": [
+      "architecture.rto",
+      "architecture.loose_coupling",
+      "architecture.circuit_breaker",
+      "architecture.cqrs"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "RTOの定義そのもの。",
+      "これは疎結合の説明であり、RTOではない。",
+      "これはCircuit Breakerの説明であり、RTOではない。",
+      "これはCQRSの説明であり、RTOではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "RTO",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.rto.meaning_to_term.001",
+    "concept_id": "architecture.rto",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n災害や障害発生後、業務やサービスを復旧させるまでの目標時間。",
+    "choices": [
+      "RTO",
+      "Circuit Breaker",
+      "疎結合",
+      "CQRS"
+    ],
+    "choice_concept_ids": [
+      "architecture.rto",
+      "architecture.circuit_breaker",
+      "architecture.loose_coupling",
+      "architecture.cqrs"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "設問の説明に合致する。",
+      "Circuit Breakerは「障害中の外部サービスへの呼出しを一時的に遮断し、連鎖障害や無駄な待ちを防ぐパターン」であり、設問の説明とは別。",
+      "疎結合は「コンポーネント間の依存を小さくし、変更の影響範囲を限定する設計上の性質」であり、設問の説明とは別。",
+      "CQRSは「更新系コマンドと参照系クエリの責務やモデルを分離するアーキテクチャパターン」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "RTO",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.rpo.term_to_meaning.001",
+    "concept_id": "architecture.rpo",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「RPO」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "障害発生時に、どの時点までのデータ損失を許容するかを表す目標復旧時点",
+      "必要なときにシステムやサービスを利用できる度合い。稼働率や停止時間などで評価する",
+      "コンポーネント間の依存を小さくし、変更の影響範囲を限定する設計上の性質",
+      "同じ操作を複数回実行しても、一回実行した場合と同じ最終状態になる性質"
+    ],
+    "choice_concept_ids": [
+      "architecture.rpo",
+      "architecture.availability",
+      "architecture.loose_coupling",
+      "architecture.idempotency"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "RPOの定義そのもの。",
+      "これは可用性の説明であり、RPOではない。",
+      "これは疎結合の説明であり、RPOではない。",
+      "これは冪等性の説明であり、RPOではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "RPO",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "architecture.rpo.meaning_to_term.001",
+    "concept_id": "architecture.rpo",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n障害発生時に、どの時点までのデータ損失を許容するかを表す目標復旧時点。",
+    "choices": [
+      "可用性",
+      "RPO",
+      "疎結合",
+      "冪等性"
+    ],
+    "choice_concept_ids": [
+      "architecture.availability",
+      "architecture.rpo",
+      "architecture.loose_coupling",
+      "architecture.idempotency"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "可用性は「必要なときにシステムやサービスを利用できる度合い。稼働率や停止時間などで評価する」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "疎結合は「コンポーネント間の依存を小さくし、変更の影響範囲を限定する設計上の性質」であり、設問の説明とは別。",
+      "冪等性は「同じ操作を複数回実行しても、一回実行した場合と同じ最終状態になる性質」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "RPO",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.zero_trust.term_to_meaning.001",
+    "concept_id": "security.zero_trust",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「ゼロトラスト」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "ネットワーク内外を理由に暗黙に信頼せず、アクセスごとに主体・端末・状況を継続的に検証する考え方",
+      "脆弱性の深刻度を基本・現状・環境などの指標から定量評価する共通スコアリング方式",
+      "重要処理を一人で完結できないよう、承認・実行・監査などの役割を分ける統制",
+      "利用者やプロセスへ、業務遂行に必要な最小限の権限だけを付与する原則"
+    ],
+    "choice_concept_ids": [
+      "security.zero_trust",
+      "security.cvss",
+      "security.sod",
+      "security.least_privilege"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "ゼロトラストの定義そのもの。",
+      "これはCVSSの説明であり、ゼロトラストではない。",
+      "これは職務分離の説明であり、ゼロトラストではない。",
+      "これは最小権限の説明であり、ゼロトラストではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "ゼロトラスト",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.zero_trust.meaning_to_term.001",
+    "concept_id": "security.zero_trust",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\nネットワーク内外を理由に暗黙に信頼せず、アクセスごとに主体・端末・状況を継続的に検証する考え方。",
+    "choices": [
+      "CVSS",
+      "職務分離",
+      "最小権限",
+      "ゼロトラスト"
+    ],
+    "choice_concept_ids": [
+      "security.cvss",
+      "security.sod",
+      "security.least_privilege",
+      "security.zero_trust"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "CVSSは「脆弱性の深刻度を基本・現状・環境などの指標から定量評価する共通スコアリング方式」であり、設問の説明とは別。",
+      "職務分離は「重要処理を一人で完結できないよう、承認・実行・監査などの役割を分ける統制」であり、設問の説明とは別。",
+      "最小権限は「利用者やプロセスへ、業務遂行に必要な最小限の権限だけを付与する原則」であり、設問の説明とは別。",
+      "設問の説明に合致する。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "ゼロトラスト",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.least_privilege.term_to_meaning.001",
+    "concept_id": "security.least_privilege",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「最小権限」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "サーバ側の機能を悪用して、攻撃者が直接到達できない内部サービスなどへリクエストさせる攻撃",
+      "利用者やプロセスへ、業務遂行に必要な最小限の権限だけを付与する原則",
+      "認証済み利用者のブラウザを悪用し、意図しないリクエストを対象サイトへ送信させる攻撃",
+      "公開鍵証明書と認証局などを用いて、公開鍵の正当性を信頼連鎖で保証する仕組み"
+    ],
+    "choice_concept_ids": [
+      "security.ssrf",
+      "security.least_privilege",
+      "security.csrf",
+      "security.pki"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "これはSSRFの説明であり、最小権限ではない。",
+      "最小権限の定義そのもの。",
+      "これはCSRFの説明であり、最小権限ではない。",
+      "これはPKIの説明であり、最小権限ではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "最小権限",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.least_privilege.meaning_to_term.001",
+    "concept_id": "security.least_privilege",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n利用者やプロセスへ、業務遂行に必要な最小限の権限だけを付与する原則。",
+    "choices": [
+      "CSRF",
+      "最小権限",
+      "PKI",
+      "SSRF"
+    ],
+    "choice_concept_ids": [
+      "security.csrf",
+      "security.least_privilege",
+      "security.pki",
+      "security.ssrf"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "CSRFは「認証済み利用者のブラウザを悪用し、意図しないリクエストを対象サイトへ送信させる攻撃」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "PKIは「公開鍵証明書と認証局などを用いて、公開鍵の正当性を信頼連鎖で保証する仕組み」であり、設問の説明とは別。",
+      "SSRFは「サーバ側の機能を悪用して、攻撃者が直接到達できない内部サービスなどへリクエストさせる攻撃」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "最小権限",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.sod.term_to_meaning.001",
+    "concept_id": "security.sod",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「職務分離」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "利用者やプロセスへ、業務遂行に必要な最小限の権限だけを付与する原則",
+      "認証済み利用者のブラウザを悪用し、意図しないリクエストを対象サイトへ送信させる攻撃",
+      "サーバ側の機能を悪用して、攻撃者が直接到達できない内部サービスなどへリクエストさせる攻撃",
+      "重要処理を一人で完結できないよう、承認・実行・監査などの役割を分ける統制"
+    ],
+    "choice_concept_ids": [
+      "security.least_privilege",
+      "security.csrf",
+      "security.ssrf",
+      "security.sod"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "これは最小権限の説明であり、職務分離ではない。",
+      "これはCSRFの説明であり、職務分離ではない。",
+      "これはSSRFの説明であり、職務分離ではない。",
+      "職務分離の定義そのもの。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "職務分離",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.sod.meaning_to_term.001",
+    "concept_id": "security.sod",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n重要処理を一人で完結できないよう、承認・実行・監査などの役割を分ける統制。",
+    "choices": [
+      "最小権限",
+      "CSRF",
+      "SSRF",
+      "職務分離"
+    ],
+    "choice_concept_ids": [
+      "security.least_privilege",
+      "security.csrf",
+      "security.ssrf",
+      "security.sod"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "最小権限は「利用者やプロセスへ、業務遂行に必要な最小限の権限だけを付与する原則」であり、設問の説明とは別。",
+      "CSRFは「認証済み利用者のブラウザを悪用し、意図しないリクエストを対象サイトへ送信させる攻撃」であり、設問の説明とは別。",
+      "SSRFは「サーバ側の機能を悪用して、攻撃者が直接到達できない内部サービスなどへリクエストさせる攻撃」であり、設問の説明とは別。",
+      "設問の説明に合致する。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "職務分離",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.mfa.term_to_meaning.001",
+    "concept_id": "security.mfa",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「多要素認証」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "認証済み利用者のブラウザを悪用し、意図しないリクエストを対象サイトへ送信させる攻撃",
+      "知識・所持・生体など異なる認証要素のカテゴリから複数を組み合わせて本人確認する方式",
+      "複数機器やサービスのログを集中収集・相関分析し、脅威検知やインシデント調査に利用する仕組み",
+      "OAuth 2.0を基盤に、利用者の認証とID情報の受け渡しを標準化したプロトコル"
+    ],
+    "choice_concept_ids": [
+      "security.csrf",
+      "security.mfa",
+      "security.siem",
+      "security.oidc"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "これはCSRFの説明であり、多要素認証ではない。",
+      "多要素認証の定義そのもの。",
+      "これはSIEMの説明であり、多要素認証ではない。",
+      "これはOpenID Connectの説明であり、多要素認証ではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "多要素認証",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.mfa.meaning_to_term.001",
+    "concept_id": "security.mfa",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n知識・所持・生体など異なる認証要素のカテゴリから複数を組み合わせて本人確認する方式。",
+    "choices": [
+      "CSRF",
+      "多要素認証",
+      "SIEM",
+      "OpenID Connect"
+    ],
+    "choice_concept_ids": [
+      "security.csrf",
+      "security.mfa",
+      "security.siem",
+      "security.oidc"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "CSRFは「認証済み利用者のブラウザを悪用し、意図しないリクエストを対象サイトへ送信させる攻撃」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "SIEMは「複数機器やサービスのログを集中収集・相関分析し、脅威検知やインシデント調査に利用する仕組み」であり、設問の説明とは別。",
+      "OpenID Connectは「OAuth 2.0を基盤に、利用者の認証とID情報の受け渡しを標準化したプロトコル」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "多要素認証",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.pki.term_to_meaning.001",
+    "concept_id": "security.pki",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「PKI」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "公開鍵証明書と認証局などを用いて、公開鍵の正当性を信頼連鎖で保証する仕組み",
+      "認証済み利用者のブラウザを悪用し、意図しないリクエストを対象サイトへ送信させる攻撃",
+      "OAuth 2.0を基盤に、利用者の認証とID情報の受け渡しを標準化したプロトコル",
+      "証明書の失効状態をオンラインで問い合わせて確認するプロトコル"
+    ],
+    "choice_concept_ids": [
+      "security.pki",
+      "security.csrf",
+      "security.oidc",
+      "security.ocsp"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "PKIの定義そのもの。",
+      "これはCSRFの説明であり、PKIではない。",
+      "これはOpenID Connectの説明であり、PKIではない。",
+      "これはOCSPの説明であり、PKIではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "PKI",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.pki.meaning_to_term.001",
+    "concept_id": "security.pki",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n公開鍵証明書と認証局などを用いて、公開鍵の正当性を信頼連鎖で保証する仕組み。",
+    "choices": [
+      "OCSP",
+      "CSRF",
+      "PKI",
+      "OpenID Connect"
+    ],
+    "choice_concept_ids": [
+      "security.ocsp",
+      "security.csrf",
+      "security.pki",
+      "security.oidc"
+    ],
+    "correct_choice": 2,
+    "choice_reasons": [
+      "OCSPは「証明書の失効状態をオンラインで問い合わせて確認するプロトコル」であり、設問の説明とは別。",
+      "CSRFは「認証済み利用者のブラウザを悪用し、意図しないリクエストを対象サイトへ送信させる攻撃」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "OpenID Connectは「OAuth 2.0を基盤に、利用者の認証とID情報の受け渡しを標準化したプロトコル」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "PKI",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.ocsp.term_to_meaning.001",
+    "concept_id": "security.ocsp",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「OCSP」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "サーバ側の機能を悪用して、攻撃者が直接到達できない内部サービスなどへリクエストさせる攻撃",
+      "知識・所持・生体など異なる認証要素のカテゴリから複数を組み合わせて本人確認する方式",
+      "ネットワーク内外を理由に暗黙に信頼せず、アクセスごとに主体・端末・状況を継続的に検証する考え方",
+      "証明書の失効状態をオンラインで問い合わせて確認するプロトコル"
+    ],
+    "choice_concept_ids": [
+      "security.ssrf",
+      "security.mfa",
+      "security.zero_trust",
+      "security.ocsp"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "これはSSRFの説明であり、OCSPではない。",
+      "これは多要素認証の説明であり、OCSPではない。",
+      "これはゼロトラストの説明であり、OCSPではない。",
+      "OCSPの定義そのもの。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "OCSP",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.ocsp.meaning_to_term.001",
+    "concept_id": "security.ocsp",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n証明書の失効状態をオンラインで問い合わせて確認するプロトコル。",
+    "choices": [
+      "ゼロトラスト",
+      "多要素認証",
+      "SSRF",
+      "OCSP"
+    ],
+    "choice_concept_ids": [
+      "security.zero_trust",
+      "security.mfa",
+      "security.ssrf",
+      "security.ocsp"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "ゼロトラストは「ネットワーク内外を理由に暗黙に信頼せず、アクセスごとに主体・端末・状況を継続的に検証する考え方」であり、設問の説明とは別。",
+      "多要素認証は「知識・所持・生体など異なる認証要素のカテゴリから複数を組み合わせて本人確認する方式」であり、設問の説明とは別。",
+      "SSRFは「サーバ側の機能を悪用して、攻撃者が直接到達できない内部サービスなどへリクエストさせる攻撃」であり、設問の説明とは別。",
+      "設問の説明に合致する。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "OCSP",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.oauth2.term_to_meaning.001",
+    "concept_id": "security.oauth2",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「OAuth 2.0」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "サーバ側の機能を悪用して、攻撃者が直接到達できない内部サービスなどへリクエストさせる攻撃",
+      "重要処理を一人で完結できないよう、承認・実行・監査などの役割を分ける統制",
+      "脆弱性の深刻度を基本・現状・環境などの指標から定量評価する共通スコアリング方式",
+      "利用者のパスワードを第三者アプリへ渡さず、限定されたアクセス権を委譲する認可フレームワーク"
+    ],
+    "choice_concept_ids": [
+      "security.ssrf",
+      "security.sod",
+      "security.cvss",
+      "security.oauth2"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "これはSSRFの説明であり、OAuth 2.0ではない。",
+      "これは職務分離の説明であり、OAuth 2.0ではない。",
+      "これはCVSSの説明であり、OAuth 2.0ではない。",
+      "OAuth 2.0の定義そのもの。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "OAuth 2.0",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.oauth2.meaning_to_term.001",
+    "concept_id": "security.oauth2",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n利用者のパスワードを第三者アプリへ渡さず、限定されたアクセス権を委譲する認可フレームワーク。",
+    "choices": [
+      "職務分離",
+      "CVSS",
+      "OAuth 2.0",
+      "SSRF"
+    ],
+    "choice_concept_ids": [
+      "security.sod",
+      "security.cvss",
+      "security.oauth2",
+      "security.ssrf"
+    ],
+    "correct_choice": 2,
+    "choice_reasons": [
+      "職務分離は「重要処理を一人で完結できないよう、承認・実行・監査などの役割を分ける統制」であり、設問の説明とは別。",
+      "CVSSは「脆弱性の深刻度を基本・現状・環境などの指標から定量評価する共通スコアリング方式」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "SSRFは「サーバ側の機能を悪用して、攻撃者が直接到達できない内部サービスなどへリクエストさせる攻撃」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "OAuth 2.0",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.oidc.term_to_meaning.001",
+    "concept_id": "security.oidc",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「OpenID Connect」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "脆弱性の深刻度を基本・現状・環境などの指標から定量評価する共通スコアリング方式",
+      "利用者のパスワードを第三者アプリへ渡さず、限定されたアクセス権を委譲する認可フレームワーク",
+      "知識・所持・生体など異なる認証要素のカテゴリから複数を組み合わせて本人確認する方式",
+      "OAuth 2.0を基盤に、利用者の認証とID情報の受け渡しを標準化したプロトコル"
+    ],
+    "choice_concept_ids": [
+      "security.cvss",
+      "security.oauth2",
+      "security.mfa",
+      "security.oidc"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "これはCVSSの説明であり、OpenID Connectではない。",
+      "これはOAuth 2.0の説明であり、OpenID Connectではない。",
+      "これは多要素認証の説明であり、OpenID Connectではない。",
+      "OpenID Connectの定義そのもの。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "OpenID Connect",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.oidc.meaning_to_term.001",
+    "concept_id": "security.oidc",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\nOAuth 2.0を基盤に、利用者の認証とID情報の受け渡しを標準化したプロトコル。",
+    "choices": [
+      "CVSS",
+      "OAuth 2.0",
+      "多要素認証",
+      "OpenID Connect"
+    ],
+    "choice_concept_ids": [
+      "security.cvss",
+      "security.oauth2",
+      "security.mfa",
+      "security.oidc"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "CVSSは「脆弱性の深刻度を基本・現状・環境などの指標から定量評価する共通スコアリング方式」であり、設問の説明とは別。",
+      "OAuth 2.0は「利用者のパスワードを第三者アプリへ渡さず、限定されたアクセス権を委譲する認可フレームワーク」であり、設問の説明とは別。",
+      "多要素認証は「知識・所持・生体など異なる認証要素のカテゴリから複数を組み合わせて本人確認する方式」であり、設問の説明とは別。",
+      "設問の説明に合致する。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "OpenID Connect",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.csrf.term_to_meaning.001",
+    "concept_id": "security.csrf",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「CSRF」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "サーバ側の機能を悪用して、攻撃者が直接到達できない内部サービスなどへリクエストさせる攻撃",
+      "認証済み利用者のブラウザを悪用し、意図しないリクエストを対象サイトへ送信させる攻撃",
+      "利用者のパスワードを第三者アプリへ渡さず、限定されたアクセス権を委譲する認可フレームワーク",
+      "複数機器やサービスのログを集中収集・相関分析し、脅威検知やインシデント調査に利用する仕組み"
+    ],
+    "choice_concept_ids": [
+      "security.ssrf",
+      "security.csrf",
+      "security.oauth2",
+      "security.siem"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "これはSSRFの説明であり、CSRFではない。",
+      "CSRFの定義そのもの。",
+      "これはOAuth 2.0の説明であり、CSRFではない。",
+      "これはSIEMの説明であり、CSRFではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "CSRF",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.csrf.meaning_to_term.001",
+    "concept_id": "security.csrf",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n認証済み利用者のブラウザを悪用し、意図しないリクエストを対象サイトへ送信させる攻撃。",
+    "choices": [
+      "SSRF",
+      "OAuth 2.0",
+      "CSRF",
+      "SIEM"
+    ],
+    "choice_concept_ids": [
+      "security.ssrf",
+      "security.oauth2",
+      "security.csrf",
+      "security.siem"
+    ],
+    "correct_choice": 2,
+    "choice_reasons": [
+      "SSRFは「サーバ側の機能を悪用して、攻撃者が直接到達できない内部サービスなどへリクエストさせる攻撃」であり、設問の説明とは別。",
+      "OAuth 2.0は「利用者のパスワードを第三者アプリへ渡さず、限定されたアクセス権を委譲する認可フレームワーク」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "SIEMは「複数機器やサービスのログを集中収集・相関分析し、脅威検知やインシデント調査に利用する仕組み」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "CSRF",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.ssrf.term_to_meaning.001",
+    "concept_id": "security.ssrf",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「SSRF」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "重要処理を一人で完結できないよう、承認・実行・監査などの役割を分ける統制",
+      "サーバ側の機能を悪用して、攻撃者が直接到達できない内部サービスなどへリクエストさせる攻撃",
+      "利用者のパスワードを第三者アプリへ渡さず、限定されたアクセス権を委譲する認可フレームワーク",
+      "公開鍵証明書と認証局などを用いて、公開鍵の正当性を信頼連鎖で保証する仕組み"
+    ],
+    "choice_concept_ids": [
+      "security.sod",
+      "security.ssrf",
+      "security.oauth2",
+      "security.pki"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "これは職務分離の説明であり、SSRFではない。",
+      "SSRFの定義そのもの。",
+      "これはOAuth 2.0の説明であり、SSRFではない。",
+      "これはPKIの説明であり、SSRFではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "SSRF",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.ssrf.meaning_to_term.001",
+    "concept_id": "security.ssrf",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\nサーバ側の機能を悪用して、攻撃者が直接到達できない内部サービスなどへリクエストさせる攻撃。",
+    "choices": [
+      "職務分離",
+      "PKI",
+      "OAuth 2.0",
+      "SSRF"
+    ],
+    "choice_concept_ids": [
+      "security.sod",
+      "security.pki",
+      "security.oauth2",
+      "security.ssrf"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "職務分離は「重要処理を一人で完結できないよう、承認・実行・監査などの役割を分ける統制」であり、設問の説明とは別。",
+      "PKIは「公開鍵証明書と認証局などを用いて、公開鍵の正当性を信頼連鎖で保証する仕組み」であり、設問の説明とは別。",
+      "OAuth 2.0は「利用者のパスワードを第三者アプリへ渡さず、限定されたアクセス権を委譲する認可フレームワーク」であり、設問の説明とは別。",
+      "設問の説明に合致する。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "SSRF",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.siem.term_to_meaning.001",
+    "concept_id": "security.siem",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「SIEM」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "知識・所持・生体など異なる認証要素のカテゴリから複数を組み合わせて本人確認する方式",
+      "利用者やプロセスへ、業務遂行に必要な最小限の権限だけを付与する原則",
+      "複数機器やサービスのログを集中収集・相関分析し、脅威検知やインシデント調査に利用する仕組み",
+      "認証済み利用者のブラウザを悪用し、意図しないリクエストを対象サイトへ送信させる攻撃"
+    ],
+    "choice_concept_ids": [
+      "security.mfa",
+      "security.least_privilege",
+      "security.siem",
+      "security.csrf"
+    ],
+    "correct_choice": 2,
+    "choice_reasons": [
+      "これは多要素認証の説明であり、SIEMではない。",
+      "これは最小権限の説明であり、SIEMではない。",
+      "SIEMの定義そのもの。",
+      "これはCSRFの説明であり、SIEMではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "SIEM",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.siem.meaning_to_term.001",
+    "concept_id": "security.siem",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n複数機器やサービスのログを集中収集・相関分析し、脅威検知やインシデント調査に利用する仕組み。",
+    "choices": [
+      "CSRF",
+      "最小権限",
+      "多要素認証",
+      "SIEM"
+    ],
+    "choice_concept_ids": [
+      "security.csrf",
+      "security.least_privilege",
+      "security.mfa",
+      "security.siem"
+    ],
+    "correct_choice": 3,
+    "choice_reasons": [
+      "CSRFは「認証済み利用者のブラウザを悪用し、意図しないリクエストを対象サイトへ送信させる攻撃」であり、設問の説明とは別。",
+      "最小権限は「利用者やプロセスへ、業務遂行に必要な最小限の権限だけを付与する原則」であり、設問の説明とは別。",
+      "多要素認証は「知識・所持・生体など異なる認証要素のカテゴリから複数を組み合わせて本人確認する方式」であり、設問の説明とは別。",
+      "設問の説明に合致する。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "SIEM",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.cvss.term_to_meaning.001",
+    "concept_id": "security.cvss",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "TERM_TO_MEANING",
+    "stem": "「CVSS」の説明として、最も適切なものはどれか。",
+    "choices": [
+      "公開鍵証明書と認証局などを用いて、公開鍵の正当性を信頼連鎖で保証する仕組み",
+      "脆弱性の深刻度を基本・現状・環境などの指標から定量評価する共通スコアリング方式",
+      "OAuth 2.0を基盤に、利用者の認証とID情報の受け渡しを標準化したプロトコル",
+      "重要処理を一人で完結できないよう、承認・実行・監査などの役割を分ける統制"
+    ],
+    "choice_concept_ids": [
+      "security.pki",
+      "security.cvss",
+      "security.oidc",
+      "security.sod"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "これはPKIの説明であり、CVSSではない。",
+      "CVSSの定義そのもの。",
+      "これはOpenID Connectの説明であり、CVSSではない。",
+      "これは職務分離の説明であり、CVSSではない。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "CVSS",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "security.cvss.meaning_to_term.001",
+    "concept_id": "security.cvss",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "MEANING_TO_TERM",
+    "stem": "次の説明に該当する用語はどれか。\n\n脆弱性の深刻度を基本・現状・環境などの指標から定量評価する共通スコアリング方式。",
+    "choices": [
+      "PKI",
+      "CVSS",
+      "OpenID Connect",
+      "職務分離"
+    ],
+    "choice_concept_ids": [
+      "security.pki",
+      "security.cvss",
+      "security.oidc",
+      "security.sod"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "PKIは「公開鍵証明書と認証局などを用いて、公開鍵の正当性を信頼連鎖で保証する仕組み」であり、設問の説明とは別。",
+      "設問の説明に合致する。",
+      "OpenID Connectは「OAuth 2.0を基盤に、利用者の認証とID情報の受け渡しを標準化したプロトコル」であり、設問の説明とは別。",
+      "職務分離は「重要処理を一人で完結できないよう、承認・実行・監査などの役割を分ける統制」であり、設問の説明とは別。"
+    ],
+    "difficulty": 2,
+    "tags": [
+      "CVSS",
+      "頻出用語"
+    ]
+  },
+  {
+    "id": "strategy.npv.scenario.001",
+    "concept_id": "strategy.npv",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "SCENARIO",
+    "stem": "ある企業が新規事業への投資可否を比較している。各案について将来得られるキャッシュフローを資本コストで現在価値に割り引き、初期投資額との差額で評価したい。最も適切な指標はどれか。",
+    "choices": [
+      "ROI",
+      "NPV",
+      "TCO",
+      "KPI"
+    ],
+    "choice_concept_ids": [
+      "strategy.roi",
+      "strategy.npv",
+      "strategy.tco",
+      "strategy.kpi"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "ROIは利益と投資額の比率。",
+      "NPVが適切。",
+      "TCOは総保有コスト。",
+      "KPIは重要業績評価指標。"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "午前問題型"
+    ]
+  },
+  {
+    "id": "strategy.ppm.scenario.001",
+    "concept_id": "strategy.ppm",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "SCENARIO",
+    "stem": "市場成長率が高く、自社の相対的市場占有率も高い事業について、PPMでは一般にどの区分として扱うか。",
+    "choices": [
+      "花形",
+      "金のなる木",
+      "問題児",
+      "負け犬"
+    ],
+    "choice_concept_ids": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "設問の状況に最も適合する。",
+      "低成長・高シェア。",
+      "高成長・低シェア。",
+      "低成長・低シェア。"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "午前問題型"
+    ]
+  },
+  {
+    "id": "strategy.kgi.scenario.001",
+    "concept_id": "strategy.kgi",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "STRATEGY",
+    "question_type": "SCENARIO",
+    "stem": "経営目標を「売上高100億円達成」と定めた。これを実現するため、営業部門で「商談化率」「平均提案件数」を月次追跡する。この関係として最も適切なものはどれか。",
+    "choices": [
+      "売上高がKPI、商談化率がKGI",
+      "売上高がKGI、商談化率がKPI",
+      "両方ともKGI",
+      "両方ともCSF"
+    ],
+    "choice_concept_ids": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "関係が逆。",
+      "設問の状況に最も適合する。",
+      "役割が異なる。",
+      "CSFは重要成功要因であり指標そのものとは限らない。"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "午前問題型"
+    ]
+  },
+  {
+    "id": "architecture.circuit_breaker.scenario.001",
+    "concept_id": "architecture.circuit_breaker",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "SCENARIO",
+    "stem": "注文サービスから決済サービスへの同期呼出しで障害が続き、タイムアウト待ちが大量発生して注文サービスまで枯渇し始めた。一定回数の失敗後、決済サービスへの呼出しを一時停止して早期失敗させたい。適切なパターンはどれか。",
+    "choices": [
+      "Saga",
+      "Circuit Breaker",
+      "CQRS",
+      "Event Sourcing"
+    ],
+    "choice_concept_ids": [
+      "architecture.saga",
+      "architecture.circuit_breaker",
+      "architecture.cqrs",
+      "architecture.event_sourcing"
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "分散トランザクションの整合性用。",
+      "設問の状況に最も適合する。",
+      "参照と更新の分離。",
+      "イベント列の永続化。"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "午前問題型"
+    ]
+  },
+  {
+    "id": "architecture.saga.scenario.001",
+    "concept_id": "architecture.saga",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "SCENARIO",
+    "stem": "分散した複数サービスをまたぐ注文処理で、単一DBトランザクションを利用できない。各サービスの処理をローカルトランザクションとして実行し、途中失敗時は既実行処理を打ち消す処理を行いたい。適切なパターンはどれか。",
+    "choices": [
+      "Saga",
+      "MVC",
+      "Repository",
+      "Cache Aside"
+    ],
+    "choice_concept_ids": [
+      "architecture.saga",
+      null,
+      null,
+      "architecture.cache_aside"
+    ],
+    "correct_choice": 0,
+    "choice_reasons": [
+      "設問の状況に最も適合する。",
+      "UI構造の分離。",
+      "データアクセス抽象化。",
+      "キャッシュ利用方式。"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "午前問題型"
+    ]
+  },
+  {
+    "id": "architecture.rto.scenario.001",
+    "concept_id": "architecture.rto",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "ARCHITECTURE",
+    "question_type": "SCENARIO",
+    "stem": "災害対策の要件で「障害発生後2時間以内にサービスを再開」「データ損失は最大15分まで許容」と定めた。前者と後者の組合せとして正しいものはどれか。",
+    "choices": [
+      "前者RPO、後者RTO",
+      "前者RTO、後者RPO",
+      "前者MTBF、後者MTTR",
+      "前者SLA、後者SLO"
+    ],
+    "choice_concept_ids": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "逆。",
+      "設問の状況に最も適合する。",
+      "MTBF/MTTRの定義と異なる。",
+      "SLA/SLOの関係とは異なる。"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "午前問題型"
+    ]
+  },
+  {
+    "id": "security.ssrf.scenario.001",
+    "concept_id": "security.ssrf",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "SCENARIO",
+    "stem": "WebアプリがURLを受け取り、そのURLからサーバ側で画像を取得する機能を持つ。攻撃者が 127.0.0.1 やクラウドのメタデータサービスを指定し、内部情報へアクセスさせようとしている。該当する攻撃はどれか。",
+    "choices": [
+      "CSRF",
+      "SSRF",
+      "XSS",
+      "クリックジャッキング"
+    ],
+    "choice_concept_ids": [
+      "security.csrf",
+      "security.ssrf",
+      null,
+      null
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "利用者ブラウザから意図しない操作を送らせる攻撃。",
+      "設問の状況に最も適合する。",
+      "スクリプトを実行させる攻撃。",
+      "UIを重ねて誤操作させる攻撃。"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "午前問題型"
+    ]
+  },
+  {
+    "id": "security.zero_trust.scenario.001",
+    "concept_id": "security.zero_trust",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "SCENARIO",
+    "stem": "社内ネットワークからのアクセスであっても無条件には信頼せず、利用者ID、端末状態、アクセス先、リスク情報を用いてアクセスごとに評価する方針を採用した。この考え方はどれか。",
+    "choices": [
+      "境界防御",
+      "ゼロトラスト",
+      "Defense in Depth",
+      "Security by Obscurity"
+    ],
+    "choice_concept_ids": [
+      null,
+      "security.zero_trust",
+      null,
+      null
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "境界内を信頼しやすい従来型。",
+      "設問の状況に最も適合する。",
+      "多層防御の一般原則。",
+      "秘匿性に依存する不適切な考え方。"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "午前問題型"
+    ]
+  },
+  {
+    "id": "security.cvss.scenario.001",
+    "concept_id": "security.cvss",
+    "revision": 1,
+    "is_active": true,
+    "source_type": "ORIGINAL",
+    "domain": "SECURITY",
+    "question_type": "SCENARIO",
+    "stem": "脆弱性情報に「CVE-XXXX-YYYY」と識別子が付与され、別途0.0〜10.0の深刻度スコアが示されている。後者の評価方式はどれか。",
+    "choices": [
+      "CWE",
+      "CVSS",
+      "CAPEC",
+      "STIX"
+    ],
+    "choice_concept_ids": [
+      null,
+      "security.cvss",
+      null,
+      null
+    ],
+    "correct_choice": 1,
+    "choice_reasons": [
+      "弱点の種類を分類する体系。",
+      "設問の状況に最も適合する。",
+      "攻撃パターンの分類。",
+      "脅威情報交換の表現仕様。"
+    ],
+    "difficulty": 3,
+    "tags": [
+      "午前問題型"
+    ]
+  }
+]

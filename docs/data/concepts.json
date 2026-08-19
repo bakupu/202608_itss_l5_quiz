@@ -1,0 +1,770 @@
+{
+  "schema_version": 3,
+  "note": "用語辞書。設問はこの辞書を concept_id で参照する。説明を直すときはここだけを直す。legacy_index はM2の旧ID（str-tm-01 等）の連番で、履歴移行の対応付けに使う。並べ替えても壊れないよう明示的に持たせている。",
+  "concepts": [
+    {
+      "id": "strategy.swot",
+      "domain": "STRATEGY",
+      "legacy_index": 1,
+      "term": "SWOT分析",
+      "full_name": "Strengths, Weaknesses, Opportunities, Threats",
+      "japanese": "強み・弱み・機会・脅威分析",
+      "meaning": "自社の内部環境を強み（Strengths）と弱み（Weaknesses）に、外部環境を機会（Opportunities）と脅威（Threats）に整理し、戦略の方向性を導く分析手法。",
+      "exam_tip": "「内部か外部か」の切り分けが問われる。強み・弱みが内部、機会・脅威が外部。外部環境だけを扱うPEST分析との違いに注意。強みと機会を掛け合わせるクロスSWOTも頻出。",
+      "related": [
+        "strategy.pest",
+        "strategy.five_forces"
+      ],
+      "related_terms": [
+        "3C分析",
+        "VRIO",
+        "クロスSWOT"
+      ],
+      "choice_definition": "内部環境の強み・弱みと、外部環境の機会・脅威を整理して戦略立案に用いる分析手法"
+    },
+    {
+      "id": "strategy.pest",
+      "domain": "STRATEGY",
+      "legacy_index": 2,
+      "term": "PEST分析",
+      "full_name": "Political, Economic, Social, Technological",
+      "japanese": "マクロ環境分析",
+      "meaning": "政治（法規制・税制）、経済（景気・為替）、社会（人口・価値観）、技術（技術革新）の4観点から、企業が自力では変えられないマクロ環境を分析する手法。",
+      "exam_tip": "外部のマクロ環境「だけ」を扱う。自社の強み・弱みは対象外。SWOTの外部要因（機会・脅威）を洗い出す前段として使われる点が問われやすい。",
+      "related": [
+        "strategy.swot",
+        "strategy.five_forces"
+      ],
+      "related_terms": [
+        "マクロ環境",
+        "外部環境分析"
+      ],
+      "choice_definition": "政治・経済・社会・技術の観点から、企業を取り巻くマクロ環境を分析する手法"
+    },
+    {
+      "id": "strategy.five_forces",
+      "domain": "STRATEGY",
+      "legacy_index": 3,
+      "term": "ファイブフォース分析",
+      "full_name": "Porter's Five Forces Analysis",
+      "japanese": "5つの力分析",
+      "meaning": "業界の収益性を決める要因を、新規参入の脅威・代替品の脅威・買い手の交渉力・売り手の交渉力・既存企業間の敵対関係という5つの力で捉える分析手法。",
+      "exam_tip": "見ているのは「業界全体の構造と収益性」であって個社の強みではない。個社の競争優位はバリューチェーンやVRIOで分析する。5つの力の名称そのものが選択肢になる。",
+      "related": [
+        "strategy.value_chain",
+        "strategy.pest"
+      ],
+      "related_terms": [
+        "競争戦略",
+        "参入障壁",
+        "代替品"
+      ],
+      "choice_definition": "業界の競争要因を、新規参入・代替品・買い手・売り手・既存競争の五つの力で捉える手法"
+    },
+    {
+      "id": "strategy.value_chain",
+      "domain": "STRATEGY",
+      "legacy_index": 4,
+      "term": "バリューチェーン",
+      "full_name": "Value Chain",
+      "japanese": "価値連鎖",
+      "meaning": "企業活動を、購買物流・製造・出荷物流・販売マーケティング・サービスという主活動と、全般管理・人事労務・技術開発・調達という支援活動に分け、どの活動で価値と競争優位が生まれるかを分析する考え方。",
+      "exam_tip": "主活動と支援活動の分類が問われる。企業間のモノの流れを指すサプライチェーンとは別概念で、こちらは自社内の活動の連なりを指す。",
+      "related": [
+        "strategy.five_forces",
+        "strategy.bsc"
+      ],
+      "related_terms": [
+        "サプライチェーン",
+        "VRIO",
+        "コアコンピタンス"
+      ],
+      "choice_definition": "企業活動を主活動と支援活動に分け、どこで価値や競争優位が生まれるかを分析する考え方"
+    },
+    {
+      "id": "strategy.ppm",
+      "domain": "STRATEGY",
+      "legacy_index": 5,
+      "term": "PPM",
+      "full_name": "Product Portfolio Management",
+      "japanese": "プロダクトポートフォリオマネジメント",
+      "meaning": "事業や製品を市場成長率と相対的市場占有率の2軸で「花形」「金のなる木」「問題児」「負け犬」の4象限に分類し、経営資源の配分を検討する手法。",
+      "exam_tip": "4象限の名称と位置の対応が頻出。高成長・高シェアが花形、低成長・高シェアが金のなる木、高成長・低シェアが問題児、低成長・低シェアが負け犬。金のなる木で得た資金を問題児へ投じるという資金の流れも問われる。",
+      "related": [
+        "strategy.bsc",
+        "strategy.roi"
+      ],
+      "related_terms": [
+        "花形",
+        "金のなる木",
+        "問題児",
+        "負け犬",
+        "経営資源配分"
+      ],
+      "choice_definition": "事業を市場成長率と相対的市場占有率で分類し、経営資源配分を検討するポートフォリオ分析"
+    },
+    {
+      "id": "strategy.bsc",
+      "domain": "STRATEGY",
+      "legacy_index": 6,
+      "term": "BSC",
+      "full_name": "Balanced Scorecard",
+      "japanese": "バランススコアカード",
+      "meaning": "財務・顧客・内部業務プロセス・学習と成長という4つの視点から戦略を指標へ落とし込み、財務指標に偏らずに業績を管理する手法。",
+      "exam_tip": "4つの視点の名称が選択肢になる。財務以外の3視点が含まれることが要点で、学習と成長が土台、財務が結果という因果連鎖（戦略マップ）で捉える。",
+      "related": [
+        "strategy.kpi",
+        "strategy.kgi"
+      ],
+      "related_terms": [
+        "戦略マップ",
+        "4つの視点"
+      ],
+      "choice_definition": "財務・顧客・内部プロセス・学習と成長の複数視点で戦略を指標に落とし込む管理手法"
+    },
+    {
+      "id": "strategy.kgi",
+      "domain": "STRATEGY",
+      "legacy_index": 7,
+      "term": "KGI",
+      "full_name": "Key Goal Indicator",
+      "japanese": "重要目標達成指標",
+      "meaning": "組織や施策が最終的に達成すべきゴールを定量的に表す成果指標。「売上高100億円」のように結果そのものを測る。",
+      "exam_tip": "KGI（最終成果）・CSF（成功要因）・KPI（過程の指標）の3点セットで問われる。KGIは結果指標、KPIは先行指標という上下関係を取り違えさせる選択肢が定番。",
+      "related": [
+        "strategy.kpi",
+        "strategy.bsc"
+      ],
+      "related_terms": [
+        "CSF",
+        "KSF",
+        "重要成功要因"
+      ],
+      "choice_definition": "組織や施策が最終的に達成すべきゴールを定量的に表す成果指標"
+    },
+    {
+      "id": "strategy.kpi",
+      "domain": "STRATEGY",
+      "legacy_index": 8,
+      "term": "KPI",
+      "full_name": "Key Performance Indicator",
+      "japanese": "重要業績評価指標",
+      "meaning": "KGIの達成に至る過程の進捗や重要活動を定量的に測る中間指標。「商談化率」「月間提案件数」のように日々動かせる活動を測る。",
+      "exam_tip": "KGIとの上下関係が要点。KPIは複数あってよく、KGIから分解して設定する。CSF（重要成功要因）は指標ではなく「何が効くか」という要因である点も区別される。",
+      "related": [
+        "strategy.kgi",
+        "strategy.roi"
+      ],
+      "related_terms": [
+        "CSF",
+        "KPIツリー",
+        "先行指標"
+      ],
+      "choice_definition": "KGI達成に至るプロセスの進捗や重要活動を定量的に測る中間指標"
+    },
+    {
+      "id": "strategy.roi",
+      "domain": "STRATEGY",
+      "legacy_index": 9,
+      "term": "ROI",
+      "full_name": "Return on Investment",
+      "japanese": "投資利益率",
+      "meaning": "投下した資本や費用に対してどれだけ利益を得たかを表す比率。利益 ÷ 投資額で求める。",
+      "exam_tip": "比率（％）であって金額ではない点が、金額で表すNPVとの分かれ目。規模の異なる案件を並べて比べられる反面、投資規模の大小が見えなくなる。",
+      "related": [
+        "strategy.npv",
+        "strategy.tco"
+      ],
+      "related_terms": [
+        "IRR",
+        "回収期間法",
+        "投資対効果"
+      ],
+      "choice_definition": "投下した資本や費用に対して、どれだけ利益を得たかを示す投資効率の指標"
+    },
+    {
+      "id": "strategy.npv",
+      "domain": "STRATEGY",
+      "legacy_index": 10,
+      "term": "NPV",
+      "full_name": "Net Present Value",
+      "japanese": "正味現在価値",
+      "meaning": "将来得られるキャッシュフローを資本コスト（割引率）で現在価値に換算し、初期投資額を差し引いた金額。投資の価値を絶対額で評価する。",
+      "exam_tip": "NPVが正なら投資価値ありと判断する。金額で表す点でROI（比率）と対比される。NPVがちょうど0になる割引率がIRRである、という関係も問われる。",
+      "related": [
+        "strategy.roi",
+        "strategy.tco"
+      ],
+      "related_terms": [
+        "IRR",
+        "DCF",
+        "割引率",
+        "資本コスト"
+      ],
+      "choice_definition": "将来キャッシュフローを割引率で現在価値に換算し、投資額との差で投資価値を評価する指標"
+    },
+    {
+      "id": "strategy.tco",
+      "domain": "STRATEGY",
+      "legacy_index": 11,
+      "term": "TCO",
+      "full_name": "Total Cost of Ownership",
+      "japanese": "総所有コスト",
+      "meaning": "導入費用だけでなく、運用・保守・教育・移行・廃棄までを含めた保有期間全体の総コストで評価する考え方。",
+      "exam_tip": "初期費用が安くても運用費で逆転する、という論点で出題される。ROIやNPVが「効果」を測るのに対し、TCOは「費用」側を漏れなく数える考え方である。",
+      "related": [
+        "strategy.roi",
+        "strategy.npv"
+      ],
+      "related_terms": [
+        "ライフサイクルコスト",
+        "運用保守費",
+        "ABC"
+      ],
+      "choice_definition": "導入費だけでなく運用・保守・教育・廃棄などを含め、保有期間全体の総コストで評価する考え方"
+    },
+    {
+      "id": "strategy.togaf",
+      "domain": "STRATEGY",
+      "legacy_index": 12,
+      "term": "TOGAF",
+      "full_name": "The Open Group Architecture Framework",
+      "japanese": "エンタープライズアーキテクチャのフレームワーク",
+      "meaning": "The Open Group が策定した、エンタープライズアーキテクチャ（EA）を策定・運用するための代表的なフレームワーク。ビジネス・データ・アプリケーション・技術の4アーキテクチャを、ADM（Architecture Development Method）という反復サイクルで開発する。",
+      "exam_tip": "EAの4階層とADMのサイクルが要点。ITサービス管理のITILや、ITガバナンスのCOBITと役割を取り違える選択肢が定番。現行は2022年公開の10th Edition で、9.2 も併存している。",
+      "related": [
+        "strategy.bsc"
+      ],
+      "related_terms": [
+        "EA",
+        "ADM",
+        "ITIL",
+        "COBIT",
+        "ザックマンフレームワーク"
+      ],
+      "choice_definition": "エンタープライズアーキテクチャを策定・運用するための代表的なフレームワーク"
+    },
+    {
+      "id": "architecture.nfr",
+      "domain": "ARCHITECTURE",
+      "legacy_index": 1,
+      "term": "非機能要件",
+      "full_name": "Non-Functional Requirements",
+      "japanese": "非機能要件",
+      "meaning": "性能・可用性・拡張性・セキュリティ・運用性・移行性など、「何ができるか」以外にシステムへ求める品質特性。機能要件と対になる。",
+      "exam_tip": "IPAの「非機能要求グレード」では、可用性・性能拡張性・運用保守性・移行性・セキュリティ・システム環境エコロジーの6項目に整理される。要件定義で合意されないまま後工程で問題化する、という文脈で出題される。",
+      "related": [
+        "architecture.availability",
+        "architecture.scalability"
+      ],
+      "related_terms": [
+        "機能要件",
+        "非機能要求グレード",
+        "品質特性",
+        "受入基準"
+      ],
+      "choice_definition": "性能・可用性・拡張性・セキュリティ・運用性など、機能そのもの以外にシステムへ求める品質特性"
+    },
+    {
+      "id": "architecture.availability",
+      "domain": "ARCHITECTURE",
+      "legacy_index": 2,
+      "term": "可用性",
+      "full_name": "Availability",
+      "japanese": "可用性",
+      "meaning": "必要なときにシステムやサービスを利用できる度合い。稼働率 = MTBF ÷ (MTBF + MTTR) で表される。",
+      "exam_tip": "信頼性（壊れにくさ、MTBF）と保守性（直しやすさ、MTTR）の両方が効いて可用性になる、という関係が問われる。RASIS（信頼性・可用性・保守性・完全性・機密性）の一要素。",
+      "related": [
+        "architecture.rto",
+        "architecture.rpo"
+      ],
+      "related_terms": [
+        "MTBF",
+        "MTTR",
+        "稼働率",
+        "RASIS",
+        "冗長化"
+      ],
+      "choice_definition": "必要なときにシステムやサービスを利用できる度合い。稼働率や停止時間などで評価する"
+    },
+    {
+      "id": "architecture.scalability",
+      "domain": "ARCHITECTURE",
+      "legacy_index": 3,
+      "term": "スケーラビリティ",
+      "full_name": "Scalability",
+      "japanese": "拡張性",
+      "meaning": "負荷の増大に対して、資源の追加や構成変更によって処理能力を拡張できる性質。",
+      "exam_tip": "1台の性能を上げるスケールアップ（垂直）と、台数を増やすスケールアウト（水平）の区別が頻出。水平拡張には状態を持たない設計（ステートレス）や疎結合が前提になる。",
+      "related": [
+        "architecture.loose_coupling",
+        "architecture.cache_aside"
+      ],
+      "related_terms": [
+        "スケールアップ",
+        "スケールアウト",
+        "ステートレス",
+        "負荷分散"
+      ],
+      "choice_definition": "負荷増大に対して資源追加や構成変更により処理能力を拡張できる性質"
+    },
+    {
+      "id": "architecture.loose_coupling",
+      "domain": "ARCHITECTURE",
+      "legacy_index": 4,
+      "term": "疎結合",
+      "full_name": "Loose Coupling",
+      "japanese": "疎結合",
+      "meaning": "コンポーネント間の依存関係を小さくし、一方の変更が他方へ及ぼす影響範囲を限定する設計上の性質。",
+      "exam_tip": "「高凝集・疎結合」が良い設計、という対の形で問われる。凝集度はモジュール内のまとまりの強さ、結合度はモジュール間の依存の強さで、向きが逆である点を取り違えさせる選択肢が出る。",
+      "related": [
+        "architecture.scalability",
+        "architecture.cqrs"
+      ],
+      "related_terms": [
+        "高凝集",
+        "密結合",
+        "結合度",
+        "凝集度",
+        "メッセージング"
+      ],
+      "choice_definition": "コンポーネント間の依存を小さくし、変更の影響範囲を限定する設計上の性質"
+    },
+    {
+      "id": "architecture.cqrs",
+      "domain": "ARCHITECTURE",
+      "legacy_index": 5,
+      "term": "CQRS",
+      "full_name": "Command Query Responsibility Segregation",
+      "japanese": "コマンドクエリ責務分離",
+      "meaning": "状態を変更するコマンド（更新系）と、状態を返すクエリ（参照系）で責務とモデルを分離するアーキテクチャパターン。参照側を非正規化して読み取り性能を上げやすくなる。",
+      "exam_tip": "イベントソーシングと組み合わせて使われることが多いが別概念である点が問われる。CQRSは「更新と参照を分ける」、イベントソーシングは「状態ではなくイベント列を保存する」。",
+      "related": [
+        "architecture.event_sourcing",
+        "architecture.loose_coupling"
+      ],
+      "related_terms": [
+        "結果整合性",
+        "リードモデル",
+        "MVC"
+      ],
+      "choice_definition": "更新系コマンドと参照系クエリの責務やモデルを分離するアーキテクチャパターン"
+    },
+    {
+      "id": "architecture.event_sourcing",
+      "domain": "ARCHITECTURE",
+      "legacy_index": 6,
+      "term": "イベントソーシング",
+      "full_name": "Event Sourcing",
+      "japanese": "イベントソーシング",
+      "meaning": "現在の状態そのものではなく、状態変化を表すイベントの列を永続化し、イベントを順に適用して状態を再構築する方式。",
+      "exam_tip": "過去の任意時点の状態を再現でき、監査証跡がそのまま残ることが利点。CQRSとの違い（保存するものが状態かイベントか）を問う選択肢が定番。",
+      "related": [
+        "architecture.cqrs",
+        "architecture.idempotency"
+      ],
+      "related_terms": [
+        "監査証跡",
+        "スナップショット",
+        "リプレイ"
+      ],
+      "choice_definition": "現在状態だけでなく、状態変化を表すイベント列を永続化し、イベントから状態を再構築する方式",
+      "aliases": [
+        "Event Sourcing"
+      ]
+    },
+    {
+      "id": "architecture.saga",
+      "domain": "ARCHITECTURE",
+      "legacy_index": 7,
+      "term": "Sagaパターン",
+      "full_name": "Saga Pattern",
+      "japanese": "サーガパターン",
+      "meaning": "分散システムで単一のトランザクションを張れない長い処理を、複数のローカルトランザクションに分け、失敗時は既に完了した処理を打ち消す補償トランザクションで整合性を保つパターン。",
+      "exam_tip": "2相コミット（2PC）の代替として問われる。DBのロールバックではなく「打ち消す処理を新たに実行する」点が要点で、途中経過が外部から見えうる（結果整合性）ことも論点になる。",
+      "related": [
+        "architecture.circuit_breaker",
+        "architecture.idempotency"
+      ],
+      "related_terms": [
+        "補償トランザクション",
+        "2相コミット",
+        "結果整合性",
+        "分散トランザクション"
+      ],
+      "choice_definition": "分散システムの長いトランザクションを複数のローカルトランザクションと補償処理で扱うパターン",
+      "aliases": [
+        "Saga"
+      ]
+    },
+    {
+      "id": "architecture.circuit_breaker",
+      "domain": "ARCHITECTURE",
+      "legacy_index": 8,
+      "term": "Circuit Breaker",
+      "full_name": "Circuit Breaker Pattern",
+      "japanese": "サーキットブレーカー",
+      "meaning": "障害中の外部サービスへの呼出しを一定回数の失敗後に遮断し、即座に失敗を返すことで、タイムアウト待ちによる資源枯渇と連鎖障害を防ぐパターン。Closed（通常）・Open（遮断）・Half-Open（試行）の状態を持つ。",
+      "exam_tip": "「タイムアウト待ちが溜まって呼出し元まで倒れる」という連鎖障害（カスケード障害）の文脈で出題される。単純なリトライは負荷を増やして悪化させうる点が対比される。",
+      "related": [
+        "architecture.saga",
+        "architecture.scalability"
+      ],
+      "related_terms": [
+        "カスケード障害",
+        "リトライ",
+        "バルクヘッド",
+        "フォールバック"
+      ],
+      "choice_definition": "障害中の外部サービスへの呼出しを一時的に遮断し、連鎖障害や無駄な待ちを防ぐパターン",
+      "aliases": [
+        "サーキットブレーカー"
+      ]
+    },
+    {
+      "id": "architecture.cache_aside",
+      "domain": "ARCHITECTURE",
+      "legacy_index": 9,
+      "term": "キャッシュアサイド",
+      "full_name": "Cache-Aside Pattern",
+      "japanese": "キャッシュアサイド",
+      "meaning": "アプリケーションがまずキャッシュを参照し、無ければ（キャッシュミス）データストアから取得してキャッシュへ書き戻す方式。遅延読み込みとも呼ばれる。",
+      "exam_tip": "書き込み時にキャッシュも同時更新するWrite-Through、キャッシュに書いて後から反映するWrite-Back（Write-Behind）との違いが問われる。キャッシュアサイドは読み取り主導である点が要点。",
+      "related": [
+        "architecture.scalability",
+        "architecture.idempotency"
+      ],
+      "related_terms": [
+        "Write-Through",
+        "Write-Back",
+        "TTL",
+        "キャッシュミス"
+      ],
+      "choice_definition": "アプリケーションがまずキャッシュを参照し、ミス時にデータストアから取得してキャッシュへ格納する方式",
+      "aliases": [
+        "Cache Aside"
+      ]
+    },
+    {
+      "id": "architecture.idempotency",
+      "domain": "ARCHITECTURE",
+      "legacy_index": 10,
+      "term": "冪等性",
+      "full_name": "Idempotency",
+      "japanese": "冪等性",
+      "meaning": "同じ操作を何回実行しても、1回だけ実行した場合と同じ最終状態になる性質。",
+      "exam_tip": "通信の再送やリトライを安全にする前提として問われる。HTTPではGET・PUT・DELETEが冪等でPOSTは非冪等、という対応が定番。二重課金を防ぐ設計の文脈でも出る。",
+      "related": [
+        "architecture.saga",
+        "architecture.event_sourcing"
+      ],
+      "related_terms": [
+        "リトライ",
+        "重複排除",
+        "冪等キー",
+        "原子性"
+      ],
+      "choice_definition": "同じ操作を複数回実行しても、一回実行した場合と同じ最終状態になる性質"
+    },
+    {
+      "id": "architecture.rto",
+      "domain": "ARCHITECTURE",
+      "legacy_index": 11,
+      "term": "RTO",
+      "full_name": "Recovery Time Objective",
+      "japanese": "目標復旧時間",
+      "meaning": "災害や障害の発生後、業務やサービスを何時間以内に復旧させるかという目標時間。",
+      "exam_tip": "RPOとの違いが最頻出。RTOは「いつまでに復旧するか」という時間軸、RPOは「どこまでのデータ損失を許すか」という時点。短くするほど待機系や自動切替の費用が増える。",
+      "related": [
+        "architecture.rpo",
+        "architecture.availability"
+      ],
+      "related_terms": [
+        "BCP",
+        "DR",
+        "MTTR",
+        "ホットスタンバイ"
+      ],
+      "choice_definition": "災害や障害発生後、業務やサービスを復旧させるまでの目標時間"
+    },
+    {
+      "id": "architecture.rpo",
+      "domain": "ARCHITECTURE",
+      "legacy_index": 12,
+      "term": "RPO",
+      "full_name": "Recovery Point Objective",
+      "japanese": "目標復旧時点",
+      "meaning": "障害発生時に、どの時点までのデータ損失を許容するかを表す目標。「最大15分前まで」ならその間の更新は失われうる。",
+      "exam_tip": "RTOと入れ替えた選択肢が定番。RPOはバックアップやレプリケーションの間隔で決まり、0に近づけるほど同期レプリケーション等の費用が増える。",
+      "related": [
+        "architecture.rto",
+        "architecture.availability"
+      ],
+      "related_terms": [
+        "BCP",
+        "バックアップ間隔",
+        "レプリケーション",
+        "MTBF"
+      ],
+      "choice_definition": "障害発生時に、どの時点までのデータ損失を許容するかを表す目標復旧時点"
+    },
+    {
+      "id": "security.zero_trust",
+      "domain": "SECURITY",
+      "legacy_index": 1,
+      "term": "ゼロトラスト",
+      "full_name": "Zero Trust",
+      "japanese": "ゼロトラスト",
+      "meaning": "社内ネットワークかどうかといった場所を信頼の根拠とせず、アクセスのたびに利用者・端末・状況を検証して認可する考え方。NIST SP 800-207 が代表的な整理。",
+      "exam_tip": "境界防御（社内は信頼、社外は不信）との対比で出題される。「一度認証したら以後は信頼する」ではなく継続的に検証する点、ネットワーク位置を信頼根拠にしない点が要点。",
+      "related": [
+        "security.least_privilege",
+        "security.mfa"
+      ],
+      "related_terms": [
+        "境界防御",
+        "NIST SP 800-207",
+        "継続的認証",
+        "多層防御"
+      ],
+      "choice_definition": "ネットワーク内外を理由に暗黙に信頼せず、アクセスごとに主体・端末・状況を継続的に検証する考え方"
+    },
+    {
+      "id": "security.least_privilege",
+      "domain": "SECURITY",
+      "legacy_index": 2,
+      "term": "最小権限",
+      "full_name": "Principle of Least Privilege",
+      "japanese": "最小権限の原則",
+      "meaning": "利用者やプロセスに対し、業務の遂行に必要な最小限の権限だけを、必要な期間だけ付与する原則。",
+      "exam_tip": "職務分離とセットで問われる。最小権限は「1人に与える権限を絞る」、職務分離は「1人で完結させない」。侵害時の被害範囲を限定する対策として挙げられる。",
+      "related": [
+        "security.sod",
+        "security.zero_trust"
+      ],
+      "related_terms": [
+        "Need-to-Know",
+        "権限昇格",
+        "特権ID管理",
+        "RBAC"
+      ],
+      "choice_definition": "利用者やプロセスへ、業務遂行に必要な最小限の権限だけを付与する原則"
+    },
+    {
+      "id": "security.sod",
+      "domain": "SECURITY",
+      "legacy_index": 3,
+      "term": "職務分離",
+      "full_name": "Separation of Duties",
+      "japanese": "職務分離",
+      "meaning": "重要な処理を1人で完結できないよう、申請・承認・実行・監査といった役割を複数の担当者へ分ける統制。",
+      "exam_tip": "内部統制・不正防止の文脈で出る。開発者が本番環境へ直接適用できる状態は職務分離違反、という形で問われる。最小権限との使い分けが論点。",
+      "related": [
+        "security.least_privilege"
+      ],
+      "related_terms": [
+        "内部統制",
+        "デュアルコントロール",
+        "相互牽制",
+        "ジョブローテーション"
+      ],
+      "choice_definition": "重要処理を一人で完結できないよう、承認・実行・監査などの役割を分ける統制"
+    },
+    {
+      "id": "security.mfa",
+      "domain": "SECURITY",
+      "legacy_index": 4,
+      "term": "多要素認証",
+      "full_name": "Multi-Factor Authentication",
+      "japanese": "多要素認証",
+      "meaning": "知識（パスワード）・所持（トークン、スマートフォン）・生体（指紋、顔）という異なるカテゴリの認証要素から2つ以上を組み合わせて本人確認する方式。",
+      "exam_tip": "「多段階認証」との違いが最頻出。パスワードと秘密の質問はどちらも知識要素なので、2段階ではあっても多要素ではない。カテゴリが異なることが要件。",
+      "related": [
+        "security.zero_trust",
+        "security.pki"
+      ],
+      "related_terms": [
+        "多段階認証",
+        "ワンタイムパスワード",
+        "FIDO2",
+        "SSO"
+      ],
+      "choice_definition": "知識・所持・生体など異なる認証要素のカテゴリから複数を組み合わせて本人確認する方式"
+    },
+    {
+      "id": "security.pki",
+      "domain": "SECURITY",
+      "legacy_index": 5,
+      "term": "PKI",
+      "full_name": "Public Key Infrastructure",
+      "japanese": "公開鍵基盤",
+      "meaning": "認証局（CA）が発行する公開鍵証明書によって「その公開鍵が本人のものである」ことを保証し、信頼の連鎖（ルート認証局から中間認証局を経てサーバ証明書へ）で成り立たせる仕組み。",
+      "exam_tip": "証明書が保証するのは公開鍵と所有者の結び付きであって、通信内容の暗号化そのものではない点が問われる。失効の確認手段としてCRLとOCSPが並べられる。",
+      "related": [
+        "security.ocsp",
+        "security.mfa"
+      ],
+      "related_terms": [
+        "CA",
+        "RA",
+        "CRL",
+        "ルート証明書",
+        "電子署名"
+      ],
+      "choice_definition": "公開鍵証明書と認証局などを用いて、公開鍵の正当性を信頼連鎖で保証する仕組み"
+    },
+    {
+      "id": "security.ocsp",
+      "domain": "SECURITY",
+      "legacy_index": 6,
+      "term": "OCSP",
+      "full_name": "Online Certificate Status Protocol",
+      "japanese": "オンライン証明書状態プロトコル",
+      "meaning": "証明書が失効していないかを、認証局のレスポンダへ1件ずつオンラインで問い合わせて確認するプロトコル。RFC 6960 で規定される。",
+      "exam_tip": "CRL（失効した証明書の一覧をまとめて配布する）との対比が要点。OCSPは即時性に優れる反面、問い合わせのたびに閲覧先が認証局へ伝わるためプライバシー上の懸念があり、サーバ側が状態を代理取得して渡すOCSPステープリングがある。",
+      "related": [
+        "security.pki"
+      ],
+      "related_terms": [
+        "CRL",
+        "OCSPステープリング",
+        "RFC 6960",
+        "証明書失効"
+      ],
+      "note": "実運用では失効確認がCRLへ回帰しつつある（Let's Encrypt は2025年8月にOCSP提供を終了）。試験ではCRLとの対比として引き続き問われる。",
+      "choice_definition": "証明書の失効状態をオンラインで問い合わせて確認するプロトコル"
+    },
+    {
+      "id": "security.oauth2",
+      "domain": "SECURITY",
+      "legacy_index": 7,
+      "term": "OAuth 2.0",
+      "full_name": "The OAuth 2.0 Authorization Framework",
+      "japanese": "認可フレームワーク",
+      "meaning": "利用者のパスワードを第三者アプリへ渡すことなく、限定された範囲のアクセス権限をアクセストークンとして委譲する認可の枠組み。RFC 6749 で規定される。",
+      "exam_tip": "「認証ではなく認可」が最重要。誰であるかを確かめる仕組みではなく、何をしてよいかを委譲する仕組み。認証を担うのは上に載せるOpenID Connect。",
+      "related": [
+        "security.oidc",
+        "security.pki"
+      ],
+      "related_terms": [
+        "RFC 6749",
+        "アクセストークン",
+        "認可コードフロー",
+        "SAML",
+        "スコープ"
+      ],
+      "note": "RFC 6749 を置き換えるOAuth 2.1が標準化作業中で、2026年8月時点ではまだドラフト。試験対象は引き続き2.0。",
+      "choice_definition": "利用者のパスワードを第三者アプリへ渡さず、限定されたアクセス権を委譲する認可フレームワーク",
+      "aliases": [
+        "OAuth"
+      ]
+    },
+    {
+      "id": "security.oidc",
+      "domain": "SECURITY",
+      "legacy_index": 8,
+      "term": "OpenID Connect",
+      "full_name": "OpenID Connect Core 1.0",
+      "japanese": "認証プロトコル",
+      "meaning": "OAuth 2.0 を基盤として、利用者の認証結果と属性情報をIDトークン（JWT形式）として受け渡すことを標準化したプロトコル。",
+      "exam_tip": "OAuth 2.0（認可）との役割分担で問われる。OIDCが追加するのはIDトークンによる認証であり、アクセストークンによる認可はOAuth側の仕組みのまま。",
+      "related": [
+        "security.oauth2"
+      ],
+      "related_terms": [
+        "IDトークン",
+        "JWT",
+        "SAML",
+        "IdP",
+        "SCIM"
+      ],
+      "choice_definition": "OAuth 2.0を基盤に、利用者の認証とID情報の受け渡しを標準化したプロトコル",
+      "aliases": [
+        "OIDC"
+      ]
+    },
+    {
+      "id": "security.csrf",
+      "domain": "SECURITY",
+      "legacy_index": 9,
+      "term": "CSRF",
+      "full_name": "Cross-Site Request Forgery",
+      "japanese": "クロスサイトリクエストフォージェリ",
+      "meaning": "ログイン済み利用者のブラウザに、罠サイトなどから対象サイトへの意図しないリクエストを送信させ、本人の権限で操作を実行させる攻撃。",
+      "exam_tip": "XSS（スクリプトを実行させる）およびSSRF（サーバに送信させる）との区別が問われる。CSRFは「利用者のブラウザに送らせる」。対策はワンタイムトークンの埋め込みとSameSite属性のCookie。",
+      "related": [
+        "security.ssrf"
+      ],
+      "related_terms": [
+        "XSS",
+        "SameSite Cookie",
+        "トークン",
+        "クリックジャッキング"
+      ],
+      "choice_definition": "認証済み利用者のブラウザを悪用し、意図しないリクエストを対象サイトへ送信させる攻撃"
+    },
+    {
+      "id": "security.ssrf",
+      "domain": "SECURITY",
+      "legacy_index": 10,
+      "term": "SSRF",
+      "full_name": "Server-Side Request Forgery",
+      "japanese": "サーバサイドリクエストフォージェリ",
+      "meaning": "URLを受け取ってサーバ側が通信する機能を悪用し、攻撃者が直接到達できない内部ネットワークやクラウドのメタデータサービスへリクエストを送らせる攻撃。",
+      "exam_tip": "CSRFとの取り違えが定番。SSRFは「サーバに送らせる」。クラウド環境ではインスタンスメタデータから認証情報を抜かれる被害が典型で、対策は宛先の許可リスト方式。",
+      "related": [
+        "security.csrf"
+      ],
+      "related_terms": [
+        "CSRF",
+        "クラウドメタデータ",
+        "許可リスト",
+        "内部ネットワーク"
+      ],
+      "choice_definition": "サーバ側の機能を悪用して、攻撃者が直接到達できない内部サービスなどへリクエストさせる攻撃"
+    },
+    {
+      "id": "security.siem",
+      "domain": "SECURITY",
+      "legacy_index": 11,
+      "term": "SIEM",
+      "full_name": "Security Information and Event Management",
+      "japanese": "セキュリティ情報イベント管理",
+      "meaning": "サーバ・ネットワーク機器・アプリケーションなど複数箇所のログを集中収集して相関分析し、単体のログでは見えない脅威の検知やインシデント調査に用いる仕組み。",
+      "exam_tip": "SOAR（検知後の対応を自動化する）、EDR（端末側の挙動を監視する）との役割分担で問われる。SIEMの主眼は横断的な収集と相関分析。",
+      "related": [
+        "security.cvss"
+      ],
+      "related_terms": [
+        "SOAR",
+        "EDR",
+        "SOC",
+        "相関分析",
+        "ログ管理"
+      ],
+      "choice_definition": "複数機器やサービスのログを集中収集・相関分析し、脅威検知やインシデント調査に利用する仕組み"
+    },
+    {
+      "id": "security.cvss",
+      "domain": "SECURITY",
+      "legacy_index": 12,
+      "term": "CVSS",
+      "full_name": "Common Vulnerability Scoring System",
+      "japanese": "共通脆弱性評価システム",
+      "meaning": "脆弱性の深刻度を 0.0〜10.0 のスコアで共通に評価する方式。製品や組織をまたいで深刻度を比較できる。",
+      "exam_tip": "CVE（個々の脆弱性に振る識別子）、CWE（弱点の種類の分類）との区別が最頻出。CVSSは深刻度の「点数」であって識別子ではない。v3.1 は基本・現状・環境の3評価基準、v4.0 では基本・脅威・環境・補足の4グループに再編された。",
+      "related": [
+        "security.siem"
+      ],
+      "related_terms": [
+        "CVE",
+        "CWE",
+        "CAPEC",
+        "基本評価基準",
+        "脆弱性管理"
+      ],
+      "choice_definition": "脆弱性の深刻度を基本・現状・環境などの指標から定量評価する共通スコアリング方式"
+    }
+  ]
+}

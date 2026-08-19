@@ -1,10 +1,12 @@
 import { SyncManager } from './sync.js';
+import { loadContent, loadStateV3, blankState, STORAGE_KEY_V3 } from './content.js';
+import { renderExplanation } from './explain.js';
 
-const STORAGE_KEY = 'itss-l5-study-state-v2';
-const LEGACY_STORAGE_KEY = 'itss-l5-study-state-v1';
+const STORAGE_KEY = STORAGE_KEY_V3;
 const DAY = 86400000;
 let questions = [];
-let state = loadState();
+let state = blankState();
+let concepts = new Map();
 let session = null;
 let installPrompt = null;
 let syncManager = null;
@@ -12,24 +14,6 @@ let syncManager = null;
 const $ = (id) => document.getElementById(id);
 const views = [...document.querySelectorAll('.view')];
 
-function blankState() {
-  return { progress: {}, attempts: [], daily: {} };
-}
-function loadState() {
-  try {
-    const current = localStorage.getItem(STORAGE_KEY);
-    if (current) return JSON.parse(current) || blankState();
-    const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
-    if (legacy) {
-      const migrated = JSON.parse(legacy) || blankState();
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(migrated));
-      return migrated;
-    }
-    return blankState();
-  } catch {
-    return blankState();
-  }
-}
 function saveState() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
@@ -282,12 +266,7 @@ function answer(choice) {
   });
   $('judge').textContent = att.correct ? '正解' : '不正解';
   $('judge').className = `judge ${att.correct ? 'good' : 'bad'}`;
-  $('explanation').textContent = q.explanation;
-  $('choiceNotes').innerHTML = q.choice_notes
-    .map((n, i) => `<div><strong>${String.fromCharCode(65 + i)}</strong> ${escapeHtml(n)}</div>`)
-    .join('');
-  $('relatedTerms').innerHTML =
-    '関連語: ' + q.related_terms.map((t) => `<span>${escapeHtml(t)}</span>`).join('');
+  renderExplanation($('explainCards'), q, choice, concepts);
   $('feedback').classList.remove('hidden');
   $('nextBtn').textContent = session.index === session.questions.length - 1 ? '結果を見る' : '次へ';
 }
@@ -444,7 +423,10 @@ function updateAuthUI(user) {
 }
 
 async function init() {
-  questions = await fetch('data/questions.json').then((r) => r.json());
+  const content = await loadContent();
+  questions = content.questions;
+  concepts = content.concepts;
+  state = loadStateV3(content.legacyMap).state;
   renderHome();
   $('dailyStartBtn').onclick = () => startSession(chooseDaily(), 'daily');
   $('customStartBtn').onclick = () => {
