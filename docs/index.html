@@ -11,8 +11,8 @@
   <body>
     <header class="topbar">
       <div>
-        <div class="eyebrow">ITSS L5 / 午前I・II</div>
-        <h1>Strategy · Architecture · Security</h1>
+        <div class="eyebrow">ITSS L5 / 科目A-1・A-2</div>
+        <h1>戦略・設計・セキュリティ・PM・監査</h1>
       </div>
       <button id="installBtn" class="ghost hidden">アプリとして追加</button>
     </header>
@@ -86,6 +86,8 @@
                 <option value="STRATEGY">ストラテジ</option>
                 <option value="ARCHITECTURE">アーキテクト</option>
                 <option value="SECURITY">セキュリティ</option>
+                <option value="PM">プロジェクト管理</option>
+                <option value="AUDIT">システム監査</option>
               </select></label
             >
             <label
@@ -104,6 +106,7 @@
                 <option value="TERM_TO_MEANING">用語 → 意味</option>
                 <option value="MEANING_TO_TERM">意味 → 用語</option>
                 <option value="SCENARIO">午前問題型</option>
+                <option value="PAST">IPA過去問</option>
               </select></label
             >
           </div>
@@ -132,6 +135,7 @@
             ><button id="starBtn" class="star-btn" aria-label="重点マーク">☆</button>
           </div>
           <h2 id="questionStem"></h2>
+          <div id="sourceNote"></div>
           <div id="choices" class="choices"></div>
           <div id="feedback" class="feedback hidden">
             <div id="judge" class="judge"></div>
@@ -202,6 +206,8 @@
               <option value="STRATEGY">ストラテジ</option>
               <option value="ARCHITECTURE">アーキテクト</option>
               <option value="SECURITY">セキュリティ</option>
+              <option value="PM">プロジェクト管理</option>
+              <option value="AUDIT">システム監査</option>
             </select>
             <select id="glossarySort" aria-label="並び順">
               <option value="STANDARD">標準の並び</option>

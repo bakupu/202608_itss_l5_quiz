@@ -771,3 +771,93 @@ select {
 .gl-practice {
   width: 100%;
 }
+
+/* --- 過去問の出典・改変表示 ---
+   🔥 IPAの利用条件（出典の明記／改変の明記）を満たすための表示。
+   目立たせすぎず、かつ確実に読める濃さにする。display:none にしない。 */
+.src-note {
+  margin: 10px 0 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--muted);
+  border-radius: 6px;
+  background: #f9fafb;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.src-note p {
+  margin: 0 0 4px;
+}
+.src-note p:last-child {
+  margin-bottom: 0;
+}
+.src-tag {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--line);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 11px;
+}
+.src-tag.warn {
+  background: #fef3c7;
+  color: var(--warn);
+}
+.src-mod {
+  color: var(--warn);
+}
+.src-foot {
+  font-size: 11px;
+  opacity: 0.8;
+}
+.src-figure {
+  margin: 6px 0;
+}
+.src-figure summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--accent);
+}
+.src-figure > div {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--fg, #111827);
+  /* 図の文章化は桁を揃えた表形式が多い。等幅にしないと列が崩れて読めない。 */
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  overflow-x: auto;
+}
+
+/* 過去問は問題文が長く改行を含む。見出し文字のままだと圧迫されるので少し落とす。 */
+#questionStem {
+  font-size: 17px;
+  line-height: 1.7;
+}
+.choice sup,
+.choice sub,
+#questionStem sup,
+#questionStem sub,
+.ex-choice sup,
+.ex-choice sub {
+  font-size: 0.75em;
+}
+
+/* 過去問の解説で先頭に出る「この設問の主題」カード */
+.ex-card.is-subject {
+  border-color: var(--accent);
+  background: #f9fafb;
+}
+.ex-badge.subject {
+  background: var(--accent);
+  color: #fff;
+}
+.gl-noquestion {
+  margin: 0;
+  font-size: 12px;
+}

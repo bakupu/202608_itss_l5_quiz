@@ -1,7 +1,7 @@
 /**
  * 用語辞書ビュー（一覧・検索・苦手順・概念単位の復習）。
  *
- * 役割: concepts.json の36概念を、学習状況と突き合わせて一覧する。
+ * 役割: concepts.json の全概念を、学習状況と突き合わせて一覧する。
  *       「苦手用語ビュー」は独立した画面にせず、この一覧の並び替えとして持たせている。
  *       同じ一覧を2画面に分けると、検索と絞り込みを両方に実装することになるため。
  *
@@ -9,13 +9,30 @@
  *       設問側の進捗が真実源で、概念側に状態を持たせない（二重管理を避ける）。
  */
 
+// ⚠️ docs/js/app.js の DOMAIN_LABEL と同じ内容を持つ。
+//    app.js は設問の領域、こちらは概念の領域を表示するため、参照が別経路になっている。
 const DOMAIN_LABEL = {
   STRATEGY: 'ストラテジ',
   ARCHITECTURE: 'アーキテクト',
   SECURITY: 'セキュリティ',
+  PM: 'プロジェクト管理',
+  AUDIT: 'システム監査',
 };
 
 const MAX_MASTERY = 4;
+
+// 標準の並び順で使う領域の順序。app.js の DOMAINS と揃える。
+const DOMAIN_ORDER = ['STRATEGY', 'ARCHITECTURE', 'SECURITY', 'PM', 'AUDIT'];
+
+// 🔥 285語あるので、並びが読み込み順のままだと目で探せない。
+//    領域でまとめ、その中は用語の五十音／アルファベット順にする。
+//    ⚠️ ここを崩すと、検索語を思いつけない利用者に一覧を辿る手段が無くなる。
+function standardOrder(a, b) {
+  const da = DOMAIN_ORDER.indexOf(a.concept.domain);
+  const db = DOMAIN_ORDER.indexOf(b.concept.domain);
+  if (da !== db) return da - db;
+  return a.concept.term.localeCompare(b.concept.term, 'ja');
+}
 
 function escapeHtml(s) {
   return String(s).replace(
@@ -107,12 +124,17 @@ function detail(concept, stats, concepts) {
         .join('')}</dd></div>`
     : '';
 
+  // 設問が1問も無い語（関連語として辞書に載せたもの）では、押しても何も起きないので出さない。
+  const practice = stats.total
+    ? `<button class="ghost gl-practice" data-concept="${escapeHtml(concept.id)}">
+        この用語の問題を解く（${stats.total}問）
+      </button>`
+    : '<p class="muted gl-noquestion">この用語の設問はまだありません。</p>';
+
   return `
     <div class="gl-detail">
       <dl class="ex-rows">${rows}${chips}</dl>
-      <button class="ghost gl-practice" data-concept="${escapeHtml(concept.id)}">
-        この用語の問題を解く（${stats.total}問）
-      </button>
+      ${practice}
     </div>`;
 }
 
@@ -157,10 +179,14 @@ export function renderGlossary({ container, concepts, questions, getP, filters, 
     .map((c) => ({ concept: c, stats: conceptStats(c, questions, getP) }))
     .filter(({ concept }) => filters.domain === 'ALL' || concept.domain === filters.domain)
     .filter(({ concept }) => matches(concept, filters.query))
-    .filter(({ stats }) => !filters.weakOnly || stats.mastery < MAX_MASTERY);
+    // 「未習得のみ」では設問の無い語を除く。設問が無い語は平均習得Lv 0 のまま動かないので、
+    // 残すと未習得の一覧が「解きようのない語」で埋まってしまう。
+    .filter(({ stats }) => !filters.weakOnly || (stats.total > 0 && stats.mastery < MAX_MASTERY));
 
   if (filters.sort === 'WEAK') {
     list.sort((a, b) => weakScore(b.stats) - weakScore(a.stats));
+  } else {
+    list.sort(standardOrder);
   }
 
   container.innerHTML = list.length

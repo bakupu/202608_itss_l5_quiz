@@ -2,6 +2,8 @@ import { SyncManager } from './sync.js';
 import { loadContent, loadStateV3, blankState, STORAGE_KEY_V3 } from './content.js';
 import { renderExplanation } from './explain.js';
 import { renderGlossary } from './glossary.js';
+import { formatText } from './text.js';
+import { sourceHtml } from './source.js';
 
 const STORAGE_KEY = STORAGE_KEY_V3;
 const DAY = 86400000;
@@ -48,13 +50,27 @@ function setP(id, p, { sync = true } = {}) {
   saveState();
   if (sync) syncManager?.scheduleSync();
 }
+// 領域の並びと表示名。⚠️ index.html の domainSelect の並びと揃えること。
+// PM・AUDIT はIPA過去問の取り込みで増えた領域で、自作の用語辞書はまだ3領域しか持たない。
+const DOMAINS = ['STRATEGY', 'ARCHITECTURE', 'SECURITY', 'PM', 'AUDIT'];
+const DOMAIN_LABEL = {
+  STRATEGY: 'ストラテジ',
+  ARCHITECTURE: 'アーキテクト',
+  SECURITY: 'セキュリティ',
+  PM: 'プロジェクト管理',
+  AUDIT: 'システム監査',
+};
 function domainLabel(d) {
-  return { STRATEGY: 'ストラテジ', ARCHITECTURE: 'アーキテクト', SECURITY: 'セキュリティ' }[d] || d;
+  return DOMAIN_LABEL[d] || d;
 }
 function typeLabel(t) {
   return (
-    { TERM_TO_MEANING: '用語 → 意味', MEANING_TO_TERM: '意味 → 用語', SCENARIO: '午前問題型' }[t] ||
-    t
+    {
+      TERM_TO_MEANING: '用語 → 意味',
+      MEANING_TO_TERM: '意味 → 用語',
+      SCENARIO: '午前問題型',
+      PAST: 'IPA過去問',
+    }[t] || t
   );
 }
 
@@ -246,14 +262,17 @@ function renderQuestion() {
   $('progressBar').style.width = `${(session.index / session.questions.length) * 100}%`;
   $('domainBadge').textContent = domainLabel(q.domain);
   $('typeBadge').textContent = typeLabel(q.question_type);
-  $('questionStem').textContent = q.stem;
+  // 過去問には改行や上付き・下付きの記法が入る。textContent だと記法が生のまま出るため整形する。
+  $('questionStem').innerHTML = formatText(q.stem);
+  // 🔥 出典と改変の旨はIPAの利用条件。回答前から見える位置に出す（explain.js 側だけに置かない）。
+  $('sourceNote').innerHTML = sourceHtml(q);
   $('starBtn').textContent = p.starred ? '★' : '☆';
   $('feedback').classList.add('hidden');
   $('choices').innerHTML = '';
   q.choices.forEach((text, i) => {
     const b = document.createElement('button');
     b.className = 'choice';
-    b.textContent = `${String.fromCharCode(65 + i)}. ${text}`;
+    b.innerHTML = `${String.fromCharCode(65 + i)}. ${formatText(text)}`;
     b.onclick = () => answer(i);
     $('choices').appendChild(b);
   });
@@ -331,7 +350,7 @@ function renderResult() {
   $('resultList').innerHTML = session.answers
     .map((a, i) => {
       const q = session.questions[i];
-      return `<div class="result-item"><strong>${a.correct ? '○' : '×'} ${escapeHtml(q.stem)}</strong><br><small>${domainLabel(q.domain)} · 習得Lv ${a.mastery_before} → ${a.mastery_after}</small></div>`;
+      return `<div class="result-item"><strong>${a.correct ? '○' : '×'} ${formatText(q.stem)}</strong><br><small>${domainLabel(q.domain)} · 習得Lv ${a.mastery_before} → ${a.mastery_after}</small></div>`;
     })
     .join('');
 }
@@ -348,7 +367,7 @@ function renderDashboard() {
   ]
     .map(([l, v]) => `<div class="kpi"><small>${l}</small><strong>${v}</strong></div>`)
     .join('');
-  $('domainProgress').innerHTML = ['STRATEGY', 'ARCHITECTURE', 'SECURITY']
+  $('domainProgress').innerHTML = DOMAINS.filter((d) => questions.some((q) => q.domain === d))
     .map((d) => {
       const qs = questions.filter((q) => q.domain === d),
         m = qs.filter((q) => getP(q.id).mastery_level >= 4).length,
@@ -378,7 +397,7 @@ function renderReview() {
     ? list
         .map((q) => {
           const p = getP(q.id);
-          return `<div class="review-item"><div><strong>${p.starred ? '★ ' : ''}${escapeHtml(q.stem)}</strong><br><small>${domainLabel(q.domain)} · 誤答 ${p.wrong_count} · Lv ${p.mastery_level}${isDue(q) ? ' · 要復習' : ''}</small></div><button class="ghost one-question" data-id="${q.id}">解く</button></div>`;
+          return `<div class="review-item"><div><strong>${p.starred ? '★ ' : ''}${formatText(q.stem)}</strong><br><small>${domainLabel(q.domain)} · 誤答 ${p.wrong_count} · Lv ${p.mastery_level}${isDue(q) ? ' · 要復習' : ''}</small></div><button class="ghost one-question" data-id="${q.id}">解く</button></div>`;
         })
         .join('')
     : '<p class="muted">まだ復習対象はありません。</p>';
@@ -439,13 +458,6 @@ function renderCurrentView() {
   else if (v === 'reviewView') renderReview();
   else if (v === 'glossaryView') renderGlossaryView();
 }
-function escapeHtml(s) {
-  return String(s).replace(
-    /[&<>'"]/g,
-    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[c],
-  );
-}
-
 function updateSyncStatus(info) {
   const el = $('syncStatus');
   if (!el) return;

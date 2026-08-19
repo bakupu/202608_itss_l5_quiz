@@ -8,14 +8,9 @@
  *         同じ用語の説明を設問ごとに複製しないための分担なので、ここで文言を足さない。
  */
 
-const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
+import { escapeHtml, formatText } from './text.js';
 
-function escapeHtml(s) {
-  return String(s).replace(
-    /[&<>'"]/g,
-    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[c],
-  );
-}
+const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
 
 function row(label, value) {
   if (!value) return '';
@@ -56,6 +51,9 @@ function card(question, index, concepts, chosenIndex) {
       }</div>`
     : '';
 
+  // 用語カードが付く選択肢では「この設問での扱い」（用語一般の説明との差分）、
+  // 用語が無い選択肢（過去問の文章選択肢）では単に「解説」と呼ぶ。
+  // 見出しが指すものが違うので、同じ語を使うと用語の説明だと誤読される。
   const body = concept
     ? heading +
       '<dl class="ex-rows">' +
@@ -66,16 +64,49 @@ function card(question, index, concepts, chosenIndex) {
       row('補足', concept.note) +
       relatedRow(concept, concepts) +
       '</dl>'
-    : `<dl class="ex-rows">${row('この設問での扱い', reason)}</dl>`;
+    : reason
+      ? `<dl class="ex-rows">${row('解説', reason)}</dl>`
+      : // 解説が未執筆の設問。空の枠を出すと「解説が壊れている」ように見えるので、
+        // 正解／自分の回答の印だけを出す。
+        '';
 
   return `
     <section class="ex-card${isCorrect ? ' is-correct' : ''}">
       <header class="ex-head">
         <span class="ex-mark">${LETTERS[index]}</span>
-        <p class="ex-choice">${escapeHtml(question.choices[index])}</p>
+        <p class="ex-choice">${formatText(question.choices[index])}</p>
       </header>
       <div class="ex-badges">${badges(index, question.correct_choice, chosenIndex)}</div>
       ${body}
+    </section>`;
+}
+
+/**
+ * 設問の主題となる用語のカード。
+ *
+ * 過去問は選択肢が文章なので、選択肢ごとの用語解説が付かない。
+ * そこで「この設問が何を問うているか」を1枚だけ先頭に出す。
+ * ⚠️ 自作問では主題の用語が選択肢の中に必ず現れるため、出すと同じ説明が2度並ぶ。
+ *    選択肢が1つも用語へ解決できなかったときだけ出す。
+ */
+function subjectCard(question, concepts) {
+  const concept = question.concept_id ? concepts.get(question.concept_id) : null;
+  if (!concept) return '';
+  if (question.choice_concept_ids?.some(Boolean)) return '';
+
+  return `
+    <section class="ex-card is-subject">
+      <div class="ex-badges"><span class="ex-badge subject">この設問の主題</span></div>
+      <div class="ex-term"><strong>${escapeHtml(concept.term)}</strong>${
+        concept.full_name ? `<span class="ex-fullname">${escapeHtml(concept.full_name)}</span>` : ''
+      }</div>
+      <dl class="ex-rows">
+        ${row('日本語', concept.japanese)}
+        ${row('意味', concept.meaning)}
+        ${row('試験ポイント', concept.exam_tip)}
+        ${row('補足', concept.note)}
+        ${relatedRow(concept, concepts)}
+      </dl>
     </section>`;
 }
 
@@ -87,7 +118,7 @@ function card(question, index, concepts, chosenIndex) {
  * @param {Map<string,object>} concepts concept_id → 概念
  */
 export function renderExplanation(container, question, chosenIndex, concepts) {
-  container.innerHTML = question.choices
-    .map((_, i) => card(question, i, concepts, chosenIndex))
-    .join('');
+  container.innerHTML =
+    subjectCard(question, concepts) +
+    question.choices.map((_, i) => card(question, i, concepts, chosenIndex)).join('');
 }
