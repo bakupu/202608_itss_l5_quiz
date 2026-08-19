@@ -10,15 +10,20 @@ GitHub Pages の静的配信 + ブラウザの localStorage だけで成立す�
 
 ## 現在地と次アクション
 
-- 現在フェーズ: **M2 完了 → M3 未着手**
+- 現在フェーズ: **M3 完了（ステップ1: 解説拡充と永久ID移行 / ステップ2: 用語辞書ビュー）→ 問題追加が次**
   - M2 で実装済み: 81問（36概念×2方向 + シナリオ9）、領域・形式・復習条件フィルタ、習得Lv・復習予定、ダッシュボード、PWA、Supabase同期コード（未設定＝無効）
-  - 2026-08-19 にディレクトリ構造を移行済み（配信物を `docs/` へ集約）
+  - 2026-08-19: ディレクトリ構造を移行（配信物を `docs/` へ集約）。`docs/` を Prettier で全面整形
+  - 2026-08-19: M3ステップ1 完了。用語辞書 `concepts.json`（36概念）を分離し、
+    4選択肢すべてに「用語 / 英語正式名称 / 日本語 / 意味 / 試験ポイント / この設問での扱い / 関連語」を表示。
+    問題IDを永久ID（`security.oauth2.term_to_meaning.001` 形式）へ移行し、履歴を v3 へ変換
+  - 2026-08-19: M3ステップ2 完了。用語辞書ビュー（検索・領域絞り込み・苦手順・未習得のみ・概念単位の出題）を追加
 - 次アクション:
   - [ ] 🔥 GitHub Pages の設定変更（👤 本人操作が必要）
     - 公開元を `agent/m2-supabase-sync` ブランチ `/` → **`main` ブランチ `/docs`** へ変更
-    - 変更前に `main` へ本移行をマージすること。順序を誤ると一時的に 404 になる
-  - [ ] 公開URLで 81問の出題・履歴保持・ホーム画面追加を実機確認（👤）
-  - [ ] M3 着手 → `30_plan/10-overview_M3実装計画.md`
+    - 変更前に `main` へマージすること。順序を誤ると一時的に 404 になる
+  - [ ] 👤 公開URLで実機確認。⚠️ **反映前にアプリのJSONエクスポートで履歴を退避**しておく
+  - [ ] 概念と問題を増やす（M3で作った辞書の上に積む）→ 新しい計画を `30_plan/` へ起こす
+  - [ ] 36概念の説明品質レビュー（試験ポイントを出題語で書き直す）→ `30_plan/10-overview_M3実装計画.md`
 - 保留中: Supabase 同期（コードは存在するが `docs/js/supabase-config.js` の `url` / `anonKey` が空で無効）
   - 解除条件: **PCとスマホの2端末で同一の学習履歴を使いたくなったとき**。それまではローカル保存のみで運用する
 
@@ -32,11 +37,24 @@ CLAUDE.md              このファイル（作業コンテキスト・真実源
 docs/                  ★GitHub Pages の配信ルート。ここだけがブラウザへ配られる
   index.html  styles.css  manifest.webmanifest  sw.js
   js/         app.js  sync.js  supabase-config.js
-  data/       questions.json（tools/make_questions.py の生成物）
+              content.js（読み込みと履歴移行）  explain.js（解説描画）
+              glossary.js（用語辞書ビュー）
+  data/       concepts.json      用語辞書。★解説を直すときはここ
+              questions-v3.json  設問。説明は concept_id 参照
+              legacy-id-map.json 旧IDから永久IDへの対応表
+              questions.json     M2の確定データ。生成の入力であり配信はしない
 tools/                 生成・検証スクリプト（道具＝コード）
 infra/                 Supabase スキーマ等の基盤定義
 10_memo/ 20_adr/ 30_plan/ 40_spec/ 50_workflow/ 90_ref/
+package.json           開発ツールのみ（Prettier / Playwright）。配信物はビルドしない
 ```
+
+よく使うコマンド（詳細は `50_workflow/`）:
+
+- `npm run build` — `concepts.json` から `questions-v3.json` と対応表を生成
+- `npm test` — 履歴移行テスト（14件）と辞書機能テスト（12件）。🔥 `content.js` を触ったら必ず通す
+- `npm run shoot -- <ラベル>` — スマホ幅・PC幅で主要画面を撮影
+- `npm run format` — Prettier で `docs/` と `tools/` を整形
 
 ⚠️ **`docs/` はドキュメント置き場ではない。配信サイト本体である。**
 GitHub Pages のブランチ配信で選べるフォルダが `/` か `/docs` のみという制約による命名で、
@@ -45,8 +63,8 @@ GitHub Pages のブランチ配信で選べるフォルダが `/` か `/docs` �
 ### `docs/` を触るときの制約
 
 - 参照はすべて**相対パス**。`docs/` ごと移動しても壊れない状態を保つ
-- `fetch()` の相対パスは**モジュールではなく `index.html` の位置**を基準に解決される（`data/questions.json`）
-- 🔥 **`docs/` 配下のファイル配置を変えたら `sw.js` の `CACHE` 名を必ず上げる**（現在 `itss-l5-v3`）。
+- `fetch()` の相対パスは**モジュールではなく `index.html` の位置**を基準に解決される（`data/questions-v3.json`）
+- 🔥 **`docs/` 配下のファイル配置を変えたら `sw.js` の `CACHE` 名を必ず上げる**（現在 `itss-l5-v5`）。
   上げないと Service Worker が旧パスを配り続け、オフライン時に壊れる
 - `docs/js/supabase-config.js` に `service_role` キーを置かない。ブラウザへ配られる
 
