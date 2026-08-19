@@ -17,6 +17,14 @@
 
 ⚠️ 注記や改変フラグが付いた問で、この表に載っていないものがあると失敗する。
    新しい回を足したら必ずここへ追記する。「表に無い＝分類し忘れ」を検出するための仕組み。
+
+🔥 figure_text（原本の図表を文にしたもの）がある問は、分類表に無くても figure_to_text とみなす。
+   実測で、転記者が modified フラグを立てずに図を文章化した問が25問あり、
+   「フラグが立った問だけを分類する」設計では改変が25問ぶん漏れていた。
+   原本の図を文へ置き換えて見せている以上それは改変なので、フラグではなく figure_text の有無で判定する。
+
+出力: 分類を当てた結果を content/exams/<試験>_<年度キー>.json へ書き出す（配信データ生成の入力）。
+      ⚠️ 60_exams/ は追跡外なので、ここで書き出さないとGitに残らない。
 """
 
 import json
@@ -27,6 +35,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 ROOT = Path(__file__).resolve().parent.parent
 EXAM_DIR = ROOT / '60_exams'
+PUBLISH_DIR = ROOT / 'content' / 'exams'
 
 # (試験, 年度キー, 問番号) → 分類
 CLASSIFY = {
@@ -82,6 +91,8 @@ def main():
     unclassified = []
     counts = {k: 0 for k in KIND_LABEL}
     total = 0
+    auto = 0
+    PUBLISH_DIR.mkdir(parents=True, exist_ok=True)
 
     for path in sorted(EXAM_DIR.glob('*/*/merged.json')):
         doc = json.loads(path.read_text(encoding='utf-8'))
@@ -92,6 +103,17 @@ def main():
             no = q['question_no']
             has_flag = bool((q.get('note') or '').strip()) or q.get('modified')
             kind = CLASSIFY.get((exam, year, no))
+
+            # 図を文章化した問は、分類表の内容によらず改変として扱う（フラグ漏れを構造的に潰す）。
+            # ⚠️ 「紙面の体裁のみ」と分類された問にも図の文章化が混ざっていた（実測4問）。
+            #    分類は転記者の申告に依存するので、ここでは申告ではなく figure_text の有無を見る。
+            if (q.get('figure_text') or '').strip() and kind not in MODIFIED_KINDS:
+                kind = 'figure_to_text'
+                auto += 1
+                # 転記者が改変と申告していないため理由が空になる。何をしたかを残しておかないと、
+                # 画面には「改変あり」とだけ出て、何を変えたのか誰にも分からなくなる。
+                if not (q.get('modification_note') or '').strip():
+                    q['modification_note'] = '原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。'
 
             if kind is None:
                 if has_flag:
@@ -107,12 +129,12 @@ def main():
             counts[kind] += 1
             changed = True
 
+        body = json.dumps(doc, ensure_ascii=False, indent=2) + chr(10)
         if changed:
-            path.write_text(
-                json.dumps(doc, ensure_ascii=False, indent=2) + '\n',
-                encoding='utf-8',
-                newline='\n',
-            )
+            path.write_text(body, encoding='utf-8', newline=chr(10))
+        # Git管理下へ書き出す。ここが配信データ生成（tools/build_content.py）の入力になる。
+        # ⚠️ 60_exams/ は追跡外なので、この書き出しが無いと分類の変更がGitに残らない。
+        (PUBLISH_DIR / f'{exam}_{year}.json').write_text(body, encoding='utf-8', newline=chr(10))
 
     print(f'対象 {total} 問')
     for k, v in counts.items():
@@ -120,6 +142,8 @@ def main():
         print(f'  {k:18} {v:3}問  ({mark}) {KIND_LABEL[k]}')
     modified = sum(counts[k] for k in MODIFIED_KINDS)
     print(f'画面に改変の旨を表示する問: {modified}')
+    print(f'  うち figure_text から自動判定: {auto} 問（分類表に載っていないもの）')
+    print(f'書き出し先: {PUBLISH_DIR}')
 
     if unclassified:
         print('\nNG  注記や改変フラグがあるのに分類表へ載っていない問:')

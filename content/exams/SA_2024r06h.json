@@ -117,10 +117,11 @@
       ],
       "has_figure": true,
       "figure_text": "〔現在〕\nプログラムA\n  …\n  在庫テーブルを更新する\n  …\nプログラムB\n  …\n  在庫テーブルを更新する\n  …\n\n〔案1〕\nプログラムA\n  …\n  在庫テーブルを更新する\n  モジュールCを呼び出す\n  …\nプログラムB\n  …\n  在庫テーブルを更新する\n  モジュールCを呼び出す\n  …\nモジュールC\n  更新ログを出力する\n\n〔案2〕\nプログラムX\n  宣言：在庫テーブルを更新した後にモジュールCを呼び出す\nプログラムA\n  …\n  在庫テーブルを更新する\n  …\nプログラムB\n  …\n  在庫テーブルを更新する\n  …\nモジュールC\n  更新ログを出力する",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "",
-      "modification_kind": null
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     },
     {
       "question_no": 8,

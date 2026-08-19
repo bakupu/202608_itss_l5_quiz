@@ -373,10 +373,11 @@
       ],
       "has_figure": true,
       "figure_text": "階層構造（上から下へ）:\nアプリケーション層\nミドルウェア層\nデバイスドライバ層\nハードウェア",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "",
-      "modification_kind": null
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     },
     {
       "question_no": 23,
@@ -407,10 +408,11 @@
       ],
       "has_figure": true,
       "figure_text": "〔サービス停止状況〕\n列: 停止理由 | 停止時間\n行1: システムバージョンアップ作業に伴う停止 | 5 月 2 日 22 時から 5 月 6 日 10 時までの 84 時間\n行2: ハードウェア故障に伴う停止 | 6 月 26 日 10 時から 20 時までの 10 時間",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "",
-      "modification_kind": null
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     },
     {
       "question_no": 25,

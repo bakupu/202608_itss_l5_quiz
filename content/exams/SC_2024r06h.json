@@ -361,10 +361,11 @@
       ],
       "has_figure": true,
       "figure_text": "人事\n| 社員番号 | 所属 | 勤続年数 | 年齢 |\n| 1 | 総務部 | 13 | 31 |\n| 2 | 総務部 | 5 | 28 |\n| 3 | 人事部 | 11 | 28 |\n| 4 | 営業部 | 8 | 30 |\n| 5 | 総務部 | 7 | 29 |",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "",
-      "modification_kind": null
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     },
     {
       "question_no": 22,

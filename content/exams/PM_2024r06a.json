@@ -66,10 +66,11 @@
       ],
       "has_figure": true,
       "figure_text": "縦軸: 金額換算値（目盛り 100, 50, 40, 34, 0）。横軸: 開始日－現時点－完了予定日。開始日（原点0）から各線が立ち上がる。BAC: 開始日0から完了予定日で100に達する直線（右端ラベルBAC）。PV: 開始日0から現時点で50に達し，そのまま完了予定日で100（BACの折れ線）まで続く直線（矢印付きラベルPV，現時点の50の位置を指す）。AC: 開始日0から現時点で40に達する直線（矢印付きラベルAC，現時点の40の位置を指す）。EV: 開始日0から現時点で34に達する直線（矢印付きラベルEV，現時点の34の位置を指す）。現時点は開始日と完了予定日の中間（期間の半分）に位置する破線の縦線で示されている。",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "",
-      "modification_kind": null
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     },
     {
       "question_no": 5,
@@ -83,10 +84,11 @@
       ],
       "has_figure": true,
       "figure_text": "凡例: 丸(作業名/所要日数の表記)で作業ノードを表し，実線矢印は作業，破線矢印（-------→）はダミー作業を表す。\nノード構成: 開始ノード（左端の丸）から次の3本の矢印が出る。\n・開始 → A（8） → ノード1\n・開始 → B（5） → ノード2\n・開始 → C（12） → ノード4\nノード2 → E（9） → ノード3\nノード1 → D（10） → ノード3\nノード1 → F（8） → 終了ノード（右端の丸）\nノード3 → G（12） → 終了ノード\nノード3 ⇢（ダミー，破線） → ノード4\nノード4 → H（5） → ノード5\nノード5 → I（4） → 終了ノード",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "",
-      "modification_kind": null
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     },
     {
       "question_no": 6,
@@ -100,10 +102,11 @@
       ],
       "has_figure": true,
       "figure_text": "凡例: 四角（アクティビティ名／所要日数）でアクティビティを表す。\n開始（丸） → A（8日間） -FS→ C（5日間） -FS→ D（5日間） → 終了（丸）\n開始（丸） → B（12日間） → 終了（丸）（Bの矢印はDの下側を通り，終了ノードの手前でDからの矢印と合流する）",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "",
-      "modification_kind": null
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     },
     {
       "question_no": 7,
@@ -204,11 +207,11 @@
       ],
       "has_figure": true,
       "figure_text": "表〔開発要員投入計画〕（単位　人）\n列見出し（時期）: 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月\n行「設計者」: (1月)　, 2, 4, 4, 4, 2, 2, 2, 2, 2, 2, (12月)　\n行「プログラマ」: , , , 3, 3, 5, 5, 3, 3, 2, 2, \n行「テスタ」: , , , , , 4, 4, 4, 6, , , \n行「計」: 0, 2, 4, 7, 7, 11, 11, 9, 11, 4, 4, 0",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "表内の空欄は0人（該当なし）として原本どおり空欄で写した。",
-      "modification_kind": "layout_only",
-      "modification_label": "紙面の体裁のみ（文字列は原本どおり）"
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     },
     {
       "question_no": 13,

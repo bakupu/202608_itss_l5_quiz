@@ -135,11 +135,11 @@
       ],
       "has_figure": true,
       "figure_text": "ノード: A, B, C, D, E（5個）\nエッジ（矢印の向き）: A→B, A→C, B→E, B→C, C→D, C→E, D→E（7本）",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "図はノード5個とエッジの矢印構成をテキストで再現した。エッジの向きの読み取りに一定の自信はあるが，原図の矢印を目視で再確認することを推奨する。",
-      "modification_kind": "layout_only",
-      "modification_label": "紙面の体裁のみ（文字列は原本どおり）"
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     },
     {
       "question_no": 9,

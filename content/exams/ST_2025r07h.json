@@ -16,8 +16,10 @@
       "has_figure": true,
       "figure_text": "検診データのサンプル\n年齢 | 飲酒の頻度（回／週） | 喫煙本数（本／週） | ガンの発症の有無\n50 | 7 | 70 | 有\n40 | 5 | 40 | 有\n55 | 2 | 10 | 無\n45 | 5 | 0 | 無",
       "note": "",
-      "modification_kind": null,
-      "modified": false
+      "modification_kind": "figure_to_text",
+      "modified": true,
+      "modification_label": "図・表・グラフを文へ変換",
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。"
     },
     {
       "question_no": 2,
@@ -64,8 +66,10 @@
       "has_figure": true,
       "figure_text": "IT投資プロジェクト（単位　百万円）\n投資年 | プロジェクト開始時点 | 1年後 | 2年後 | 3年後\nキャッシュフロー | -150 | 100 | 100 | 100\n\nDCF法による金銭的価値の算定結果（単位　百万円）\n算定結果＼投資年 | プロジェクト開始時点 | 1年後 | 2年後 | 3年後 | 合計\na | -150 | 83 | 69 | 57 | 59\nb | -150 | 83 | 71 | 62 | 66\nc | -150 | 83 | 83 | 83 | 99\nd | -150 | 83 | 96 | 99 | 128",
       "note": "",
-      "modification_kind": null,
-      "modified": false
+      "modification_kind": "figure_to_text",
+      "modified": true,
+      "modification_label": "図・表・グラフを文へ変換",
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。"
     },
     {
       "question_no": 5,
@@ -130,8 +134,10 @@
       "has_figure": true,
       "figure_text": "フロー図: a → b → c → ポジション決定 → d（太枠） → 実行計画策定",
       "note": "",
-      "modification_kind": null,
-      "modified": false
+      "modification_kind": "figure_to_text",
+      "modified": true,
+      "modification_label": "図・表・グラフを文へ変換",
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。"
     },
     {
       "question_no": 9,
@@ -162,8 +168,10 @@
       "has_figure": true,
       "figure_text": "図タイトル: 消費者と製品との関わりの程度（列：高／低）\n行見出し: 消費者がブランド間の違いを知覚できる程度（行：高／低）\n\n            | 高（関わりの程度） | 低（関わりの程度）\n高（知覚）  | 複雑な購買行動型   | バラエティシーキング型\n低（知覚）  | 不協和低減型       | 習慣購買型",
       "note": "",
-      "modification_kind": null,
-      "modified": false
+      "modification_kind": "figure_to_text",
+      "modified": true,
+      "modification_label": "図・表・グラフを文へ変換",
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。"
     },
     {
       "question_no": 11,
@@ -338,8 +346,10 @@
       "has_figure": true,
       "figure_text": "単位 百万円\n項目 | 金額\n売上高 | 1,500\n売上原価 | 1,000\n販売費及び一般管理費 | 200\n営業外収益 | 40\n営業外費用 | 30",
       "note": "",
-      "modification_kind": null,
-      "modified": false
+      "modification_kind": "figure_to_text",
+      "modified": true,
+      "modification_label": "図・表・グラフを文へ変換",
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。"
     },
     {
       "question_no": 22,

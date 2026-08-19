@@ -32,10 +32,11 @@
       ],
       "has_figure": true,
       "figure_text": "上段の箱「管理のプロセス群」と下段の箱（内部に「a」と表記された小さな四角を含む）が上下に並ぶ。下段の箱から上段の箱へ向かう矢印（左側，上向き）に「変更要求」の説明が付く。上段の箱から下段の箱へ向かう矢印（右側，下向き）に「承認された変更」の説明が付く。",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "",
-      "modification_kind": null
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     },
     {
       "question_no": 3,
@@ -100,10 +101,11 @@
       ],
       "has_figure": true,
       "figure_text": "アクティビティA（6日）からアクティビティB（7日）へ「終了ー開始関係（リード2日）」の矢印。アクティビティB（7日）からアクティビティC（5日）へ「開始ー開始関係（ラグ3日）」の矢印。",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "",
-      "modification_kind": null
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     },
     {
       "question_no": 7,
@@ -117,11 +119,11 @@
       ],
       "has_figure": true,
       "figure_text": "図1 プロジェクト活動（当初計画）：作業名/所要日数を付した矢線から成るアローダイアグラム。凡例は「作業名／所要日数」を丸（イベント）と矢印で表す。以下，接続関係を表すために便宜上イベントにn0～n7の符号を付す。\nn0→A(4)→n1\nn1→B(5)→n2\nn1→C(10)→n3\nn2→D(4)→n3\nn2→E(2)→n4\nn3→F(4)→n4\nn3→G(7)→n5\nn4→H(6)→n6\nn5→I(4)→n6\nn6→J(8)→n7\n\n図2 プロジェクト活動（変更後計画）：作業Cが10日から12日に変更され，作業Gが作業G1(2日)と作業G2(5日)に分割されている。作業Iの起点はG1完了後のイベントに変更され，G2完了後のイベントからは破線（凡例：ダミー作業）でHとIの合流点へ接続されている。同様に便宜上イベントにn0～n6，n6a（G1後），n8（G2後），n7（J前の合流点），n9（終了）の符号を付す。\nn0→A(4)→n1\nn1→B(5)→n2\nn1→C(12)→n3\nn2→D(4)→n3\nn2→E(2)→n4\nn3→F(4)→n4\nn4→H(6)→n7\nn3→G1(2)→n6a\nn6a→G2(5)→n8\nn6a→I(4)→n7\nn8→（ダミー作業，破線）→n7\nn7→J(8)→n9",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "図1・図2ともイベントの符号（n0，n1，n2…等）は原本に記載が無く，作業の接続関係を文章で表すために便宜上付したもの。また，作業D（n2とn3の間の矢線）の向きは画像から確実に判別できなかったため，一般的な解釈（B経由のイベントからC経由のイベントへ向かう）として記載した。実際の図の矢印の向きは原本画像で要確認。",
-      "modification_kind": "layout_only",
-      "modification_label": "紙面の体裁のみ（文字列は原本どおり）"
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     },
     {
       "question_no": 8,
@@ -187,10 +189,11 @@
       ],
       "has_figure": true,
       "figure_text": "〔会議体の一覧〕\n列：名称，目的，内容，開催日，形式，場所\n行1：名称＝プロジェクト内定例報告会，目的＝プロジェクトチーム内での情報共有，内容＝プロジェクトの進捗と課題の状況を確認する，開催日＝毎週木曜日，形式＝対面，場所＝自社会議室\n行2：名称＝顧客定例報告会，目的＝顧客との情報共有，内容＝プロジェクトの進捗と課題の状況を報告する，開催日＝毎週金曜日，形式＝Web，場所＝自社会議室，顧客会議室\n行3：名称＝ステアリングコミッティ，目的＝プロジェクトの重要な意思決定，内容＝重要な課題や問題を報告し，方針を決定する，開催日＝意思決定が必要なとき，形式＝対面，場所＝自社役員会議室",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "",
-      "modification_kind": null
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     },
     {
       "question_no": 12,
@@ -426,10 +429,11 @@
       ],
       "has_figure": true,
       "figure_text": "証拠として保全するもの\na：遠隔にあるログサーバに記録された調査対象サーバのアクセスログ\nb：調査対象サーバにインストールされていた会計ソフトのインストール用CD\nc：調査対象サーバのハードディスク上の表計算ファイル\nd：調査対象サーバのルーティングテーブルの状態",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "",
-      "modification_kind": null
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     }
   ],
   "answers": {

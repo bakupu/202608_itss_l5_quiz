@@ -202,10 +202,11 @@
       ],
       "has_figure": true,
       "figure_text": "〔エラープルーフ化の五つの原理〕\n・異常検出：エラーに気付くようにする。\n・影響緩和：影響が致命的なものにならないようにする。\n・代替化：　人が作業をしなくてもよいようにする。\n・排除：　　作業や注意を不要にする。\n・容易化：　作業を易しくする。",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "",
-      "modification_kind": null
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     },
     {
       "question_no": 13,
@@ -356,10 +357,11 @@
       ],
       "has_figure": true,
       "figure_text": "納品表：列＝顧客番号，商品番号，納品数量\n顧客表：列＝顧客番号，顧客名",
-      "modified": false,
-      "modification_note": "",
+      "modified": true,
+      "modification_note": "原本の図・表・グラフを文で記述した（下の「原本の図表を文にしたもの」を参照）。",
       "note": "",
-      "modification_kind": null
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
     },
     {
       "question_no": 22,
