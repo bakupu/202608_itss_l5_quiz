@@ -1,0 +1,24 @@
+{
+  "name": "itss-l5-study",
+  "version": "0.0.0",
+  "description": "ITSS L5 自習用PWAの開発ツール（配信物はdocs/。npmは検証と整形にのみ使う）",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "node tools/test_migration.mjs && node tools/test_glossary.mjs",
+    "format": "prettier --write docs/index.html docs/styles.css docs/js/*.js tools/*.mjs",
+    "build": "python tools/build_content.py",
+    "shoot": "node tools/shoot.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "private": "true",
+  "devDependencies": {
+    "playwright": "^1.62.1",
+    "prettier": "^3.9.6"
+  }
+}
