@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "node tools/test_migration.mjs && node tools/test_glossary.mjs",
+    "test": "node tools/test_migration.mjs && node tools/test_glossary.mjs && node tools/test_past.mjs",
     "format": "prettier --write docs/index.html docs/styles.css docs/js/*.js tools/*.mjs",
     "build": "python tools/build_content.py",
     "shoot": "node tools/shoot.mjs"

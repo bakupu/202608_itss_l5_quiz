@@ -74,6 +74,18 @@ const SCREENS = [
       await page.fill('#glossarySearch', '証明書');
     },
   },
+  {
+    // 過去問の画面。出典・改変の旨・図表の文章化が出ることを目で確かめる枠。
+    name: '9-past',
+    act: async (page) => {
+      await page.click('.nav-btn[data-view="homeView"]');
+      await page.selectOption('#typeSelect', 'PAST');
+      await page.selectOption('#domainSelect', 'PM');
+      await page.fill('#countInput', '3');
+      await page.click('#customStartBtn');
+    },
+  },
+  { name: '10-past-feedback', act: async (page) => page.click('#choices button:first-child') },
 ];
 
 const VIEWPORTS = [

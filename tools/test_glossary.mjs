@@ -113,10 +113,15 @@ try {
   // --- 展開状態の保持 ---
   await page.selectOption('#glossarySort', 'STANDARD');
   await page.waitForTimeout(150);
+  // ⚠️ 先頭の用語名を読んでから、その語で検索する。
+  //    固定の語で検索すると、辞書へ語を足して並び順が変わるたびにこのテストが壊れる。
+  const firstTerm = (
+    await page.locator('.gl-item:first-child .gl-title strong').textContent()
+  ).trim();
   await page.click('.gl-item:first-child .gl-head');
   await page.waitForTimeout(150);
   check('項目を開くと詳細が出る', (await page.locator('.gl-detail').count()) === 1);
-  await page.fill('#glossarySearch', 'SWOT');
+  await page.fill('#glossarySearch', firstTerm);
   await page.waitForTimeout(150);
   check(
     '検索しても開いた状態が保たれる',
