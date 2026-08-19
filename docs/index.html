@@ -1,133 +1,197 @@
 <!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#111827" />
-  <title>ITSS L5 Study</title>
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="topbar">
-    <div>
-      <div class="eyebrow">ITSS L5 / 午前I・II</div>
-      <h1>Strategy · Architecture · Security</h1>
-    </div>
-    <button id="installBtn" class="ghost hidden">アプリとして追加</button>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#111827" />
+    <title>ITSS L5 Study</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">ITSS L5 / 午前I・II</div>
+        <h1>Strategy · Architecture · Security</h1>
+      </div>
+      <button id="installBtn" class="ghost hidden">アプリとして追加</button>
+    </header>
 
-  <main id="app" class="container">
-    <section id="homeView" class="view active">
-      <div class="hero-grid">
-        <article class="card primary-card">
-          <div class="card-label">TODAY</div>
-          <h2>今日の3問</h2>
-          <p id="todayStatus" class="muted">復習・未習得・新規から自動選出します。</p>
-          <button id="dailyStartBtn" class="primary wide">3問スタート</button>
+    <main id="app" class="container">
+      <section id="homeView" class="view active">
+        <div class="hero-grid">
+          <article class="card primary-card">
+            <div class="card-label">TODAY</div>
+            <h2>今日の3問</h2>
+            <p id="todayStatus" class="muted">復習・未習得・新規から自動選出します。</p>
+            <button id="dailyStartBtn" class="primary wide">3問スタート</button>
+          </article>
+          <article class="metric-card">
+            <span>習得</span><strong id="masteredCount">0</strong
+            ><small id="masteredDenom">/ 0</small>
+          </article>
+          <article class="metric-card">
+            <span>連続</span><strong id="streakCount">0</strong><small>日</small>
+          </article>
+          <article class="metric-card">
+            <span>要復習</span><strong id="reviewDueCount">0</strong><small>問</small>
+          </article>
+        </div>
+
+        <section class="card section-card sync-card">
+          <div class="section-head">
+            <div>
+              <h2>クラウド同期</h2>
+              <span id="syncStatus" class="sync-status local">ローカル保存</span>
+            </div>
+            <button id="syncNowBtn" class="ghost">今すぐ同期</button>
+          </div>
+          <div id="syncSetupHint" class="setup-hint hidden">
+            supabase-config.js に Project URL と anon/public key
+            を設定すると、PC・スマホ間で同期できます。
+          </div>
+          <div id="authSignedOut" class="auth-row">
+            <input
+              id="emailInput"
+              type="email"
+              inputmode="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              aria-label="ログイン用メールアドレス"
+            />
+            <button id="loginBtn" class="secondary">メールでログイン</button>
+          </div>
+          <div id="authSignedIn" class="auth-row hidden">
+            <span
+              ><strong id="userEmail"></strong><br /><small class="muted"
+                >このアカウントの学習履歴を全端末で共有</small
+              ></span
+            >
+            <button id="logoutBtn" class="ghost">ログアウト</button>
+          </div>
+        </section>
+
+        <section class="card section-card">
+          <div class="section-head">
+            <h2>みっちりやる</h2>
+            <span class="muted">条件を指定して出題</span>
+          </div>
+          <div class="form-grid">
+            <label
+              >問題数<input id="countInput" type="number" min="1" max="100" value="20"
+            /></label>
+            <label
+              >領域<select id="domainSelect">
+                <option value="ALL">すべて</option>
+                <option value="STRATEGY">ストラテジ</option>
+                <option value="ARCHITECTURE">アーキテクト</option>
+                <option value="SECURITY">セキュリティ</option>
+              </select></label
+            >
+            <label
+              >対象<select id="filterSelect">
+                <option value="ALL">全問題</option>
+                <option value="WRONG">誤答歴あり</option>
+                <option value="STARRED">★重点</option>
+                <option value="DUE">要復習</option>
+                <option value="UNMASTERED">未習得</option>
+                <option value="NEW">未回答</option>
+              </select></label
+            >
+            <label
+              >形式<select id="typeSelect">
+                <option value="ALL">すべて</option>
+                <option value="TERM_TO_MEANING">用語 → 意味</option>
+                <option value="MEANING_TO_TERM">意味 → 用語</option>
+                <option value="SCENARIO">午前問題型</option>
+              </select></label
+            >
+          </div>
+          <button id="customStartBtn" class="secondary wide">条件指定でスタート</button>
+        </section>
+
+        <section class="card section-card">
+          <div class="section-head">
+            <h2>最近の実績</h2>
+            <button id="exportBtn" class="ghost">JSON出力</button>
+          </div>
+          <div id="miniBars" class="mini-bars"></div>
+        </section>
+      </section>
+
+      <section id="quizView" class="view">
+        <div class="quiz-head">
+          <button id="quitBtn" class="ghost">← 終了</button>
+          <div class="progress-wrap"><div id="progressBar" class="progress"></div></div>
+          <span id="progressText">1 / 3</span>
+        </div>
+        <article class="card quiz-card">
+          <div class="question-meta">
+            <span id="domainBadge" class="badge"></span
+            ><span id="typeBadge" class="badge subtle"></span
+            ><button id="starBtn" class="star-btn" aria-label="重点マーク">☆</button>
+          </div>
+          <h2 id="questionStem"></h2>
+          <div id="choices" class="choices"></div>
+          <div id="feedback" class="feedback hidden">
+            <div id="judge" class="judge"></div>
+            <p id="explanation"></p>
+            <div id="choiceNotes" class="choice-notes"></div>
+            <div id="relatedTerms" class="related-terms"></div>
+            <button id="nextBtn" class="primary wide">次へ</button>
+          </div>
         </article>
-        <article class="metric-card"><span>習得</span><strong id="masteredCount">0</strong><small id="masteredDenom">/ 0</small></article>
-        <article class="metric-card"><span>連続</span><strong id="streakCount">0</strong><small>日</small></article>
-        <article class="metric-card"><span>要復習</span><strong id="reviewDueCount">0</strong><small>問</small></article>
-      </div>
-
-
-      <section class="card section-card sync-card">
-        <div class="section-head">
-          <div><h2>クラウド同期</h2><span id="syncStatus" class="sync-status local">ローカル保存</span></div>
-          <button id="syncNowBtn" class="ghost">今すぐ同期</button>
-        </div>
-        <div id="syncSetupHint" class="setup-hint hidden">supabase-config.js に Project URL と anon/public key を設定すると、PC・スマホ間で同期できます。</div>
-        <div id="authSignedOut" class="auth-row">
-          <input id="emailInput" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" aria-label="ログイン用メールアドレス" />
-          <button id="loginBtn" class="secondary">メールでログイン</button>
-        </div>
-        <div id="authSignedIn" class="auth-row hidden">
-          <span><strong id="userEmail"></strong><br><small class="muted">このアカウントの学習履歴を全端末で共有</small></span>
-          <button id="logoutBtn" class="ghost">ログアウト</button>
-        </div>
       </section>
 
-      <section class="card section-card">
-        <div class="section-head"><h2>みっちりやる</h2><span class="muted">条件を指定して出題</span></div>
-        <div class="form-grid">
-          <label>問題数<input id="countInput" type="number" min="1" max="100" value="20" /></label>
-          <label>領域<select id="domainSelect"><option value="ALL">すべて</option><option value="STRATEGY">ストラテジ</option><option value="ARCHITECTURE">アーキテクト</option><option value="SECURITY">セキュリティ</option></select></label>
-          <label>対象<select id="filterSelect"><option value="ALL">全問題</option><option value="WRONG">誤答歴あり</option><option value="STARRED">★重点</option><option value="DUE">要復習</option><option value="UNMASTERED">未習得</option><option value="NEW">未回答</option></select></label>
-          <label>形式<select id="typeSelect"><option value="ALL">すべて</option><option value="TERM_TO_MEANING">用語 → 意味</option><option value="MEANING_TO_TERM">意味 → 用語</option><option value="SCENARIO">午前問題型</option></select></label>
-        </div>
-        <button id="customStartBtn" class="secondary wide">条件指定でスタート</button>
+      <section id="resultView" class="view">
+        <article class="card result-card">
+          <div class="card-label">RESULT</div>
+          <h2 id="resultTitle">セッション完了</h2>
+          <div class="result-grid">
+            <div><strong id="resultCorrect">0</strong><span>正解</span></div>
+            <div><strong id="resultRate">0%</strong><span>正答率</span></div>
+            <div><strong id="resultMasteredDelta">+0</strong><span>新規習得</span></div>
+          </div>
+          <div id="resultList" class="result-list"></div>
+          <button id="resultHomeBtn" class="primary wide">ホームへ</button>
+        </article>
       </section>
 
-      <section class="card section-card">
-        <div class="section-head"><h2>最近の実績</h2><button id="exportBtn" class="ghost">JSON出力</button></div>
-        <div id="miniBars" class="mini-bars"></div>
+      <section id="dashboardView" class="view">
+        <section class="card section-card">
+          <div class="section-head">
+            <h2>ダッシュボード</h2>
+            <span class="muted">直近30日</span>
+          </div>
+          <div id="kpiGrid" class="kpi-grid"></div>
+        </section>
+        <section class="card section-card">
+          <h3>領域別 習得率</h3>
+          <div id="domainProgress"></div>
+        </section>
+        <section class="card section-card">
+          <h3>日別回答数</h3>
+          <div id="activityChart" class="bar-chart"></div>
+        </section>
       </section>
-    </section>
 
-    <section id="quizView" class="view">
-      <div class="quiz-head">
-        <button id="quitBtn" class="ghost">← 終了</button>
-        <div class="progress-wrap"><div id="progressBar" class="progress"></div></div>
-        <span id="progressText">1 / 3</span>
-      </div>
-      <article class="card quiz-card">
-        <div class="question-meta"><span id="domainBadge" class="badge"></span><span id="typeBadge" class="badge subtle"></span><button id="starBtn" class="star-btn" aria-label="重点マーク">☆</button></div>
-        <h2 id="questionStem"></h2>
-        <div id="choices" class="choices"></div>
-        <div id="feedback" class="feedback hidden">
-          <div id="judge" class="judge"></div>
-          <p id="explanation"></p>
-          <div id="choiceNotes" class="choice-notes"></div>
-          <div id="relatedTerms" class="related-terms"></div>
-          <button id="nextBtn" class="primary wide">次へ</button>
-        </div>
-      </article>
-    </section>
-
-    <section id="resultView" class="view">
-      <article class="card result-card">
-        <div class="card-label">RESULT</div>
-        <h2 id="resultTitle">セッション完了</h2>
-        <div class="result-grid">
-          <div><strong id="resultCorrect">0</strong><span>正解</span></div>
-          <div><strong id="resultRate">0%</strong><span>正答率</span></div>
-          <div><strong id="resultMasteredDelta">+0</strong><span>新規習得</span></div>
-        </div>
-        <div id="resultList" class="result-list"></div>
-        <button id="resultHomeBtn" class="primary wide">ホームへ</button>
-      </article>
-    </section>
-
-    <section id="dashboardView" class="view">
-      <section class="card section-card">
-        <div class="section-head"><h2>ダッシュボード</h2><span class="muted">直近30日</span></div>
-        <div id="kpiGrid" class="kpi-grid"></div>
+      <section id="reviewView" class="view">
+        <section class="card section-card">
+          <div class="section-head">
+            <h2>復習リスト</h2>
+            <span id="reviewCountLabel" class="muted"></span>
+          </div>
+          <div id="reviewList" class="review-list"></div>
+        </section>
       </section>
-      <section class="card section-card">
-        <h3>領域別 習得率</h3>
-        <div id="domainProgress"></div>
-      </section>
-      <section class="card section-card">
-        <h3>日別回答数</h3>
-        <div id="activityChart" class="bar-chart"></div>
-      </section>
-    </section>
+    </main>
 
-    <section id="reviewView" class="view">
-      <section class="card section-card">
-        <div class="section-head"><h2>復習リスト</h2><span id="reviewCountLabel" class="muted"></span></div>
-        <div id="reviewList" class="review-list"></div>
-      </section>
-    </section>
-  </main>
+    <nav class="bottom-nav">
+      <button data-view="homeView" class="nav-btn active">ホーム</button>
+      <button data-view="reviewView" class="nav-btn">復習</button>
+      <button data-view="dashboardView" class="nav-btn">分析</button>
+    </nav>
 
-  <nav class="bottom-nav">
-    <button data-view="homeView" class="nav-btn active">ホーム</button>
-    <button data-view="reviewView" class="nav-btn">復習</button>
-    <button data-view="dashboardView" class="nav-btn">分析</button>
-  </nav>
-
-  <script src="js/app.js" type="module"></script>
-</body>
+    <script src="js/app.js" type="module"></script>
+  </body>
 </html>
