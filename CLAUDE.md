@@ -43,6 +43,8 @@ docs/                  ★GitHub Pages の配信ルート。ここだけがブ�
               questions-v3.json  設問。説明は concept_id 参照
               legacy-id-map.json 旧IDから永久IDへの対応表
               questions.json     M2の確定データ。生成の入力であり配信はしない
+content/               ビルドの入力データ（配信物ではない）
+  exams/      IPA過去問の転記結果。試験区分_年度キー.json
 tools/                 生成・検証スクリプト（道具＝コード）
 infra/                 Supabase スキーマ等の基盤定義
 10_memo/ 20_adr/ 30_plan/ 40_spec/ 50_workflow/ 90_ref/
@@ -55,6 +57,24 @@ package.json           開発ツールのみ（Prettier / Playwright）。配信
 - `npm test` — 履歴移行テスト（14件）と辞書機能テスト（12件）。🔥 `content.js` を触ったら必ず通す
 - `npm run shoot -- <ラベル>` — スマホ幅・PC幅で主要画面を撮影
 - `npm run format` — Prettier で `docs/` と `tools/` を整形
+- `python tools/fetch_exams.py --all` — IPA過去問を取得しページをPNG化（`60_exams/`、追跡外）
+- `python tools/merge_exam.py <試験> <年度>` — 分担転記を結合し解答例と突合
+- `python tools/normalize_exams.py` — 改変判定を全問へ当て直す
+
+## 過去問の扱い（IPAの利用条件）
+
+科目A-2（旧・午前II）の過去問を教材として収録している。IPA は公表済みの過去問題について
+許諾も使用料も不要としているが、**次の3点が条件**であり、外すと利用条件を満たさなくなる。
+
+1. **出典を明記する**（年度・期・試験区分・時間区分・問番号）→ `source_refs` に持ち、画面にも出す
+2. **改変した場合はその旨も明記する** → `modification_kind` が `figure_to_text` / `notation` の問は画面に出す
+3. 著作権はIPAが放棄していない
+
+🔥 **正解は解答例PDFから別経路で読み取って `answer-key.json` に持つ。**
+転記と同じ経路で正解を得ると突合の意味が消える。
+
+⚠️ 過去問PDFは全ページ画像でテキスト層が無い。読み取りは150dpiのPNGに対して行う。
+⚠️ 上付き・下付きは `^{...}` / `_{...}` の記法で保持する。平文化すると式が意味を失う。
 
 ⚠️ **`docs/` はドキュメント置き場ではない。配信サイト本体である。**
 GitHub Pages のブランチ配信で選べるフォルダが `/` か `/docs` のみという制約による命名で、
