@@ -1,6 +1,8 @@
 # 問題データの生成
 
-検証ステータス: 2026-08-19 に Python 3.13.7 で実行して確認済み（81問）。
+検証ステータス: 2026-08-19 に Python 3.13.7 で実行して確認済み（自作81問 + 過去問300問 = 381問）。
+
+過去問の側の手順は分けてある → [IPA過去問の取り込み](20-content_IPA過去問の取り込み.md)
 
 ## いま使うのはどちらか
 
@@ -10,13 +12,20 @@
 npm run build      # = python tools/build_content.py
 ```
 
-`questions.json`（M2の確定データ）と `concepts.json`（用語辞書）から、
-`questions-v3.json` と `legacy-id-map.json` を生成する。
+次の2つを1本にまとめて `questions-v3.json` と `legacy-id-map.json` を生成する。
+
+- `questions.json`（M2の確定データ）＋ `concepts.json`（用語辞書）→ 自作81問
+- `content/exams/*.json`（転記・検算済みのIPA過去問）＋ `content/past-concepts.json`（主題の用語の対応表）
+  → 出典つきの過去問300問
+
+### 直すときにどこを触るか
 
 - **解説の文言を直したいときは `docs/data/concepts.json` を直す。** 用語の説明は辞書側にあり、
   1か所直せば全設問の解説へ反映される。設問側にあるのは「この設問で適切／不適切な理由」だけ
 - シナリオ問題が主題とする概念は `tools/build_content.py` の `SCENARIO_CONCEPT` で明示している。
   シナリオ問題を足したらここへ1行足す（自動判定できない）
+- 過去問に主題の用語を結び付けるのは `content/past-concepts.json`。**ここに無い過去問があると
+  `npm run build` が止まる**（黙って解説の無い問が混ざらないようにするため）
 - 🔥 **既存81問は再生成せず変換している。** M2の選択肢は `random.sample` で選ばれたもので、
   再生成すると別の問題になり、問題IDに紐づいた学習履歴の意味が壊れる
 
