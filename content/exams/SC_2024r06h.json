@@ -1,0 +1,466 @@
+{
+  "exam": "SC",
+  "year_key": "2024r06h",
+  "source_label": "令和6年度 春期 情報処理安全確保支援士試験 午前II 解答例",
+  "questions": [
+    {
+      "question_no": 1,
+      "page": 3,
+      "stem": "クロスサイトリクエストフォージェリ攻撃の対策として，効果がないものはどれか。",
+      "choices": [
+        "Web サイトでの決済などの重要な操作の都度，利用者のパスワードを入力させる。",
+        "Web サイトへのログイン後，毎回異なる値を HTTP レスポンスボディに含め，Web ブラウザからのリクエストごとに送付されるその値を，Web サーバ側で照合する。",
+        "Web ブラウザからのリクエスト中の Referer によって正しいリンク元からの遷移であることを確認する。",
+        "Web ブラウザからのリクエストを Web サーバで受け付けた際に，リクエストに含まれる \"<\", \">\" などの特殊文字を，\"&lt;\", \"&gt;\" などの文字列に置き換える。"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 2,
+      "page": 3,
+      "stem": "送信者から受信者にメッセージ認証符号（MAC：Message Authentication Code）を付与したメッセージを送り，次に受信者が第三者に転送した。そのときの MAC に関する記述のうち，適切なものはどれか。ここで，共通鍵は送信者と受信者だけが知っており，送信者と受信者のそれぞれの公開鍵は第三者を含めた 3 名が知っているものとする。",
+      "choices": [
+        "MAC は，送信者がメッセージと共通鍵を用いて生成する。MAC を用いると，受信者がメッセージの完全性を確認できる。",
+        "MAC は，送信者がメッセージと共通鍵を用いて生成する。MAC を用いると，第三者が送信者の真正性を確認できる。",
+        "MAC は，送信者がメッセージと受信者の公開鍵を用いて生成する。MAC を用いると，第三者がメッセージの完全性を確認できる。",
+        "MAC は，送信者がメッセージと送信者の公開鍵を用いて生成する。MAC を用いると，受信者が送信者の真正性を確認できる。"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 3,
+      "page": 4,
+      "stem": "PKI（公開鍵基盤）を構成する RA（Registration Authority）の役割はどれか。",
+      "choices": [
+        "デジタル証明書にデジタル署名を付与する。",
+        "デジタル証明書に紐づけられた属性証明書を発行する。",
+        "デジタル証明書の失効リストを管理し，デジタル証明書の有効性を確認する。",
+        "本人確認を行い，デジタル証明書の発行申請の承認又は却下を行う。"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "イの「紐づけ」に「ひも」のルビあり。",
+      "modification_kind": "layout_only",
+      "modification_label": "紙面の体裁のみ（文字列は原本どおり）"
+    },
+    {
+      "question_no": 4,
+      "page": 4,
+      "stem": "標準化団体 OASIS が，Web サイトなどを運営するオンラインビジネスパートナー間で認証，属性及び認可の情報を安全に交換するために策定したものはどれか。",
+      "choices": [
+        "SAML",
+        "SOAP",
+        "XKMS",
+        "XML Signature"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 5,
+      "page": 4,
+      "stem": "送信元 IP アドレスが A，送信元ポート番号が 80/tcp，宛先 IP アドレスがホストに割り振られていない未使用の IP アドレスである SYN/ACK パケットを大量に観測した場合，推定できる攻撃はどれか。",
+      "choices": [
+        "IP アドレス A を攻撃先とするサービス妨害攻撃",
+        "IP アドレス A を攻撃先とするパスワードリスト攻撃",
+        "IP アドレス A を攻撃元とするサービス妨害攻撃",
+        "IP アドレス A を攻撃元とするパスワードリスト攻撃"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 6,
+      "page": 5,
+      "stem": "X.509 における CRL に関する記述のうち，適切なものはどれか。",
+      "choices": [
+        "RFC 5280 では，認証局は，発行したデジタル証明書のうち失効したものについては，シリアル番号を失効後 1 年間 CRL に記載するよう義務付けている。",
+        "Web サイトの利用者の Web ブラウザは，その Web サイトにサーバ証明書を発行した認証局の公開鍵が Web ブラウザに組み込まれていれば，CRL を参照しなくてもよい。",
+        "認証局は，発行した全てのデジタル証明書の有効期限を CRL に記載する。",
+        "認証局は，有効期限内のデジタル証明書が失効されたとき，そのシリアル番号を CRL に記載する。"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 7,
+      "page": 5,
+      "stem": "ISMAP-LIU クラウドサービス登録規則（令和 6 年 3 月 1 日最終改定）での ISMAP-LIU に関する記述として，適切なものはどれか。",
+      "choices": [
+        "JIS Q 27001 に加え，JIS Q 27017 に規定されたクラウドサービス固有の管理策が適切に導入，実施されていることも認証する。",
+        "アウトソーシング事業者が記述したセキュリティの内部統制に対しても，監査法人が評価手続を実施した結果とその意見を表明する。",
+        "リスクの小さな業務・情報の処理に用いる SaaS サービスを対象とする。",
+        "我が国の政府機関などにおける情報セキュリティのベースライン，及びより高い水準の情報セキュリティを確保するための対策事項を規定している。"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 8,
+      "page": 5,
+      "stem": "組織のセキュリティインシデント管理の成熟度を評価するために Open CSIRT Foundation が開発したモデルはどれか。",
+      "choices": [
+        "CMMC",
+        "CMMI",
+        "SAMM",
+        "SIM3"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 9,
+      "page": 6,
+      "stem": "JVN などの脆弱性対策ポータルサイトで採用されている CWE はどれか。",
+      "choices": [
+        "IT 製品の脆弱性を評価する手法",
+        "製品を識別するためのプラットフォーム名の一覧",
+        "セキュリティに関連する設定項目を識別するための識別子",
+        "ソフトウェア及びハードウェアの脆弱性の種類の一覧"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "見出しの「脆弱性」に「ぜい」のルビあり。",
+      "modification_kind": "layout_only",
+      "modification_label": "紙面の体裁のみ（文字列は原本どおり）"
+    },
+    {
+      "question_no": 10,
+      "page": 6,
+      "stem": "FIPS PUB 140-3 はどれか。",
+      "choices": [
+        "暗号モジュールのセキュリティ要求事項",
+        "情報セキュリティマネジメントシステムの要求事項",
+        "デジタル証明書や証明書失効リストの技術仕様",
+        "無線 LAN セキュリティの技術仕様"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 11,
+      "page": 6,
+      "stem": "セキュリティ対策として，CASB を利用した際の効果はどれか。",
+      "choices": [
+        "クラウドサービスカスタマの管理者が，従業員が利用しているクラウドサービスに対して，CASB を利用して脆弱性診断を行うことによって，脆弱性を特定できる。",
+        "クラウドサービスカスタマの管理者が，従業員が利用しているクラウドサービスに対して，CASB を利用して利用状況の可視化を行うことによって，許可を得ずにクラウドサービスを利用している者を特定できる。",
+        "クラウドサービスプロバイダが，運用しているクラウドサービスに対して，CASB を利用して DDoS 攻撃対策を行うことによって，クラウドサービスの可用性低下を緩和できる。",
+        "クラウドサービスプロバイダが，クラウドサービスを運用している施設に対して，CASB を利用して入退室管理を行うことによって，クラウドサービス運用環境への物理的な不正アクセスを防止できる。"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "アの「脆弱性診断」の「脆弱」に「ぜい」のルビあり。",
+      "modification_kind": "layout_only",
+      "modification_label": "紙面の体裁のみ（文字列は原本どおり）"
+    },
+    {
+      "question_no": 12,
+      "page": 7,
+      "stem": "不特定多数の利用者に無料で開放されている公衆無線 LAN サービスのアクセスポイントと端末で利用される仕様として，Wi-Fi Alliance の Enhanced Open によって新規に規定されたものはどれか。",
+      "choices": [
+        "端末でのパスワードの入力で，端末からアクセスポイントへの接続が可能となる仕様",
+        "端末でのパスワードの入力で，端末とアクセスポイントとの通信の暗号化が可能となる仕様",
+        "端末でのパスワードの入力なしに，端末からアクセスポイントへの接続が可能となる仕様",
+        "端末でのパスワードの入力なしに，端末とアクセスポイントとの通信の暗号化が可能となる仕様"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 13,
+      "page": 7,
+      "stem": "HTTP Strict Transport Security（HSTS）の動作はどれか。",
+      "choices": [
+        "HTTP over TLS（HTTPS）によって接続しているとき，接続先のサーバ証明書が EV SSL 証明書である場合とない場合で，Web ブラウザのアドレス表示部分の表示を変える。",
+        "Web サーバからコンテンツをダウンロードするとき，どの文字列が秘密情報かを判定できないように圧縮する。",
+        "Web サーバと Web ブラウザとの間の TLS のハンドシェイクにおいて，一度確立したセッションとは別の新たなセッションを確立するとき，既に確立したセッションを使って改めてハンドシェイクを行う。",
+        "Web ブラウザは，Web サイトにアクセスすると，以降の指定された期間，当該サイトには全て HTTPS によって接続する。"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 14,
+      "page": 8,
+      "stem": "IEEE 802.1X におけるサプリカントはどれか。",
+      "choices": [
+        "一度の認証で複数のサーバやアプリケーションを利用できる認証システム",
+        "クライアント側から送信された認証情報を受け取り，認証を行うシステム",
+        "クライアント側と認証サーバの仲介役となり，クライアント側から送信された認証情報を受け取り，認証サーバに送信するネットワーク機器",
+        "認証を要求するクライアント側の装置やソフトウェア"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 15,
+      "page": 8,
+      "stem": "DNS において DNS CAA（Certification Authority Authorization）レコードを設定することによるセキュリティ上の効果はどれか。",
+      "choices": [
+        "Web サイトにアクセスしたときの Web ブラウザに鍵マークが表示されていれば当該サイトが安全であることを，利用者が確認できる。",
+        "Web サイトにアクセスする際の URL を短縮することによって，利用者の URL の誤入力を防ぐ。",
+        "電子メールを受信するサーバでスパムメールと誤検知されないようにする。",
+        "不正なサーバ証明書の発行を防ぐ。"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 16,
+      "page": 8,
+      "stem": "電子メール又はその通信を暗号化する三つのプロトコルについて，公開鍵を用意する単位の組合せのうち，適切なものはどれか。",
+      "choices": [
+        "PGP はメールアドレスごと，S/MIME はメールアドレスごと，SMTP over TLS はメールサーバごとに，それぞれ公開鍵を用意する。",
+        "PGP はメールアドレスごと，S/MIME はメールサーバごと，SMTP over TLS はメールアドレスごとに，それぞれ公開鍵を用意する。",
+        "PGP はメールサーバごと，S/MIME はメールアドレスごと，SMTP over TLS はメールアドレスごとに，それぞれ公開鍵を用意する。",
+        "PGP はメールサーバごと，S/MIME はメールサーバごと，SMTP over TLS はメールサーバごとに，それぞれ公開鍵を用意する。"
+      ],
+      "has_figure": true,
+      "figure_text": "表（3列4行）\n列見出し: PGP | S/MIME | SMTP over TLS\nア: メールアドレスごと | メールアドレスごと | メールサーバごと\nイ: メールアドレスごと | メールサーバごと | メールアドレスごと\nウ: メールサーバごと | メールアドレスごと | メールアドレスごと\nエ: メールサーバごと | メールサーバごと | メールサーバごと",
+      "modified": true,
+      "modification_note": "原本は3列4行の表（PGP／S/MIME／SMTP over TLSの各列に「メールアドレスごと」「メールサーバごと」の値が並ぶ）。各行（ア〜エ）の3値を「PGPは○○，S/MIMEは○○，SMTP over TLSは○○に，それぞれ公開鍵を用意する。」という文へ変換した。原本の値は figure_text にそのまま保持。",
+      "note": "",
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
+    },
+    {
+      "question_no": 17,
+      "page": 9,
+      "stem": "ソフトウェアの脆弱性管理のためのツールとしても利用される SBOM（Software Bill of Materials）はどれか。",
+      "choices": [
+        "ソフトウェアの脆弱性に対する，ベンダーに依存しないオープンで汎用的な深刻度の評価方法",
+        "ソフトウェアのセキュリティアップデートを行うときに推奨される管理プロセス，組織体制などをまとめたガイドライン",
+        "ソフトウェアを構成するコンポーネント，互いの依存関係などのリスト",
+        "米国の非営利団体 MITRE によって策定された，ソフトウェアにおけるセキュリティ上の弱点の種類を識別するための基準"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "見出しの「脆弱性」に「ぜい」のルビあり。",
+      "modification_kind": "layout_only",
+      "modification_label": "紙面の体裁のみ（文字列は原本どおり）"
+    },
+    {
+      "question_no": 18,
+      "page": 9,
+      "stem": "TCP ヘッダーに含まれる情報はどれか。",
+      "choices": [
+        "宛先ポート番号",
+        "送信元 IP アドレス",
+        "パケット生存時間（TTL）",
+        "プロトコル番号"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "原本は2段組（ア・イが1行，ウ・エが1行）のレイアウトだが，内容はそのまま4択として転記した。",
+      "modification_kind": "layout_only",
+      "modification_label": "紙面の体裁のみ（文字列は原本どおり）"
+    },
+    {
+      "question_no": 19,
+      "page": 9,
+      "stem": "TCP のサブミッションポート（ポート番号 587）の説明として，適切なものはどれか。",
+      "choices": [
+        "FTP サービスで，制御用コネクションのポート番号 21 とは別にデータ転送用に使用する。",
+        "Web サービスで，ポート番号 80 の HTTP 要求とは別に，サブミットボタンをクリックした際の入力フォームのデータ送信に使用する。",
+        "コマンド操作の遠隔ログインで，通信内容を暗号化するために TELNET のポート番号 23 の代わりに使用する。",
+        "電子メールサービスで，迷惑メール対策などのために SMTP のポート番号 25 の代わりに使用する。"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 20,
+      "page": 10,
+      "stem": "Web サーバから送信される HTTP ヘッダーのうち，Web サーバからの応答の内容を，Web ブラウザやプロキシサーバなどのキャッシュに保持させないようにするものはどれか。",
+      "choices": [
+        "Cache-Control: no-cache",
+        "Cache-Control: no-store",
+        "Cache-Control: private",
+        "Cache-Control: public"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 21,
+      "page": 10,
+      "stem": "“人事”表に対して次の SQL 文を実行したとき，結果として得られる社員番号はどれか。\n\n〔SQL 文〕\nSELECT 社員番号 FROM 人事\n　WHERE（勤続年数 > 10 OR 年齢 > 28）\n　AND 所属 = ' 総務部 '",
+      "choices": [
+        "1, 2, 5",
+        "1, 3, 4, 5",
+        "1, 3, 5",
+        "1, 5"
+      ],
+      "has_figure": true,
+      "figure_text": "人事\n| 社員番号 | 所属 | 勤続年数 | 年齢 |\n| 1 | 総務部 | 13 | 31 |\n| 2 | 総務部 | 5 | 28 |\n| 3 | 人事部 | 11 | 28 |\n| 4 | 営業部 | 8 | 30 |\n| 5 | 総務部 | 7 | 29 |",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 22,
+      "page": 11,
+      "stem": "仕様書やソースコードについて，作成者を含めた複数人で，記述されたシステムやソフトウェアの振る舞いを机上でシミュレートして，問題点を発見する手法はどれか。",
+      "choices": [
+        "ウォークスルー",
+        "サンドイッチテスト",
+        "トップダウンテスト",
+        "並行シミュレーション"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 23,
+      "page": 11,
+      "stem": "ソフトウェアの品質を確保するための検証に形式手法を用いる。このとき行う検証方法の説明として，適切なものはどれか。",
+      "choices": [
+        "進行役（モデレーター），記録役などの役割を決めた複数人で，成果物に欠陥がないかどうかを検証する。",
+        "プログラムの内部構造とは無関係に，プログラムが仕様どおりに機能するかどうかを検証する。",
+        "プログラムの内部構造に着目し，プログラムが仕様どおりに動作するかどうかを検証する。",
+        "明確で厳密な意味を定義することができる言語を用いてソフトウェアの仕様を記述して，満たすべき性質と仕様とが整合しているかどうかを論理的に検証する。"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    },
+    {
+      "question_no": 24,
+      "page": 12,
+      "stem": "IT サービスにおけるコンピュータシステムの利用に対する課金を逓減課金方式で行うときのグラフはどれか。",
+      "choices": [
+        "縦軸に利用料金，横軸に利用量をとったグラフで，利用量 0 付近で利用料金が最も高く，利用量の増加とともに利用料金が減少し，減少幅は次第に小さくなって曲線は右下がりで平らに近づく（利用量が増えるほど利用料金が下がる曲線）。",
+        "縦軸に利用料金，横軸に利用量をとったグラフで，原点から直線的に利用料金が増加した後，ある利用量に達すると利用料金が一定（水平）になる。",
+        "縦軸に利用料金，横軸に利用量をとったグラフで，原点から利用量の増加に伴い利用料金が増加するが，増加の傾きは次第に緩やかになる（右上がりで上に凸の曲線）。",
+        "縦軸に利用料金，横軸に利用量をとったグラフで，原点から利用量の増加に伴い利用料金が増加するが，増加の傾きは次第に急になる（右上がりで下に凸の曲線）。"
+      ],
+      "modified": true,
+      "modification_note": "選択肢はア～エの4つのグラフ（折れ線）で示されており，文章ではないため，各グラフの形状（縦軸:利用料金，横軸:利用量）を文章化して choices に格納した。figure_text に各グラフの概形をテキストで記録した。",
+      "figure_text": "ア: 縦軸「利用料金」，横軸「利用量」。原点近くの利用量0付近で利用料金が最も高い位置から始まり，利用量が増えるにつれて利用料金が減少する。減少の度合いは次第に緩やかになり，曲線は右下がりでほぼ平らになっていく。\nイ: 縦軸「利用料金」，横軸「利用量」。原点(0,0)から利用量の増加に伴い利用料金が直線的に増加し，ある利用量の点で頭打ちとなり，それ以降は利用料金が一定（水平線）になる。\nウ: 縦軸「利用料金」，横軸「利用量」。原点(0,0)から利用量の増加に伴い利用料金が増加するが，序盤の傾きが急で，利用量が増えるにつれて傾きが緩やかになる（上に凸の右上がり曲線）。\nエ: 縦軸「利用料金」，横軸「利用量」。原点(0,0)から利用量の増加に伴い利用料金が増加するが，序盤の傾きが緩やかで，利用量が増えるにつれて傾きが急になる（下に凸の右上がり曲線）。",
+      "has_figure": true,
+      "note": "グラフの形状は目視で判読した近似的な記述であり，正確な数値や座標は読み取れないため文章化している。",
+      "modification_kind": "figure_to_text",
+      "modification_label": "図・表・グラフを文へ変換"
+    },
+    {
+      "question_no": 25,
+      "page": 12,
+      "stem": "金融庁“財務報告に係る内部統制の評価及び監査に関する実施基準（令和 5 年）”における，IT に係る全般統制に該当するものとして，最も適切なものはどれか。",
+      "choices": [
+        "アプリケーションプログラムの例外処理（エラー）の修正と再処理",
+        "業務別マスタ・データの維持管理",
+        "システムの開発，保守に係る管理",
+        "入力情報の完全性，正確性，正当性等を確保する統制"
+      ],
+      "has_figure": false,
+      "figure_text": "",
+      "modified": false,
+      "modification_note": "",
+      "note": "",
+      "modification_kind": null
+    }
+  ],
+  "answers": {
+    "1": "エ",
+    "2": "ア",
+    "3": "エ",
+    "4": "ア",
+    "5": "ア",
+    "6": "エ",
+    "7": "ウ",
+    "8": "エ",
+    "9": "エ",
+    "10": "ア",
+    "11": "イ",
+    "12": "エ",
+    "13": "エ",
+    "14": "エ",
+    "15": "エ",
+    "16": "ア",
+    "17": "ウ",
+    "18": "ア",
+    "19": "エ",
+    "20": "イ",
+    "21": "エ",
+    "22": "ア",
+    "23": "エ",
+    "24": "ウ",
+    "25": "ウ"
+  }
+}
