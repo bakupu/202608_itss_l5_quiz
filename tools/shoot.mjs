@@ -86,6 +86,26 @@ const SCREENS = [
     },
   },
   { name: '10-past-feedback', act: async (page) => page.click('#choices button:first-child') },
+  {
+    // 設定パネル（配色・書体・文字サイズ・解説の開きかた）。
+    name: '11-settings',
+    act: async (page) => {
+      await page.click('#quitBtn');
+      await page.click('.settings-card > summary');
+    },
+  },
+  {
+    // 夜テーマ。配色を選べる以上、片方だけ撮ると崩れに気づけない。
+    name: '12-night-home',
+    act: async (page) => page.click('.seg[data-setting="theme"] button[data-value="night"]'),
+  },
+  {
+    name: '13-night-question',
+    act: async (page) => {
+      await page.click('#dailyStartBtn');
+      await page.click('#choices button:first-child');
+    },
+  },
 ];
 
 const VIEWPORTS = [
@@ -137,10 +157,15 @@ try {
         );
         continue;
       }
-      await page.waitForTimeout(250);
+      // 正誤の演出（発光・振れ・数え上げ）は最長0.7秒。終わる前に撮ると毎回違う絵が写る。
+      await page.waitForTimeout(900);
       // fullPage 撮影では position:fixed の要素がページ中央へ描画され、本文に重なって写る
       // （実機の見え方ではなく撮影側の挙動）。撮影の間だけ static へ落として本文を隠さないようにする。
-      await page.addStyleTag({ content: '.bottom-nav{position:static !important}' });
+      // sticky/fixed の要素は fullPage 撮影でビューポート下端の位置に描かれ、本文へ重なって写る
+      // （実機の見え方ではなく撮影側の挙動）。撮影の間だけ通常フローへ落とす。
+      await page.addStyleTag({
+        content: '.bottom-nav,.next-bar{position:static !important}',
+      });
       const out = join(outDir, `${screen.name}-${vp.tag}.png`);
       await page.screenshot({ path: out, fullPage: true });
       console.log(out);
