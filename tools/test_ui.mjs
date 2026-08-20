@@ -257,6 +257,59 @@ try {
   check('🔥 同じ日に続けて回しても同じ設問が出直さない', dup === 0, `重複 ${dup}/5 問`);
   check('2本で10問ぶんの別々の設問が出る', new Set([...first, ...second]).size === 10);
 
+  // --- 結果画面のねぎらい（adr-0003 の追記） ---
+  // 🔥 0点でも文が出ることを見る。「淡々としすぎ」への対処が、0点の日だけ空になるのを防ぐ。
+  const runThree = async (correctly) => {
+    await page.click('.nav-btn[data-view="homeView"]');
+    await page.fill('#countInput', '3');
+    await page.click('#customStartBtn');
+    await page.waitForSelector('#quizView.active');
+    for (let i = 0; i < 3; i++) {
+      const stem = await page.locator('#questionStem').innerText();
+      const key = answerKey.get(norm(stem)) ?? 0;
+      // 誤答させたいときは正解以外を押す（1〜4のうち正解でない最初の番号）
+      const press = correctly ? key + 1 : key === 0 ? 2 : 1;
+      await page.keyboard.press(String(press));
+      await page.locator('#nextBtn').click();
+      await page.waitForTimeout(20);
+    }
+    await page.waitForSelector('#resultView.active');
+    // ⚠️ 正答数と正答率は0から数え上げる（420ms）。すぐ読むと途中の値が取れる。
+    //    採点印は0.85秒で消えるので、その前に読み終える必要がある。
+    await page.waitForTimeout(500);
+    return {
+      head: (await page.locator('#resultTitle').textContent()).trim(),
+      body: (await page.locator('#praiseBody').textContent()).trim(),
+      fact: (await page.locator('#praiseFact').textContent()).trim(),
+      rate: (await page.locator('#resultRate').textContent()).trim(),
+      stamp: await page.locator('#stamp.show svg').count(),
+      word: (await page.locator('#stamp').innerText()).trim(),
+    };
+  };
+
+  const full = await runThree(true);
+  check('満点のとき正答率が100%になる', full.rate === '100%', full.rate);
+  check(
+    '満点のときねぎらいの見出しと本文が出る',
+    full.head.length > 0 && full.body.length > 0,
+    `${full.head} / ${full.body}`,
+  );
+  check('満点のとき採点印が押される', full.stamp === 1 && full.word.length > 0, full.word);
+  check('事実の1行が出る', full.fact.length > 0, full.fact);
+
+  const zero = await runThree(false);
+  check('0点のとき正答率が0%になる', zero.rate === '0%', zero.rate);
+  check(
+    '🔥 0点でもねぎらいの見出しと本文が出る',
+    zero.head.length > 0 && zero.body.length > 0,
+    `${zero.head} / ${zero.body}`,
+  );
+  check('🔥 0点でも事実の1行が出る（空の称賛にしない）', zero.fact.length > 0, zero.fact);
+  check('0点でも採点印は押される', zero.stamp === 1, zero.word);
+
+  const zero2 = await runThree(false);
+  check('同じ段の文が2回続けて出ない', zero2.head !== zero.head, `${zero.head} → ${zero2.head}`);
+
   check('JSエラーが出ていない', errors.length === 0, errors.join(' / '));
   await context.close();
 } finally {

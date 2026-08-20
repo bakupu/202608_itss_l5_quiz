@@ -87,20 +87,31 @@ const SCREENS = [
   },
   { name: '10-past-feedback', act: async (page) => page.click('#choices button:first-child') },
   {
-    // 設定パネル（配色・書体・文字サイズ・解説の開きかた）。
-    name: '11-settings',
+    // 結果画面（ねぎらいの文＋事実の1行）。採点印は0.85秒で消えるのでここには写らない。
+    name: '11-result',
     act: async (page) => {
-      await page.click('#quitBtn');
+      await page.locator('#nextBtn').click();
+      await page.locator('#choices button').first().click();
+      await page.locator('#nextBtn').click();
+      await page.locator('#choices button').first().click();
+      await page.locator('#nextBtn').click();
+    },
+  },
+  {
+    // 設定パネル（配色・書体・文字サイズ・解説の開きかた）。
+    name: '12-settings',
+    act: async (page) => {
+      await page.click('#resultHomeBtn');
       await page.click('.settings-card > summary');
     },
   },
   {
     // 夜テーマ。配色を選べる以上、片方だけ撮ると崩れに気づけない。
-    name: '12-night-home',
+    name: '13-night-home',
     act: async (page) => page.click('.seg[data-setting="theme"] button[data-value="night"]'),
   },
   {
-    name: '13-night-question',
+    name: '14-night-question',
     act: async (page) => {
       await page.click('#dailyStartBtn');
       await page.click('#choices button:first-child');
