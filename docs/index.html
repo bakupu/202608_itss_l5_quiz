@@ -1,17 +1,41 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" data-theme="paper" data-exam-font="mincho" data-text-size="m" data-explain="all">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-    <meta name="theme-color" content="#111827" />
+    <meta name="theme-color" content="#edf0ec" />
     <title>ITSS L5 Study</title>
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      /* 見た目の設定を最初の描画より前に当てる。
+         app.js（module）は defer 相当で走るため、そこで当てると
+         既定テーマが一瞬映ってから切り替わる（夜テーマで白く光る）。
+         ⚠️ 保存先は itss-l5-ui-v1。学習履歴のキー（itss-l5-study-state-*）には触らない。 */
+      (function () {
+        try {
+          var s = JSON.parse(localStorage.getItem('itss-l5-ui-v1') || '{}');
+          var r = document.documentElement;
+          if (s.theme) r.dataset.theme = s.theme;
+          if (s.examFont) r.dataset.examFont = s.examFont;
+          if (s.textSize) r.dataset.textSize = s.textSize;
+          if (s.explain) r.dataset.explain = s.explain;
+          var mq = window.matchMedia('(prefers-color-scheme: dark)');
+          var apply = function () {
+            r.dataset.sys = mq.matches ? 'dark' : 'light';
+          };
+          apply();
+          mq.addEventListener ? mq.addEventListener('change', apply) : mq.addListener(apply);
+        } catch (e) {
+          /* localStorage が使えない環境でも既定の見た目で動く */
+        }
+      })();
+    </script>
   </head>
   <body>
     <header class="topbar">
       <div>
-        <div class="eyebrow">ITSS L5 / 科目A-1・A-2</div>
+        <div class="eyebrow">ITSS L5 / 科目A-2</div>
         <h1>戦略・設計・セキュリティ・PM・監査</h1>
       </div>
       <button id="installBtn" class="ghost hidden">アプリとして追加</button>
@@ -19,57 +43,39 @@
 
     <main id="app" class="container">
       <section id="homeView" class="view active">
-        <div class="hero-grid">
-          <article class="card primary-card">
-            <div class="card-label">TODAY</div>
-            <h2>今日の3問</h2>
-            <p id="todayStatus" class="muted">復習・未習得・新規から自動選出します。</p>
-            <button id="dailyStartBtn" class="primary wide">3問スタート</button>
-          </article>
-          <article class="metric-card">
-            <span>習得</span><strong id="masteredCount">0</strong
-            ><small id="masteredDenom">/ 0</small>
-          </article>
-          <article class="metric-card">
-            <span>連続</span><strong id="streakCount">0</strong><small>日</small>
-          </article>
-          <article class="metric-card">
-            <span>要復習</span><strong id="reviewDueCount">0</strong><small>問</small>
-          </article>
-        </div>
-
-        <section class="card section-card sync-card">
-          <div class="section-head">
-            <div>
-              <h2>クラウド同期</h2>
-              <span id="syncStatus" class="sync-status local">ローカル保存</span>
+        <article class="card today-card">
+          <div class="today-head">
+            <div id="weekDots" class="week-dots"></div>
+            <span id="todayFlag" class="today-flag">今日はまだ</span>
+          </div>
+          <div class="today-body">
+            <!-- 五角の到達印。5領域の平均習得Lvで満ちる -->
+            <figure class="seal">
+              <svg id="sealSvg" viewBox="0 0 200 176" role="img" aria-labelledby="sealTitle"></svg>
+              <figcaption>5領域の到達度 <b id="sealPct">0%</b></figcaption>
+            </figure>
+            <div class="today-main">
+              <div class="eyebrow">きょうの3問</div>
+              <h2 id="todayHeadline">3問だけ、はじめる</h2>
+              <p id="todayStatus" class="muted"></p>
+              <button id="dailyStartBtn" class="primary">3問はじめる</button>
+              <dl class="stat-strip">
+                <div>
+                  <dt>習得</dt>
+                  <dd><b id="masteredCount">0</b><small id="masteredDenom">/ 0</small></dd>
+                </div>
+                <div>
+                  <dt>要復習</dt>
+                  <dd><b id="reviewDueCount">0</b><small>問</small></dd>
+                </div>
+                <div>
+                  <dt>連続</dt>
+                  <dd><b id="streakCount">0</b><small>日</small></dd>
+                </div>
+              </dl>
             </div>
-            <button id="syncNowBtn" class="ghost">今すぐ同期</button>
           </div>
-          <div id="syncSetupHint" class="setup-hint hidden">
-            supabase-config.js に Project URL と anon/public key
-            を設定すると、PC・スマホ間で同期できます。
-          </div>
-          <div id="authSignedOut" class="auth-row">
-            <input
-              id="emailInput"
-              type="email"
-              inputmode="email"
-              autocomplete="email"
-              placeholder="you@example.com"
-              aria-label="ログイン用メールアドレス"
-            />
-            <button id="loginBtn" class="secondary">メールでログイン</button>
-          </div>
-          <div id="authSignedIn" class="auth-row hidden">
-            <span
-              ><strong id="userEmail"></strong><br /><small class="muted"
-                >このアカウントの学習履歴を全端末で共有</small
-              ></span
-            >
-            <button id="logoutBtn" class="ghost">ログアウト</button>
-          </div>
-        </section>
+        </article>
 
         <section class="card section-card">
           <div class="section-head">
@@ -115,11 +121,96 @@
 
         <section class="card section-card">
           <div class="section-head">
-            <h2>最近の実績</h2>
-            <button id="exportBtn" class="ghost">JSON出力</button>
+            <h2>この7日</h2>
+            <span id="weekSummary" class="muted"></span>
           </div>
           <div id="miniBars" class="mini-bars"></div>
+          <p id="weekEmpty" class="empty-note hidden">
+            まだこの7日の記録がありません。1問答えると、その日の棒が立ちます。
+          </p>
         </section>
+
+        <details class="card section-card settings-card">
+          <summary>
+            <h2>設定</h2>
+            <span class="muted">見た目・同期・書き出し</span>
+          </summary>
+
+          <div class="set-row">
+            <label>配色</label>
+            <div class="seg" data-setting="theme">
+              <button data-value="paper">答案</button>
+              <button data-value="linen">やわらか</button>
+              <button data-value="night">夜</button>
+              <button data-value="auto">端末に合わせる</button>
+            </div>
+          </div>
+          <div class="set-row">
+            <label>問題文の書体</label>
+            <div class="seg" data-setting="examFont">
+              <button data-value="mincho">明朝（本番の試験問題と同じ）</button>
+              <button data-value="gothic">ゴシック（画面で読みやすい）</button>
+            </div>
+          </div>
+          <div class="set-row">
+            <label>問題文の文字サイズ</label>
+            <div class="seg" data-setting="textSize">
+              <button data-value="s">小</button>
+              <button data-value="m">標準</button>
+              <button data-value="l">大</button>
+            </div>
+          </div>
+          <div class="set-row">
+            <label>回答後の選択肢の解説</label>
+            <div class="seg" data-setting="explain">
+              <button data-value="all">4つとも開く</button>
+              <button data-value="focus">自分の回答と正解だけ開く</button>
+            </div>
+            <p class="set-note">
+              誤答の選択肢が何の説明なのかも読めるよう、既定では4つとも開きます。
+              スクロールを短くしたいときだけ切り替えてください。
+            </p>
+          </div>
+
+          <div class="set-row set-divider">
+            <div class="sync-head">
+              <label>クラウド同期</label>
+              <span id="syncStatus" class="sync-status local">ローカル保存</span>
+              <button id="syncNowBtn" class="ghost">今すぐ同期</button>
+            </div>
+            <div id="syncSetupHint" class="setup-hint hidden">
+              supabase-config.js に Project URL と anon/public key
+              を設定すると、PC・スマホ間で同期できます。設定するまでは、この端末だけに保存されます。
+            </div>
+            <div id="authSignedOut" class="auth-row">
+              <input
+                id="emailInput"
+                type="email"
+                inputmode="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                aria-label="ログイン用メールアドレス"
+              />
+              <button id="loginBtn" class="secondary">メールでログイン</button>
+            </div>
+            <div id="authSignedIn" class="auth-row hidden">
+              <span
+                ><strong id="userEmail"></strong><br /><small class="muted"
+                  >このアカウントの学習履歴を全端末で共有</small
+                ></span
+              >
+              <button id="logoutBtn" class="ghost">ログアウト</button>
+            </div>
+          </div>
+
+          <div class="set-row set-divider">
+            <label>学習履歴の書き出し</label>
+            <button id="exportBtn" class="ghost">JSONで保存する</button>
+            <p class="set-note">
+              履歴はこの端末の中だけにあります。端末を替える前に書き出しておいてください。
+            </p>
+          </div>
+        </details>
       </section>
 
       <section id="quizView" class="view">
@@ -134,13 +225,19 @@
             ><span id="typeBadge" class="badge subtle"></span
             ><button id="starBtn" class="star-btn" aria-label="重点マーク">☆</button>
           </div>
-          <h2 id="questionStem"></h2>
+          <h2 id="questionStem" class="exam-text"></h2>
           <div id="sourceNote"></div>
           <div id="choices" class="choices"></div>
           <div id="feedback" class="feedback hidden">
-            <div id="judge" class="judge"></div>
+            <div class="verdict">
+              <span id="verdictMark"></span>
+              <div>
+                <div id="judge" class="judge"></div>
+                <div id="lvLadder" class="ladder"></div>
+              </div>
+            </div>
             <div id="explainCards" class="explain-cards"></div>
-            <button id="nextBtn" class="primary wide">次へ</button>
+            <div class="next-bar"><button id="nextBtn" class="primary wide">次へ</button></div>
           </div>
         </article>
       </section>
@@ -148,7 +245,7 @@
       <section id="resultView" class="view">
         <article class="card result-card">
           <div class="card-label">RESULT</div>
-          <h2 id="resultTitle">セッション完了</h2>
+          <h2 id="resultTitle">おつかれさまでした</h2>
           <div class="result-grid">
             <div><strong id="resultCorrect">0</strong><span>正解</span></div>
             <div><strong id="resultRate">0%</strong><span>正答率</span></div>
@@ -166,9 +263,11 @@
             <span class="muted">直近30日</span>
           </div>
           <div id="kpiGrid" class="kpi-grid"></div>
+          <p id="kpiNote" class="kpi-note"></p>
+          <p id="dashEmpty" class="empty-note hidden"></p>
         </section>
         <section class="card section-card">
-          <h3>領域別 習得率</h3>
+          <h3>領域別 到達状況</h3>
           <div id="domainProgress"></div>
         </section>
         <section class="card section-card">
@@ -222,6 +321,10 @@
         </section>
       </section>
     </main>
+
+    <!-- 正答時の採点印。本文の上に重ねるだけで、情報はここに載せない
+         （消えても #judge に「正解」が残る） -->
+    <div id="stamp" class="stamp" aria-hidden="true"></div>
 
     <nav class="bottom-nav">
       <button data-view="homeView" class="nav-btn active">ホーム</button>

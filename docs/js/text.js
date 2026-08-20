@@ -13,6 +13,12 @@
  * ⚠️ この関数の戻り値は innerHTML へ入れる前提。textContent へ入れるとタグが見えてしまう。
  */
 
+/**
+ * 選択肢の記号。IPA本番の科目A-2は ア〜エ で答えるため、練習も同じ記号で行う。
+ * ⚠️ 出題画面（app.js）と解説（explain.js）の両方で使う。片方だけ変えると記号が食い違う。
+ */
+export const CHOICE_MARKS = ['ア', 'イ', 'ウ', 'エ', 'オ', 'カ'];
+
 export function escapeHtml(s) {
   return String(s).replace(
     /[&<>'"]/g,

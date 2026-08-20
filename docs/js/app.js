@@ -2,8 +2,9 @@ import { SyncManager } from './sync.js';
 import { loadContent, loadStateV3, blankState, STORAGE_KEY_V3 } from './content.js';
 import { renderExplanation } from './explain.js';
 import { renderGlossary } from './glossary.js';
-import { formatText } from './text.js';
+import { formatText, CHOICE_MARKS } from './text.js';
 import { sourceHtml } from './source.js';
+import { initSettings, getSetting } from './settings.js';
 
 const STORAGE_KEY = STORAGE_KEY_V3;
 const DAY = 86400000;
@@ -251,7 +252,14 @@ function startSession(list, mode = 'custom') {
     alert('条件に該当する問題がありません。');
     return;
   }
-  session = { questions: list, index: 0, answers: [], mode, masteredBefore: masteredCount() };
+  session = {
+    questions: list,
+    index: 0,
+    answers: [],
+    mode,
+    masteredBefore: masteredCount(),
+    reachBefore: currentReachAvg(),
+  };
   showView('quizView');
   renderQuestion();
 }
@@ -259,23 +267,86 @@ function renderQuestion() {
   const q = session.questions[session.index],
     p = getP(q.id);
   $('progressText').textContent = `${session.index + 1} / ${session.questions.length}`;
-  $('progressBar').style.width = `${(session.index / session.questions.length) * 100}%`;
+  const bar = $('progressBar');
+  bar.style.width = `${(session.index / session.questions.length) * 100}%`;
+  if (session.index > 0) {
+    bar.classList.remove('flash');
+    void bar.offsetWidth;
+    bar.classList.add('flash');
+  }
+  document.querySelector('.quiz-card').classList.remove('good', 'bad');
+  $('stamp').classList.remove('show');
+  $('stamp').innerHTML = '';
   $('domainBadge').textContent = domainLabel(q.domain);
   $('typeBadge').textContent = typeLabel(q.question_type);
   // 過去問には改行や上付き・下付きの記法が入る。textContent だと記法が生のまま出るため整形する。
   $('questionStem').innerHTML = formatText(q.stem);
   // 🔥 出典と改変の旨はIPAの利用条件。回答前から見える位置に出す（explain.js 側だけに置かない）。
   $('sourceNote').innerHTML = sourceHtml(q);
-  $('starBtn').textContent = p.starred ? '★' : '☆';
+  setStar(p.starred);
   $('feedback').classList.add('hidden');
   $('choices').innerHTML = '';
   q.choices.forEach((text, i) => {
     const b = document.createElement('button');
     b.className = 'choice';
-    b.innerHTML = `${String.fromCharCode(65 + i)}. ${formatText(text)}`;
+    // 記号は本番と同じ ア〜エ。キーボードで答えられるよう、数字も小さく併記する。
+    b.innerHTML =
+      `<span class="mark">${CHOICE_MARKS[i]}<small>${i + 1}</small></span>` +
+      `<span class="exam-text">${formatText(text)}</span>`;
+    b.style.setProperty('--i', String(i)); // 回答後、下から順に色が付く順番
     b.onclick = () => answer(i);
     $('choices').appendChild(b);
   });
+}
+function setStar(on) {
+  $('starBtn').textContent = on ? '★' : '☆';
+  $('starBtn').classList.toggle('on', Boolean(on));
+}
+function reduceMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+/**
+ * 朱の採点マーク。正誤が出た瞬間に一筆で描かれる。
+ * stroke-dasharray の長さを図形ごとに渡す（円周と線長が違うため、共通値だと描き切れない）。
+ */
+function verdictMarkHtml(correct) {
+  return correct
+    ? `<svg class="vmark good" viewBox="0 0 48 48" aria-hidden="true"><circle class="vstroke" style="--len:114" cx="24" cy="24" r="18"/></svg>`
+    : `<svg class="vmark" viewBox="0 0 48 48" aria-hidden="true"><path class="vstroke" style="--len:37" d="M12 12 L36 36"/><path class="vstroke d2" style="--len:37" d="M36 12 L12 36"/></svg>`;
+}
+/**
+ * 正答時に画面中央へ押す採点印。
+ * ⚠️ 情報はここに載せない（消えても #judge に結果が残る）。
+ *    誤答には出さない。出すと1問ごとに叱られる画面になる。
+ */
+function showStamp() {
+  const el = $('stamp');
+  if (reduceMotion()) return;
+  el.innerHTML = `<svg viewBox="0 0 120 120" aria-hidden="true">
+      <circle class="ring" cx="60" cy="60" r="50"/>
+      <text class="word" x="60" y="60" dx="-0.8" text-anchor="middle" dominant-baseline="central">正解</text>
+    </svg>`;
+  el.classList.remove('show');
+  void el.offsetWidth; // 連続正解でも毎回再生させる
+  el.classList.add('show');
+  el.addEventListener(
+    'animationend',
+    () => {
+      el.classList.remove('show');
+      el.innerHTML = '';
+    },
+    { once: true },
+  );
+}
+/** 習得Lvの階段。上がった段だけ光らせる。 */
+function ladderHtml(before, after) {
+  const steps = [1, 2, 3, 4]
+    .map(
+      (n) => `<i class="${after >= n ? 'on' : ''}${after >= n && before < n ? ' lit' : ''}"></i>`,
+    )
+    .join('');
+  const move = after > before ? `Lv${before} → Lv${after}` : `Lv${after}`;
+  return `<span class="ladder-label">習得Lv</span>${steps}<span class="ladder-text">${move}</span>`;
 }
 function answer(choice) {
   const q = session.questions[session.index],
@@ -286,11 +357,48 @@ function answer(choice) {
     if (i === q.correct_choice) b.classList.add('correct');
     if (i === choice && i !== q.correct_choice) b.classList.add('wrong');
   });
-  $('judge').textContent = att.correct ? '正解' : '不正解';
+  // 正答は縁が一度発光し、誤答は小さく振れる。⚠️ 付け直す前に必ず外す
+  // （同じ判定が続くとアニメーションが再生されない）。
+  const card = document.querySelector('.quiz-card');
+  card.classList.remove('good', 'bad');
+  void card.offsetWidth;
+  card.classList.add(att.correct ? 'good' : 'bad');
+  if (att.correct) showStamp();
+  $('verdictMark').innerHTML = verdictMarkHtml(att.correct);
+  $('judge').textContent = att.correct
+    ? '正解'
+    : `不正解 — 正解は ${CHOICE_MARKS[q.correct_choice]}`;
   $('judge').className = `judge ${att.correct ? 'good' : 'bad'}`;
-  renderExplanation($('explainCards'), q, choice, concepts);
+  $('lvLadder').innerHTML = ladderHtml(att.mastery_before, att.mastery_after);
+  renderExplanation($('explainCards'), q, choice, concepts, {
+    focusOnly: getSetting('explain') === 'focus',
+  });
   $('feedback').classList.remove('hidden');
   $('nextBtn').textContent = session.index === session.questions.length - 1 ? '結果を見る' : '次へ';
+  // 判定と解説の先頭を画面に入れる。選択肢の位置に留まると、何が起きたか見えない。
+  $('feedback').scrollIntoView({ behavior: reduceMotion() ? 'auto' : 'smooth', block: 'start' });
+}
+/**
+ * 出題中のキーボード操作。1〜4 で選択、Enter / Space / → で次へ。
+ * ⚠️ 入力欄（辞書の検索など）に文字を打っているときは何もしない。
+ */
+function onKeydown(e) {
+  if (!$('quizView').classList.contains('active') || !session) return;
+  const tag = e.target?.tagName;
+  if (tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA') return;
+  const answered = !$('feedback').classList.contains('hidden');
+  if (!answered && /^[1-9]$/.test(e.key)) {
+    const b = $('choices').children[Number(e.key) - 1];
+    if (b) {
+      e.preventDefault();
+      b.click();
+    }
+    return;
+  }
+  if (answered && (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowRight')) {
+    e.preventDefault();
+    $('nextBtn').click();
+  }
 }
 function endOrNext() {
   if (session.index >= session.questions.length - 1) {
@@ -319,38 +427,170 @@ function streak() {
   }
   return n;
 }
+/**
+ * 領域ごとの到達度（平均習得Lv ÷ 4）。0〜1。
+ * ⚠️ ダッシュボードの「習得率」（Lv4に達した問題の割合）とは別の指標。
+ *    Lv4は7日空けた正解が要るので初日は必ず0になり、五角の到達印が何日も空のままになる。
+ *    毎日の手応えを映すのはこちらで、名前も「到達度」と分けている。
+ */
+function domainReach(d) {
+  const qs = questions.filter((q) => q.domain === d);
+  if (!qs.length) return 0;
+  const sum = qs.reduce((s, q) => s + Math.min(4, getP(q.id).mastery_level || 0), 0);
+  return sum / (qs.length * 4);
+}
+/** 五角の到達印。5領域＝試験制度の区分そのものなので、5軸の形が意味を持つ。 */
+function renderSeal() {
+  const cx = 100,
+    cy = 92,
+    R = 62,
+    labels = ['戦略', '設計', 'セキュリティ', 'PM', '監査'],
+    reach = DOMAINS.map(domainReach),
+    pt = (i, r) => {
+      const a = (-90 + i * 72) * (Math.PI / 180);
+      return [cx + Math.cos(a) * r, cy + Math.sin(a) * r];
+    },
+    poly = (r) =>
+      [0, 1, 2, 3, 4]
+        .map((i) =>
+          pt(i, r)
+            .map((n) => n.toFixed(1))
+            .join(','),
+        )
+        .join(' ');
+  const rings = [0.25, 0.5, 0.75, 1]
+    .map((k) => `<polygon class="seal-ring" points="${poly(R * k)}"/>`)
+    .join('');
+  const spokes = [0, 1, 2, 3, 4]
+    .map((i) => {
+      const [x, y] = pt(i, R);
+      return `<line class="seal-spoke" x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/>`;
+    })
+    .join('');
+  // まだ何も無いときは面も点も描かない。中心に潰れた図形は「汚れ」に見え、
+  // 「0%だ」とも「壊れている」とも読めてしまう。0%は枠だけで示す。
+  const any = reach.some((v) => v > 0);
+  const area = any
+    ? `<polygon class="seal-area" points="${reach
+        .map((v, i) =>
+          pt(i, R * Math.max(0.02, v))
+            .map((n) => n.toFixed(1))
+            .join(','),
+        )
+        .join(' ')}"/>`
+    : '';
+  const dots = reach
+    .map((v, i) => {
+      if (!v) return '';
+      const [x, y] = pt(i, R * Math.max(0.02, v));
+      return `<circle class="seal-dot${v >= 1 ? ' full' : ''}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.2"/>`;
+    })
+    .join('');
+  const text = labels
+    .map((l, i) => {
+      const [x, y] = pt(i, R + 16),
+        anchor = i === 0 || i === 3 ? 'middle' : x > cx ? 'start' : 'end';
+      return `<text class="seal-label" x="${x.toFixed(1)}" y="${(y + 3).toFixed(1)}" text-anchor="${anchor}">${l}</text>`;
+    })
+    .join('');
+  const avg = reach.reduce((s, v) => s + v, 0) / reach.length;
+  // セッション直後だけ、前回の広さから今の広さへ広げる（何が増えたのかを見せる）。
+  const grow = sealGrowFrom !== null && avg > sealGrowFrom && !reduceMotion();
+  const from = grow ? Math.max(0.25, sealGrowFrom / avg) : 1;
+  sealGrowFrom = null;
+  $('sealSvg').innerHTML =
+    `<title id="sealTitle">5領域の到達度 ${Math.round(avg * 100)}%</title>` +
+    rings +
+    spokes +
+    `<g class="${grow ? 'seal-grow' : ''}" style="--from:${from.toFixed(3)}">${area}${dots}</g>` +
+    text;
+  $('sealPct').textContent = `${Math.round(avg * 100)}%`;
+}
+/** 到達印を広げるときの開始値（セッション開始時の平均到達度）。null なら演出しない。 */
+let sealGrowFrom = null;
+function currentReachAvg() {
+  const r = DOMAINS.map(domainReach);
+  return r.reduce((a, b) => a + b, 0) / r.length;
+}
+const WEEKDAY = ['日', '月', '火', '水', '木', '金', '土'];
 function renderHome() {
-  $('masteredCount').textContent = masteredCount();
+  renderSeal();
+  const mastered = masteredCount(),
+    due = questions.filter(isDue).length,
+    fresh = questions.filter((q) => getP(q.id).attempt_count === 0).length,
+    answeredEver = state.attempts.length;
+  $('masteredCount').textContent = mastered;
   $('masteredDenom').textContent = `/ ${questions.length}`;
   $('streakCount').textContent = streak();
-  $('reviewDueCount').textContent = questions.filter(isDue).length;
+  $('reviewDueCount').textContent = due;
+
   const today = state.daily[isoDay()]?.count || 0;
-  $('todayStatus').textContent =
-    today >= 3
-      ? `今日は ${today} 問回答済み。追加学習もできます。`
-      : '復習・未習得・新規から自動選出します。';
+  $('todayFlag').textContent = today ? `今日は ${today} 問` : '今日はまだ';
+  $('todayFlag').classList.toggle('done', today > 0);
+  $('todayHeadline').textContent = today ? 'もう1セットいく' : '3問だけ、はじめる';
+  $('dailyStartBtn').textContent = today ? 'つづけて3問' : '3問はじめる';
+  $('todayStatus').textContent = answeredEver
+    ? `要復習 ${due}問・未回答 ${fresh}問 から選びます。`
+    : '1問答えるとその問題が習得Lv1になり、翌日から復習に並びます。';
+
   const last7 = [...Array(7)].map((_, i) => {
       const d = new Date(Date.now() - (6 - i) * DAY);
-      return state.daily[isoDay(d)]?.count || 0;
+      return { count: state.daily[isoDay(d)]?.count || 0, day: WEEKDAY[d.getDay()] };
     }),
-    max = Math.max(3, ...last7);
-  $('miniBars').innerHTML = last7
+    max = Math.max(3, ...last7.map((x) => x.count)),
+    total7 = last7.reduce((s, x) => s + x.count, 0);
+  $('weekDots').innerHTML = last7
     .map(
-      (v) =>
-        `<div class="mini-bar" title="${v}問" style="height:${Math.max(3, (v / max) * 100)}%"></div>`,
+      (x, i) =>
+        `<div class="${i === 6 ? 'is-today' : ''}" title="${x.count}問"><i class="${x.count ? 'on' : ''}"></i><small>${x.day}</small></div>`,
     )
     .join('');
+  $('weekSummary').textContent = total7 ? `7日で ${total7} 問` : 'まだ記録なし';
+  // 全部0のとき棒グラフを出すと、空の枠が「何かが壊れている」ように見える。
+  $('miniBars').classList.toggle('hidden', total7 === 0);
+  $('weekEmpty').classList.toggle('hidden', total7 > 0);
+  $('miniBars').innerHTML = last7
+    .map(
+      (x) =>
+        `<div class="mini-bar${x.count ? '' : ' zero'}" title="${x.day} ${x.count}問" style="height:${Math.max(3, (x.count / max) * 100)}%"></div>`,
+    )
+    .join('');
+}
+/**
+ * 数字を 0 から to へ数え上げる。
+ * ⚠️ 表示は必ず to で終える（途中で止まった値が残ると、間違った成績を見せる）。
+ */
+function countUp(el, to, format) {
+  if (reduceMotion() || !to) {
+    el.textContent = format(to);
+    return;
+  }
+  const dur = 420,
+    t0 = performance.now();
+  const step = (t) => {
+    const k = Math.min(1, (t - t0) / dur);
+    el.textContent = format(Math.round(to * (1 - Math.pow(1 - k, 3))));
+    if (k < 1) requestAnimationFrame(step);
+    else el.textContent = format(to);
+  };
+  requestAnimationFrame(step);
 }
 function renderResult() {
   const correct = session.answers.filter((a) => a.correct).length,
     delta = masteredCount() - session.masteredBefore;
-  $('resultCorrect').textContent = `${correct}/${session.answers.length}`;
-  $('resultRate').textContent = `${Math.round((correct / session.answers.length) * 100)}%`;
+  countUp($('resultCorrect'), correct, (v) => `${v}/${session.answers.length}`);
+  countUp($('resultRate'), Math.round((correct / session.answers.length) * 100), (v) => `${v}%`);
   $('resultMasteredDelta').textContent = `+${Math.max(0, delta)}`;
+  $('resultTitle').textContent =
+    correct === session.answers.length ? '全問正解' : 'おつかれさまでした';
   $('resultList').innerHTML = session.answers
     .map((a, i) => {
-      const q = session.questions[i];
-      return `<div class="result-item"><strong>${a.correct ? '○' : '×'} ${formatText(q.stem)}</strong><br><small>${domainLabel(q.domain)} · 習得Lv ${a.mastery_before} → ${a.mastery_after}</small></div>`;
+      const q = session.questions[i],
+        lv =
+          a.mastery_after > a.mastery_before
+            ? `習得Lv ${a.mastery_before} → ${a.mastery_after}`
+            : `習得Lv ${a.mastery_after}`;
+      return `<div class="result-item"><span class="rmark ${a.correct ? 'good' : 'bad'}">${a.correct ? '○' : '×'}</span><strong class="exam-text">${formatText(q.stem)}</strong><br><small>${domainLabel(q.domain)} · ${lv}</small></div>`;
     })
     .join('');
 }
@@ -360,21 +600,38 @@ function renderDashboard() {
     correct = attempts.filter((a) => a.correct).length,
     recovery = Object.values(state.progress).reduce((s, p) => s + (p.recovery_count || 0), 0);
   $('kpiGrid').innerHTML = [
-    ['習得', `${masteredCount()} / ${questions.length}`],
+    ['習得（Lv4）', `${masteredCount()} / ${questions.length}`],
     ['30日回答', attempts.length],
     ['30日正答率', attempts.length ? `${Math.round((correct / attempts.length) * 100)}%` : '—'],
     ['誤答→習得', recovery],
   ]
     .map(([l, v]) => `<div class="kpi"><small>${l}</small><strong>${v}</strong></div>`)
     .join('');
-  $('domainProgress').innerHTML = DOMAINS.filter((d) => questions.some((q) => q.domain === d))
-    .map((d) => {
-      const qs = questions.filter((q) => q.domain === d),
-        m = qs.filter((q) => getP(q.id).mastery_level >= 4).length,
-        pct = qs.length ? Math.round((m / qs.length) * 100) : 0;
-      return `<div class="domain-row"><div class="domain-label"><span>${domainLabel(d)}</span><span>${m}/${qs.length} (${pct}%)</span></div><div class="track"><div class="fill" style="width:${pct}%"></div></div></div>`;
-    })
-    .join('');
+  $('kpiNote').textContent =
+    '習得（Lv4）は、Lv3に達した問題を7日以上空けて正解できたもの。最短で8日目から増えます。' +
+    'その日の手応えは下の内訳（Lv1〜3）と「30日正答率」で見てください。';
+  // 何も記録が無いとき、0が4つ並ぶだけでは「壊れている」のか「まだやっていない」のか分からない。
+  const empty = state.attempts.length === 0;
+  $('dashEmpty').classList.toggle('hidden', !empty);
+  if (empty)
+    $('dashEmpty').textContent =
+      'まだ記録がありません。ホームの「3問はじめる」を回すと、正答率・領域別の習得率・日別の回答数がここに出ます。';
+  // 🔥 「習得」= Lv4 は7日空けた正解が要るため、初週は必ず 0/381 のままになる。
+  //    Lv4だけの棒を出すと、毎日やっても何も動かない画面になり「壊れている」と読まれる（実測で指摘された）。
+  //    そこで Lv1〜4 の内訳を積み上げで出し、Lv4 はその一部として示す。判定のロジックは変えない。
+  $('domainProgress').innerHTML =
+    DOMAINS.filter((d) => questions.some((q) => q.domain === d))
+      .map((d) => {
+        const qs = questions.filter((q) => q.domain === d),
+          lv = [0, 0, 0, 0, 0];
+        for (const q of qs) lv[Math.min(4, getP(q.id).mastery_level || 0)]++;
+        const seg = [1, 2, 3, 4]
+          .map((n) => `<i class="lv${n}" style="width:${(lv[n] / qs.length) * 100}%"></i>`)
+          .join('');
+        return `<div class="domain-row"><div class="domain-label"><span>${domainLabel(d)}</span><span>習得 ${lv[4]} · 着手 ${qs.length - lv[0]} / ${qs.length}</span></div><div class="stack">${seg}</div></div>`;
+      })
+      .join('') +
+    '<div class="legend"><span><i class="lv1"></i>Lv1 答えた</span><span><i class="lv2"></i>Lv2 正解した</span><span><i class="lv3"></i>Lv3 別の日に2連続</span><span><i class="lv4"></i>Lv4 7日後も正解＝習得</span></div>';
   const days = [...Array(14)].map((_, i) => {
       const d = new Date(Date.now() - (13 - i) * DAY),
         key = isoDay(d);
@@ -384,7 +641,7 @@ function renderDashboard() {
   $('activityChart').innerHTML = days
     .map(
       (x) =>
-        `<div class="bar-col" title="${x.label}: ${x.count}問"><div class="bar" style="height:${Math.max(2, (x.count / max) * 125)}px"></div><small>${x.label}</small></div>`,
+        `<div class="bar-col" title="${x.label}: ${x.count}問"><div class="bar${x.count ? '' : ' zero'}" style="height:${Math.max(2, (x.count / max) * 118)}px"></div><small>${x.label}</small></div>`,
     )
     .join('');
 }
@@ -397,10 +654,10 @@ function renderReview() {
     ? list
         .map((q) => {
           const p = getP(q.id);
-          return `<div class="review-item"><div><strong>${p.starred ? '★ ' : ''}${formatText(q.stem)}</strong><br><small>${domainLabel(q.domain)} · 誤答 ${p.wrong_count} · Lv ${p.mastery_level}${isDue(q) ? ' · 要復習' : ''}</small></div><button class="ghost one-question" data-id="${q.id}">解く</button></div>`;
+          return `<div class="review-item"><div><strong class="exam-text">${p.starred ? '★ ' : ''}${formatText(q.stem)}</strong><br><small>${domainLabel(q.domain)} · 誤答 ${p.wrong_count} · 習得Lv ${p.mastery_level}${isDue(q) ? ' · 要復習' : ''}</small></div><button class="ghost one-question" data-id="${q.id}">解く</button></div>`;
         })
         .join('')
-    : '<p class="muted">まだ復習対象はありません。</p>';
+    : '<p class="empty-note">まだ復習対象はありません。3問解くと、翌日からここに並びます。★を付けた問題もここに集まります。</p>';
   document
     .querySelectorAll('.one-question')
     .forEach(
@@ -476,6 +733,17 @@ async function init() {
   questions = content.questions;
   concepts = content.concepts;
   state = loadStateV3(content.legacyMap).state;
+  // 見た目の設定。解説の開きかたを変えたときは、いま出ている解説にも即座に反映する。
+  initSettings((name) => {
+    if (name === 'explain' && session && !$('feedback').classList.contains('hidden')) {
+      const q = session.questions[session.index],
+        last = session.answers[session.answers.length - 1];
+      renderExplanation($('explainCards'), q, last?.choice ?? -1, concepts, {
+        focusOnly: getSetting('explain') === 'focus',
+      });
+    }
+  });
+  document.addEventListener('keydown', onKeydown);
   renderHome();
   $('dailyStartBtn').onclick = () => startSession(chooseDaily(), 'daily');
   $('customStartBtn').onclick = () => {
@@ -483,15 +751,20 @@ async function init() {
     startSession(filteredQuestions().slice(0, n), 'custom');
   };
   $('nextBtn').onclick = endOrNext;
-  $('quitBtn').onclick = () => showView('homeView');
-  $('resultHomeBtn').onclick = () => showView('homeView');
+  const backHome = () => {
+    // 到達印を「前回の広さ」から広げるための基準値。セッションを開いた時点の値を使う。
+    if (session) sealGrowFrom = session.reachBefore;
+    showView('homeView');
+  };
+  $('quitBtn').onclick = backHome;
+  $('resultHomeBtn').onclick = backHome;
   $('starBtn').onclick = () => {
     const q = session.questions[session.index],
       p = { ...getP(q.id) };
     p.starred = !p.starred;
     p.star_updated_at = new Date().toISOString();
     setP(q.id, p);
-    $('starBtn').textContent = p.starred ? '★' : '☆';
+    setStar(p.starred);
   };
   $('exportBtn').onclick = () => {
     const blob = new Blob(

@@ -1,16 +1,14 @@
 /**
  * 回答後の解説描画。
  *
- * 方針: 正解・不正解にかかわらず、A〜Dすべてを同じ密度で説明する。
+ * 方針: 正解・不正解にかかわらず、ア〜エすべてを同じ密度で説明する。
  *       「別概念です」で済ませると、誤答選択肢が何なのかを学べない。
  * データ: 概念そのものの説明は concepts.json（用語辞書）が持ち、
  *         「この設問で適切／不適切な理由」だけが設問側（choice_reasons）にある。
  *         同じ用語の説明を設問ごとに複製しないための分担なので、ここで文言を足さない。
  */
 
-import { escapeHtml, formatText } from './text.js';
-
-const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
+import { escapeHtml, formatText, CHOICE_MARKS } from './text.js';
 
 function row(label, value) {
   if (!value) return '';
@@ -38,7 +36,7 @@ function badges(index, correctIndex, chosenIndex) {
   return out.join('');
 }
 
-function card(question, index, concepts, chosenIndex) {
+function card(question, index, concepts, chosenIndex, focusOnly) {
   const conceptId = question.choice_concept_ids?.[index];
   const concept = conceptId ? concepts.get(conceptId) : null;
   const isCorrect = index === question.correct_choice;
@@ -70,13 +68,26 @@ function card(question, index, concepts, chosenIndex) {
         // 正解／自分の回答の印だけを出す。
         '';
 
+  const head = `<header class="ex-head">
+        <span class="ex-mark">${CHOICE_MARKS[index]}</span>
+        <p class="ex-choice exam-text">${formatText(question.choices[index])}</p>
+      </header>
+      <div class="ex-badges">${badges(index, question.correct_choice, chosenIndex)}</div>`;
+
+  // 「自分の回答と正解だけ開く」設定のときだけ、それ以外を畳む。
+  // ⚠️ 既定は全開のまま。誤答選択肢が何の説明なのかを読ませるのがこの画面の目的で、
+  //    畳むのはスクロールを短くしたい人のための選択肢にすぎない。
+  const collapsed = focusOnly && !isCorrect && index !== chosenIndex && body;
+  if (collapsed) {
+    return `
+    <details class="ex-card">
+      <summary>${head}</summary>
+      ${body}
+    </details>`;
+  }
   return `
     <section class="ex-card${isCorrect ? ' is-correct' : ''}">
-      <header class="ex-head">
-        <span class="ex-mark">${LETTERS[index]}</span>
-        <p class="ex-choice">${formatText(question.choices[index])}</p>
-      </header>
-      <div class="ex-badges">${badges(index, question.correct_choice, chosenIndex)}</div>
+      ${head}
       ${body}
     </section>`;
 }
@@ -116,9 +127,12 @@ function subjectCard(question, concepts) {
  * @param {object} question questions-v3.json の1件
  * @param {number} chosenIndex 利用者が選んだ選択肢（未回答なら -1）
  * @param {Map<string,object>} concepts concept_id → 概念
+ * @param {{focusOnly?: boolean}} [opts] focusOnly=true で、自分の回答と正解以外を畳む
  */
-export function renderExplanation(container, question, chosenIndex, concepts) {
+export function renderExplanation(container, question, chosenIndex, concepts, opts = {}) {
   container.innerHTML =
     subjectCard(question, concepts) +
-    question.choices.map((_, i) => card(question, i, concepts, chosenIndex)).join('');
+    question.choices
+      .map((_, i) => card(question, i, concepts, chosenIndex, Boolean(opts.focusOnly)))
+      .join('');
 }
