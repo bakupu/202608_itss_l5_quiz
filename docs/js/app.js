@@ -5,6 +5,7 @@ import { renderGlossary } from './glossary.js';
 import { formatText, CHOICE_MARKS } from './text.js';
 import { sourceHtml } from './source.js';
 import { initSettings, getSetting } from './settings.js';
+import { pickPraise, praiseFact, crossedMilestone } from './praise.js';
 
 const STORAGE_KEY = STORAGE_KEY_V3;
 const DAY = 86400000;
@@ -356,16 +357,18 @@ function verdictMarkHtml(correct) {
     : `<svg class="vmark" viewBox="0 0 48 48" aria-hidden="true"><path class="vstroke" style="--len:37" d="M12 12 L36 36"/><path class="vstroke d2" style="--len:37" d="M36 12 L12 36"/></svg>`;
 }
 /**
- * 正答時に画面中央へ押す採点印。
- * ⚠️ 情報はここに載せない（消えても #judge に結果が残る）。
- *    誤答には出さない。出すと1問ごとに叱られる画面になる。
+ * 画面中央へ押す採点印。正答時（「正解」）とセッション終了時（「満点」等）で使う。
+ * ⚠️ 情報はここに載せない（消えても判定文とねぎらいの2行が画面に残る）。
+ *    1問ごとの誤答には出さない。出すと毎問叱られる画面になる。
+ * @param {string} word 輪の中に入れる語。**2文字まで**（3文字以上は輪から出る）
+ * @param {'good'|'ai'} tone 色。good=青緑 / ai=藍
  */
-function showStamp() {
+function showStamp(word = '正解', tone = 'good') {
   const el = $('stamp');
   if (reduceMotion()) return;
-  el.innerHTML = `<svg viewBox="0 0 120 120" aria-hidden="true">
+  el.innerHTML = `<svg class="${tone}" viewBox="0 0 120 120" aria-hidden="true">
       <circle class="ring" cx="60" cy="60" r="50"/>
-      <text class="word" x="60" y="60" dx="-0.8" text-anchor="middle" dominant-baseline="central">正解</text>
+      <text class="word" x="60" y="60" dx="-0.8" text-anchor="middle" dominant-baseline="central">${word}</text>
     </svg>`;
   el.classList.remove('show');
   void el.offsetWidth; // 連続正解でも毎回再生させる
@@ -622,8 +625,22 @@ function renderResult() {
   countUp($('resultCorrect'), correct, (v) => `${v}/${session.answers.length}`);
   countUp($('resultRate'), Math.round((correct / session.answers.length) * 100), (v) => `${v}%`);
   $('resultMasteredDelta').textContent = `+${Math.max(0, delta)}`;
-  $('resultTitle').textContent =
-    correct === session.answers.length ? '全問正解' : 'おつかれさまでした';
+  // 🔥 0点でもねぎらう。ただし空の称賛はしない（praise.js の方針）。
+  //    段別の文に加えて「その日いちばん強い事実」を1行出すので、0点の日にも書くことがある。
+  const praise = pickPraise(correct, session.answers.length);
+  $('resultTitle').textContent = praise.head;
+  $('praiseBody').textContent = praise.body;
+  const answered = state.attempts.length;
+  $('praiseFact').textContent = praiseFact({
+    delta: Math.max(0, delta),
+    milestone: crossedMilestone(answered - session.answers.length, answered),
+    streak: streak(),
+    lvUp: session.answers.filter((a) => a.mastery_after > a.mastery_before).length,
+    correct,
+    wrong: session.answers.filter((a) => !a.correct).length,
+    answered: session.answers.length,
+  });
+  showStamp(praise.mark, praise.tone);
   $('resultList').innerHTML = session.answers
     .map((a, i) => {
       const q = session.questions[i],

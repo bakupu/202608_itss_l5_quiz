@@ -738,6 +738,31 @@ select {
 /* ============================================================
    結果
    ============================================================ */
+/* 結果画面のねぎらい。見出し（#resultTitle）を大きく、次の一手を小さく、事実を印付きで出す。
+   ⚠️ 採点印は0.85秒で消えるので、褒めた内容はこの2行に残す（印だけでは何も残らない）。 */
+.praise-body {
+  margin: 6px 0 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+.praise-fact {
+  margin: 10px 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ink-2);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+.praise-fact::before {
+  content: '✓';
+  color: var(--midori);
+  font-weight: 700;
+}
+
 .result-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1564,6 +1589,13 @@ select {
   stroke: var(--midori);
   stroke-width: 5;
   opacity: 0.92;
+}
+/* 結果画面では段によって色を変える（満点・上々は青緑、それ以下は藍） */
+.stamp svg.ai .ring {
+  stroke: var(--ai);
+}
+.stamp svg.ai .word {
+  fill: var(--ai);
 }
 /* 文字は輪の中に収める。viewBox 120 / r 50 なので、これより大きいと輪から出る */
 .stamp .word {
