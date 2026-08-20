@@ -41,6 +41,7 @@ function defaultP() {
     last_wrong_at: null,
     next_review_at: null,
     correct_days: [],
+    served_at: [], // 直近7日にこの問題を出した時刻。出題の重みを半減させるために使う
   };
 }
 function getP(id) {
@@ -192,60 +193,99 @@ function isDue(q) {
   const p = getP(q.id);
   return p.next_review_at && new Date(p.next_review_at) <= new Date();
 }
-function scoreQuestion(q) {
-  const p = getP(q.id);
-  let s = Math.random() * 10;
-  if (isDue(q)) s += 80;
-  if (p.last_wrong_at) s += 45;
-  if (p.starred) s += 35;
-  if (p.mastery_level <= 2) s += 25;
-  if (p.attempt_count === 0) s += 18;
-  if (p.last_answered_at) {
-    const age = (Date.now() - new Date(p.last_answered_at)) / DAY;
-    s += Math.min(age, 20);
-  }
-  return s;
+/**
+ * 出題の重み。判断は adr-0004（20_adr/0004-30-app_出題の選び方と習得指標の扱い.md）。
+ *
+ * 🔥 出した回数で半減させるのが要点。以前は「一度でも誤答した」に永久 +45 を与えており、
+ *    誤答は next_review_at の短縮でも処理されているため二重計上だった。
+ *    その結果、同じ日に20問×4本回すと4本目は既出100%（出た実数は381問中28問）になっていた。
+ * ⚠️ 点数そのものを保存して半減させてはいけない。回復手段が無く、10回出た問題が二度と出なくなる。
+ *    保存するのは「出した時刻」だけにし、7日で捨てる（= 放っておけば重みが戻る）。
+ */
+function serveCount(p) {
+  const cutoff = Date.now() - 7 * DAY;
+  return (p.served_at || []).filter((t) => new Date(t).getTime() >= cutoff).length;
 }
-function chooseDaily() {
-  const pool = [...questions],
-    picked = [],
-    groups = [
-      (q) => isDue(q) || getP(q.id).last_wrong_at,
-      (q) => getP(q.id).mastery_level <= 2,
-      (q) => getP(q.id).attempt_count === 0,
-    ];
-  for (const test of groups) {
-    const c = pool
-      .filter((q) => !picked.includes(q) && test(q))
-      .sort((a, b) => scoreQuestion(b) - scoreQuestion(a))[0];
-    if (c) picked.push(c);
+function servedToday(q) {
+  return (getP(q.id).served_at || []).some((t) => isoDay(new Date(t)) === isoDay());
+}
+function questionWeight(q) {
+  const p = getP(q.id);
+  // 1 から始める。0にすると抽選の母数が消え、習得済みの問題が永久に出なくなる。
+  let base = 1;
+  if (isDue(q)) {
+    const over = (Date.now() - new Date(p.next_review_at).getTime()) / DAY;
+    base += 80 + Math.min(20, Math.max(0, over));
   }
-  while (picked.length < 3) {
-    const c = pool
-      .filter((q) => !picked.includes(q))
-      .sort((a, b) => scoreQuestion(b) - scoreQuestion(a))[0];
-    if (!c) break;
-    picked.push(c);
+  if (p.starred) base += 25;
+  if (p.attempt_count === 0) base += 20;
+  // 「直前の回答が誤答」。正解すれば消えるので、昔の誤答が居座らない。
+  if (p.attempt_count > 0 && (p.correct_streak || 0) === 0) base += 25;
+  base += (4 - Math.min(4, p.mastery_level || 0)) * 5;
+  return base * Math.pow(0.5, serveCount(p));
+}
+/** 重みに比例した抽選（同じ配列から1件引く）。 */
+function drawIndex(list) {
+  const w = list.map((q) => Math.max(0.0001, questionWeight(q)));
+  const total = w.reduce((a, b) => a + b, 0);
+  let r = Math.random() * total;
+  for (let i = 0; i < list.length; i++) {
+    r -= w[i];
+    if (r <= 0) return i;
+  }
+  return list.length - 1;
+}
+/**
+ * 候補から n 問選ぶ。⌈n/3⌉ は重みの高い順、残りは抽選。
+ * 抽選からは当日すでに出した問題を外す（外すと足りない場合だけ戻す）。
+ */
+function pickQuestions(pool, n) {
+  const picked = [],
+    slots = Math.max(1, Math.ceil(n / 3));
+  for (const q of [...pool].sort((a, b) => questionWeight(b) - questionWeight(a))) {
+    if (picked.length >= Math.min(slots, n)) break;
+    picked.push(q);
+  }
+  const rest = pool.filter((q) => !picked.includes(q));
+  let candidates = rest.filter((q) => !servedToday(q));
+  if (candidates.length < n - picked.length) candidates = rest;
+  while (picked.length < n && candidates.length) {
+    picked.push(candidates.splice(drawIndex(candidates), 1)[0]);
   }
   return picked;
+}
+/** 出題した事実を記録する。⚠️ 選んだ時点ではなく、画面に出した時点で記録する。 */
+function recordServe(q) {
+  const cutoff = Date.now() - 7 * DAY,
+    p = { ...getP(q.id) };
+  p.served_at = [
+    ...(p.served_at || []).filter((t) => new Date(t).getTime() >= cutoff),
+    new Date().toISOString(),
+  ];
+  // 同期しない。出題の散らし方は端末ごとの都合で、学習履歴ではない。
+  setP(q.id, p, { sync: false });
+}
+/** 今日の3問。スコア1問（⌈3/3⌉）＋ 抽選2問。 */
+function chooseDaily() {
+  return pickQuestions(questions, 3);
 }
 function filteredQuestions() {
   const domain = $('domainSelect').value,
     filter = $('filterSelect').value,
     type = $('typeSelect').value;
-  return questions
-    .filter((q) => {
-      const p = getP(q.id);
-      if (domain !== 'ALL' && q.domain !== domain) return false;
-      if (type !== 'ALL' && q.question_type !== type) return false;
-      if (filter === 'WRONG' && p.wrong_count === 0) return false;
-      if (filter === 'STARRED' && !p.starred) return false;
-      if (filter === 'DUE' && !isDue(q)) return false;
-      if (filter === 'UNMASTERED' && p.mastery_level >= 4) return false;
-      if (filter === 'NEW' && p.attempt_count > 0) return false;
-      return true;
-    })
-    .sort((a, b) => scoreQuestion(b) - scoreQuestion(a));
+  return questions.filter((q) => {
+    const p = getP(q.id);
+    if (domain !== 'ALL' && q.domain !== domain) return false;
+    if (type !== 'ALL' && q.question_type !== type) return false;
+    if (filter === 'WRONG' && p.wrong_count === 0) return false;
+    if (filter === 'STARRED' && !p.starred) return false;
+    if (filter === 'DUE' && !isDue(q)) return false;
+    if (filter === 'UNMASTERED' && p.mastery_level >= 4) return false;
+    if (filter === 'NEW' && p.attempt_count > 0) return false;
+    return true;
+  });
+  // ⚠️ ここで並べ替えない。並べて上位から取ると、同じ顔ぶれが毎回出る（adr-0004）。
+  //    選ぶのは pickQuestions（スコア枠＋抽選）。
 }
 function startSession(list, mode = 'custom') {
   if (!list.length) {
@@ -264,8 +304,9 @@ function startSession(list, mode = 'custom') {
   renderQuestion();
 }
 function renderQuestion() {
-  const q = session.questions[session.index],
-    p = getP(q.id);
+  const q = session.questions[session.index];
+  recordServe(q);
+  const p = getP(q.id);
   $('progressText').textContent = `${session.index + 1} / ${session.questions.length}`;
   const bar = $('progressBar');
   bar.style.width = `${(session.index / session.questions.length) * 100}%`;
@@ -646,9 +687,19 @@ function renderDashboard() {
     .join('');
 }
 function renderReview() {
+  // ⚠️ 出題の重みで並べない。抽選のゆらぎが入ると、再描画のたびに並びが変わって読めない。
+  //    期限到来 → 誤答の多い順 → 習得Lvの低い順 の決定的な並びにする。
+  const rank = (q) => {
+    const p = getP(q.id);
+    return [isDue(q) ? 0 : 1, -(p.wrong_count || 0), p.mastery_level || 0];
+  };
   const list = questions
     .filter((q) => getP(q.id).starred || getP(q.id).wrong_count > 0 || isDue(q))
-    .sort((a, b) => scoreQuestion(b) - scoreQuestion(a));
+    .sort((a, b) => {
+      const x = rank(a),
+        y = rank(b);
+      return x[0] - y[0] || x[1] - y[1] || x[2] - y[2];
+    });
   $('reviewCountLabel').textContent = `${list.length}件`;
   $('reviewList').innerHTML = list.length
     ? list
@@ -748,7 +799,7 @@ async function init() {
   $('dailyStartBtn').onclick = () => startSession(chooseDaily(), 'daily');
   $('customStartBtn').onclick = () => {
     const n = Math.max(1, Math.min(100, Number($('countInput').value) || 20));
-    startSession(filteredQuestions().slice(0, n), 'custom');
+    startSession(pickQuestions(filteredQuestions(), n), 'custom');
   };
   $('nextBtn').onclick = endOrNext;
   const backHome = () => {
