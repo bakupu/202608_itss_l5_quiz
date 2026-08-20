@@ -42,6 +42,9 @@ GitHub Pages の静的配信 + ブラウザの localStorage だけで成立す�
       誤答は朱の × と小さな振れ、選択肢の色は下から順に付く、
       結果は数え上げ、到達印はセッション前の広さから広がる。
       すべて `prefers-reduced-motion` で無効化でき、**情報は演出に載せていない**
+    - 結果画面に**ねぎらい**を入れた（`docs/js/praise.js`）。正答率5段×各6本の文＋
+      その日いちばん強い事実1行＋段別の採点印。0点でも出す（空の称賛はしない）。
+      `sw.js` の `CACHE` は v8
     - 🔥 出題の選び方を入れ替えた（[adr-0004](20_adr/0004-30-app_出題の選び方と習得指標の扱い.md)）。
       重み = 基礎点 × `0.5^(直近7日の出題回数)`、n問のうち `⌈n/3⌉` をスコア順・残りは抽選。
       永久 +45 だった `last_wrong_at` の加点を廃止（`next_review_at` との二重計上だった）。
@@ -75,6 +78,7 @@ docs/                  ★GitHub Pages の配信ルート。ここだけがブ�
               content.js（読み込みと履歴移行）  explain.js（解説描画）
               glossary.js（用語辞書ビュー）
               settings.js（★見た目の設定。保存先は itss-l5-ui-v1）
+              praise.js（★結果画面のねぎらい文。5段×6本＋事実の1行）
               text.js（上付き・下付き・改行の整形／選択肢の記号 ア〜エ）
               source.js（★出典と改変の表示）
   data/       concepts.json      用語辞書285語。★解説を直すときはここ
@@ -135,7 +139,7 @@ GitHub Pages のブランチ配信で選べるフォルダが `/` か `/docs` �
 
 - 参照はすべて**相対パス**。`docs/` ごと移動しても壊れない状態を保つ
 - `fetch()` の相対パスは**モジュールではなく `index.html` の位置**を基準に解決される（`data/questions-v3.json`）
-- 🔥 **`docs/` 配下のファイル配置を変えたら `sw.js` の `CACHE` 名を必ず上げる**（現在 `itss-l5-v7`）。
+- 🔥 **`docs/` 配下のファイル配置を変えたら `sw.js` の `CACHE` 名を必ず上げる**（現在 `itss-l5-v8`）。
   上げないと Service Worker が旧パスを配り続け、オフライン時に壊れる
 - `docs/js/supabase-config.js` に `service_role` キーを置かない。ブラウザへ配られる
 
